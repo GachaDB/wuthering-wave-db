@@ -1,6 +1,6 @@
 // Function to fetch character data based on the name in the URL
 function updateCharacterInfo(characterName) {
-    fetch('../Asset/json/characters_detail.json')
+    fetch("https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/characters_detail.json")
       .then(response => response.json())
       .then(data => {
         const character = data.find(char => char.name.toLowerCase() === characterName.toLowerCase());
