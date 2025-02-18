@@ -1,6 +1,6 @@
 async function fetchCoupons() {
     try {
-        const response = await fetch("../Asset/json/code.json");
+        const response = await fetch("https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/code.json");
         if (!response.ok) throw new Error("Failed to fetch JSON");
 
         const coupons = await response.json();
