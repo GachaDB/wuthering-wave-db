@@ -1,0 +1,73 @@
+[
+    {
+      "name": "Aalto",
+      "title": "Mistcloak Strike",
+      "class": "Congenital",
+      "description": "Aalto is a playable Aero Congenital Resonator in Wuthering Waves. He is an information broker from the New Federation and a Consultant of the Black Shores. He first appears in the Main Quest Chapter I: Act V - Rewinding Raindrops.",
+      "gender": "Male",
+      "birthday": "June 11",
+      "birthplace": "New Federation",
+      "nation": "The Black Shores",
+      "affiliations": ["Black Shores"],
+      "sigil": "Perceptive Eyes",
+      "special_dish": "Misty Tea",
+      "voice_actors": {
+        "english": "James Day",
+        "chinese": "Liang Dawei (梁达伟)",
+        "japanese": "Iwasaki Ryōta (岩崎 諒太)",
+        "korean": "Im Chaebin (임채빈)"
+      },
+      "translations": [
+        { "language": "English", "name": "Aalto" },
+        { "language": "Chinese (Simplified)", "name": "秋水" },
+        { "language": "Chinese (Traditional)", "name": "秋水" },
+        { "language": "Japanese", "name": "アールト" },
+        { "language": "Korean", "name": "알토" },
+        { "language": "French", "name": "Aalto" },
+        { "language": "German", "name": "Aalto" },
+        { "language": "Spanish", "name": "Aalto" }
+      ],
+      "forte": "aalto_forte.md",
+      "resonance_chain": "aalto_resonance_chain.md",
+      "ascension_material": "aalto_material.md",
+      "relationship": "aalto_relationship.md",
+      "background": "aalto_background.md",
+      "model_image": "Aalto_Full_Sprite.webp"
+    },
+    {
+      "name": "Baizhi",
+      "title": "Healing You'tan",
+      "class": "Mutant",
+      "description": "Baizhi (Chinese: 白芷) is a playable Glacio Mutant Resonator in Wuthering Waves. She is a researcher in Remnant Ecoacoustics at Huaxu Academy. Baizhi's once unfulfilled wish has now manifested as her loyal companion. The Remnant Creature You'tan is her source of healing powers, and a lifelong research focus.",
+      "gender": "Female",
+      "birthday": "September 10",
+      "birthplace": "Huanglong",
+      "nation": "Huanglong",
+      "affiliations": ["Jinzhou", "Huaxu Academy"],
+      "sigil": null,
+      "special_dish": "Iced Perilla",
+      "voice_actors": {
+        "english": "Samantha Dakin",
+        "chinese": "Chen Tingting (陈婷婷)",
+        "japanese": "Seto Asami (瀬戸 麻沙美)",
+        "korean": "Seong Ye-won (성예원)"
+      },
+      "translations": [
+        { "language": "English", "name": "Baizhi" },
+        { "language": "Chinese (Simplified)", "name": "白芷" },
+        { "language": "Chinese (Traditional)", "name": "白芷" },
+        { "language": "Japanese", "name": "白ビャク芷シ" },
+        { "language": "Korean", "name": "설지" },
+        { "language": "French", "name": "Baizhi" },
+        { "language": "German", "name": "Baizhi" },
+        { "language": "Spanish", "name": "Baizhi" }
+      ],
+      "forte": "baizhi_forte.md",
+      "resonance_chain": "baizhi_resonance_chain.md",
+      "ascension_material": "baizhi_material.md",
+      "relationship": "baizhi_relationship.md",
+      "background": "baizhi_background.md",
+      "personality": "baizhi_personality.md",
+      "model_image": "Baizhi_Full_Sprite.webp"
+    }
+]  

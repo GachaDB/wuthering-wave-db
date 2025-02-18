@@ -1,0 +1,272 @@
+[
+  {
+    "name": "Rover (Spectro)",
+    "element": "Spectro",
+    "rarity": 5,
+    "type": "Sword",
+    "role": "DPS",
+    "image": "Rover_Head_Icon.png",
+    "release_date": "2024-05-23"
+  },
+  {
+    "name": "Rover (Havoc)",
+    "element": "Havoc",
+    "rarity": 5,
+    "type": "Sword",
+    "role": "DPS",
+    "image": "Rover_Head_Icon.png",
+    "release_date": "2024-01-15"
+  },
+  {
+    "name": "Aalto",
+    "element": "Aero",
+    "rarity": 4,
+    "type": "Pistol",
+    "role": "DPS",
+    "image": "Alto_Head_Icon.webp",
+    "release_date": "2024-05-23"
+  },
+  {
+    "name": "Jinhsi",
+    "element": "Spectro",
+    "rarity": 5,
+    "type": "Broadblade",
+    "role": "DPS",
+    "image": "Jinhsi_Head_Icon.webp",
+    "release_date": "2024-06-28"
+  },
+  {
+    "name": "Calcharo",
+    "element": "Electro",
+    "rarity": 5,
+    "type": "Broadblade",
+    "role": "DPS",
+    "image": "Calcharo_Head_Icon.webp",
+    "release_date": "2024-05-23"
+  },
+  {
+    "name": "Baizhi",
+    "element": "Glacio",
+    "rarity": 4,
+    "type": "Rectifier",
+    "role": "Support",
+    "image": "Baizhi_Head_Icon.webp",
+    "release_date": "2024-05-23"
+  },
+  {
+    "name": "Brant",
+    "element": "Fusion",
+    "rarity": 5,
+    "type": "Sword",
+    "role": "Sub",
+    "image": "https://example.com/images/baizhi.png",
+    "release_date": "???"
+  },
+  {
+    "name": "Phoebe",
+    "element": "Spectro",
+    "rarity": 5,
+    "type": "Rectifier",
+    "role": "DPS",
+    "image": "Phoebe_Head_Icon.webp",
+    "release_date": "2025-02-13"
+  },
+  {
+    "name": "Camellya",
+    "element": "Havoc",
+    "rarity": 5,
+    "type": "Sword",
+    "role": "DPS",
+    "image": "Camellya_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Carlotta",
+    "element": "Glacio",
+    "rarity": 5,
+    "type": "Pistol",
+    "role": "DPS",
+    "image": "Carlotta_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Changli",
+    "element": "Fusion",
+    "rarity": 5,
+    "type": "Sword",
+    "role": "DPS",
+    "image": "Changli_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Chixia",
+    "element": "Fusion",
+    "rarity": 5,
+    "type": "Pistol",
+    "role": "DPS",
+    "image": "Chixia_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Danjin",
+    "element": "Havoc",
+    "rarity": 4,
+    "type": "Sword",
+    "role": "DPS",
+    "image": "Danjin_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Encore",
+    "element": "Fusion",
+    "rarity": 5,
+    "type": "Rectifier",
+    "role": "DPS",
+    "image": "Encore_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Jianxin",
+    "element": "Aero",
+    "rarity": 5,
+    "type": "Gauntlet",
+    "role": "Buffer",
+    "image": "Jianxin_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Jiyan",
+    "element": "Aero",
+    "rarity": 5,
+    "type": "Broadblade",
+    "role": "DPS",
+    "image": "Jiyan_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Lingyang",
+    "element": "Glacio",
+    "rarity": 5,
+    "type": "Gauntlet",
+    "role": "DPS",
+    "image": "Lingyang_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Lumi",
+    "element": "Electro",
+    "rarity": 4,
+    "type": "Broadblade",
+    "role": "Buffer",
+    "image": "Lumi_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Mortefi",
+    "element": "Fusion",
+    "rarity": 4,
+    "type": "Pistol",
+    "role": "Buffer",
+    "image": "Mortefi_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Rocchia",
+    "element": "Havoc",
+    "rarity": 5,
+    "type": "Rectifier",
+    "role": "Buffer",
+    "image": "Rocchia_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Sanhua",
+    "element": "Glacio",
+    "rarity": 4,
+    "type": "Sword",
+    "role": "Buffer",
+    "image": "Sanhua_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Shorekeeper",
+    "element": "Spectro",
+    "rarity": 5,
+    "type": "Rectifier",
+    "role": "Support",
+    "image": "Shorekeeper_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Taoqi",
+    "element": "Havoc",
+    "rarity": 4,
+    "type": "Broadblade",
+    "role": "Buffer",
+    "image": "Taoqi_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Verina",
+    "element": "Spectro",
+    "rarity": 5,
+    "type": "Rectifier",
+    "role": "Support",
+    "image": "Verina_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Xiangli Yao",
+    "element": "Electro",
+    "rarity": 5,
+    "type": "Gauntlet",
+    "role": "DPS",
+    "image": "Xiangli_Yao_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Yangyang",
+    "element": "Aero",
+    "rarity": 4,
+    "type": "Sword",
+    "role": "Buffer",
+    "image": "Yangyang_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Yinlin",
+    "element": "Fusion",
+    "rarity": 5,
+    "type": "Rectifier",
+    "role": "Sub",
+    "image": "Yinlin_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Youhu",
+    "element": "Fusion",
+    "rarity": 4,
+    "type": "Gauntlet",
+    "role": "Support",
+    "image": "Youhu_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Yuanwu",
+    "element": "Electro",
+    "rarity": 4,
+    "type": "Gauntlet",
+    "role": "Support",
+    "image": "Yuanwu_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  },
+  {
+    "name": "Zhezhi",
+    "element": "Glacio",
+    "rarity": 5,
+    "type": "Rectifier",
+    "role": "Sub",
+    "image": "Zhezhi_Head_Icon.webp",
+    "release_date": "2024-04-02"
+  }
+]

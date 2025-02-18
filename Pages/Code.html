@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="StickIn" content="This is the Stick IN Home Page">
+    <link rel="stylesheet" href="../CSS/Sidebar.css">
+    <link rel="stylesheet" href="../CSS/Code.css">
+    <title>Codes</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="menu-btn">
+        <i class="bx bx-menu"></i>
+      </div>
+    </nav>
+    <nav class="sidebar">
+      <header>
+        <div class="image-text">
+          <a href="your-link-here">
+            <span class="image">
+              <img src="https://t4.ftcdn.net/jpg/04/06/91/91/240_F_406919147_D3WsGjwXj1qmFNrei2ZFvBWwiueRcFmg.jpg" alt="logo" />
+            </span>
+          </a>
+          <div class="text header-text">
+            <span class="main">Wuthering Waves</span>
+          </div>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="nav-link">
+            <a href="../Index.html">
+              <i class="bx bx-home-alt icons"></i>
+              <span class="text nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="#">
+              <i class="bx bxs-coupon icons"></i>
+              <span class="text nav-text">Coupons/Codes</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="Character.html">
+              <i class='bx bx-group icons'></i>
+              <span class="text nav-text">Character</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="Game-list.html">
+              <i class='bx bx-knife icons'></i>
+              <span class="text nav-text">Weapon</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="Game-list.html">
+              <i class="bx bxs-virus icons"></i>
+              <span class="text nav-text">Echos/TD</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="Game-list.html">
+              <i class="bx bx-book-content icons"></i>
+              <span class="text nav-text">Story</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="Game-list.html">
+              <i class="bx bx-calendar icons"></i>
+              <span class="text nav-text">Timeline</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="Game-list.html">
+              <i class="bx bx-stats icons"></i>
+              <span class="text nav-text">Gacha Simulator</span>
+            </a>
+          </li>
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <li class="nav-link">
+            <a href="Credits.html">
+              <i class="bx bxs-heart icons"></i>
+              <span class="text nav-text">Support Us</span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="banner">
+        <hr class="separator">
+        <h2 class="title">Coupon/Code</h2>
+        <hr class="separator">
+      </div>
+      <section>
+        <h3>Active Coupons</h3>
+        <div class="coupon-grid" id="activeCoupons"></div>
+      </section>
+      <section>
+        <h3>Expired Coupons</h3>
+        <div class="coupon-grid expired-grid" id="expiredCoupons"></div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="../JS/Sidebar.js"></script>
+    <script src="../JS/Code.js"></script>
+  </body>
+</html>

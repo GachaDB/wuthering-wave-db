@@ -1,0 +1,21 @@
+{
+    "people": [
+      {
+        "name": "Richard",
+        "experience": "richard_experience.md"
+      },
+      {
+        "name": "Alice",
+        "experience": "alice_experience.md"
+      },
+      {
+        "name": "Bob",
+        "experience": "bob_experience.md"
+      },
+      {
+        "name": "Charlie",
+        "experience": "charlie_experience.md"
+      }
+    ]
+  }
+  
