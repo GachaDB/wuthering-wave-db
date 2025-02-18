@@ -1,6 +1,6 @@
 async function fetchCharacters() {
   try {
-    const response = await fetch("../Asset/json/characters.json");
+    const response = await fetch("https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/main/Asset/Json/characters.json");
     const characters = await response.json();
     const filteredCharacters = characters.filter((char) => char.release_date !== "???");
     displayCharacters(filteredCharacters);
