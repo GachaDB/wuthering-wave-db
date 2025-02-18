@@ -289,15 +289,17 @@ body.dark .search-bar input {
 body {
   position: relative;
   background-color: #121212;
-  background-image: url("https://html5up.net/uploads/demos/overflow/assets/css/images/overlay.png"), 
-  url("../asset/image/background.jpg");
+  background-image: 
+    url("https://html5up.net/uploads/demos/overflow/assets/css/images/overlay.png"), 
+    url("https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/main/Asset/Image/background.jpg");
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
   background-position: top left, center 0;
   background-attachment: fixed, fixed;
   padding-top: 40px;
   margin-left: 70px;
-}	
+}
+
 
 body::before {
 content: "";
