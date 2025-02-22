@@ -1,0 +1,45 @@
+{
+    "weapons": [
+      {
+        "name": "Shadowfang",
+        "image": "https://example.com/images/shadowfang.png",
+        "skill": {
+          "name": "Phantom Slash",
+          "description": "Unleashes a swift, shadow-infused slash that deals high damage and reduces enemy visibility."
+        }
+      },
+      {
+        "name": "Stormbringer",
+        "image": "https://example.com/images/stormbringer.png",
+        "skill": {
+          "name": "Thunderstrike",
+          "description": "Summons a powerful lightning strike that stuns enemies for 3 seconds."
+        }
+      },
+      {
+        "name": "Infernal Blade",
+        "image": "https://example.com/images/infernal_blade.png",
+        "skill": {
+          "name": "Flame Surge",
+          "description": "Engulfs the blade in flames, increasing attack power and burning enemies over time."
+        }
+      },
+      {
+        "name": "Frostpiercer",
+        "image": "https://example.com/images/frostpiercer.png",
+        "skill": {
+          "name": "Glacial Spike",
+          "description": "Launches a shard of ice that slows and freezes enemies on impact."
+        }
+      },
+      {
+        "name": "Dragonsoul Spear",
+        "image": "https://example.com/images/dragonsoul_spear.png",
+        "skill": {
+          "name": "Draconic Lunge",
+          "description": "A powerful thrust attack that pierces through multiple enemies and deals extra damage to dragons."
+        }
+      }
+    ]
+  }
+  
