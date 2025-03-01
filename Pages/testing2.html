@@ -1,0 +1,280 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.weapons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+.weapon-item {
+    width: 200px;
+    height: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Increased border-radius */
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    position: relative;
+    background: white;
+}
+
+.weapon-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; /* Smooth transition on hover */
+}
+
+.weapon-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px; /* Slight rounding for images */
+}
+.weapon-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.weapon-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: black;
+}
+
+.weapon-tags {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.weapon-tags .weapon-label {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    font-size: 12px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.weapon-type-icon {
+    max-width: 24px;
+    max-height: 24px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.weapon-label-rarity-5 { background-color: #FFD700; color: white; } /* Gold for 5-star */
+.weapon-label-rarity-4 { background-color: #A020F0; color: white; } /* Purple for 4-star */
+.weapon-label-rarity-3 { background-color: #1E90FF; color: white; } /* Blue for 3-star */
+.weapon-label-rarity-2 { background-color: #32CD32; color: white; } /* Green for 2-star */
+.weapon-label-rarity-1 { background-color: #808080; color: white; } /* Grey for 1-star */
+.weapon-label-type { background-color: #2196F3; color: white; } /* Blue for weapon type */
+
+.weapon-name {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    width: 80%;
+    border-radius: 5px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+</style>
+<div class="container">
+    <div class="title"><h2>Weapons</h2></div>
+    <div class="weapons-grid">
+    </div>
+</div>
+
+<div id="weapon-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" src="" alt="">
+        <p id="modal-description"></p>
+        <p><strong>Skill:</strong> <span id="modal-skill-name"></span></p>
+        <p id="modal-skill-description"></p>
+    </div>
+</div>
+
+<script>
+    const weapons = [
+    {
+      "name": "Lustrous Razor",
+      "type": "Broadblade",
+      "description": "Gaze upon this Broadblade, its sharp edges gleaming in the frigid air. Wield it to feel power coursing through you like a raging river.",
+      "rarity": 5,
+      "image": "Broadblade_Lustrous_Razor.webp",
+      "skill": {
+        "name": "Stormy Resolution",
+        "description": "Increases Energy Regen by 12.8%/16%/19.2%/22.4%/25.6%. When Resonance Skill is cast, Resonance Liberation DMG Bonus is increased by 7%/8.75%/10.5%/12.25%/14%, stacking up to 3/3/3/3/3 times. This effect lasts for 12/12/12/12/12s.."
+      }
+    },
+    {
+      "name": "Verdant Summit",
+      "type": "Broadblade",
+      "description": "The ancient mountain stands tall, its peak reaching towards the sky. A river flows for thousands of years, forming the blade of a powerful weapon. As it is unsheathed, a powerful dragon's roar echoes through the heavens and earth, causing the sea to churn. This awe-inspiring weapon strikes fear in all who witness its might.",
+      "rarity": 5,
+      "image": "Broadblade_Verdant_Summit.webp",
+      "skill": {
+        "name": "Swordsworn",
+        "description": "Increases Attribute DMG Bonus by 12%/15%/18%/21%/24%. Every time Intro Skill or Resonance Liberation is cast, increases Heavy Attack DMG Bonus by 24%/30%/36%/42%/48%, stacking up to 2/2/2/2/2 time(s). This effect lasts for 14/14/14/14/14s."
+      }
+    },
+    {
+      "name": "Ages of Harvest",
+      "type": "Broadblade",
+      "rarity": 4,
+      "image": "Broadblade_Ages_of_Harvest.webp",
+      "skill": {
+        "name": "Placeholder Skill",
+        "description": "Placeholder description."
+      }
+    },
+    {
+      "name": "Discord",
+      "type": "Broadblade",
+      "rarity": 4,
+      "image": "Broadblade_Discord.webp",
+      "skill": {
+        "name": "Placeholder Skill",
+        "description": "Placeholder description."
+      }
+    },
+    {
+      "name": "Broadblade#41",
+      "type": "Broadblade",
+      "rarity": 3,
+      "image": "Broadblade_41.webp",
+      "skill": {
+        "name": "Placeholder Skill",
+        "description": "Placeholder description."
+      }
+    },
+    {
+      "name": "Dauntless Evernight",
+      "type": "Broadblade",
+      "rarity": 5,
+      "image": "Broadblade_Dauntless_Evernight.webp",
+      "skill": {
+        "name": "Placeholder Skill",
+        "description": "Placeholder description."
+      }
+    },
+    {
+      "name": "Helios Cleaver",
+      "type": "Broadblade",
+      "rarity": 4,
+      "image": "Broadblade_Helios_Cleaver.webp",
+      "skill": {
+        "name": "Placeholder Skill",
+        "description": "Placeholder description."
+      }
+    }
+    ];
+    
+    const weaponsGrid = document.querySelector('.weapons-grid');
+const modal = document.getElementById("weapon-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalImage = document.getElementById("modal-image");
+const modalDescription = document.getElementById("modal-description");
+const modalSkillName = document.getElementById("modal-skill-name");
+const modalSkillDescription = document.getElementById("modal-skill-description");
+const closeModal = document.querySelector(".close");
+
+weapons.forEach(weapon => {
+    const weaponItem = document.createElement('div');
+    const weaponTypeImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/${weapon.type}_Weapon_Icon.webp`;
+    const stars = "★".repeat(weapon.rarity);
+    
+    weaponItem.classList.add('weapon-item');
+
+    weaponItem.innerHTML = `
+        <div class="weapon-image-wrapper">
+            <img alt="${weapon.name}" src="${weapon.image}">
+            <div class="weapon-tags">
+                <span class="weapon-label weapon-label-rarity-${weapon.rarity}">${weapon.rarity} ${stars}</span>
+                <img class="weapon-type-icon" src="${weaponTypeImage}" alt="${weapon.type}" title="${weapon.type}">
+            </div>
+        </div>
+        <h6 class="weapon-name">${weapon.name}</h6>
+    `;
+
+    // Open modal when clicked
+    weaponItem.addEventListener("click", () => {
+        modalTitle.textContent = weapon.name;
+        modalImage.src = weapon.image;
+        modalDescription.textContent = weapon.description || "No description available.";
+        modalSkillName.textContent = weapon.skill.name;
+        modalSkillDescription.textContent = weapon.skill.description;
+
+        modal.style.display = "flex";
+    });
+
+    weaponsGrid.appendChild(weaponItem);
+});
+
+// Close modal when clicking the "X"
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Close modal when clicking outside of it
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+    </script>
+    
