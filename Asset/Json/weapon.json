@@ -594,7 +594,7 @@
       "type": "Sword",
       "description": "The Sword provided by the Pioneer Association for the voyagers is bright in color, not easy to lose, hard in texture, and can cope with various extreme environments for a long time, and is very popular among the group of explorers.",
       "rarity": 4,
-      "image": "Sword_of_Voyager.webp",
+      "image": "Sword_Sword_of_Voyager.webp",
       "main_stats": {
         "stats": "ATK",
         "value": "24.00/78.42/134.88/171.10/207.32/243.55/279.78/300.00"
@@ -668,970 +668,989 @@
     {
       "name": "Static Mist",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Pistols_Static_Mist.webp",
+      "rarity": 5,
+      "description": "Grip the sleek frame and feel its cool surface as you aim down the sight. With a pull of the trigger, unleash a thick smoke barrage onto the battlefield with these powerful Pistols in your hands.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "47.00/153.58/264.13/335.07/406.01/476.95/547.89/587.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. Rate",
+        "value": "5.40%/9.60%/13.80%/15.90%/18.00%/20.10%/22.20%/24.30%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Stormy Resolution",
+        "description": "Increases Energy Regen by 12.8%/16%/19.2%/22.4%/25.6%. Incoming Resonator's ATK is increased by 10%/12.5%/15%/17.5%/20% for 14/14/14/14/14s, stackable for up to 1/1/1/1/1 times after the wielder casts Outro Skill."
       }
     },
     {
       "name": "The Last Dance",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Pistols_The_Last_Dance.webp",
+      "rarity": 5,
+      "description": "The radiant crystals, ever shattering and reshaping, beckon you into a treacherous dance, a gamble where life is the wager. Cortado, cortado... relentlessly draw each other in until all we can hear are our quivers. When the crimson finale arrives, remember, death comes for all.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "40.00/130.71/224.79/285.17/345.54/405.92/466.29/500.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. DMG",
+        "value": "16.00%/28.44%/40.89%/47.11%/53.33%/59.56%/65.78%/72.00%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Silent Eulogy",
+        "description": "Increases ATK by 12%/15%/18%/21%/24%. Every time Intro Skill or Resonance Liberation is cast, Resonance Skill DMG Bonus increases by 48%/60%/72%/84%/96% for 5/5/5/5/5s."
       }
     },
     {
       "name": "Cadenza",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Pistols_Cadenza.webp",
+      "rarity": 4,
+      "description": "An ascending crescendo. These pistols unleash bullets with the force of thunder, tearing through the heavens like a symphony of destruction.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "27.00/88.23/151.73/192.49/233.24/273.99/314.75/337.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Energy Regen",
+        "value": "11.52%/20.48%/29.44%/33.92%/38.40%/42.88%/47.36%/51.84%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Ceaseless Aria",
+        "description": "When Resonance Skill is cast, restores 8/10/12/14/16 Concerto Energy. This effect can be triggered 1/1/1/1/1 times every 20/20/20/20/20s."
       }
     },
     {
       "name": "Undying Flame",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Pistols_Undying_Flame.webp",
+      "rarity": 4,
+      "description": "A weapon designed to commemorate the Midnight Rangers' dedication. \"Let my body ablaze, flames dance to banish all evil's haze.\"",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "33.00/107.83/185.45/235.26/285.07/334.88/384.69/412.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "6.75%/12.00%/17.25%/19.87%/22.50%/25.12%/27.75%/30.38%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Loyalty",
+        "description": "When Intro Skill is cast, increases Resonance Skill DMG Bonus by 20%/25%/30%/35%/40% for 15/15/15/15/15s."
       }
     },
     {
       "name": "Novaburst",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Pistols_Novaburst.webp",
+      "rarity": 4,
+      "description": "Pistols born from the strange phenomena in the sky. The forger infused the weapon with the feelings from witnessing the strange star, making it look hollow and light, yet extremely stable, with the power of thunder when it fires.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "33.00/107.83/185.45/235.26/285.07/334.88/384.69/412.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "6.75%/12.00%/17.25%/19.87%/22.50%/25.12%/27.75%/30.38%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Ever-changing",
+        "description": "When the Resonator dashes or dodges, increases ATK by 4%/5%/6%/7%/8%, stacking up to 3/3/3/3/3 time(s). This effect lasts for 8/8/8/8/8s."
       }
     },
     {
       "name": "Pistols#26",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 3,
-      "image": "Pistols_26.webp",
+      "image": "Pistols_Pistols#26.webp",
+      "rarity": 4,
+      "description": "The Huaxu Academy has developed practical, high-performance pistols based on previous source energy weapons, showcasing their meticulous research and aiming for excellence.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "31.00/101.30/174.21/221.01/267.79/314.58/361.38/387.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "8.10%/14.40%/20.70%/23.85%/27.00%/30.15%/33.30%/36.45%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Omniscient",
+        "description": "When the Resonator takes no damage, increases ATK by 6%/7.5%/9%/10.5%/12% every 5/5/5/5/5s, stacking up to 2/2/2/2/2 time(s). This effect lasts for 8/8/8/8/8s. When the Resonator takes damage, loses 1/1/1/1/1 stacks and heals 5%/6.25%/7.5%/8.75%/10% of their Max HP."
       }
     },
     {
       "name": "Thunderbolt",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Pistols_Thunderbolt.webp",
+      "rarity": 4,
+      "description": "These Pistols are ceremonial weapons used in Huanglong's Magistrate Inauguration Ceremonies. The golden ginkgo leaf pattern symbolizes Huanglong's resilience, thriving in a world that has left it behind.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "31.00/101.30/174.21/221.01/267.79/314.58/361.38/387.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "8.10%/14.40%/20.70%/23.85%/27.00%/30.15%/33.30%/36.45%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Unstoppable",
+        "description": "When hitting a target with Basic Attacks or Heavy Attacks, increases Resonance Skill DMG Bonus by 7%/11%/15%/19%/23%, stacking up to 3/3/3/3/3 time(s). This effect lasts for 10/10/10/10/10s and can be triggered 1/1/1/1/1 time(s) every 1/1/1/1/1s."
       }
     },
     {
       "name": "Relativistic Jet",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Pistols_Relativistic_Jet.webp",
+      "rarity": 4,
+      "description": "A prototype weapon designed by the Black Shores for elite combatants. These pistols take their name from the incessant course of destruction of a blazar—a galactic nucleus whose blinding radiance pierces the cosmos, shining unmistakably across billions of light years.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "37.00/120.90/207.93/263.78/319.62/375.47/431.32/462.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "4.05%/7.20%/10.35%/11.92%/13.50%/15.07%/16.65%/18.23%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Intergalactic Gaze",
+        "description": "Casting the Resonance Skill grants 6/7/8/9/10 Resonance Energy and increases ATK by 10%/12.5%/15%/17.5%/20%, lasting for 16/16/16/16/16s. This effect can be triggered once every 20/20/20/20/20s."
       }
     },
     {
       "name": "Romance in Farewell",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Pistols_Romance_in_Farewell.webp",
+      "rarity": 4,
+      "description": "This weapon draws its design inspiration from the play—Romance in Farewell. This pistol was once the symbol of the aspiration for repute, the weight of unrequited love, and the tremors of unspoken words. When the trigger is pulled, and the curtain drops, it turns into a long farewell and a sign of lingering sorrow in the heart of the bereaved.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "37.00/120.90/207.93/263.78/319.62/375.47/431.32/462.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "4.05%/7.20%/10.35%/11.92%/13.50%/15.07%/16.65%/18.23%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Rhetoric",
+        "description": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by 4%/5%/6%/7%/8% for 10/10/10/10/10s. This effect can be triggered 1 time per second, stackable up to 4/4/4/4/4 times."
       }
     },
     {
       "name": "Pistols of Night",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 5,
-      "image": "Pistols_of_Night.webp",
+      "image": "Pistols_Pistols_of_Night.webp",
+      "rarity": 3,
+      "description": "May victory prevail the lasting night. This type of pistols not only carries the oath of protection but also contains the hope of rejuvenation.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "26.00/84.96/146.11/185.36/224.60/263.85/303.09/325.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "5.40%/9.60%/13.80%/15.90%/18.00%/20.10%/22.20%/24.30%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Valiance",
+        "description": "When Intro Skill is cast, increases ATK by 8%/10%/12%/14%/16%, lasting for 10/10/10/10/10s."
       }
     },
     {
       "name": "Guardian Pistols",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 3,
       "image": "Pistols_Guardian_Pistols.webp",
+      "rarity": 3,
+      "description": "The first Jinzhou Magistrate, in memory of the mysterious person who helped defend the border and build the city, created the Guardian series under his guidance. Now, it has become the cornerstone of the development of new weapons.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "24.00/78.42/134.88/171.10/207.32/243.55/279.78/300.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "6.75%/12.00%/17.25%/19.87%/22.50%/25.12%/27.75%/30.38%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Unity",
+        "description": "Resonance Skill DMG Bonus is increased by 12%/15%/18%/21%/24%."
       }
     },
     {
       "name": "Originite: Type III",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Pistols_Originite_Type_III.webp",
+      "rarity": 3,
+      "description": "To create new Tacetite weapons, the Huaxu Academy designed these test Pistols for technical verification. Their main feature is healing through attacks, improving the physical abilities of Resonators while exhibiting impressive weapon performance.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "26.00/84.96/146.11/185.36/224.60/263.85/303.09/325.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "5.40%/9.60%/13.80%/15.90%/18.00%/20.10%/22.20%/24.30%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Alarcrity",
+        "description": "When Dodge Counter is cast, heals 1.6%/2%/2.4%/2.8%/3.2% of the Resonator's Max HP. This effect can be triggered 1/1/1/1/1 time(s) every 6/6/6/6/6s."
       }
     },
     {
       "name": "Pistols of Voyager",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 4,
-      "image": "Pistols_of_Voyager.webp",
+      "image": "Pistols_Pistols_of_Voyager.webp",
+      "rarity": 3,
+      "description": "The Pistols provided by the Pioneer Association for the far walkers, with bright colors, not easy to lose, hard texture, can cope with various extreme environments for a long time, and is very popular among the explorer group.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "24.00/78.42/134.88/171.10/207.32/243.55/279.78/300.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "6.75%/12.00%/17.25%/19.87%/22.50%/25.12%/27.75%/30.38%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Long Journey",
+        "description": "When Resonance Skill is cast, restores 8/9/10/11/12 Resonance Energy. This effect can be triggered 1/1/1/1/1 time(s) every 20/20/20/20/20s."
       }
     },
     {
       "name": "Tyro Pistols",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 2,
       "image": "Pistols_Tyro_Pistols.webp",
+      "rarity": 2,
+      "description": "The inception of valiant venture. A pair of pistols designed for novice Resonators. Contains a power not to be underestimated under its simple outlook.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "22.00/71.89/123.64/156.84/190.05/223.25/256.46/275.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "3.30%/5.87%/8.43%/9.72%/11.00%/12.28%/13.57%/14.85%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Prologue",
+        "description": "Increases ATK by 5%/6.25%/7.5%/8.75%/10%."
       }
     },
     {
       "name": "Training Pistols",
       "type": "Pistols",
-      "description": "Placeholder description.",
-      "rarity": 1,
       "image": "Pistols_Training_Pistols.webp",
+      "rarity": 1,
+      "description": "These pistols are designed specifically for training and teaching, offering only the basic features.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "20.00/65.35/112.40/142.58/172.77/202.96/233.15/250.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "2.55%/4.53%/6.52%/7.51%/8.50%/9.49%/10.48%/11.47%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Persevere",
+        "description": "Increases ATK by 4%/5%/6%/7%/8%."
       }
     },
     {
       "name": "Abyss Surges",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Gauntlets_Abyss_Surges.webp",
+      "rarity": 5,
+      "description": "The Gauntlets pulsate with an uncontrollable force, emanating unspeakable anger from the depths of the unknown lake. As you don them, unleash your fury on helpless enemies. Feel its power surge through you.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "47.00/153.58/264.13/335.07/406.01/476.95/547.89/587.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "8.10%/14.40%/20.70%/23.85%/27.00%/30.15%/33.30%/36.45%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Stormy Resolution",
+        "description": "Increases Energy Regen by 12.8%/16%/19.2%/22.4%/25.6%. When hitting a target with Resonance Skill, increases Basic Attack DMG Bonus by 10%/12.5%/15%/17.5%/20%, lasting for 8/8/8/8/8s. When hitting a target with Basic Attacks, increases Resonance Skill DMG Bonus by 10%/12.5%/15%/17.5%/20%, lasting for 8/8/8/8/8s."
       }
     },
     {
       "name": "Verity's Handle",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
+      "image": "Gauntlets_Verity's_Handle.webp",
       "rarity": 5,
-      "image": "Gauntlets_Veritys_Handle.webp",
+      "description": "Crafted with the lost art from the Court of Savantae, these gauntlets are solid and unbreakable, despite their lightweight materials. They are no tools of violence or aggression, but instruments for unraveling puzzles and pursuing the truth.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "47.00/153.58/264.13/335.07/406.01/476.95/547.89/587.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. Rate",
+        "value": "5.40%/9.60%/13.80%/15.90%/18.00%/20.10%/22.20%/24.30%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Ad Veritatem",
+        "description": "Gain 12%/15%/18%/21%/24% Attribute DMG Bonus. When using Resonance Liberation, the wielder gains 48%/60%/72%/84%/96% Resonance Liberation DMG Bonus for 8/8/8/8/8s. This effect can be extended by 5/5/5/5/5s each time Resonance Skills are cast, up to 3/3/3/3/3 times."
       }
     },
     {
       "name": "Tragicomedy",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Gauntlets_Tragicomedy.webp",
+      "rarity": 5,
+      "description": "The joys and sorrows of life dance in an endless circle; Pain and tears shift in an instant into a carnival.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "47.00/153.58/264.13/335.07/406.01/476.95/547.89/587.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. Rate",
+        "value": "5.40%/9.60%/13.80%/15.90%/18.00%/20.10%/22.20%/24.30%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Fool's Warble",
+        "description": "Increases ATK by 12%/15%/18%/21%/24%. Every time Basic Attack or Intro Skill is cast, Heavy Attack DMG Bonus increases by 48%/60%/72%/84%/96% for 3/3/3/3/3s."
       }
     },
     {
       "name": "Marcato",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Gauntlets_Marcato.webp",
+      "rarity": 4,
+      "description": "A descending adagio. These gauntlets pulsate with the power of surging waves, shattering anything in their path like a deadly hymn.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "27.00/88.23/151.73/192.49/233.24/273.99/314.75/337.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Energy Regen",
+        "value": "11.52%/20.48%/29.44%/33.92%/38.40%/42.88%/47.36%/51.84%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Ceaseless Aria",
+        "description": "When Resonance Skill is cast, restores 8/10/12/14/16 Concerto Energy. This effect can be triggered 1/1/1/1/1 times every 20/20/20/20/20s."
       }
     },
     {
       "name": "Amity Accord",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Gauntlets_Amity_Accord.webp",
+      "rarity": 4,
+      "description": "A weapon designed to commemorate the Midnight Rangers' comradeship. \"Thin garments yield to icy moons, while armor withstands the chill of stars.\"",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "27.00/88.23/151.73/192.49/233.24/273.99/314.75/337.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "DEF",
+        "value": "13.68%/24.32%/34.96%/40.28%/45.60%/50.92%/56.24%/61.56%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Camaraderie",
+        "description": "When Intro Skill is cast, increases Resonance Liberation DMG Bonus by 20%/25%/30%/35%/40%, lasting for 15/15/15/15/15s."
       }
     },
     {
       "name": "Gauntlets#21D",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 3,
-      "image": "Gauntlets_21D.webp",
+      "image": "Gauntlets_Gauntlets#21D.webp",
+      "rarity": 4,
+      "description": "Huaxu Academy has independently improved and developed the first set of highly practical high-performance Gauntlets based on the previous source energy weapons, representing the care and warmth of the Academy, stable and lasting.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "31.00/101.30/174.21/221.01/267.79/314.58/361.38/387.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Energy Regen",
+        "value": "8.64%/15.36%/22.08%/25.44%/28.80%/32.16%/35.52%/38.88%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Mastermind",
+        "description": "When the Resonator dashes or dodges, increases ATK by 8%/10%/12%/14%/16%. Increases Dodge Counter DMG by 50%/62.5%/75%/87.5%/100%, lasting for 8/8/8/8/8s. When Dodge Counter is performed, heals 5%/6.25%/7.5%/8.75%/10% of the Resonator's Max HP. This effect can be triggered 1/1/1/1/1 time(s) every 6/6/6/6/6s."
       }
     },
     {
       "name": "Stonard",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Gauntlets_Stonard.webp",
+      "rarity": 4,
+      "description": "These Gauntlets are ceremonial weapons used in Huanglong's Magistrate Inauguration Ceremonies. The golden ginkgo leaf pattern symbolizes Huanglong's resilience, thriving in a world that has left it behind.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "33.00/107.83/185.45/235.26/285.07/334.88/384.69/412.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. Rate",
+        "value": "4.50%/8.00%/11.50%/13.25%/15.00%/16.75%/18.50%/20.25%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Wallbreaker",
+        "description": "Casting Resonance Skill increases the wielder's Resonance Liberation DMG Bonus by 18%/27%/36%/45%/54%, lasting for 15/15/15/15/15s."
       }
     },
     {
       "name": "Hollow Mirage",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Gauntlets_Hollow_Mirage.webp",
+      "rarity": 4,
+      "description": "The Gauntlets born from the strange phenomenon in the sky. The blacksmith infused the feelings of witnessing the strange star into the weapon, making it look hollow and light, but it can exert a tremendous momentum while protecting the user.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "33.00/107.83/185.45/235.26/285.07/334.88/384.69/412.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "6.75%/12.00%/17.25%/19.87%/22.50%/25.12%/27.75%/30.38%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Celestial Blessing",
+        "description": "When Resonance Liberation is cast, grants 3/3/3/3/3 stack(s) of Iron Armor. Each stack increases ATK and DEF by 3%/3.5%/4%/4.5%/5%, stacking up to 3/3/3/3/3 time(s). When the Resonator takes damage, reduces the number of stacks by 1/1/1/1/1."
       }
     },
     {
       "name": "Celestial Spiral",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Gauntlets_Celestial_Spiral.webp",
+      "rarity": 4,
+      "description": "A prototype weapon designed by the Black Shores for elite combatants. These gauntlets take their name from the tragic demise of a blazar—a galactic nucleus whose blinding radiance pierces the cosmos, shining unmistakably across billions of light years.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "37.00/120.90/207.93/263.78/319.62/375.47/431.32/462.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "4.05%/7.20%/10.35%/11.92%/13.50%/15.07%/16.65%/18.23%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Intergalactic Gaze",
+        "description": "Casting the Resonance Skill grants 6/7/8/9/10 Resonance Energy and increases ATK by 10%/12.5%/15%/17.5%/20%, lasting for 16/16/16/16/16s. This effect can be triggered once every 20/20/20/20/20s."
       }
     },
     {
       "name": "Legend of Drunken Hero",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Gauntlets_Legend_of_Drunken_Hero.webp",
+      "rarity": 4,
+      "description": "This weapon draws its design inspiration from the play—Legend of Drunken Hero. From the cup flows a liquid that grants courage and strength, empowering the hero to defy fate and turn the tide with his gauntlets. Yet in this intoxicating delight lies peril—dulled senses become the hero's undoing as enemies close in. Thus, in those wine-stained pages, one always read about triumphs followed by defeats.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "37.00/120.90/207.93/263.78/319.62/375.47/431.32/462.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "4.05%/7.20%/10.35%/11.92%/13.50%/15.07%/16.65%/18.23%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Rhetoric",
+        "description": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by 4%/5%/6%/7%/8% for 10/10/10/10/10s. This effect can be triggered 1 time per second, stackable up to 4/4/4/4/4 times."
       }
     },
     {
       "name": "Gauntlets of Night",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 5,
-      "image": "Gauntlets_of_Night.webp",
+      "image": "Gauntlets_Gauntlets_of_Night.webp",
+      "rarity": 3,
+      "description": "May victory prevail the lasting night. In addition to the sworn oath of protection, these gauntlets also commemorate the sacrifices of those brave souls.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "26.00/84.96/146.11/185.36/224.60/263.85/303.09/325.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "5.40%/9.60%/13.80%/15.90%/18.00%/20.10%/22.20%/24.30%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Valiance",
+        "description": "When Intro Skill is cast, increases ATK by 8%/10%/12%/14%/16%, lasting for 10/10/10/10/10s."
       }
     },
     {
       "name": "Guardian Gauntlets",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 3,
       "image": "Gauntlets_Guardian_Gauntlets.webp",
+      "rarity": 3,
+      "description": "The first Jinzhou Magistrate, in memory of the mysterious person who helped defend the border and build the city, created the Guardian series under his guidance. Now, it has become the cornerstone of the development of new weapons.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "24.00/78.42/134.88/171.10/207.32/243.55/279.78/300.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "DEF",
+        "value": "8.55%/15.20%/21.85%/25.17%/28.50%/31.82%/35.15%/38.48%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Collective Strength",
+        "description": "Increases Resonance Liberation DMG Bonus by 12%/15%/18%/21%/24%."
       }
     },
     {
       "name": "Originite: Type IV",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Gauntlets_Originite_Type_IV.webp",
+      "rarity": 3,
+      "description": "To create new Tacetite weapons, the Huaxu Academy designed these test Gauntlets for technical verification. Their main feature is healing through attacks, improving the physical abilities of Resonators while exhibiting impressive weapon performance.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "24.00/78.42/134.88/171.10/207.32/243.55/279.78/300.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. DMG",
+        "value": "9.00%/16.00%/23.00%/26.50%/30.00%/33.50%/37.00%/40.50%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Rejuvinate",
+        "description": "When dealing Basic Attack DMG, heals 0.5%/0.65%/0.8%/0.95%/1.1% of the Resonator's Max HP. This effect can be triggered 1/1/1/1/1 time(s) every 3/3/3/3/3s."
       }
     },
     {
       "name": "Gauntlets of Voyager",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 4,
-      "image": "Gauntlets_of_Voyager.webp",
+      "image": "Gauntlets_Gauntlets_of_Voyager.webp",
+      "rarity": 3,
+      "description": "The Gauntlets provided by the Pioneer Association for the far walkers, with bright colors, not easy to lose, hard texture, can cope with various extreme environments for a long time, and are very popular among the explorer group.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "26.00/84.96/146.11/185.36/224.60/263.85/303.09/325.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "DEF",
+        "value": "6.84%/12.16%/17.48%/20.14%/22.80%/25.46%/28.12%/30.78%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Crusade",
+        "description": "When Resonance Skill is cast, restores 8/9/10/11/12 Resonance Energy. This effect can be triggered 1/1/1/1/1 time(s) every 20/20/20/20/20s."
       }
     },
     {
       "name": "Tyro Gauntlets",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 2,
       "image": "Gauntlets_Tyro_Gauntlets.webp",
+      "rarity": 2,
+      "description": "The dawn of enduring endeavor. A pair of gauntlets designed for novice Resonators. Contains a power not to be underestimated under its simple outlook.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "22.00/71.89/123.64/156.84/190.05/223.25/256.46/275.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "3.30%/5.87%/8.43%/9.72%/11.00%/12.28%/13.57%/14.85%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Prologue",
+        "description": "Increases ATK by 5%/6.25%/7.5%/8.75%/10%."
       }
     },
     {
       "name": "Training Gauntlets",
       "type": "Gauntlets",
-      "description": "Placeholder description.",
-      "rarity": 1,
       "image": "Gauntlets_Training_Gauntlets.webp",
+      "rarity": 1,
+      "description": "These gauntlets are designed specifically for training and teaching, offering only the basic features.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "20.00/65.35/112.40/142.58/172.77/202.96/233.15/250.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "2.55%/4.53%/6.52%/7.51%/8.50%/9.49%/10.48%/11.47%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Persevere",
+        "description": "Increases ATK by 4%/5%/6%/7%/8%."
       }
     },
     {
       "name": "Cosmic Ripples",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Rectifier_Cosmic_Ripples.webp",
+      "rarity": 5,
+      "description": "Take hold of the frozen Rectifier, a powerful tool imbued with the energy of the celestial lake. Let it lead you to ultimate knowledge and vanquish all obstacles in your path.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "40.00/130.71/224.79/285.17/345.54/405.92/466.29/500.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "12.00%/21.33%/30.67%/35.33%/40.00%/44.67%/49.33%/54.00%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Stormy Resolution",
+        "description": "Increases Energy Regen by 12.8%/16%/19.2%/22.4%/25.6%. When dealing Basic Attack DMG, increases Basic Attack DMG Bonus by 3.2%/4%/4.8%/5.6%/6.4%, stacking up to 5/5/5/5/5 time(s). This effect lasts for 8/8/8/8/8s and can be triggered 1/1/1/1/1 time(s) every 0.5/0.5/0.5/0.5/0.5s."
       }
     },
     {
       "name": "Stringmaster",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Rectifier_Stringmaster.webp",
+      "rarity": 5,
+      "description": "The puppet's palm unfurls, releasing deadly strings with a menacing hum. The air crackles, immobilizing foes and leaving unhealable scars from rapid electric bolts.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "40.00/130.71/224.79/285.17/345.54/405.92/466.29/500.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. Rate",
+        "value": "8.00%/14.22%/20.44%/23.56%/26.67%/29.78%/32.89%/36.00%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Electric Amplification",
+        "description": "Grants 12%/15%/18%/21%/24% Attribute DMG Bonus. When dealing Resonance Skill DMG, increases ATK by 12%/15%/18%/21%/24%, stacking up to 2/2/2/2/2 times. This effect lasts for 5/5/5/5/5s. When the wielder is not on the field, increases their ATK by an additional 12%/15%/18%/21%/24%."
       }
     },
     {
       "name": "Rime-Draped Sprouts",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Rectifier_Rime-Draped_Sprouts.webp",
+      "rarity": 5,
+      "description": "An artist's seal adorned with rimed sprouts. It is stamped on numerous paintings that capture mountains and ravines in expressive, mesmerizing strokes. The tender sprouts symbolize the perpetual blossoming of artistic marvels.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "40.00/130.71/224.79/285.17/345.54/405.92/466.29/500.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. DMG",
+        "value": "16.00%/28.44%/40.89%/47.11%/53.33%/59.56%/65.78%/72.00%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Panorama",
+        "description": "Increase ATK by 12%/15%/18%/21%/24%. While the wielder is on the field, using Resonance Skill grants 12%/15%/18%/21%/24% Basic Attack DMG Bonus, stacking up to 3/3/3/3/3 times for 6/6/6/6/6s. At 3/3/3/3/3 stacks or above, casting Outro Skill consumes all stacks of this effect and grants the wielder 52%/65%/78%/91%/104% Basic Attack DMG Bonus for 27/27/27/27/27s, effective when the wielder is off the field."
       }
     },
     {
       "name": "Stellar Symphony",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Rectifier_Stellar_Symphony.webp",
+      "rarity": 5,
+      "description": "A rectifier bearing an energy core that simulates the lifecycle of stars—an infinite loop that originates from a singularity and ends in explosive demise. The celestial debris collides in thunderous rumbles, heralding the birth of a new star.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "33.00/107.83/185.45/235.26/285.07/334.88/384.69/412.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Energy Regen",
+        "value": "17.12%/30.43%/43.75%/50.41%/57.07%/63.72%/70.38%/77.04%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Astral Evolvement",
+        "description": "Increase HP by 12%/15%/18%/21%/24%. Restore 8/10/12/14/16 Concerto Energy when casting Resonance Liberation. This effect can be triggered 1/1/1/1/1 time(s) every 20/20/20/20/20s. When casting Resonance Skill that heals, increase nearby party members' ATK by 14%/17.5%/21%/24.5%/28% for 30/30/30/30/30s. Effects of the same name cannot be stacked."
       }
     },
     {
       "name": "Luminous Hymn",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Rectifier_Luminous_Hymn.webp",
+      "rarity": 5,
+      "description": "\"The Sentinel's grace, how sweet thou art. Our home was lost, but found at last. With twigs between my beaks, I brave the waves. Bound by love, we're crowned with holy light.\"",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "40.00/130.71/224.79/285.17/345.54/405.92/466.29/500.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. Rate",
+        "value": "8.00%/14.22%/20.44%/23.56%/26.67%/29.78%/32.89%/36.00%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Homebuilder's Anthem",
+        "description": "Increase ATK by 12%/15%/18%/21%/24%. Dealing DMG to targets with Spectro Frazzle grants the wielder 14%/17.5%/21%/24.5%/28% Basic Attack DMG Bonus and 14%/17.5%/21%/24.5%/28% Heavy Attack DMG Bonus, stacking up to 3/3/3/3/3 times for 6/6/6/6/6s. Casting Outro Skill Amplifies the Spectro Frazzle DMG on targets around the active Resonator by 30%/37.5%/45%/52.5%/60% for 30/30/30/30/30s. Effects of the same name cannot be stacked."
+      }
+    },
+    {
+      "name": "Whispers of Sirens",
+      "type": "Rectifier",
+      "image": "Rectifier_Whispers_of_Sirens.webp",
+      "rarity": 5,
+      "description": "From the sea, some see stars, some catch the moon, and some hear countless whispers and murmurs. Those murmurs seep into her venom, flowing through every winding river. In the end, the murmurs envelope, like the bell of a jellyfish, like the sea.",
+      "main_stats": {
+        "stats": "ATK",
+        "value": "33.00/107.83/185.45/235.26/285.07/334.88/384.69/412.50"
+      },
+      "sub_stats": {
+        "stats": "Crit. DMG",
+        "value": "16.00%/28.44%/40.89%/47.11%/53.33%/59.56%/65.78%/72.00%"
+      },
+      "skill": {
+        "name": "Astral Evolvement",
+        "description": "Increases ATK by 12%/15%/18%/21%/24%. Casting Echo Skill within 10/10/10/10/10s after casting Intro Skill grants 1/1/1/1/1 stacks of Gentle Dreams. Echoes with the same name can only trigger this effect once, stacking up to 3/3/3/3/3 times, lasting for 10/10/10/10/10s. Switching to another Resonator ends this effect early. With 1/1/1/1/1 stack: Grant 40%/50%/60%/70%/80% Basic Attack DMG Bonus. With 2/2/2/2/2 stack: Ignore 10%/12.5%/15%/17.5%/20% of the target's Havoc RES. With 3/3/3/3/3 stack: The wielder gains 40%/50%/60%/70%/80% Basic Attack DMG Bonus and ignores 10%/12.5%/15%/17.5%/20% of the target's Havoc RES for 27/27/27/27/27s when Gentle Dream ends early. Switching back to the wielder ends the effect immediately."
       }
     },
     {
       "name": "Variation",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 3,
       "image": "Rectifier_Variation.webp",
+      "rarity": 4,
+      "description": "A descending adagio. This rectifier opens up an insightful window into the situation, changing the tune of the intense battle concerto.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "27.00/88.23/151.73/192.49/233.24/273.99/314.75/337.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Energy Regen",
+        "value": "11.52%/20.48%/29.44%/33.92%/38.40%/42.88%/47.36%/51.84%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Ceaseless Aria",
+        "description": "When Resonance Skill is cast, restores 8/10/12/14/16 Concerto Energy. This effect can be triggered 1/1/1/1/1 times every 20/20/20/20/20s."
       }
     },
     {
       "name": "Rectifier#25",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 3,
-      "image": "Rectifier_25.webp",
+      "image": "Rectifier_Rectifier#25.webp",
+      "rarity": 4,
+      "description": "An improved version of a Rectifier prototype from Huanglong's next-gen weaponry project. This device is characterized by its powerful, purified output and sound that resonates with the decisively strong-willed.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "27.00/88.23/151.73/192.49/233.24/273.99/314.75/337.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Energy Regen",
+        "value": "11.52%/20.48%/29.44%/33.92%/38.40%/42.88%/47.36%/51.84%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Dawnbringer",
+        "description": "When Resonance Skill is cast, if the Resonator's HP is below 60%/60%/60%/60%/60%, heals 5%/6.25%/7.5%/8.75%/10% of their Max HP. This effect can be triggered 1/1/1/1/1 time(s) every 8/8/8/8/8s. If the Resonator's HP is above 60%/60%/60%/60%/60%, increases ATK by 12%/15%/18%/21%/24%, lasting for 10/10/10/10/10s."
       }
     },
     {
       "name": "Jinzhou Keeper",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Rectifier_Jinzhou_Keeper.webp",
+      "rarity": 4,
+      "description": "A weapon designed to commemorate the Midnight Rangers' vigilant protection of Jinzhou. \"Cast your gaze towards the north, where the city's silhouette fades, its gates veiled by the tranquil rain.\"",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "31.00/101.30/174.21/221.01/267.79/314.58/361.38/387.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "8.10%/14.40%/20.70%/23.85%/27.00%/30.15%/33.30%/36.45%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Guardian",
+        "description": "Casting Intro Skill increases the wielder's ATK by 8%/10%/12%/14%/16% and HP by 10%/12.5%/15%/17.5%/20%, lasting for 15/15/15/15/15s."
       }
     },
     {
       "name": "Comet Flare",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Rectifier_Comet_Flare.webp",
+      "rarity": 4,
+      "description": "A Rectifier born born from an aerial phenomenon. Capturing the essence of an alien star, its design is delicate and lightweight, yet it remains sturdy and adaptable.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "33.00/107.83/185.45/235.26/285.07/334.88/384.69/412.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "HP",
+        "value": "6.75%/12.00%/17.25%/19.87%/22.50%/25.12%/27.75%/30.38%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Luminous Protection",
+        "description": "When dealing Basic Attack DMG or Heavy Attack DMG, increases Healing Bonus by 3%/3.75%/4.5%/5.25%/6%, stacking up to 3/3/3/3/3 time(s). This effect lasts for 8/8/8/8/8s and can be triggered 1/1/1/1/1 time(s) every 0.6/0.6/0.6/0.6/0.6s."
       }
     },
     {
       "name": "Augment",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Rectifier_Augment.webp",
+      "rarity": 4,
+      "description": "This Rectifier is a ceremonial weapon used in Huanglong's Magistrate Inauguration Ceremonies. The golden ginkgo leaf pattern symbolizes Huanglong's resilience, thriving in a world that has left it behind.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "33.00/107.83/185.45/235.26/285.07/334.88/384.69/412.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Crit. Rate",
+        "value": "4.50%/8.00%/11.50%/13.25%/15.00%/16.75%/18.50%/20.25%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Forgiving Resilience",
+        "description": "Casting Resonance Liberation increases the wielder's ATK by 15%/23.25%/31.5%/39.75%/48%, lasting for 15/15/15/15/15s."
       }
     },
     {
       "name": "Fusion Accretion",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Rectifier_Fusion_Accretion.webp",
+      "rarity": 4,
+      "description": "A prototype weapon designed by the Black Shores for elite combatants. This rectifier takes its name from the devastating might of a blazar—a galactic nucleus whose blinding radiance pierces the cosmos, shining unmistakably across billions of light years.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "37.00/120.90/207.93/263.78/319.62/375.47/431.32/462.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "4.05%/7.20%/10.35%/11.92%/13.50%/15.07%/16.65%/18.23%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Intergalactic Gaze",
+        "description": "Casting the Resonance Skill grants 6/7/8/9/10 Resonance Energy and increases ATK by 10%/12.5%/15%/17.5%/20%, lasting for 16/16/16/16/16s. This effect can be triggered once every 20/20/20/20/20s."
       }
     },
     {
       "name": "Call of the Abyss",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 5,
       "image": "Rectifier_Call_of_the_Abyss.webp",
+      "rarity": 4,
+      "description": "Held by the keepers of this land, this scepter was once a symbol of dominion over its people and the architectural marvels they achieved. However, it has long lost its luster, and its grandeur blends into the ripples of the pipe organ melodies of Rinascita.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "27.00/88.23/151.73/192.49/233.24/273.99/314.75/337.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Energy Regen",
+        "value": "11.52%/20.48%/29.44%/33.92%/38.40%/42.88%/47.36%/51.84%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Pole of the Celestial Dome",
+        "description": "Casting Resonance Liberation increases the Resonator's Healing Bonus by 16%/20%/24%/28%/32% for 15/15/15/15/15s."
       }
     },
     {
       "name": "Waltz in Masquerade",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Rectifier_Waltz_in_Masquerade.webp",
+      "rarity": 4,
+      "description": "This weapon draws its design inspiration from the play—Waltz in Masquerade. A waltz is a dance of spectacle and masquerade, where the grand symphony drowns whispered secrets and swirling dresses conceal the exchange of letters and promises. The dancers speak a silent language, as smooth and precise as the perfect resonance of a rectifier.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "37.00/120.90/207.93/263.78/319.62/375.47/431.32/462.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "4.05%/7.20%/10.35%/11.92%/13.50%/15.07%/16.65%/18.23%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Rhetoric",
+        "description": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by 4%/5%/6%/7%/8% for 10/10/10/10/10s. This effect can be triggered 1 time per second, stackable up to 4/4/4/4/4 times."
       }
     },
     {
       "name": "Ocean's Gift",
       "type": "Rectifier",
-      "description": "Placeholder description.",
+      "image": "Rectifier_Ocean's_Gift.webp",
       "rarity": 4,
-      "image": "Rectifier_Oceans_Gift.webp",
+      "description": "To fishers, the sea is their field of harvest. Harvest means hope.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "37.00/120.90/207.93/263.78/319.62/375.47/431.32/462.50"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "4.05%/7.20%/10.35%/11.92%/13.50%/15.07%/16.65%/18.23%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Fish Catch",
+        "description": "Dealing DMG to enemies with Spectro Frazzle increases the wielder's Spectro DMG by 6%/7%/8%/9%/10%, gaining 1 stack per second for 6s, stacking up to 4 times."
       }
     },
     {
       "name": "Rectifier of Night",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 5,
-      "image": "Rectifier_of_Night.webp",
+      "image": "Rectifier_Rectifier_of_Night.webp",
+      "rarity": 3,
+      "description": "May victory prevail the lasting night. In addition to the sworn oath of protection, this rectifier signifies the confidence of those fighting souls.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "26.00/84.96/146.11/185.36/224.60/263.85/303.09/325.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "5.40%/9.60%/13.80%/15.90%/18.00%/20.10%/22.20%/24.30%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Valiance",
+        "description": "When Intro Skill is cast, increases ATK by 8%/10%/12%/14%/16%, lasting for 10/10/10/10/10s."
       }
     },
     {
       "name": "Originite: Type V",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 4,
       "image": "Rectifier_Originite_Type_V.webp",
+      "rarity": 3,
+      "description": "To create new Tacetite weapons, the Huaxu Academy designed this test Rectifier for technical verification. Its main feature is healing through attacks, improving the physical abilities of Resonators while exhibiting impressive weapon performance.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "24.00/78.42/134.88/171.10/207.32/243.55/279.78/300.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "HP",
+        "value": "6.75%/12.00%/17.25%/19.87%/22.50%/25.12%/27.75%/30.38%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Augment",
+        "description": "When Intro Skill is cast, heals 5%/6.25%/7.5%/8.75%/10% of the Resonator's Max HP. This effect can be triggered 1/1/1/1/1 time(s) every 20/20/20/20/20s."
       }
     },
     {
       "name": "Rectifier of Voyager",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 4,
-      "image": "Rectifier_of_Voyager.webp",
+      "image": "Rectifier_Rectifier_of_Voyager.webp",
+      "rarity": 3,
+      "description": "The Rectifier provided by the Pioneer Association for the explorers, with bright colors, not easy to lose, hard texture, can cope with various extreme environments for a long time, is very popular among the explorers.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "24.00/78.42/134.88/171.10/207.32/243.55/279.78/300.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "Energy Regen",
+        "value": "7.20%/12.80%/18.40%/21.20%/24.00%/26.80%/29.60%/32.40%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Crusade",
+        "description": "When Resonance Skill is cast, restores 8/9/10/11/12 Resonance Energy. This effect can be triggered 1/1/1/1/1 time(s) every 20/20/20/20/20s."
       }
     },
     {
       "name": "Guardian Rectifier",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 3,
       "image": "Rectifier_Guardian_Rectifier.webp",
+      "rarity": 3,
+      "description": "The first Jinzhou Magistrate, in memory of the mysterious person who helped defend the border and build the city, created the Guardian series under his guidance. Now, it has become the cornerstone of the development of new weapons.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "26.00/84.96/146.11/185.36/224.60/263.85/303.09/325.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "5.40%/9.60%/13.80%/15.90%/18.00%/20.10%/22.20%/24.30%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Companionship",
+        "description": "Increases Basic Attack and Heavy Attack DMG Bonus by 12%/15%/18%/21%/24%."
       }
     },
     {
       "name": "Tyro Rectifier",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 2,
       "image": "Rectifier_Tyro_Rectifier.webp",
+      "rarity": 2,
+      "description": "The origin of universal genesis. A Rectifier designed for novice Resonators. Contains a power not to be underestimated under its simple outlook.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "22.00/71.89/123.64/156.84/190.05/223.25/256.46/275.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "3.30%/5.87%/8.43%/9.72%/11.00%/12.28%/13.57%/14.85%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Prologue",
+        "description": "Increases ATK by 5%/6.25%/7.5%/8.75%/10%."
       }
     },
     {
       "name": "Training Rectifier",
       "type": "Rectifier",
-      "description": "Placeholder description.",
-      "rarity": 1,
       "image": "Rectifier_Training_Rectifier.webp",
+      "rarity": 1,
+      "description": "This rectifier is designed specifically for training and teaching, offering only the basic features.",
       "main_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "20.00/65.35/112.40/142.58/172.77/202.96/233.15/250.00"
       },
       "sub_stats": {
-        "stats": "",
-        "value": 0
+        "stats": "ATK",
+        "value": "2.55%/4.53%/6.52%/7.51%/8.50%/9.49%/10.48%/11.47%"
       },
       "skill": {
-        "name": "Placeholder Skill",
-        "description": "Placeholder description."
+        "name": "Persevere",
+        "description": "Increases ATK by 4%/5%/6%/7%/8%."
       }
     }
   ]
