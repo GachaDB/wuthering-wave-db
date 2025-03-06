@@ -95,22 +95,23 @@
                 const { weapons } = await weaponResponse.json();
 
                 const processedHeroes = heroes.map(({ name, rarity, image }) => ({
-                    name,
-                    rarity,
-                    image,
-                    video: "none",
-                    type: rarity === 5 ? "resonator" : "any",
-                    limited: limitedItems.has(name)
-                }));
+					name,
+					rarity,
+					image,
+					video: `${name}_Summon_Animation.mp4`,
+					type: rarity === 5 ? "resonator" : "any",
+					limited: limitedItems.has(name)
+				}));
 
-                const processedWeapons = weapons.map(({ name, rarity, image }) => ({
-                    name,
-                    rarity,
-                    image,
-                    video: "none",
-                    type: rarity === 5 ? "weapon" : "any",
-                    limited: limitedItems.has(name)
-                }));
+				const processedWeapons = weapons.map(({ name, rarity, image }) => ({
+					name,
+					rarity,
+					image,
+					video: "none",
+					type: rarity === 5 ? "weapon" : "any",
+					limited: limitedItems.has(name)
+				}));
+
 
                 const combinedData = [...processedHeroes, ...processedWeapons];
 
@@ -125,33 +126,33 @@
                 const otherWeapons = processedWeapons.filter(w => w.rarity < 5);
 
                 // Limited vs Non-limited count
-                const limitedHeroes = processedHeroes.filter(h => h.limited);
-                const limitedWeapons = processedWeapons.filter(w => w.limited);
-                const nonLimitedHeroes = processedHeroes.filter(h => !h.limited);
-                const nonLimitedWeapons = processedWeapons.filter(w => !w.limited);
+                const limitedHeroes = fiveStarHeroes.filter(h => h.limited);
+                const limitedWeapons = fiveStarWeapons.filter(w => w.limited);
+                const nonLimitedHeroes = fiveStarHeroes.filter(h => !h.limited);
+                const nonLimitedWeapons = fiveStarWeapons.filter(w => !w.limited);
 
                 summaryDiv.innerHTML = `
                     <h3>Summary</h3>
                     <p><strong>Total Heroes:</strong> ${totalHeroes} (5★: ${fiveStarHeroes.length}, Other: ${otherHeroes.length})</p>
                     <p><strong>Total Weapons:</strong> ${totalWeapons} (5★: ${fiveStarWeapons.length}, Other: ${otherWeapons.length})</p>
 
-                    <p><strong>Limited Heroes:</strong> ${limitedHeroes.length} (5★: ${limitedHeroes.filter(h => h.rarity === 5).length}, Other: ${limitedHeroes.filter(h => h.rarity < 5).length})</p>
-                    <p><strong>Limited Weapons:</strong> ${limitedWeapons.length} (5★: ${limitedWeapons.filter(w => w.rarity === 5).length}, Other: ${limitedWeapons.filter(w => w.rarity < 5).length})</p>
+                    <p><strong>Limited 5★ Heroes:</strong> ${limitedHeroes.length}</p>
+                    <p><strong>Limited 5★ Weapons:</strong> ${limitedWeapons.length}</p>
 
-                    <p><strong>Non-Limited Heroes:</strong> ${nonLimitedHeroes.length}</p>
-                    <p><strong>Non-Limited Weapons:</strong> ${nonLimitedWeapons.length}</p>
+                    <p><strong>Non-Limited 5★ Heroes:</strong> ${nonLimitedHeroes.length}</p>
+                    <p><strong>Non-Limited 5★ Weapons:</strong> ${nonLimitedWeapons.length}</p>
 
                     <h3>Limited 5★ Heroes</h3>
-                    <ul>${limitedHeroes.filter(h => h.rarity === 5).map(h => `<li>${h.name}</li>`).join('')}</ul>
+                    <ul>${limitedHeroes.map(h => `<li>${h.name}</li>`).join('')}</ul>
 
                     <h3>Limited 5★ Weapons</h3>
-                    <ul>${limitedWeapons.filter(w => w.rarity === 5).map(w => `<li>${w.name}</li>`).join('')}</ul>
+                    <ul>${limitedWeapons.map(w => `<li>${w.name}</li>`).join('')}</ul>
 
-                    <h3>Other Limited Heroes</h3>
-                    <ul>${limitedHeroes.filter(h => h.rarity < 5).map(h => `<li>${h.name}</li>`).join('')}</ul>
+                    <h3>Non-Limited 5★ Heroes</h3>
+                    <ul>${nonLimitedHeroes.map(h => `<li>${h.name}</li>`).join('')}</ul>
 
-                    <h3>Other Limited Weapons</h3>
-                    <ul>${limitedWeapons.filter(w => w.rarity < 5).map(w => `<li>${w.name}</li>`).join('')}</ul>
+                    <h3>Non-Limited 5★ Weapons</h3>
+                    <ul>${nonLimitedWeapons.map(w => `<li>${w.name}</li>`).join('')}</ul>
                 `;
 
                 output.textContent = JSON.stringify(combinedData, null, 2);
@@ -163,12 +164,21 @@
         }
 
         function copyData() {
-            const output = document.getElementById("output").textContent;
-            if (!output) return alert("No data to copy!");
-            navigator.clipboard.writeText(output)
-                .then(() => alert("Data copied!"))
-                .catch(err => console.error("Error copying data:", err));
-        }
+			const output = document.getElementById("output").textContent;
+			if (!output) return alert("No data to copy!");
+
+			try {
+				const allData = JSON.parse(output);
+				const filteredData = allData.filter(item => item.rarity >= 3); // Only 3★ and above
+
+				navigator.clipboard.writeText(JSON.stringify(filteredData, null, 2))
+					.then(() => alert("Filtered data (3★+) copied!"))
+					.catch(err => console.error("Error copying data:", err));
+			} catch (error) {
+				console.error("Error processing data:", error);
+				alert("Failed to process data for copying.");
+			}
+		}
     </script>
 
 </body>

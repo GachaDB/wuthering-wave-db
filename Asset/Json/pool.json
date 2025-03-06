@@ -1,182 +1,786 @@
 [
   {
-    "name": "Rover (Spectro)",
-    "rarity": 5,
-    "image": "Rover_Head_Icon.png",
-    "video": "none"
-  },
-  {
-    "name": "Rover (Havoc)",
-    "rarity": 5,
-    "image": "Rover_Head_Icon.png",
-    "video": "none"
-  },
-  {
     "name": "Aalto",
     "rarity": 4,
     "image": "Alto_Head_Icon.webp",
-    "video": "none"
+    "video": "Aalto_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
     "name": "Jinhsi",
     "rarity": 5,
     "image": "Jinhsi_Head_Icon.webp",
-    "video": "none"
+    "video": "Jinhsi_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Calcharo",
     "rarity": 5,
     "image": "Calcharo_Head_Icon.webp",
-    "video": "none"
+    "video": "Calcharo_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": false
   },
   {
     "name": "Baizhi",
     "rarity": 4,
     "image": "Baizhi_Head_Icon.webp",
-    "video": "none"
+    "video": "Baizhi_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
     "name": "Brant",
     "rarity": 5,
     "image": "Brant_Head_Icon.webp",
-    "video": "none"
+    "video": "Brant_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Phoebe",
     "rarity": 5,
     "image": "Phoebe_Head_Icon.webp",
-    "video": "none"
+    "video": "Phoebe_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Camellya",
     "rarity": 5,
     "image": "Camellya_Head_Icon.webp",
-    "video": "none"
+    "video": "Camellya_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Carlotta",
     "rarity": 5,
     "image": "Carlotta_Head_Icon.webp",
-    "video": "none"
+    "video": "Carlotta_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Changli",
     "rarity": 5,
     "image": "Changli_Head_Icon.webp",
-    "video": "none"
+    "video": "Changli_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Chixia",
     "rarity": 5,
     "image": "Chixia_Head_Icon.webp",
-    "video": "none"
+    "video": "Chixia_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": false
   },
   {
     "name": "Danjin",
     "rarity": 4,
     "image": "Danjin_Head_Icon.webp",
-    "video": "none"
+    "video": "Danjin_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
     "name": "Encore",
     "rarity": 5,
     "image": "Encore_Head_Icon.webp",
-    "video": "none"
+    "video": "Encore_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": false
   },
   {
     "name": "Jianxin",
     "rarity": 5,
     "image": "Jianxin_Head_Icon.webp",
-    "video": "none"
+    "video": "Jianxin_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": false
   },
   {
     "name": "Jiyan",
     "rarity": 5,
     "image": "Jiyan_Head_Icon.webp",
-    "video": "none"
+    "video": "Jiyan_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Lingyang",
     "rarity": 5,
     "image": "Lingyang_Head_Icon.webp",
-    "video": "none"
+    "video": "Lingyang_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": false
   },
   {
     "name": "Lumi",
     "rarity": 4,
     "image": "Lumi_Head_Icon.webp",
-    "video": "none"
+    "video": "Lumi_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
     "name": "Mortefi",
     "rarity": 4,
     "image": "Mortefi_Head_Icon.webp",
-    "video": "none"
+    "video": "Mortefi_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
-    "name": "Rocchia",
+    "name": "Roccia",
     "rarity": 5,
-    "image": "Rocchia_Head_Icon.webp",
-    "video": "none"
+    "image": "Roccia_Head_Icon.webp",
+    "video": "Roccia_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Sanhua",
     "rarity": 4,
     "image": "Sanhua_Head_Icon.webp",
-    "video": "none"
+    "video": "Sanhua_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
     "name": "Shorekeeper",
     "rarity": 5,
     "image": "Shorekeeper_Head_Icon.webp",
-    "video": "none"
+    "video": "Shorekeeper_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Taoqi",
     "rarity": 4,
     "image": "Taoqi_Head_Icon.webp",
-    "video": "none"
+    "video": "Taoqi_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
     "name": "Verina",
     "rarity": 5,
     "image": "Verina_Head_Icon.webp",
-    "video": "none"
+    "video": "Verina_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": false
   },
   {
     "name": "Xiangli Yao",
     "rarity": 5,
     "image": "Xiangli_Yao_Head_Icon.webp",
-    "video": "none"
+    "video": "Xiangli Yao_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Yangyang",
     "rarity": 4,
     "image": "Yangyang_Head_Icon.webp",
-    "video": "none"
+    "video": "Yangyang_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
     "name": "Yinlin",
     "rarity": 5,
     "image": "Yinlin_Head_Icon.webp",
-    "video": "none"
+    "video": "Yinlin_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
   },
   {
     "name": "Youhu",
     "rarity": 4,
     "image": "Youhu_Head_Icon.webp",
-    "video": "none"
+    "video": "Youhu_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
     "name": "Yuanwu",
     "rarity": 4,
     "image": "Yuanwu_Head_Icon.webp",
-    "video": "none"
+    "video": "Yuanwu_Summon_Animation.mp4",
+    "type": "any",
+    "limited": false
   },
   {
     "name": "Zhezhi",
     "rarity": 5,
     "image": "Zhezhi_Head_Icon.webp",
-    "video": "none"
+    "video": "Zhezhi_Summon_Animation.mp4",
+    "type": "resonator",
+    "limited": true
+  },
+  {
+    "name": "Lustrous Razor",
+    "rarity": 5,
+    "image": "Broadblade_Lustrous_Razor.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": false
+  },
+  {
+    "name": "Verdant Summit",
+    "rarity": 5,
+    "image": "Broadblade_Verdant_Summit.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Ages of Harvest",
+    "rarity": 5,
+    "image": "Broadblade_Ages_of_Harvest.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Discord",
+    "rarity": 4,
+    "image": "Broadblade_Discord.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Broadblade#41",
+    "rarity": 4,
+    "image": "Broadblade_Broadblade#41.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Dauntless Evernight",
+    "rarity": 4,
+    "image": "Broadblade_Dauntless_Evernight.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Helios Cleaver",
+    "rarity": 4,
+    "image": "Broadblade_Helios_Cleaver.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Waning Redshift",
+    "rarity": 4,
+    "image": "Broadblade_Waning_Redshift.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Meditations on Mercy",
+    "rarity": 4,
+    "image": "Broadblade_Meditations_on_Mercy.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Broadblade of Night",
+    "rarity": 3,
+    "image": "Broadblade_of_Night.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Originite: Type I",
+    "rarity": 3,
+    "image": "Broadblade_Originite_Type_I.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Broadblade of Voyager",
+    "rarity": 3,
+    "image": "Broadblade_of_Voyager.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Guardian Broadblade",
+    "rarity": 3,
+    "image": "Broadblade_Guardian_Broadblade.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Beguiling Melody",
+    "rarity": 3,
+    "image": "Broadblade_Beguiling_Melody.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Emerald of Genesis",
+    "rarity": 5,
+    "image": "Sword_Emerald_of_Genesis.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": false
+  },
+  {
+    "name": "Blazing Brilliance",
+    "rarity": 5,
+    "image": "Sword_Blazing_Brilliance.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Red Spring",
+    "rarity": 5,
+    "image": "Sword_Red_Spring.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Unflickering Valor",
+    "rarity": 5,
+    "image": "Sword_Unflickering_Valor.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Overture",
+    "rarity": 4,
+    "image": "Sword_Overture.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Sword#18",
+    "rarity": 4,
+    "image": "Sword_Sword_18.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Commando of Conviction",
+    "rarity": 4,
+    "image": "Sword_Commando_of_Conviction.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Lunar Cutter",
+    "rarity": 4,
+    "image": "Sword_Lunar_Cutter.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Endless Collapse",
+    "rarity": 4,
+    "image": "Sword_Endless_Collapse.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Fables of Wisdom",
+    "rarity": 4,
+    "image": "Sword_Fables_of_Wisdom.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Sword of Night",
+    "rarity": 3,
+    "image": "Sword_of_Night.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Originite: Type II",
+    "rarity": 3,
+    "image": "Sword_Originite_Type_II.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Sword of Voyager",
+    "rarity": 3,
+    "image": "Sword_Sword_of_Voyager.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Guardian Sword",
+    "rarity": 3,
+    "image": "Sword_Guardian_Sword.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Static Mist",
+    "rarity": 5,
+    "image": "Pistols_Static_Mist.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": false
+  },
+  {
+    "name": "The Last Dance",
+    "rarity": 5,
+    "image": "Pistols_The_Last_Dance.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Cadenza",
+    "rarity": 4,
+    "image": "Pistols_Cadenza.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Undying Flame",
+    "rarity": 4,
+    "image": "Pistols_Undying_Flame.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Novaburst",
+    "rarity": 4,
+    "image": "Pistols_Novaburst.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Pistols#26",
+    "rarity": 4,
+    "image": "Pistols_Pistols#26.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Relativistic Jet",
+    "rarity": 4,
+    "image": "Pistols_Relativistic_Jet.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Romance in Farewell",
+    "rarity": 4,
+    "image": "Pistols_Romance_in_Farewell.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Pistols of Night",
+    "rarity": 3,
+    "image": "Pistols_Pistols_of_Night.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Guardian Pistols",
+    "rarity": 3,
+    "image": "Pistols_Guardian_Pistols.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Originite: Type III",
+    "rarity": 3,
+    "image": "Pistols_Originite_Type_III.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Pistols of Voyager",
+    "rarity": 3,
+    "image": "Pistols_Pistols_of_Voyager.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Abyss Surges",
+    "rarity": 5,
+    "image": "Gauntlets_Abyss_Surges.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": false
+  },
+  {
+    "name": "Verity's Handle",
+    "rarity": 5,
+    "image": "Gauntlets_Verity's_Handle.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Tragicomedy",
+    "rarity": 5,
+    "image": "Gauntlets_Tragicomedy.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Marcato",
+    "rarity": 4,
+    "image": "Gauntlets_Marcato.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Amity Accord",
+    "rarity": 4,
+    "image": "Gauntlets_Amity_Accord.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Gauntlets#21D",
+    "rarity": 4,
+    "image": "Gauntlets_Gauntlets#21D.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Hollow Mirage",
+    "rarity": 4,
+    "image": "Gauntlets_Hollow_Mirage.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Celestial Spiral",
+    "rarity": 4,
+    "image": "Gauntlets_Celestial_Spiral.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Legend of Drunken Hero",
+    "rarity": 4,
+    "image": "Gauntlets_Legend_of_Drunken_Hero.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Gauntlets of Night",
+    "rarity": 3,
+    "image": "Gauntlets_Gauntlets_of_Night.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Guardian Gauntlets",
+    "rarity": 3,
+    "image": "Gauntlets_Guardian_Gauntlets.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Originite: Type IV",
+    "rarity": 3,
+    "image": "Gauntlets_Originite_Type_IV.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Gauntlets of Voyager",
+    "rarity": 3,
+    "image": "Gauntlets_Gauntlets_of_Voyager.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Cosmic Ripples",
+    "rarity": 5,
+    "image": "Rectifier_Cosmic_Ripples.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": false
+  },
+  {
+    "name": "Stringmaster",
+    "rarity": 5,
+    "image": "Rectifier_Stringmaster.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Rime-Draped Sprouts",
+    "rarity": 5,
+    "image": "Rectifier_Rime-Draped_Sprouts.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Stellar Symphony",
+    "rarity": 5,
+    "image": "Rectifier_Stellar_Symphony.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Luminous Hymn",
+    "rarity": 5,
+    "image": "Rectifier_Luminous_Hymn.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Whispers of Sirens",
+    "rarity": 5,
+    "image": "Rectifier_Whispers_of_Sirens.webp",
+    "video": "none",
+    "type": "weapon",
+    "limited": true
+  },
+  {
+    "name": "Variation",
+    "rarity": 4,
+    "image": "Rectifier_Variation.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Rectifier#25",
+    "rarity": 4,
+    "image": "Rectifier_Rectifier#25.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Jinzhou Keeper",
+    "rarity": 4,
+    "image": "Rectifier_Jinzhou_Keeper.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Comet Flare",
+    "rarity": 4,
+    "image": "Rectifier_Comet_Flare.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Fusion Accretion",
+    "rarity": 4,
+    "image": "Rectifier_Fusion_Accretion.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Call of the Abyss",
+    "rarity": 4,
+    "image": "Rectifier_Call_of_the_Abyss.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Waltz in Masquerade",
+    "rarity": 4,
+    "image": "Rectifier_Waltz_in_Masquerade.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Rectifier of Night",
+    "rarity": 3,
+    "image": "Rectifier_Rectifier_of_Night.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Originite: Type V",
+    "rarity": 3,
+    "image": "Rectifier_Originite_Type_V.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Rectifier of Voyager",
+    "rarity": 3,
+    "image": "Rectifier_Rectifier_of_Voyager.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
+  },
+  {
+    "name": "Guardian Rectifier",
+    "rarity": 3,
+    "image": "Rectifier_Guardian_Rectifier.webp",
+    "video": "none",
+    "type": "any",
+    "limited": false
   }
 ]
