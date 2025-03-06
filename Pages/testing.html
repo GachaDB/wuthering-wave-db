@@ -3,58 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch and Filter Data</title>
+    <title>Fetch and Report Data</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #444;
+        }
+        pre {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            overflow-x: auto;
+            max-width: 800px;
+            margin: 20px auto;
+            white-space: pre-wrap;
+        }
+        .report {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        .report h3 {
+            margin-top: 10px;
+            color: #ffcc00;
+        }
+        .report ul {
+            list-style: none;
+            padding: 0;
+        }
+        .report li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
 
-    <button onclick="fetchAndFilterData()">Fetch Data</button>
-    <button onclick="copyToClipboard()" id="copyBtn" disabled>Copy Data</button>
+    <button onclick="fetchAllData()">Fetch All Data</button>
+    <button onclick="copyData()" id="copyBtn" disabled>Copy Data</button>
+
+    <div class="report" id="summary"></div>
     <pre id="output"></pre>
 
     <script>
-        async function fetchAndFilterData() {
-            const url = "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/characters.json";
+        const limitedItems = new Set([
+            "Verdant Summit", "Ages of Harvest", "Blazing Brilliance", "Red Spring", 
+            "Unflickering Valor", "Bloodpact's Pledge", "The Last Dance", "Verity's Handle", 
+            "Tragicomedy", "Stringmaster", "Rime-Draped Sprouts", "Stellar Symphony", 
+            "Luminous Hymn", "Whispers of Sirens", "Jiyan", "Camellya", "Yinlin", 
+            "Jinhsi", "Xiangli Yao", "Changli", "Zhezhi", "Shorekeeper", "Roccia", 
+            "Carlotta", "Brant", "Phoebe"
+        ]);
+
+        async function fetchAllData() {
+            const heroUrl = "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/characters.json";
+            const weaponUrl = "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/weapon.json";
             const output = document.getElementById("output");
             const copyBtn = document.getElementById("copyBtn");
+            const summaryDiv = document.getElementById("summary");
 
             try {
                 output.textContent = "Fetching data...";
+                summaryDiv.innerHTML = "";
                 copyBtn.disabled = true;
 
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                const [heroResponse, weaponResponse] = await Promise.all([fetch(heroUrl), fetch(weaponUrl)]);
+                if (!heroResponse.ok || !weaponResponse.ok) {
+                    throw new Error("Failed to fetch one or more resources.");
                 }
 
-                const data = await response.json();
-                
-                const filteredData = data.map(({ name, rarity, image }) => ({
+                const heroes = await heroResponse.json();
+                const { weapons } = await weaponResponse.json();
+
+                const processedHeroes = heroes.map(({ name, rarity, image }) => ({
                     name,
                     rarity,
                     image,
-                    video: "none"
+                    video: "none",
+                    type: rarity === 5 ? "resonator" : "any",
+                    limited: limitedItems.has(name)
                 }));
 
-                const jsonString = JSON.stringify(filteredData, null, 2);
-                output.textContent = jsonString;
-                
-                copyBtn.disabled = false; // Enable copy button
+                const processedWeapons = weapons.map(({ name, rarity, image }) => ({
+                    name,
+                    rarity,
+                    image,
+                    video: "none",
+                    type: rarity === 5 ? "weapon" : "any",
+                    limited: limitedItems.has(name)
+                }));
+
+                const combinedData = [...processedHeroes, ...processedWeapons];
+
+                // Create summary report
+                const totalHeroes = processedHeroes.length;
+                const totalWeapons = processedWeapons.length;
+
+                // Count based on rarity
+                const fiveStarHeroes = processedHeroes.filter(h => h.rarity === 5);
+                const otherHeroes = processedHeroes.filter(h => h.rarity < 5);
+                const fiveStarWeapons = processedWeapons.filter(w => w.rarity === 5);
+                const otherWeapons = processedWeapons.filter(w => w.rarity < 5);
+
+                // Limited vs Non-limited count
+                const limitedHeroes = processedHeroes.filter(h => h.limited);
+                const limitedWeapons = processedWeapons.filter(w => w.limited);
+                const nonLimitedHeroes = processedHeroes.filter(h => !h.limited);
+                const nonLimitedWeapons = processedWeapons.filter(w => !w.limited);
+
+                summaryDiv.innerHTML = `
+                    <h3>Summary</h3>
+                    <p><strong>Total Heroes:</strong> ${totalHeroes} (5★: ${fiveStarHeroes.length}, Other: ${otherHeroes.length})</p>
+                    <p><strong>Total Weapons:</strong> ${totalWeapons} (5★: ${fiveStarWeapons.length}, Other: ${otherWeapons.length})</p>
+
+                    <p><strong>Limited Heroes:</strong> ${limitedHeroes.length} (5★: ${limitedHeroes.filter(h => h.rarity === 5).length}, Other: ${limitedHeroes.filter(h => h.rarity < 5).length})</p>
+                    <p><strong>Limited Weapons:</strong> ${limitedWeapons.length} (5★: ${limitedWeapons.filter(w => w.rarity === 5).length}, Other: ${limitedWeapons.filter(w => w.rarity < 5).length})</p>
+
+                    <p><strong>Non-Limited Heroes:</strong> ${nonLimitedHeroes.length}</p>
+                    <p><strong>Non-Limited Weapons:</strong> ${nonLimitedWeapons.length}</p>
+
+                    <h3>Limited 5★ Heroes</h3>
+                    <ul>${limitedHeroes.filter(h => h.rarity === 5).map(h => `<li>${h.name}</li>`).join('')}</ul>
+
+                    <h3>Limited 5★ Weapons</h3>
+                    <ul>${limitedWeapons.filter(w => w.rarity === 5).map(w => `<li>${w.name}</li>`).join('')}</ul>
+
+                    <h3>Other Limited Heroes</h3>
+                    <ul>${limitedHeroes.filter(h => h.rarity < 5).map(h => `<li>${h.name}</li>`).join('')}</ul>
+
+                    <h3>Other Limited Weapons</h3>
+                    <ul>${limitedWeapons.filter(w => w.rarity < 5).map(w => `<li>${w.name}</li>`).join('')}</ul>
+                `;
+
+                output.textContent = JSON.stringify(combinedData, null, 2);
+                copyBtn.disabled = false;
             } catch (error) {
                 output.textContent = "Error fetching data: " + error;
                 console.error("Error fetching data:", error);
             }
         }
 
-        function copyToClipboard() {
+        function copyData() {
             const output = document.getElementById("output").textContent;
-
-            if (!output) {
-                alert("No data to copy!");
-                return;
-            }
-
+            if (!output) return alert("No data to copy!");
             navigator.clipboard.writeText(output)
-                .then(() => alert("Data copied to clipboard!"))
+                .then(() => alert("Data copied!"))
                 .catch(err => console.error("Error copying data:", err));
         }
     </script>
