@@ -21,7 +21,7 @@
     "name": "Aalto",
     "element": "Aero",
     "rarity": 4,
-    "type": "Pistol",
+    "type": "Pistols",
     "role": "DPS",
     "image": "Alto_Head_Icon.webp",
     "release_date": "2024-05-23"
@@ -84,7 +84,7 @@
     "name": "Carlotta",
     "element": "Glacio",
     "rarity": 5,
-    "type": "Pistol",
+    "type": "Pistols",
     "role": "DPS",
     "image": "Carlotta_Head_Icon.webp",
     "release_date": "2024-04-02"
@@ -102,7 +102,7 @@
     "name": "Chixia",
     "element": "Fusion",
     "rarity": 5,
-    "type": "Pistol",
+    "type": "Pistols",
     "role": "DPS",
     "image": "Chixia_Head_Icon.webp",
     "release_date": "2024-04-02"
@@ -129,7 +129,7 @@
     "name": "Jianxin",
     "element": "Aero",
     "rarity": 5,
-    "type": "Gauntlet",
+    "type": "Gauntlets",
     "role": "Buffer",
     "image": "Jianxin_Head_Icon.webp",
     "release_date": "2024-04-02"
@@ -147,7 +147,7 @@
     "name": "Lingyang",
     "element": "Glacio",
     "rarity": 5,
-    "type": "Gauntlet",
+    "type": "Gauntlets",
     "role": "DPS",
     "image": "Lingyang_Head_Icon.webp",
     "release_date": "2024-04-02"
@@ -165,7 +165,7 @@
     "name": "Mortefi",
     "element": "Fusion",
     "rarity": 4,
-    "type": "Pistol",
+    "type": "Pistols",
     "role": "Buffer",
     "image": "Mortefi_Head_Icon.webp",
     "release_date": "2024-04-02"
@@ -219,7 +219,7 @@
     "name": "Xiangli Yao",
     "element": "Electro",
     "rarity": 5,
-    "type": "Gauntlet",
+    "type": "Gauntlets",
     "role": "DPS",
     "image": "Xiangli_Yao_Head_Icon.webp",
     "release_date": "2024-04-02"
@@ -246,7 +246,7 @@
     "name": "Youhu",
     "element": "Fusion",
     "rarity": 4,
-    "type": "Gauntlet",
+    "type": "Gauntlets",
     "role": "Support",
     "image": "Youhu_Head_Icon.webp",
     "release_date": "2024-04-02"
@@ -255,7 +255,7 @@
     "name": "Yuanwu",
     "element": "Electro",
     "rarity": 4,
-    "type": "Gauntlet",
+    "type": "Gauntlets",
     "role": "Support",
     "image": "Yuanwu_Head_Icon.webp",
     "release_date": "2024-04-02"
