@@ -42,7 +42,7 @@
       "name": "Ages of Harvest",
       "type": "Broadblade",
       "description": "Each swing of the blade reveals the flow of time and the change of the stars. The sword embodies all things, uniting them into one. Its gentle aura seems capable of dissolving the indestructible, whether it's millennia-old ice or the stagnation of time.",
-      "rarity": 4,
+      "rarity": 5,
       "image": "Broadblade_Ages_of_Harvest.webp",
       "main_stats": {
         "stats": "ATK",
@@ -80,8 +80,8 @@
       "name": "Broadblade#41",
       "type": "Broadblade",
       "description": "An improved version of a mass-produced broadblade model developed in Huanglong. With its formidable performance and innovative technologies, this broadblade carries a weight only to be wielded by seasoned warriors.",
-      "rarity": 3,
-      "image": "Broadblade_41.webp",
+      "rarity": 4,
+      "image": "Broadblade_Broadblade#41.webp",
       "main_stats": {
         "stats": "ATK",
         "value": "33.00/107.83/185.45/235.26/285.07/334.88/384.69/412.50"
@@ -99,7 +99,7 @@
       "name": "Dauntless Evernight",
       "type": "Broadblade",
       "description": "A weapon designed to commemorate the Midnight Rangers' preparedness. \"Autumn fades in endless nights, ready blades gleam with silent might.\"",
-      "rarity": 5,
+      "rarity": 4,
       "image": "Broadblade_Dauntless_Evernight.webp",
       "main_stats": {
         "stats": "ATK",
