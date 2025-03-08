@@ -2,7 +2,7 @@
   {
     "name": "Aalto",
     "rarity": 4,
-    "image": "Alto_Head_Icon.webp",
+    "image": "Alto_Full_Sprite.webp",
     "video": "Aalto_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -10,7 +10,7 @@
   {
     "name": "Jinhsi",
     "rarity": 5,
-    "image": "Jinhsi_Head_Icon.webp",
+    "image": "Jinhsi_Full_Sprite.webp",
     "video": "Jinhsi_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -18,7 +18,7 @@
   {
     "name": "Calcharo",
     "rarity": 5,
-    "image": "Calcharo_Head_Icon.webp",
+    "image": "Calcharo_Full_Sprite.webp",
     "video": "Calcharo_Summon_Animation.mp4",
     "type": "resonator",
     "limited": false
@@ -26,7 +26,7 @@
   {
     "name": "Baizhi",
     "rarity": 4,
-    "image": "Baizhi_Head_Icon.webp",
+    "image": "Baizhi_Full_Sprite.webp",
     "video": "Baizhi_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -34,7 +34,7 @@
   {
     "name": "Brant",
     "rarity": 5,
-    "image": "Brant_Head_Icon.webp",
+    "image": "Brant_Full_Sprite.webp",
     "video": "Brant_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -42,7 +42,7 @@
   {
     "name": "Phoebe",
     "rarity": 5,
-    "image": "Phoebe_Head_Icon.webp",
+    "image": "Phoebe_Full_Sprite.webp",
     "video": "Phoebe_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -50,7 +50,7 @@
   {
     "name": "Camellya",
     "rarity": 5,
-    "image": "Camellya_Head_Icon.webp",
+    "image": "Camellya_Full_Sprite.webp",
     "video": "Camellya_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -58,7 +58,7 @@
   {
     "name": "Carlotta",
     "rarity": 5,
-    "image": "Carlotta_Head_Icon.webp",
+    "image": "Carlotta_Full_Sprite.webp",
     "video": "Carlotta_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -66,15 +66,15 @@
   {
     "name": "Changli",
     "rarity": 5,
-    "image": "Changli_Head_Icon.webp",
+    "image": "Changli_Full_Sprite.webp",
     "video": "Changli_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
   },
   {
     "name": "Chixia",
-    "rarity": 5,
-    "image": "Chixia_Head_Icon.webp",
+    "rarity": 4,
+    "image": "Chixia_Full_Sprite.webp",
     "video": "Chixia_Summon_Animation.mp4",
     "type": "resonator",
     "limited": false
@@ -82,7 +82,7 @@
   {
     "name": "Danjin",
     "rarity": 4,
-    "image": "Danjin_Head_Icon.webp",
+    "image": "Danjin_Full_Sprite.webp",
     "video": "Danjin_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -90,7 +90,7 @@
   {
     "name": "Encore",
     "rarity": 5,
-    "image": "Encore_Head_Icon.webp",
+    "image": "Encore_Full_Sprite.webp",
     "video": "Encore_Summon_Animation.mp4",
     "type": "resonator",
     "limited": false
@@ -98,7 +98,7 @@
   {
     "name": "Jianxin",
     "rarity": 5,
-    "image": "Jianxin_Head_Icon.webp",
+    "image": "Jianxin_Full_Sprite.webp",
     "video": "Jianxin_Summon_Animation.mp4",
     "type": "resonator",
     "limited": false
@@ -106,7 +106,7 @@
   {
     "name": "Jiyan",
     "rarity": 5,
-    "image": "Jiyan_Head_Icon.webp",
+    "image": "Jiyan_Full_Sprite.webp",
     "video": "Jiyan_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -114,7 +114,7 @@
   {
     "name": "Lingyang",
     "rarity": 5,
-    "image": "Lingyang_Head_Icon.webp",
+    "image": "Lingyang_Full_Sprite.webp",
     "video": "Lingyang_Summon_Animation.mp4",
     "type": "resonator",
     "limited": false
@@ -122,7 +122,7 @@
   {
     "name": "Lumi",
     "rarity": 4,
-    "image": "Lumi_Head_Icon.webp",
+    "image": "Lumi_Full_Sprite.webp",
     "video": "Lumi_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -130,7 +130,7 @@
   {
     "name": "Mortefi",
     "rarity": 4,
-    "image": "Mortefi_Head_Icon.webp",
+    "image": "Mortefi_Full_Sprite.webp",
     "video": "Mortefi_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -138,7 +138,7 @@
   {
     "name": "Roccia",
     "rarity": 5,
-    "image": "Roccia_Head_Icon.webp",
+    "image": "Roccia_Full_Sprite.webp",
     "video": "Roccia_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -146,7 +146,7 @@
   {
     "name": "Sanhua",
     "rarity": 4,
-    "image": "Sanhua_Head_Icon.webp",
+    "image": "Sanhua_Full_Sprite.webp",
     "video": "Sanhua_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -154,7 +154,7 @@
   {
     "name": "Shorekeeper",
     "rarity": 5,
-    "image": "Shorekeeper_Head_Icon.webp",
+    "image": "Shorekeeper_Full_Sprite.webp",
     "video": "Shorekeeper_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -162,7 +162,7 @@
   {
     "name": "Taoqi",
     "rarity": 4,
-    "image": "Taoqi_Head_Icon.webp",
+    "image": "Taoqi_Full_Sprite.webp",
     "video": "Taoqi_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -170,7 +170,7 @@
   {
     "name": "Verina",
     "rarity": 5,
-    "image": "Verina_Head_Icon.webp",
+    "image": "Verina_Full_Sprite.webp",
     "video": "Verina_Summon_Animation.mp4",
     "type": "resonator",
     "limited": false
@@ -178,7 +178,7 @@
   {
     "name": "Xiangli Yao",
     "rarity": 5,
-    "image": "Xiangli_Yao_Head_Icon.webp",
+    "image": "Xiangli_Yao_Full_Sprite.webp",
     "video": "Xiangli Yao_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -186,7 +186,7 @@
   {
     "name": "Yangyang",
     "rarity": 4,
-    "image": "Yangyang_Head_Icon.webp",
+    "image": "Yangyang_Full_Sprite.webp",
     "video": "Yangyang_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -194,7 +194,7 @@
   {
     "name": "Yinlin",
     "rarity": 5,
-    "image": "Yinlin_Head_Icon.webp",
+    "image": "Yinlin_Full_Sprite.webp",
     "video": "Yinlin_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true
@@ -202,7 +202,7 @@
   {
     "name": "Youhu",
     "rarity": 4,
-    "image": "Youhu_Head_Icon.webp",
+    "image": "Youhu_Full_Sprite.webp",
     "video": "Youhu_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -210,7 +210,7 @@
   {
     "name": "Yuanwu",
     "rarity": 4,
-    "image": "Yuanwu_Head_Icon.webp",
+    "image": "Yuanwu_Full_Sprite.webp",
     "video": "Yuanwu_Summon_Animation.mp4",
     "type": "any",
     "limited": false
@@ -218,7 +218,7 @@
   {
     "name": "Zhezhi",
     "rarity": 5,
-    "image": "Zhezhi_Head_Icon.webp",
+    "image": "Zhezhi_Full_Sprite.webp",
     "video": "Zhezhi_Summon_Animation.mp4",
     "type": "resonator",
     "limited": true

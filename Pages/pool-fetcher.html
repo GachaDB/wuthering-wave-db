@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch and Report Data</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #444;
+        }
+        pre {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            overflow-x: auto;
+            max-width: 800px;
+            margin: 20px auto;
+            white-space: pre-wrap;
+        }
+        .report {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        .report h3 {
+            margin-top: 10px;
+            color: #ffcc00;
+        }
+        .report ul {
+            list-style: none;
+            padding: 0;
+        }
+        .report li {
+            margin: 5px 0;
+        }
+        #output {
+            height: 300px; /* Set a fixed height */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border: 1px solid #ccc; /* Optional: Adds a border for visibility */
+            padding: 10px; /* Optional: Adds spacing inside */
+            background-color: #f9f9f9; /* Optional: Light gray background */
+            white-space: pre-wrap; /* Ensures text wraps properly */
+            word-wrap: break-word; /* Breaks long words if needed */
+        }
+
+    </style>
+</head>
+<body>
+
+    <button onclick="fetchAllData()">Fetch All Data</button>
+    <button onclick="copyData()" id="copyBtn" disabled>Copy Data</button>
+
+    <div class="report" id="summary"></div>
+    <pre id="output"></pre>
+
+    <script>
+        const limitedItems = new Set([
+            "Verdant Summit", "Ages of Harvest", "Blazing Brilliance", "Red Spring", 
+            "Unflickering Valor", "Bloodpact's Pledge", "The Last Dance", "Verity's Handle", 
+            "Tragicomedy", "Stringmaster", "Rime-Draped Sprouts", "Stellar Symphony", 
+            "Luminous Hymn", "Whispers of Sirens", "Jiyan", "Camellya", "Yinlin", 
+            "Jinhsi", "Xiangli Yao", "Changli", "Zhezhi", "Shorekeeper", "Roccia", 
+            "Carlotta", "Brant", "Phoebe"
+        ]);
+
+        async function fetchAllData() {
+            const heroUrl = "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/characters.json";
+            const weaponUrl = "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/weapon.json";
+            const output = document.getElementById("output");
+            const copyBtn = document.getElementById("copyBtn");
+            const summaryDiv = document.getElementById("summary");
+
+            try {
+                output.textContent = "Fetching data...";
+                summaryDiv.innerHTML = "";
+                copyBtn.disabled = true;
+
+                const [heroResponse, weaponResponse] = await Promise.all([fetch(heroUrl), fetch(weaponUrl)]);
+                if (!heroResponse.ok || !weaponResponse.ok) {
+                    throw new Error("Failed to fetch one or more resources.");
+                }
+
+                const heroes = await heroResponse.json();
+                const { weapons } = await weaponResponse.json();
+
+                const processedHeroes = heroes.map(({ name, rarity, image }) => ({
+					name,
+					rarity,
+					image,
+					video: `${name}_Summon_Animation.mp4`,
+					type: rarity === 5 ? "resonator" : "any",
+					limited: limitedItems.has(name)
+				}));
+
+				const processedWeapons = weapons.map(({ name, rarity, image }) => ({
+					name,
+					rarity,
+					image,
+					video: "none",
+					type: rarity === 5 ? "weapon" : "any",
+					limited: limitedItems.has(name)
+				}));
+
+
+                const combinedData = [...processedHeroes, ...processedWeapons];
+
+                // Create summary report
+                const totalHeroes = processedHeroes.length;
+                const totalWeapons = processedWeapons.length;
+
+                // Count based on rarity
+                const fiveStarHeroes = processedHeroes.filter(h => h.rarity === 5);
+                const otherHeroes = processedHeroes.filter(h => h.rarity < 5);
+                const fiveStarWeapons = processedWeapons.filter(w => w.rarity === 5);
+                const otherWeapons = processedWeapons.filter(w => w.rarity < 5);
+
+                // Limited vs Non-limited count
+                const limitedHeroes = fiveStarHeroes.filter(h => h.limited);
+                const limitedWeapons = fiveStarWeapons.filter(w => w.limited);
+                const nonLimitedHeroes = fiveStarHeroes.filter(h => !h.limited);
+                const nonLimitedWeapons = fiveStarWeapons.filter(w => !w.limited);
+
+                summaryDiv.innerHTML = `
+                    <h3>Summary</h3>
+                    <p><strong>Total Heroes:</strong> ${totalHeroes} (5★: ${fiveStarHeroes.length}, Other: ${otherHeroes.length})</p>
+                    <p><strong>Total Weapons:</strong> ${totalWeapons} (5★: ${fiveStarWeapons.length}, Other: ${otherWeapons.length})</p>
+
+                    <p><strong>Limited 5★ Heroes:</strong> ${limitedHeroes.length}</p>
+                    <p><strong>Limited 5★ Weapons:</strong> ${limitedWeapons.length}</p>
+
+                    <p><strong>Non-Limited 5★ Heroes:</strong> ${nonLimitedHeroes.length}</p>
+                    <p><strong>Non-Limited 5★ Weapons:</strong> ${nonLimitedWeapons.length}</p>
+
+                    <h3>Limited 5★ Heroes</h3>
+                    <ul>${limitedHeroes.map(h => `<li>${h.name}</li>`).join('')}</ul>
+
+                    <h3>Limited 5★ Weapons</h3>
+                    <ul>${limitedWeapons.map(w => `<li>${w.name}</li>`).join('')}</ul>
+
+                    <h3>Non-Limited 5★ Heroes</h3>
+                    <ul>${nonLimitedHeroes.map(h => `<li>${h.name}</li>`).join('')}</ul>
+
+                    <h3>Non-Limited 5★ Weapons</h3>
+                    <ul>${nonLimitedWeapons.map(w => `<li>${w.name}</li>`).join('')}</ul>
+                `;
+
+                output.textContent = JSON.stringify(combinedData, null, 2);
+                copyBtn.disabled = false;
+            } catch (error) {
+                output.textContent = "Error fetching data: " + error;
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        function copyData() {
+			const output = document.getElementById("output").textContent;
+			if (!output) return alert("No data to copy!");
+
+			try {
+				const allData = JSON.parse(output);
+				const filteredData = allData.filter(item => item.rarity >= 3); // Only 3★ and above
+
+				navigator.clipboard.writeText(JSON.stringify(filteredData, null, 2))
+					.then(() => alert("Filtered data (3★+) copied!"))
+					.catch(err => console.error("Error copying data:", err));
+			} catch (error) {
+				console.error("Error processing data:", error);
+				alert("Failed to process data for copying.");
+			}
+		}
+    </script>
+
+</body>
+</html>
