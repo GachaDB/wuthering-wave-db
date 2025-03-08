@@ -6,133 +6,155 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Gacha System</title>
 	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 20px;
-		}
+	body {
+		font-family: Arial, sans-serif;
+		margin: 20px;
+	}
 
-		.navbar {
-			margin-bottom: 20px;
-		}
+	.navbar {
+		margin-bottom: 20px;
+	}
 
-		.navbar button {
-			padding: 10px;
-			font-size: 16px;
-			margin-right: 10px;
-			cursor: pointer;
-		}
+	.navbar button {
+		padding: 10px;
+		font-size: 16px;
+		margin-right: 10px;
+		cursor: pointer;
+	}
 
-		.banner {
-			display: none;
-			margin-bottom: 20px;
-		}
+	.banner {
+		display: none;
+		margin-bottom: 20px;
+	}
 
-		.summon-buttons {
-			margin-bottom: 20px;
-		}
-		/* Grid Layout for Summoning Results */
-		.summoning-result {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr); /* Exactly 5 items per row */
-	gap: 20px;
-	justify-items: center; /* Centers each item in its grid cell horizontally */
-	align-items: center; /* Centers each item in its grid cell vertically */
-	margin-top: 20px;
-	width: 80%; /* Set width of the summoning result container */
-	max-width: 1200px; /* Optional: Set max width to prevent container from growing too wide */
-	margin-left: auto; /* Center the container horizontally */
-	margin-right: auto; /* Center the container horizontally */
-}
+	.summon-buttons {
+		margin-bottom: 20px;
+	}
 
+	/* Grid Layout for Summoning Results */
+	.summoning-result {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		/* Exactly 5 items per row */
+		gap: 20px;
+		justify-items: center;
+		/* Centers each item in its grid cell horizontally */
+		align-items: center;
+		/* Centers each item in its grid cell vertically */
+		margin-top: 20px;
+		width: 80%;
+		/* Set width of the summoning result container */
+		max-width: 1200px;
+		/* Optional: Set max width to prevent container from growing too wide */
+		margin-left: auto;
+		/* Center the container horizontally */
+		margin-right: auto;
+		/* Center the container horizontally */
+	}
 
-		.history {
-			margin-top: 20px;
-		}
+	.history {
+		margin-top: 20px;
+	}
 
-		.history ul {
-			max-height: 200px;
-			overflow-y: auto;
-			border: 1px solid #ccc;
-			padding: 10px;
-			list-style-type: none;
-		}
+	.history ul {
+		max-height: 200px;
+		overflow-y: auto;
+		border: 1px solid #ccc;
+		padding: 10px;
+		list-style-type: none;
+	}
 
-		.result {
-			border: 2px solid gold;
-			padding: 10px;
-			margin-top: 20px;
-			display: none;
-			font-weight: bold;
-			color: gold;
-		}
-		.summon-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 250px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    transition: transform 0.2s ease-in-out;
-}
+	.result {
+		border: 2px solid gold;
+		padding: 10px;
+		margin-top: 20px;
+		display: none;
+		font-weight: bold;
+		color: gold;
+	}
 
-/* Default styling for all summon images */
-.summon-item img {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-}
+	.summon-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 150px;
+		height: 200px;
+		border-radius: 10px;
+		text-align: center;
+		font-weight: bold;
+		transition: transform 0.2s ease-in-out;
+	}
 
-/* Weapons: Full cover */
-.summon-item-weapon img {
-    object-fit: cover;
-    width: 150px; /* Adjust based on actual image size */
-    height: 150px;
-}
+	.summon-item img {
+		border-radius: 5px;
+		object-fit: none;
+	}
 
-/* Resonators: Cropped Image */
-.summon-item-resonator img {
-    width: 120px; /* Adjust width */
-    height: 120px; /* Adjust height */
-    object-fit: cover;
-    clip-path: inset(10% 15% 40% 15%); /* Crop top 10%, sides 15%, bottom 40% */
-    border-radius: 10px;
-}
+	.summon-item-weapon {
+		position: relative;
+		width: 150px;
+		height: 200px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
+	.summon-item-weapon img {
+		width: 100%;
+		/* Scale image down */
+		max-width: 160px;
+		/* Ensure it does not exceed a certain size */
+		height: auto;
+		/* Maintain aspect ratio */
+		object-fit: contain;
+		/* Ensure the whole image fits */
+		display: block;
+		/* Prevent inline spacing issues */
+	}
 
-.summon-item:hover {
-    transform: scale(1.1);
-}
+	/* Resonators: Show only the top half */
+	.summon-item-resonator {
+		position: relative;
+		overflow: hidden;
+		/* Hide the bottom part */
+	}
 
-/* Image styling */
-.summon-item img {
-    width: 100%;  /* Adjust size */
-    height: 100%; /* Adjust size */
-    object-fit: contain;
-    border-radius: 5px;
-}
+	.summon-item-resonator img {
+		position: absolute;
+		padding-top: 5px;
+		transform: translateY(15%) scale(0.5);
+		object-fit: none;
+		/* Keeps original size */
+	}
 
-/* Rarity colors */
-.rarity-3 {
-    background: #6C757D; /* Gray */
-    border: 3px solid #ADB5BD;
-    color: white;
-}
+	/* Hover effect */
+	.summon-item:hover {
+		transform: scale(1.1);
+	}
 
-.rarity-4 {
-    background: #7D5BB1; /* Purple */
-    border: 3px solid #A377E8;
-    color: white;
-}
+	/* Rarity colors */
+	.rarity-3 {
+		background: #6C757D;
+		/* Gray */
+		border: 3px solid #ADB5BD;
+		color: white;
+	}
 
-.rarity-5 {
-    background: #E4AF24; /* Gold */
-    border: 3px solid #FFD700;
-    color: black;
-}
+	.rarity-4 {
+		background: #7D5BB1;
+		/* Purple */
+		border: 3px solid #A377E8;
+		color: white;
+	}
 
+	.rarity-5 {
+		background: #E4AF24;
+		/* Gold */
+		border: 3px solid #FFD700;
+		color: black;
+	}
 	</style>
 </head>
 
@@ -142,15 +164,10 @@
 		<button onclick="showPage('hero')">Hero Banner</button>
 		<button onclick="showPage('weapon')">Weapon Banner</button>
 	</div>
-	
 	<!-- Summon Result Notification -->
 	<div id="summonResult" class="result"></div>
-	
 	<label style="opacity: 0;">
-        <input type="checkbox" id="limitedToggle">
-        Include Limited Items
-    </label>
-
+		<input type="checkbox" id="limitedToggle"> Include Limited Items </label>
 	<!-- Hero Banner Page -->
 	<div id="heroBanner" class="banner">
 		<h2>Hero Banner</h2>
@@ -162,14 +179,12 @@
 		<div id="summoningResult" class="summoning-result">
 			<!-- Summon result will be shown here -->
 		</div>
-
 		<div class="history">
 			<h3>Hero Summon History</h3>
 			<button onclick="clearHistory('hero')">Clear Hero History</button>
 			<ul id="heroHistoryList"></ul>
 		</div>
 	</div>
-
 	<!-- Weapon Banner Page -->
 	<div id="weaponBanner" class="banner">
 		<h2>Weapon Banner</h2>
@@ -187,190 +202,172 @@
 			<ul id="weaponHistoryList"></ul>
 		</div>
 	</div>
-
-
 	<script>
-		const poolDataUrl = 'https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/pool.json';
-		const rates = {
-			base5Star: 0.008,
-			average5Star: 0.018,
-			guarantee5Star: 80,
-			base4Star: 0.06,
-			guarantee4Star: 10,
-			increased5StarPerSummon: 0.05,
-			softPity: 67
-		};
-		const featuredItems = {
-			hero: "Jinhsi",
-			weapon: "Ages of Harvest",
-			fourStarHero: ["Baizhi", "Danjin", "Yuanwu"],
-			fourStarWeapon: ["Discord", "Overture", "Variation"]
-		};
-		let summonData = JSON.parse(localStorage.getItem('summonData')) || {
-			hero: {
-				pity: 0,
-				lost50_50: false,
-				history: []
-			},
-			weapon: {
-				pity: 0,
-				lost50_50: false,
-				history: []
-			}
-		};
-	
-		function showPage(page) {
-				// Hide both pages initially
-				document.getElementById('heroBanner').style.display = 'none';
-				document.getElementById('weaponBanner').style.display = 'none';
-				
-				// Show the selected page
-				if (page === 'hero') {
-					document.getElementById('heroBanner').style.display = 'block';
-				} else if (page === 'weapon') {
-					document.getElementById('weaponBanner').style.display = 'block';
-				}
-			}
-	
-			// Default to Hero Banner page on load
-			showPage('hero');
-	
-		async function fetchPoolData() {
-			const response = await fetch(poolDataUrl);
-			return response.json();
+	const poolDataUrl = 'https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/pool.json';
+	const rates = {
+		base5Star: 0.008,
+		average5Star: 0.018,
+		guarantee5Star: 80,
+		base4Star: 0.06,
+		guarantee4Star: 10,
+		increased5StarPerSummon: 0.05,
+		softPity: 67
+	};
+	const featuredItems = {
+		hero: "Jinhsi",
+		weapon: "Ages of Harvest",
+		fourStarHero: ["Baizhi", "Danjin", "Yuanwu"],
+		fourStarWeapon: ["Discord", "Overture", "Variation"]
+	};
+	let summonData = JSON.parse(localStorage.getItem('summonData')) || {
+		hero: {
+			pity: 0,
+			lost50_50: false,
+			history: []
+		},
+		weapon: {
+			pity: 0,
+			lost50_50: false,
+			history: []
 		}
-	
-		function filterPoolData(data, type, includeLimited) {
-			return data.filter(item => ((type === "hero" && item.type === "resonator") || (type === "weapon" && item.type === "weapon") || item.type === "any") && (includeLimited || !item.limited));
+	};
+
+	function showPage(page) {
+		// Hide both pages initially
+		document.getElementById('heroBanner').style.display = 'none';
+		document.getElementById('weaponBanner').style.display = 'none';
+		// Show the selected page
+		if(page === 'hero') {
+			document.getElementById('heroBanner').style.display = 'block';
+		} else if(page === 'weapon') {
+			document.getElementById('weaponBanner').style.display = 'block';
 		}
-	
-		function getRandomItem(pool, rarity) {
-			const filteredPool = pool.filter(item => item.rarity === rarity);
-			if(filteredPool.length === 0) {
-				// console.error(`No items found for rarity ${rarity}`);
-				return {
-					name: `Unknown ${rarity}★`,
-					rarity
-				}; // Fallback item
-			}
-			return { ...filteredPool[Math.floor(Math.random() * filteredPool.length)] }; 
+	}
+	// Default to Hero Banner page on load
+	showPage('hero');
+	async function fetchPoolData() {
+		const response = await fetch(poolDataUrl);
+		return response.json();
+	}
+
+	function filterPoolData(data, type, includeLimited) {
+		return data.filter(item => ((type === "hero" && item.type === "resonator") || (type === "weapon" && item.type === "weapon") || item.type === "any") && (includeLimited || !item.limited));
+	}
+
+	function getRandomItem(pool, rarity) {
+		const filteredPool = pool.filter(item => item.rarity === rarity);
+		if(filteredPool.length === 0) {
+			// console.error(`No items found for rarity ${rarity}`);
+			return {
+				name: `Unknown ${rarity}★`,
+				rarity
+			}; // Fallback item
 		}
-	
-		async function summon(bannerType, count) {
+		return {
+			...filteredPool[Math.floor(Math.random() * filteredPool.length)]
+		};
+	}
+	async function summon(bannerType, count) {
 		const includeLimited = document.getElementById('limitedToggle').checked;
 		const poolData = await fetchPoolData();
 		const pool = filterPoolData(poolData, bannerType, includeLimited);
 		const results = [];
 		const summonResults = [];
-	
-		for (let i = 0; i < count; i++) {
+		for(let i = 0; i < count; i++) {
 			summonData[bannerType].pity++;
 			let pityCount = summonData[bannerType].pity;
 			let rarity;
-	
 			// Base 5★ rate calculation
 			let fiveStarRate = rates.base5Star;
-			if (pityCount > rates.softPity) {
+			if(pityCount > rates.softPity) {
 				fiveStarRate += (pityCount - rates.softPity) * rates.increased5StarPerSummon;
 			}
 			fiveStarRate = Math.min(fiveStarRate, 1); // Ensure max is 100%
-	
 			// Determine rarity
 			const random = Math.random();
-			if (pityCount >= rates.guarantee5Star) {
+			if(pityCount >= rates.guarantee5Star) {
 				rarity = 5; // Guaranteed 5★
-			} else if (pityCount % rates.guarantee4Star === 0) {
+			} else if(pityCount % rates.guarantee4Star === 0) {
 				rarity = 4; // Guaranteed 4★ every 10 summons
 			} else {
-				if (random < fiveStarRate) {
+				if(random < fiveStarRate) {
 					rarity = 5;
-				} else if (random < fiveStarRate + rates.base4Star) {
+				} else if(random < fiveStarRate + rates.base4Star) {
 					rarity = 4;
 				} else {
 					rarity = 3;
 				}
 			}
-	
 			// Get item
 			let item;
 			// do {
-				if (rarity === 5 && bannerType === "weapon") {
-					item = { name: featuredItems.weapon, rarity: 5 }; // Always give featured weapon
-				} else {
-					item = getRandomItem(pool, rarity);
-				}
+			if(rarity === 5 && bannerType === "weapon") {
+				item = {
+					name: featuredItems.weapon,
+					rarity: 5
+				}; // Always give featured weapon
+			} else {
+				item = getRandomItem(pool, rarity);
+			}
 			// } while (!isValidItem(item));
-	
-			if (!item) {
+			if(!item) {
 				// console.error("[ERROR] No item found for rarity", rarity);
 				continue;
 			}
-	
 			// [Debug] Check item before mutation
 			// console.log("[Debug] Initial item:", JSON.stringify(item));
 			// console.log("[Debug] Type of item.name:", typeof item.name);
-	
 			// console.log("[Debug] Final item before storing:", JSON.stringify(item));
-	
 			// Apply banner rules
-			if (rarity === 5) {
-				if (bannerType === "hero") {
+			if(rarity === 5) {
+				if(bannerType === "hero") {
 					console.log("[Debug] Before check50_50System:", JSON.stringify(item));
 					check50_50System(bannerType, item);
 					console.log("[Debug] After check50_50System:", JSON.stringify(item));
-				} else if (bannerType === "weapon") {
+				} else if(bannerType === "weapon") {
 					item.isFeatured = true; // Weapons are always featured
 				}
 				showSummonResult(item, bannerType, summonData[bannerType].pity);
 				summonData[bannerType].pity = 0; // Reset pity AFTER rolling 5★
-			} else if (rarity === 4) {
+			} else if(rarity === 4) {
 				// console.log("[Debug] Before check4Star50_50System:", JSON.stringify(item));
 				check4Star50_50System(bannerType, item, pool);
 				// console.log("[Debug] After check4Star50_50System:", JSON.stringify(item));
 			}
-	
 			// [Debug] Log before storing
 			// console.log("[Debug] [FINAL DEBUG] Item before pushing:", JSON.stringify(item));
-	
 			// Deep clone item to prevent mutations
 			let fixedItem = JSON.parse(JSON.stringify(item));
-	
 			// Store results
 			results.push(fixedItem);
 			summonResults.push(fixedItem);
 			saveToHistory(bannerType, fixedItem);
 		}
-	
 		// Update UI & history
 		showLatestSummonResult(summonResults);
 		updateHistoryDisplay(bannerType);
 		updatePityCounter(bannerType);
 		localStorage.setItem("summonData", JSON.stringify(summonData));
 	}
-	
+
 	function isValidItem(item) {
 		// console.log("[Debug] Checking item validity:", JSON.stringify(item, null, 2)); // Full snapshot
-	
 		// Extract the raw name if item.name is an object
 		let rawItemName = typeof item.name === "object" && item.name !== null ? item.name.name : item.name;
-		
 		// console.log("[Debug] Extracted raw item name:", rawItemName);
 		// console.log("[Debug] Type of extracted raw item name:", typeof rawItemName);
-	
-		if (typeof rawItemName !== "string") { 
+		if(typeof rawItemName !== "string") {
 			// console.warn("❌ Invalid item: name is not a string", rawItemName);
 			return false;
 		}
-	
 		// console.log("[Debug] pre changed item name:", item.name);
 		// Modify item to store the correct name
 		item.name = rawItemName;
 		// console.log("[Debug] post changed item name:", item.name);
-	
 		// console.log("[Debug] ✅ Item is valid:", JSON.stringify(item, null, 2));
 		return true;
 	}
-	
+
 	function saveToHistory(bannerType, item) {
 		summonData[bannerType].history.push({
 			name: item.name,
@@ -378,11 +375,11 @@
 			time: new Date().toLocaleString()
 		});
 	}
-	
+
 	function getFeaturedWeapon(pool) {
 		return pool.find(item => item.rarity === 5 && item.isFeatured);
 	}
-	
+
 	function updateHistoryDisplay(bannerType) {
 		const historyList = document.getElementById(`${bannerType}HistoryList`);
 		historyList.innerHTML = '';
@@ -400,15 +397,14 @@
 			historyList.appendChild(listItem);
 		});
 	}
-	
+
 	function updatePityCounter(bannerType) {
 		document.getElementById(`${bannerType}Pity`).textContent = summonData[bannerType].pity;
 	}
-	
+
 	function check50_50System(bannerType, item) {
 		// Ensure summonData is initialized
-		if(!summonData) summonData = {}; 
-		
+		if(!summonData) summonData = {};
 		// Initialize summonData for the bannerType if not already present
 		if(!summonData[bannerType]) {
 			summonData[bannerType] = {
@@ -417,27 +413,24 @@
 				total5Stars: 0
 			};
 		}
-		
 		summonData[bannerType].total5Stars++; // Increment total 5-star count
-	
 		// console.log(`[Debug] Checking 50/50 System for bannerType: ${bannerType}`);
 		// console.log(`[Debug] Total 5-Stars so far: ${summonData[bannerType].total5Stars}`);
 		// console.log(`[Debug] Lost 50/50 count: ${summonData[bannerType].lost50_50Count}`);
-		
 		// Guarantee featured if last 50/50 was lost
 		if(summonData[bannerType].lost50_50) {
 			// console.log("[Debug] Last 50/50 was lost, forcing featured item.");
 			item.name = featuredItems[bannerType];
-            item.image = `${item.name}_Head_Icon.webp`;
-            item.video = `${item.name}_Summon_Animation.mp4`;
-            item.limited = true;
+			item.image = `${item.name}_Full_Sprite.webp`;
+			item.video = `${item.name}_Summon_Animation.mp4`;
+			item.limited = true;
 			summonData[bannerType].lost50_50 = false; // Reset loss flag
 		} else {
 			// 50% chance to get featured, 50% chance to lose
 			if(Math.random() < 0.5) {
 				// console.log("[Debug] Won the 50/50, getting featured item.");
 				item.name = featuredItems[bannerType]; // Win 50% of the time
-				item.image = `${item.name}_Head_Icon.webp`;
+				item.image = `${item.name}_Full_Sprite.webp`;
 				item.video = `${item.name}_Summon_Animation.mp4`;
 				item.limited = true;
 				summonData[bannerType].lost50_50 = false; // Reset loss flag
@@ -447,11 +440,10 @@
 				summonData[bannerType].lost50_50Count++; // Increment lost 50/50 counter
 			}
 		}
-	
 		// [Debug] Logs for lost50_50Count after update
 		// console.log(`[Debug] Updated Lost 50/50 count: ${summonData[bannerType].lost50_50Count}`);
 	}
-	
+
 	function check4Star50_50System(bannerType, item, pool) {
 		if(!summonData) summonData = {}; // Ensure summonData is initialized
 		if(!summonData[bannerType]) summonData[bannerType] = {
@@ -484,46 +476,37 @@
 		// console.log(`[Debug] Lost 50/50 Count (4★): ${summonData[bannerType].lost50_50Count_4}`);
 		// console.log(`[Debug] Current Lost 50/50 Status (4★): ${summonData[bannerType].lost50_50_4}`);
 	}
-	
+
 	function showLatestSummonResult(items) {
-    // Get the div where the summoning result will be shown
-    const resultDiv = document.getElementById('summoningResult');
-    
-    // Clear any previous summon results
-    resultDiv.innerHTML = '';
-
-    // Loop through the items (could be 1 or more)
-    items.forEach(item => {
-        const resultContent = document.createElement('div');
-        resultContent.classList.add('summon-item', `rarity-${item.rarity}`);
-
-
-		// console.log(`[Debug] Summoned: ${item.name}, Data: ${JSON.stringify(item, null, 2)}`);
-
-        // Determine the image source based on the item type
-        let imageUrl = '';
-		let imageClass = '';
-
-if (item.type === 'weapon' || (item.type === 'any' && item.video === 'none')) {
-    imageUrl = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/${item.image}`;
-	imageClass = 'summon-image-weapon';
-} else if (item.type === 'resonator' || item.type === 'any') {
-    imageUrl = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Model/${item.image}`;
-	imageClass = 'summon-image-resonator';
-}
-
-
-        // Set the content of the new element with the item's image
-        resultContent.innerHTML = `
-            <img src="${imageUrl}" alt="${item.name}" class="summon-image ${imageClass}">
+		// Get the div where the summoning result will be shown
+		const resultDiv = document.getElementById('summoningResult');
+		// Clear any previous summon results
+		resultDiv.innerHTML = '';
+		// Loop through the items (could be 1 or more)
+		items.forEach(item => {
+			const resultContent = document.createElement('div');
+			// console.log(`[Debug] Summoned: ${item.name}, Data: ${JSON.stringify(item, null, 2)}`);
+			// Determine the image source based on the item type
+			let imageUrl = '';
+			let imageClass = '';
+			if(item.type === 'weapon' || (item.type === 'any' && item.video === 'none')) {
+				imageUrl = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/${item.image}`;
+				imageClass = 'summon-item-weapon';
+			} else if(item.type === 'resonator' || item.type === 'any') {
+				imageUrl = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Model/${item.image}`;
+				imageClass = 'summon-item-resonator';
+			}
+			resultContent.classList.add('summon-item', `rarity-${item.rarity}`, `${imageClass}`);
+			imageUrl = imageUrl.replace(/#/g, '%23');
+			// Set the content of the new element with the item's image
+			resultContent.innerHTML = `
+            <img src="${imageUrl}" alt="${item.name}" class="summon-image">
         `;
+			// Append the new item to the result div
+			resultDiv.appendChild(resultContent);
+		});
+	}
 
-        // Append the new item to the result div
-        resultDiv.appendChild(resultContent);
-    });
-}
-
-	
 	function showSummonResult(item, bannerType, pityCount) {
 		const summonResultDiv = document.getElementById('summonResult');
 		if(!summonResultDiv) {
@@ -534,7 +517,7 @@ if (item.type === 'weapon' || (item.type === 'any' && item.video === 'none')) {
 		summonResultDiv.innerHTML = resultMessage;
 		summonResultDiv.style.display = "block"; // Ensure it's visible
 	}
-	
+
 	function clearHistory(bannerType) {
 		summonData[bannerType] = {
 			pity: 0,
@@ -545,7 +528,7 @@ if (item.type === 'weapon' || (item.type === 'any' && item.video === 'none')) {
 		updateHistoryDisplay(bannerType);
 		updatePityCounter(bannerType);
 	}
-	
+
 	function loadHistory() {
 		updateHistoryDisplay('hero');
 		updateHistoryDisplay('weapon');

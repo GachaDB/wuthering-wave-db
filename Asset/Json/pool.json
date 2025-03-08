@@ -2,7 +2,7 @@
   {
     "name": "Aalto",
     "rarity": 4,
-    "image": "Alto_Full_Sprite.webp",
+    "image": "Aalto_Full_Sprite.webp",
     "video": "Aalto_Summon_Animation.mp4",
     "type": "any",
     "limited": false
