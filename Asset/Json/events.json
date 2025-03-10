@@ -1,0 +1,639 @@
+[
+    {
+      "id": "absolutePulsationAgesOfHarvest1",
+      "name": "Absolute Pulsation: Ages of Harvest",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Ages of Harvest",
+        "featured4Star": [
+          "Discord",
+          "Commando of Conviction",
+          "Amity Accord"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Ages_of_Harvest_2024-06-28.webp",
+      "start": "2024-06-28 09:00",
+      "end": "2024-07-22 09:59",
+      "version": "Version 1.1"
+    },
+    {
+      "id": "absolutePulsationAgesOfHarvest2",
+      "name": "Absolute Pulsation: Ages of Harvest",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Ages of Harvest",
+        "featured4Star": [
+          "Celestial Spiral",
+          "Dauntless Evernight",
+          "Variation"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Ages_of_Harvest_2024-06-28.webp",
+      "start": "2025-01-23 10:00",
+      "end": "2025-02-12 09:59",
+      "version": "Version 2.0"
+    },
+    {
+      "id": "absolutePulsationBlazingBrilliance1",
+      "name": "Absolute Pulsation: Blazing Brilliance",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Blazing Brilliance",
+        "featured4Star": [
+          "Comet Flare",
+          "Overture",
+          "Undying Flame"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Blazing_Brilliance_2024-07-22.webp",
+      "start": "2024-07-22 10:00",
+      "end": "2024-08-14 09:59",
+      "version": "Version 1.1"
+    },
+    {
+      "id": "absolutePulsationBlazingBrilliance2",
+      "name": "Absolute Pulsation: Blazing Brilliance",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Blazing Brilliance",
+        "featured4Star": [
+          "Waning Redshift",
+          "Comet Flare",
+          "Marcato"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Blazing_Brilliance_2025-03-06.webp",
+      "start": "2025-03-06 10:00",
+      "end": "2025-03-26 09:59",
+      "version": "Version 2.1"
+    },
+    {
+      "id": "absolutePulsationLuminousHymn",
+      "name": "Absolute Pulsation: Luminous Hymn",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Luminous Hymn",
+        "featured4Star": [
+          "Jinzhou Keeper",
+          "Discord",
+          "Novaburst"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Luminous_Hymn_2025-02-13.webp",
+      "start": "2025-02-13 09:00",
+      "end": "2025-03-06 09:59",
+      "version": "Version 2.1"
+    },
+    {
+      "id": "absolutePulsationRedSpring",
+      "name": "Absolute Pulsation: Red Spring",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Red Spring",
+        "featured4Star": [
+          "Commando of Conviction",
+          "Novaburst",
+          "Fusion Accretion"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Red_Spring_2024-11-14.webp",
+      "start": "2024-11-14 10:00",
+      "end": "2024-12-12 09:59",
+      "version": "Version 1.4"
+    },
+    {
+      "id": "absolutePulsationRimeDrapedSprouts1",
+      "name": "Absolute Pulsation: Rime-Draped Sprouts",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Rime-Draped Sprouts",
+        "featured4Star": [
+          "Dauntless Evernight",
+          "Jinzhou Keeper",
+          "Hollow Mirage"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Rime-Draped_Sprouts_2024-08-15.webp",
+      "start": "2024-08-15 09:00",
+      "end": "2024-09-07 09:59",
+      "version": "Version 1.2"
+    },
+    {
+      "id": "absolutePulsationRimeDrapedSprouts2",
+      "name": "Absolute Pulsation: Rime-Draped Sprouts",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Rime-Draped Sprouts",
+        "featured4Star": [
+          "Waning Redshift",
+          "Comet Flare",
+          "Marcato"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Rime-Draped_Sprouts_2025-01-02.webp",
+      "start": "2025-01-02 09:00",
+      "end": "2025-01-23 09:59",
+      "version": "Version 2.0"
+    },
+    {
+      "id": "absolutePulsationStellarSymphony",
+      "name": "Absolute Pulsation: Stellar Symphony",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Stellar Symphony",
+        "featured4Star": [
+          "Endless Collapse",
+          "Discord",
+          "Comet Flare"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Stellar_Symphony_2024-09-29.webp",
+      "start": "2024-09-29 10:00",
+      "end": "2024-10-24 09:59",
+      "version": "Version 1.3"
+    },
+    {
+      "id": "absolutePulsationStringmaster1",
+      "name": "Absolute Pulsation: Stringmaster",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Stringmaster",
+        "featured4Star": [
+          "Jinzhou Keeper",
+          "Cadenza",
+          "Lunar Cutter"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Stringmaster_2024-06-06.webp",
+      "start": "2024-06-06 10:00",
+      "end": "2024-06-26 11:59",
+      "version": "Version 1.0"
+    },
+    {
+      "id": "absolutePulsationStringmaster2",
+      "name": "Absolute Pulsation: Stringmaster",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Stringmaster",
+        "featured4Star": [
+          "Waning Redshift",
+          "Jinzhou Keeper",
+          "Hollow Mirage"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Stringmaster_2024-12-12.webp",
+      "start": "2024-12-12 10:00",
+      "end": "2025-01-01 11:59",
+      "version": "Version 1.4"
+    },
+    {
+      "id": "absolutePulsationTheLastDance",
+      "name": "Absolute Pulsation: The Last Dance",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "The Last Dance",
+        "featured4Star": [
+          "Relativistic Jet",
+          "Fusion Accretion",
+          "Amity Accord"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_The_Last_Dance_2025-01-02.webp",
+      "start": "2025-01-02 09:00",
+      "end": "2025-01-23 09:59",
+      "version": "Version 2.0"
+    },
+    {
+      "id": "absolutePulsationTragicomedy",
+      "name": "Absolute Pulsation: Tragicomedy",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Tragicomedy",
+        "featured4Star": [
+          "Celestial Spiral",
+          "Dauntless Evernight",
+          "Variation"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Tragicomedy_2025-01-23.webp",
+      "start": "2025-01-23 10:00",
+      "end": "2025-02-12 09:59",
+      "version": "Version 2.0"
+    },
+    {
+      "id": "absolutePulsationUnflickeringValor",
+      "name": "Absolute Pulsation: Unflickering Valor",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Unflickering Valor",
+        "featured4Star": [
+          "Waning Redshift",
+          "Comet Flare",
+          "Marcato"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Unflickering_Valor_2025-03-06.webp",
+      "start": "2025-03-06 10:00",
+      "end": "2025-03-26 09:59",
+      "version": "Version 2.1"
+    },
+    {
+      "id": "absolutePulsationVerdantSummit1",
+      "name": "Absolute Pulsation: Verdant Summit",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Verdant Summit",
+        "featured4Star": [
+          "Dauntless Evernight",
+          "Variation",
+          "Hollow Mirage"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Verdant_Summit_2024-05-23.webp",
+      "start": "2024-05-23 09:00",
+      "end": "2024-06-13 09:59",
+      "version": "Version 1.0"
+    },
+    {
+      "id": "absolutePulsationVerdantSummit2",
+      "name": "Absolute Pulsation: Verdant Summit",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Verdant Summit",
+        "featured4Star": [
+          "Celestial Spiral",
+          "Variation",
+          "Helios Cleaver"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Verdant_Summit_2024-05-23.webp",
+      "start": "2024-10-24 11:00",
+      "end": "2024-11-13 09:59",
+      "version": "Version 1.3"
+    },
+    {
+      "id": "absolutePulsationVeritysHandle1",
+      "name": "Absolute Pulsation: Verity's Handle",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Verity's Handle",
+        "featured4Star": [
+          "Marcato",
+          "Helios Cleaver",
+          "Novaburst"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Verity%27s_Handle_2024-09-07.webp",
+      "start": "2024-09-07 10:00",
+      "end": "2024-09-28 09:59",
+      "version": "Version 1.2"
+    },
+    {
+      "id": "absolutePulsationVeritysHandle2",
+      "name": "Absolute Pulsation: Verity's Handle",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Verity's Handle",
+        "featured4Star": [
+          "Waning Redshift",
+          "Jinzhou Keeper",
+          "Hollow Mirage"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Verity%27s_Handle_2024-12-12.webp",
+      "start": "2024-12-12 10:00",
+      "end": "2025-01-01 11:59",
+      "version": "Version 1.4"
+    },
+    {
+      "id": "blazeAcrossTheDeep",
+      "name": "Blaze Across the Deep",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Brant",
+        "featured4Star": [
+          "Youhu",
+          "Taoqi",
+          "Mortefi"
+        ]
+      },
+      "imageUrl": "Blaze_Across_the_Deep_2025-03-06.webp",
+      "start": "2025-03-06 10:00",
+      "end": "2025-03-26 09:59",
+      "version": "Version 2.1"
+    },
+    {
+      "id": "celestialRevelation1",
+      "name": "Celestial Revelation",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Xiangli Yao",
+        "featured4Star": [
+          "Danjin",
+          "Aalto",
+          "Yuanwu"
+        ]
+      },
+      "imageUrl": "Celestial_Revelation_2024-09-07.webp",
+      "start": "2024-09-07 10:00",
+      "end": "2024-09-28 11:59",
+      "version": "Version 1.2"
+    },
+    {
+      "id": "celestialRevelation2",
+      "name": "Celestial Revelation",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Xiangli Yao",
+        "featured4Star": [
+          "Lumi",
+          "Baizhi",
+          "Yuanwu"
+        ]
+      },
+      "imageUrl": "Celestial_Revelation_2024-12-12.webp",
+      "start": "2024-12-12 10:00",
+      "end": "2025-01-01 11:59",
+      "version": "Version 1.4"
+    },
+    {
+      "id": "chromaticProse1",
+      "name": "Chromatic Prose",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Zhezhi",
+        "featured4Star": [
+          "Chixia",
+          "Baizhi",
+          "Sanhua"
+        ]
+      },
+      "imageUrl": "Chromatic_Prose_2024-08-15.webp",
+      "start": "2024-08-15 09:00",
+      "end": "2024-09-07 09:59",
+      "version": "Version 1.2"
+    },
+    {
+      "id": "chromaticProse2",
+      "name": "Chromatic Prose",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Zhezhi",
+        "featured4Star": [
+          "Chixia",
+          "Sanhua",
+          "Mortefi"
+        ]
+      },
+      "imageUrl": "Chromatic_Prose_2025-01-02.webp",
+      "start": "2025-01-02 09:00",
+      "end": "2025-01-23 09:59",
+      "version": "Version 2.0"
+    },
+    {
+      "id": "endOfLostTrail",
+      "name": "End of Lost Trail",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Camellya",
+        "featured4Star": [
+          "Danjin",
+          "Yangyang",
+          "Aalto"
+        ]
+      },
+      "imageUrl": "End_of_Lost_Trail_2024-11-14.webp",
+      "start": "2024-11-14 10:00",
+      "end": "2024-12-12 09:59",
+      "version": "Version 1.4"
+    },
+    {
+      "id": "prevailTheLastingNight1",
+      "name": "Prevail the Lasting Night",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Prevail the Lasting Night",
+        "featured4Star": []
+      },
+      "imageUrl": "Prevail_the_Lasting_Night_2024-05-23.webp",
+      "start": "2024-05-23",
+      "end": ""
+    },
+    {
+      "id": "prevailTheLastingNight2",
+      "name": "Prevail the Lasting Night",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Jiyan",
+        "featured4Star": [
+          "Youhu",
+          "Sanhua",
+          "Mortefi"
+        ]
+      },
+      "imageUrl": "Prevail_the_Lasting_Night_2024-10-24.webp",
+      "start": "2024-10-24 10:00",
+      "end": "2024-11-13 09:59",
+      "version": "Version 1.3"
+    },
+    {
+      "id": "thawbornRenewal1",
+      "name": "Thawborn Renewal",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Jinhsi",
+        "featured4Star": [
+          "Sanhua",
+          "Danjin",
+          "Yangyang"
+        ]
+      },
+      "imageUrl": "Thawborn_Renewal_2024-06-28.webp",
+      "start": "2024-06-28 09:00",
+      "end": "2024-07-22 09:59",
+      "version": "Version 1.1"
+    },
+    {
+      "id": "thawbornRenewal2",
+      "name": "Thawborn Renewal",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Jinhsi",
+        "featured4Star": [
+          "Danjin",
+          "Youhu",
+          "Yuanwu"
+        ]
+      },
+      "imageUrl": "Thawborn_Renewal_2025-01-23.webp",
+      "start": "2025-01-23 10:00",
+      "end": "2025-02-12 11:59",
+      "version": "Version 2.0"
+    },
+    {
+      "id": "tidalChorus",
+      "name": "Tidal Chorus",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": null,
+        "featured4Star": [null]
+      },
+      "imageUrl": "Tidal_Chorus.webp",
+      "start": null,
+      "end": null
+    },
+    {
+      "id": "tillTheSeaTurnsClear",
+      "name": "Till the Sea Turns Clear",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Shorekeeper",
+        "featured4Star": [
+          "Taoqi",
+          "Yangyang",
+          "Chixia"
+        ]
+      },
+      "imageUrl": "Till_the_Sea_Turns_Clear_2024-09-29.webp",
+      "start": "2024-09-29 10:00",
+      "end": "2024-10-24 09:59",
+      "version": "Version 1.3"
+    },
+    {
+      "id": "vermillionsPloy1",
+      "name": "Vermillion's Ploy",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Changli",
+        "featured4Star": [
+          "Taoqi",
+          "Baizhi",
+          "Mortefi"
+        ]
+      },
+      "imageUrl": "Vermillion%27s_Ploy_2024-07-22.webp",
+      "start": "2024-07-22 10:00",
+      "end": "2024-08-14 11:59",
+      "version": "Version 1.1"
+    },
+    {
+      "id": "vermillionsPloy2",
+      "name": "Vermillion's Ploy",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Changli",
+        "featured4Star": [
+          "Youhu",
+          "Taoqi",
+          "Mortefi"
+        ]
+      },
+      "imageUrl": "Vermillion%27s_Ploy_2025-03-06.webp",
+      "start": "2025-03-06 10:00",
+      "end": "2025-03-26 09:59",
+      "version": "Version 2.1"
+    },
+    {
+      "id": "whenSilenceTolls",
+      "name": "When Silence Tolls",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Carlotta",
+        "featured4Star": [
+          "Chixia",
+          "Sanhua",
+          "Mortefi"
+        ]
+      },
+      "imageUrl": "When_Silence_Tolls_2025-01-02.webp",
+      "start": "2025-01-02 09:00",
+      "end": "2025-01-23 09:59",
+      "version": "Version 2.0"
+    },
+    {
+      "id": "whenThunderPours1",
+      "name": "When Thunder Pours",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Yinlin",
+        "featured4Star": [
+          "Taoqi",
+          "Aalto",
+          "Yuanwu"
+        ]
+      },
+      "imageUrl": "When_Thunder_Pours_2024-06-06.webp",
+      "start": "2024-06-06 10:00",
+      "end": "2024-06-26 11:59",
+      "version": "Version 1.0"
+    },
+    {
+      "id": "whenThunderPours2",
+      "name": "When Thunder Pours",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Yinlin",
+        "featured4Star": [
+          "Lumi",
+          "Baizhi",
+          "Yuanwu"
+        ]
+      },
+      "imageUrl": "When_Thunder_Pours_2024-12-12.webp",
+      "start": "2024-12-12 10:00",
+      "end": "2025-01-01 11:59",
+      "version": "Version 1.4"
+    },
+    {
+    "name": "With Hushed Whispers 2025-02-13",
+    "type": "convene",
+    "event_detail": {
+        "type": "hero",
+        "featured": "Phoebe",
+        "featured4Star": [
+        "Lumi",
+        "Chixia",
+        "Aalto"
+        ]
+    },
+    "imageUrl": "With_Hushed_Whispers_2025-02-13.webp",
+    "start": "2025-02-13 09:00",
+    "end": "2025-03-06 09:59",
+    "version": "Version 2.1"
+    }
+  ]
