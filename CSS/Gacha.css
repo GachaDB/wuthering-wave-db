@@ -1,0 +1,319 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#gachaBody {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row; /* Changed to row to place navbar and container side by side */
+    color: white;
+}
+
+.navbar {
+    /* Removed position: fixed */
+    width: 200px; /* Fixed width for the navbar */
+    height: 100%; /* Full height */
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 2;
+    flex-shrink: 0; /* Prevents navbar from shrinking */
+}
+
+.navbar button {
+    margin: 5px 0;
+    padding: 10px;
+    background: #444; /* Default background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Full width of navbar */
+    height: 70px;
+    background-size: cover; /* For background images */
+    background-position: center;
+    text-shadow: 1px 1px 2px black; /* Improve text readability on images */
+}
+
+.navbar button:hover {
+    background-color: #666; /* Hover effect still applies over image */
+}
+
+#bannerContainer {
+    flex-grow: 1; /* Takes remaining space */
+    position: relative;
+    height: 100%;
+}
+
+.banner {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.banner.active {
+    display: block;
+}
+
+.pity-counter {
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1000; /* Ensure it appears above other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    min-width: 700px; /* Optional: Ensures a minimum width */
+    min-height: 400px;
+    overflow-y: auto; /* Scroll if content overflows */
+    position: relative;
+    text-align: center;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.history-table th, .history-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.history-table th {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.history-table td {
+    color: white;
+}
+
+.pagination {
+    margin: 10px 0;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background: #e64a19;
+}
+
+.pagination button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.main-button {
+    margin: 10px;
+    padding: 12px 50px; /* Extra padding for a balanced shape */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1)); 
+    color: black;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Ensures the overlay stays within the button */
+    /* Soft Diamond Shape */
+    clip-path: polygon(20% 10%, 80% 10%, 90% 50%, 80% 90%, 20% 90%, 10% 50%);
+}
+
+/* Adding overlay as an actual overlay */
+.main-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.7; /* Adjust transparency for a subtle overlay */
+    pointer-events: none; /* Prevents interaction with the overlay */
+}
+
+.main-button:hover {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+}
+
+.summon-buttons .summon-icon {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    vertical-align: middle; /* Aligns image with text */
+    margin-right: 5px; /* Space between image and text */
+}
+
+.history-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.summoning-result {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#summonResult {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    display: none;
+    max-width: 800px;
+}
+
+.summon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 150px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+
+.result {
+    border: 2px solid gold;
+    padding: 10px;
+    margin-top: 20px;
+    display: none;
+    font-weight: bold;
+    color: gold;
+}
+
+.summon-item img {
+    border-radius: 5px;
+    object-fit: none;
+}
+
+.summon-item-weapon {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summon-item-weapon img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.summon-item-resonator {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summon-item-resonator img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 5px;
+}
+
+.rarity-3 {
+    background: radial-gradient(circle, #808080, #666666, #4D4D4D);
+    border: 3px solid #adb5bd;
+    color: white;
+}
+
+.rarity-4 {
+    background: radial-gradient(circle, #a020f0, #800080, #4b0082);
+    border: 3px solid #a377e8;
+    color: white;
+}
+
+.rarity-5 {
+    background: radial-gradient(circle, #ffcc00, #ffb700, #ff9f00);
+    border: 3px solid #ffd700;
+    color: black;
+}

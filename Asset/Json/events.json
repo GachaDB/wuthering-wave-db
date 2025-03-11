@@ -1,7 +1,7 @@
 [
     {
       "id": "absolutePulsationAgesOfHarvest1",
-      "name": "Absolute Pulsation: Ages of Harvest",
+      "name": "Ages of Harvest",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -19,7 +19,7 @@
     },
     {
       "id": "absolutePulsationAgesOfHarvest2",
-      "name": "Absolute Pulsation: Ages of Harvest",
+      "name": "Ages of Harvest",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -37,7 +37,7 @@
     },
     {
       "id": "absolutePulsationBlazingBrilliance1",
-      "name": "Absolute Pulsation: Blazing Brilliance",
+      "name": "Blazing Brilliance",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -55,7 +55,7 @@
     },
     {
       "id": "absolutePulsationLuminousHymn",
-      "name": "Absolute Pulsation: Luminous Hymn",
+      "name": "Luminous Hymn",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -73,7 +73,7 @@
     },
     {
       "id": "absolutePulsationRedSpring",
-      "name": "Absolute Pulsation: Red Spring",
+      "name": "Red Spring",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -91,7 +91,7 @@
     },
     {
       "id": "absolutePulsationRimeDrapedSprouts1",
-      "name": "Absolute Pulsation: Rime-Draped Sprouts",
+      "name": "Rime-Draped Sprouts",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -109,7 +109,7 @@
     },
     {
       "id": "absolutePulsationRimeDrapedSprouts2",
-      "name": "Absolute Pulsation: Rime-Draped Sprouts",
+      "name": "Rime-Draped Sprouts",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -127,7 +127,7 @@
     },
     {
       "id": "absolutePulsationStellarSymphony",
-      "name": "Absolute Pulsation: Stellar Symphony",
+      "name": "Stellar Symphony",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -145,7 +145,7 @@
     },
     {
       "id": "absolutePulsationStringmaster1",
-      "name": "Absolute Pulsation: Stringmaster",
+      "name": "Stringmaster",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -163,7 +163,7 @@
     },
     {
       "id": "absolutePulsationStringmaster2",
-      "name": "Absolute Pulsation: Stringmaster",
+      "name": "Stringmaster",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -181,7 +181,7 @@
     },
     {
       "id": "absolutePulsationTheLastDance",
-      "name": "Absolute Pulsation: The Last Dance",
+      "name": "The Last Dance",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -199,7 +199,7 @@
     },
     {
       "id": "absolutePulsationTragicomedy",
-      "name": "Absolute Pulsation: Tragicomedy",
+      "name": "Tragicomedy",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -217,7 +217,7 @@
     },
     {
       "id": "absolutePulsationVerdantSummit1",
-      "name": "Absolute Pulsation: Verdant Summit",
+      "name": "Verdant Summit",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -235,7 +235,7 @@
     },
     {
       "id": "absolutePulsationVerdantSummit2",
-      "name": "Absolute Pulsation: Verdant Summit",
+      "name": "Verdant Summit",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -253,7 +253,7 @@
     },
     {
       "id": "absolutePulsationVeritysHandle1",
-      "name": "Absolute Pulsation: Verity's Handle",
+      "name": "Verity's Handle",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -271,7 +271,7 @@
     },
     {
       "id": "absolutePulsationVeritysHandle2",
-      "name": "Absolute Pulsation: Verity's Handle",
+      "name": "Verity's Handle",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -577,7 +577,7 @@
     },
     {
       "id": "absolutePulsationUnflickeringValor",
-      "name": "Absolute Pulsation: Unflickering Valor",
+      "name": "Unflickering Valor",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
@@ -613,7 +613,7 @@
     },
     {
       "id": "absolutePulsationBlazingBrilliance2",
-      "name": "Absolute Pulsation: Blazing Brilliance",
+      "name": "Blazing Brilliance",
       "type": "Convene",
       "event_detail": {
         "type": "weapon",
