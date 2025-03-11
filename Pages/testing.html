@@ -1,170 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gacha System</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
+    <style>body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+  }
 
-      .navbar {
-        margin-bottom: 20px;
-      }
+  #gachaBody {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+  }
 
-      .navbar button {
-        padding: 10px;
-        font-size: 16px;
-        margin-right: 10px;
-        cursor: pointer;
-      }
+  .navbar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 2;
+  }
 
-      .banner {
-        display: none;
-        margin-bottom: 20px;
-      }
+  .navbar button {
+      margin: 5px 0;
+      padding: 10px;
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
 
-      .summon-buttons {
-        margin-bottom: 20px;
-      }
+  .navbar button:hover {
+      background: #666;
+  }
 
-      /* Grid Layout for Summoning Results */
-      .summoning-result {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        /* Exactly 5 items per row */
-        gap: 20px;
-        justify-items: center;
-        /* Centers each item in its grid cell horizontally */
-        align-items: center;
-        /* Centers each item in its grid cell vertically */
-        margin-top: 20px;
-        width: 80%;
-        /* Set width of the summoning result container */
-        max-width: 1200px;
-        /* Optional: Set max width to prevent container from growing too wide */
-        margin-left: auto;
-        /* Center the container horizontally */
-        margin-right: auto;
-        /* Center the container horizontally */
-      }
+  .banner {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+  }
 
-      .history {
-        margin-top: 20px;
-      }
+  .banner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+  }
 
-      .history ul {
-        max-height: 200px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        list-style-type: none;
-      }
+  .banner-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: grid;
+      place-items: center;
+      height: 100%;
+  }
 
-      .result {
-        border: 2px solid gold;
-        padding: 10px;
-        margin-top: 20px;
-        display: none;
-        font-weight: bold;
-        color: gold;
-      }
+  .banner.active {
+      display: block;
+  }
 
-      .summon-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 150px;
-        height: 200px;
-        border-radius: 10px;
-        text-align: center;
-        font-weight: bold;
-        transition: transform 0.2s ease-in-out;
-      }
+  .summon-buttons button {
+      margin: 10px;
+      padding: 10px 20px;
+      background: #ff5722;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
 
-      .summon-item img {
-        border-radius: 5px;
-        object-fit: none;
-      }
+  .summon-buttons button:hover {
+      background: #e64a19;
+  }
 
-      .summon-item-weapon {
-        position: relative;
-        width: 150px;
-        height: 200px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  /* Taken from previous code for horizontal layout */
+  .summoning-result {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); /* Exactly 5 items per row */
+      gap: 20px;
+      justify-items: center; /* Centers each item horizontally */
+      align-items: center; /* Centers each item vertically */
+      margin-top: 20px;
+      width: 80%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+  }
 
-      .summon-item-weapon img {
-        width: 100%;
-        /* Scale image down */
-        max-width: 160px;
-        /* Ensure it does not exceed a certain size */
-        height: auto;
-        /* Maintain aspect ratio */
-        object-fit: contain;
-        /* Ensure the whole image fits */
-        display: block;
-        /* Prevent inline spacing issues */
-      }
+  #summonResult {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+      color: white;
+      display: none;
+      max-width: 800px;
+  }
 
-      /* Resonators: Show only the top half */
-      .summon-item-resonator {
-        position: relative;
-        overflow: hidden;
-        /* Hide the bottom part */
-      }
+  .summon-item {
+      display: flex; /* Kept from previous code for consistency */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 150px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      transition: transform 0.2s ease-in-out;
+  }
 
-      .summon-item-resonator img {
-        position: absolute;
-        padding-top: 5px;
-        transform: translateY(15%) scale(0.5);
-        object-fit: none;
-        /* Keeps original size */
-      }
+  .result {
+      border: 2px solid gold;
+      padding: 10px;
+      margin-top: 20px;
+      display: none;
+      font-weight: bold;
+      color: gold;
+  }
 
-      /* Hover effect */
-      .summon-item:hover {
-        transform: scale(1.1);
-      }
+  .summon-item img {
+      border-radius: 5px;
+      object-fit: none;
+  }
 
-      /* Rarity colors */
-      .rarity-3 {
-        background: #6c757d;
-        /* Gray */
-        border: 3px solid #adb5bd;
-        color: white;
-      }
+  .summon-item-weapon {
+      position: relative;
+      width: 100px;
+      height: 150px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
 
-      .rarity-4 {
-        background: #7d5bb1;
-        /* Purple */
-        border: 3px solid #a377e8;
-        color: white;
-      }
+  .summon-item-weapon img {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+  }
 
-      .rarity-5 {
-        background: #e4af24;
-        /* Gold */
-        border: 3px solid #ffd700;
-        color: black;
-      }
+  .summon-item-resonator {
+      position: relative;
+      width: 100px; /* Kept original size */
+      height: 150px; /* Kept original size */
+      overflow: hidden;
+      display: flex; /* Matched with weapon */
+      align-items: center; /* Matched with weapon */
+      justify-content: center; /* Matched with weapon */
+  }
+
+  .summon-item-resonator img {
+      width: 100%; /* Matched with weapon */
+      max-width: 160px; /* Matched with weapon */
+      height: auto; /* Matched with weapon */
+      object-fit: contain; /* Matched with weapon */
+      display: block; /* Matched with weapon */
+      border-radius: 5px; /* Kept from general summon-item img */
+  }
+
+  /* Rarity colors */
+  .rarity-3 {
+      background: #6c757d;
+      border: 3px solid #adb5bd;
+      color: white;
+  }
+
+  .rarity-4 {
+      background: #7d5bb1;
+      border: 3px solid #a377e8;
+      color: white;
+  }
+
+  .rarity-5 {
+      background: #e4af24;
+      border: 3px solid #ffd700;
+      color: black;
+  }
+
+  .history {
+      margin-top: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+  }
+
+  .history ul {
+      list-style-type: none;
+      padding: 0;
+  }
+
+  .history ul li {
+      margin: 5px 0;
+  }
     </style>
-  </head>
-
-  <body>
-    <h1>Gacha System</h1>
-    <div class="navbar" id="bannerNav"></div>
-    <div id="summonResult" class="result"></div>
-    <label style="opacity: 0"> <input type="checkbox" id="limitedToggle" /> Include Limited Items </label>
-    <div id="bannerContainer"></div>
-    <script src="./JS/Gacha.js"></script>
-  </body>
-  
-  <script src="../JS/Gacha.js"></script>
+</head>
+<body>
+    <div id="gachaBody">
+        <h1>Gacha System</h1>
+        <div class="navbar" id="bannerNav"></div>
+        <div id="summonResult" class="result"></div>
+        <label style="opacity: 0"> <input type="checkbox" id="limitedToggle" /> Include Limited Items </label>
+        <div id="bannerContainer">
+            <!-- Banners will be dynamically inserted here -->
+        </div>
+    </div>
+    <script src="../JS/Gacha.js"></script>
+</body>
 </html>

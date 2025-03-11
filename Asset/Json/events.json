@@ -54,24 +54,6 @@
       "version": "Version 1.1"
     },
     {
-      "id": "absolutePulsationBlazingBrilliance2",
-      "name": "Absolute Pulsation: Blazing Brilliance",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Blazing Brilliance",
-        "featured4Star": [
-          "Waning Redshift",
-          "Comet Flare",
-          "Marcato"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Blazing_Brilliance_2025-03-06.webp",
-      "start": "2025-03-06 10:00",
-      "end": "2025-03-26 09:59",
-      "version": "Version 2.1"
-    },
-    {
       "id": "absolutePulsationLuminousHymn",
       "name": "Absolute Pulsation: Luminous Hymn",
       "type": "Convene",
@@ -234,24 +216,6 @@
       "version": "Version 2.0"
     },
     {
-      "id": "absolutePulsationUnflickeringValor",
-      "name": "Absolute Pulsation: Unflickering Valor",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Unflickering Valor",
-        "featured4Star": [
-          "Waning Redshift",
-          "Comet Flare",
-          "Marcato"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Unflickering_Valor_2025-03-06.webp",
-      "start": "2025-03-06 10:00",
-      "end": "2025-03-26 09:59",
-      "version": "Version 2.1"
-    },
-    {
       "id": "absolutePulsationVerdantSummit1",
       "name": "Absolute Pulsation: Verdant Summit",
       "type": "Convene",
@@ -322,24 +286,6 @@
       "start": "2024-12-12 10:00",
       "end": "2025-01-01 11:59",
       "version": "Version 1.4"
-    },
-    {
-      "id": "blazeAcrossTheDeep",
-      "name": "Blaze Across the Deep",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Brant",
-        "featured4Star": [
-          "Youhu",
-          "Taoqi",
-          "Mortefi"
-        ]
-      },
-      "imageUrl": "Blaze_Across_the_Deep_2025-03-06.webp",
-      "start": "2025-03-06 10:00",
-      "end": "2025-03-26 09:59",
-      "version": "Version 2.1"
     },
     {
       "id": "celestialRevelation1",
@@ -504,19 +450,6 @@
       "version": "Version 2.0"
     },
     {
-      "id": "tidalChorus",
-      "name": "Tidal Chorus",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": null,
-        "featured4Star": [null]
-      },
-      "imageUrl": "Tidal_Chorus.webp",
-      "start": null,
-      "end": null
-    },
-    {
       "id": "tillTheSeaTurnsClear",
       "name": "Till the Sea Turns Clear",
       "type": "Convene",
@@ -551,24 +484,6 @@
       "start": "2024-07-22 10:00",
       "end": "2024-08-14 11:59",
       "version": "Version 1.1"
-    },
-    {
-      "id": "vermillionsPloy2",
-      "name": "Vermillion's Ploy",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Changli",
-        "featured4Star": [
-          "Youhu",
-          "Taoqi",
-          "Mortefi"
-        ]
-      },
-      "imageUrl": "Vermillion%27s_Ploy_2025-03-06.webp",
-      "start": "2025-03-06 10:00",
-      "end": "2025-03-26 09:59",
-      "version": "Version 2.1"
     },
     {
       "id": "whenSilenceTolls",
@@ -641,5 +556,90 @@
     "start": "2025-02-13 09:00",
     "end": "2025-03-06 09:59",
     "version": "Version 2.1"
+    },
+    {
+      "id": "blazeAcrossTheDeep",
+      "name": "Blaze Across the Deep",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Brant",
+        "featured4Star": [
+          "Youhu",
+          "Taoqi",
+          "Mortefi"
+        ]
+      },
+      "imageUrl": "Blaze_Across_the_Deep_2025-03-06.webp",
+      "start": "2025-03-06 10:00",
+      "end": "2025-03-26 09:59",
+      "version": "Version 2.1"
+    },
+    {
+      "id": "absolutePulsationUnflickeringValor",
+      "name": "Absolute Pulsation: Unflickering Valor",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Unflickering Valor",
+        "featured4Star": [
+          "Waning Redshift",
+          "Comet Flare",
+          "Marcato"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Unflickering_Valor_2025-03-06.webp",
+      "start": "2025-03-06 10:00",
+      "end": "2025-03-26 09:59",
+      "version": "Version 2.1"
+    },
+    {
+      "id": "vermillionsPloy2",
+      "name": "Vermillion's Ploy",
+      "type": "Convene",
+      "event_detail": {
+        "type": "hero",
+        "featured": "Changli",
+        "featured4Star": [
+          "Youhu",
+          "Taoqi",
+          "Mortefi"
+        ]
+      },
+      "imageUrl": "Vermillion%27s_Ploy_2025-03-06.webp",
+      "start": "2025-03-06 10:00",
+      "end": "2025-03-26 09:59",
+      "version": "Version 2.1"
+    },
+    {
+      "id": "absolutePulsationBlazingBrilliance2",
+      "name": "Absolute Pulsation: Blazing Brilliance",
+      "type": "Convene",
+      "event_detail": {
+        "type": "weapon",
+        "featured": "Blazing Brilliance",
+        "featured4Star": [
+          "Waning Redshift",
+          "Comet Flare",
+          "Marcato"
+        ]
+      },
+      "imageUrl": "Absolute_Pulsation_Blazing_Brilliance_2025-03-06.webp",
+      "start": "2025-03-06 10:00",
+      "end": "2025-03-26 09:59",
+      "version": "Version 2.1"
+    },
+    {
+      "id": "tidalChorus",
+      "name": "Tidal Chorus",
+      "type": "Convene",
+      "event_detail": {
+        "type": "normal",
+        "featured": null,
+        "featured4Star": [null]
+      },
+      "imageUrl": "Tidal_Chorus.webp",
+      "start": null,
+      "end": null
     }
   ]
