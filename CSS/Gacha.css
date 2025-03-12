@@ -1,28 +1,31 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 main {
     margin: 0;
     padding: 0;
     height: 100%;
-    margin-top: 25px;
     overflow: hidden;
     font-family: Arial, sans-serif;
-    z-index: 3;
-    min-height: 650px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 #gachaBody {
     position: relative;
-    width: 100%;
+    width: 95%;
     height: 100%;
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: row; /* Changed to row to place banner-pannel and container side by side */
     color: white;
-    z-index: 3;
 }
 
 .banner-pannel {
-    /* Removed position: fixed */
     width: 200px; /* Fixed width for the banner-pannel */
     height: 100%; /* Full height */
     overflow-y: auto;
@@ -55,7 +58,6 @@ main {
     flex-grow: 1; /* Takes remaining space */
     position: relative;
     height: 100%;
-    min-height: 600px;
 }
 
 .banner {
@@ -321,4 +323,32 @@ main {
     background: radial-gradient(circle, #ffcc00, #ffb700, #ff9f00);
     border: 3px solid #ffd700;
     color: black;
+}
+
+.navbar{
+    display: none;
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    #gachaBody {
+        display: none;
+    }
+
+    .portrait-message {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-size: 24px;
+        color: white;
+        background-color: black;
+        text-align: center;
+        z-index: 98;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .portrait-message {
+        display: none;
+    }
 }

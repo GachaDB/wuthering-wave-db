@@ -523,3 +523,16 @@ function loadHistory() {
 		updatePityCounter(banner.type);
 	});
 }
+
+function checkOrientation() {
+    if (window.innerHeight > window.innerWidth) {
+        document.getElementById("gachaBody").style.display = "none";
+        document.querySelector(".portrait-message").style.display = "flex";
+    } else {
+        document.getElementById("gachaBody").style.display = "flex";
+        document.querySelector(".portrait-message").style.display = "none";
+    }
+}
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("load", checkOrientation);
