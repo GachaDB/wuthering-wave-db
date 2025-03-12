@@ -370,4 +370,10 @@ main {
         width: 50px;
         height: 100px;
     }
+    .pagination {
+        margin: 0;
+    }
+    .modal-content h3{
+        display: none;
+    }
 }
