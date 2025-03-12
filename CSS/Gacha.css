@@ -31,7 +31,6 @@ main {
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.2);
     padding: 10px;
-    z-index: 2;
     flex-shrink: 0; /* Prevents banner-pannel from shrinking */
 }
 
@@ -357,7 +356,7 @@ main {
         max-width: 450px; /* Reduce max width for smaller screens */
         font-size: 12px; /* Reduce text size */
         padding: 8px;
-        z-index: 100;
+        z-index: 1000;
     }
     .summon-item-weapon img {
         width: 100%;
