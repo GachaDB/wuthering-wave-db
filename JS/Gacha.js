@@ -339,7 +339,7 @@ function updateHistoryDisplay(bannerType) {
 
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
-        const paginatedHistory = summonData[bannerType].history.slice(startIndex, endIndex);
+        const paginatedHistory = summonData[bannerType].history.slice().reverse().slice(startIndex, endIndex);
 
         paginatedHistory.forEach((entry) => {
             const rarityClass = `rarity-${entry.rarity}`; // e.g., rarity-5, rarity-4

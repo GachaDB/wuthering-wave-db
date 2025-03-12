@@ -1,280 +1,770 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="StickIn" content="This is the Stick IN Home Page">
-    <link rel="stylesheet" href="../CSS/Sidebar.css">
-    <link rel="stylesheet" href="../CSS/Character_Detail.css">
-    <title>Resonator</title>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <!-- GSAP Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <!-- Three.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="menu-btn">
-        <i class="bx bx-menu"></i>
-      </div>
-    </nav>
-    <nav class="sidebar">
-      <header>
-        <div class="image-text">
-          <a href="your-link-here">
-            <span class="image">
-              <img src="https://t4.ftcdn.net/jpg/04/06/91/91/240_F_406919147_D3WsGjwXj1qmFNrei2ZFvBWwiueRcFmg.jpg" alt="logo" />
-            </span>
-          </a>
-          <div class="text header-text">
-            <span class="main">Wuthering Waves</span>
-          </div>
+    <title>Character Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .character-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .basic-info {
+            flex: 1;
+        }
+
+        .description {
+            line-height: 1.5;
+            margin-top: 10px;
+            color: #cccccc;
+        }
+
+        .button-list {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button.active {
+            background-color: #007bff;
+        }
+
+        .tab-button:hover:not(.active) {
+            background-color: #444;
+        }
+
+        .content-area {
+            padding: 20px;
+            border-radius: 5px;
+            min-height: 200px;
+            background-color: #2a2a2a;
+        }
+		.tab-title{
+			font-size: 12px;
+		}
+
+        /* Profile Card Styles */
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 1rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            border: 0;
+            border-radius: 50px;
+            height: 50px;
+            transition: background-color 0.3s;
+        }
+
+        .card p {
+            margin: 0;
+            font: bold 1.5em Verdana, sans-serif;
+        }
+
+        .card i {
+            float: right;
+            padding: 4px;
+        }
+
+        /* Rarity-based colors */
+        .rarity-common { background-color: #4a4a4a; }
+        .rarity-uncommon { background-color: #2d6a4f; }
+        .rarity-rare { background-color: #1e3a8a; }
+        .rarity-epic { background-color: #4c2c72; }
+        .rarity-legendary { background-color: #b8860b; }
+        .general-bg { background-color: #713a96; }
+
+        /* Table Styles */
+        .table-striped {
+            width: 100%;
+            margin-bottom: 1rem;
+            border: 1px solid #444;
+            border-radius: 4px;
+        }
+
+        .table-striped tr:nth-child(odd) {
+            background-color: #333;
+        }
+
+        .table-striped tr:nth-child(even) {
+            background-color: #2a2a2a;
+        }
+
+        .table-striped td {
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Custom column widths */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        .col-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
+        }
+
+		.voice-section {
+    margin-top: 10px;
+}
+
+.voice-list {
+    margin-bottom: 15px;
+}
+
+.voice-item {
+    padding: 8px;
+    background-color: #333;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.voice-item:hover {
+    background-color: #444;
+}
+
+.voice-player {
+    margin-top: 15px;
+}
+
+#voiceAudio {
+    width: 100%;
+    max-width: 300px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+#currentVoice {
+    margin-top: 5px;
+    color: #cccccc;
+    font-size: 0.9em;
+}
+
+.sequence-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* No gap between card and description */
+}
+
+.sequence-description {
+    background-color: #2a2a2a;
+    color: #cccccc;
+    border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+}
+
+.upgrade-container-alt {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.upgrade-card {
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.upgrade-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s;
+}
+
+.upgrade-header:hover {
+    background-color: #4a4a4a !important; /* Override inline style on hover */
+}
+
+.upgrade-materials-alt {
+    color: #ffffff;
+}
+
+.upgrade-materials-alt ul li {
+    padding: 5px 0;
+    font-size: 0.95em;
+}
+        .skill {
+            padding: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+		.dark-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+.dark-table th, .dark-table td {
+    padding: 10px;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+.dark-table th {
+    background-color: #333;
+}
+
+input[type="range"] {
+    accent-color: #eee;
+}
+
+        @media (max-width: 576px) {
+            .col-3 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            .col-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://via.placeholder.com/200" alt="Character Image" class="character-image">
+            <div class="basic-info">
+                <h1>Character Name</h1>
+                <div><span class="rarity">Legendary</span>|<span class="weapon">Greatsword</span></div>
+                <p class="description">
+                    A mysterious warrior from the ancient lands, wielding powers beyond mortal comprehension.
+                </p>
+            </div>
         </div>
-        <i class="bx bx-chevron-right toggle"></i>
-      </header>
-      <div class="menu-bar">
-        <div class="menu">
-          <li class="nav-link">
-            <a href="/">
-              <i class="bx bx-home-alt icons"></i>
-              <span class="text nav-text">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="Code.html">
-              <i class="bx bxs-coupon icons"></i>
-              <span class="text nav-text">Coupons/Codes</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="Character.html">
-              <i class='bx bx-group icons'></i>
-              <span class="text nav-text">Character</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="Weapon.html">
-              <i class='bx bx-knife icons'></i>
-              <span class="text nav-text">Weapon</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="Echos-TD.html">
-              <i class="bx bxs-virus icons"></i>
-              <span class="text nav-text">Echos/TD</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="Story.html">
-              <i class="bx bx-book-content icons"></i>
-              <span class="text nav-text">Story</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="Timeline.html">
-              <i class="bx bx-calendar icons"></i>
-              <span class="text nav-text">Timeline</span>
-            </a>
-          </li>
-          <li class="nav-link">
-            <a href="Gacha.html">
-              <i class="bx bx-stats icons"></i>
-              <span class="text nav-text">Gacha Simulator</span>
-            </a>
-          </li>
-          </ul>
+		<div class="button-list">
+			<button class="tab-button active" data-tab="profile">Profile</button>
+			<button class="tab-button" data-tab="backstory">Backstory</button>
+			<button class="tab-button" data-tab="stats">Stats</button>
+			<button class="tab-button" data-tab="skill">Skills</button>
+			<button class="tab-button" data-tab="levelUpgrade">Level Upgrade</button>
+			<button class="tab-button" data-tab="skillUpgrade">Skill Upgrade</button>
+			<button class="tab-button" data-tab="voice">Voice</button>
+			<button class="tab-button" data-tab="dupe">Resonance Chain</button>
+			<button class="tab-button" data-tab="gallery">Gallery</button>
+		</div>
+
+        <div class="content-area" id="content">
+            <div class="card rarity-legendary">
+                <p>Character Name (Legendary)
+                    <i class="fa fa-id-card"></i>
+                </p>
+            </div>
+            <table class="table-striped">
+                <tr class="row">
+                    <td class="col-3 text-right font-weight-bold">full name</td>
+                    <td class="col-3">n/a</td>
+                    <td class="col-3 text-right font-weight-bold">age</td>
+                    <td class="col-3">n/a</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-3 text-right font-weight-bold">species</td>
+                    <td class="col-3">n/a</td>
+                    <td class="col-3 text-right font-weight-bold">gender</td>
+                    <td class="col-3">n/a</td>
+                </tr>
+                <tr class="row">
+                    <td class="col-3 text-right font-weight-bold">Ocupation</td>
+                    <td class="col-3">n/a</td>
+                    <td class="col-3 text-right font-weight-bold">Status</td>
+                    <td class="col-3">n/a</td>
+                </tr>
+            </table>
         </div>
-        <div class="bottom-content">
-          <li class="nav-link">
-            <a href="Credits.html">
-              <i class="bx bxs-heart icons"></i>
-              <span class="text nav-text">Support Us</span>
-            </a>
-          </li>
-        </div>
-      </div>
-    </nav>
-    <main>
-      <!-- 🎉 Banner -->
-      <div class="banner">
-        <section id="header">
-          <header>
-            <h1 id="character-name">Name</h1>
-            <hr class="separator">
-            <p id="character-title">Title</p>
-          </header>
-        </section>
-      </div>
-      <!--
-            Overflow by HTML5 UP
-            html5up.net | @ajlkn
-            Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-        -->
-        <div class="is-preload">
-          <section id="banner">
-            <header>
-              <h2>Description</h2>
-            </header>
-            <p id="character-description">Description of the character...</p>
-          </section>
-        <!-- Looks -->
-        <article id="first" class="container box style1 right">
-          <a href="#" class="image fit">
-            <img id="character-image" src="" alt="" />
-          </a>
-          <div class="inner">
-            <header>
-              <h2>Appearance</h2>
-            </header>
-            <p id="appearance">Character appearance description...</p>
-          </div>
-        </article>
-        <!-- Vision aquired -->
-        <article class="container box style3">
-          <header>
-            <h2>Vision</h2>
-            <p>Just a generic box. Nothing to see here.</p>
-          </header>
-          <section>
-            <header>
-              <h3>Paragraph</h3>
-              <p>This is a subtitle</p>
-            </header>
-            <p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit amet risus elit. </p>
-          </section>
-          <hr>
-          <section>
-            </header>
-            <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
-            <h3 style="text-align:right;">- Blockquote</h3>
-          </section>
-        </article>
-        <!-- Personality -->
-        <article class="container box style3">
-          <header>
-            <h2>Personality</h2>
-          </header>
-          <section>
-            <p>Solidity, practicality, extreme determination and strength of will are characteristics that describe Arend. No one will ever drive him, but he will willingly and loyally follow anyone he trusts. He's a stable, balanced, conservative, law-abiding citizen and loves peace, possessing all the best qualities of the bourgeoisie.</p>
-            <p> As he has a sense of material value and physical possessions, respect for property and a horror of falling into debt, he will do everything in his power to maintain the security of the status quo and be somewhat hostile to change.</p>
-          </section>
-          <header>
-            <h3>Too Virtuos</h3>
-            <p>for his own good</p>
-          </header>
-          <section>
-            <p>Mentally, his characteristics are keen-witted and practical more often than intellectual, but apt to become fixed in his opinions through his preference for following accepted and reliable patterns of experience.</p>
-            <p>Arend's character is generally dependable, steadfast, prudent, just, firm and unshaken in the face of difficulties. His vices arise from his virtues, going to extremes on occasion, such as sometimes being too unquestioning to the conventions he admires.</p>
-          </section>
-          <header>
-            <h3>Watchful Eagle</h3>
-            <p>ardent protector</p>
-          </header>
-          <section>
-            <p> He's faithful and generous toward friends with a great capacity for affection, but rarely makes friends with anyone outside his social rank, to which he is ordinarily excessively faithful.</p>
-            <p>In the main, he's gentle, even tempered, good natured, modest and slow to anger, disliking quarreling and avoiding ill-feeling. If he's provoked, however, he can explode into violent outbursts of ferocious anger in which he seems to lose all self-control. Equally unexpected are his occasional sallies into humor and exhibitions of fun. </p>
-          </section>
-          <hr>
-          <section>
-            <blockquote>Wheresoever you go, go with all your heart.</blockquote>
-            <h3 style="text-align:right;">- Confucius</h3>
-          </section>
-        </article>
-        <!-- Background -->
-        <article class="container box style3">
-          <header>
-            <h2>Background</h2>
-            <p>The Berg Family</p>
-          </header>
-          <section>
-            <p>Arend was raised and born in Mondstadt. He was the fourth of nine children. Sadly, only four of them are alive today. In his entire life, he's never traveled more than ten miles from Mondstadt. His father, Lukas, is the owner of a restaurant in the city, which he and his brothers are to take over.</p>
-            <p>In his youth, Arend was a solid, albeit unspectacular, student. He was brought up in a household that stressed intense religious devotion and personal humility. Arend received a stern education – strict, punitive, and disciplinary – that revolved around devout instruction. Despite being raised in a religious household and still maintaining a belief in The Seven, he has become skeptical of religion as of late.</p>
-            <p>Arend had lived a rigorous and predictable life, leading to the oft-repeated story that neighbors would set their clocks by his daily walks. Most of his life had been set for him, but there was a part of him that craved an escape. Joining the Knights of Favonius seemed to open a path on a journey he never expected.</p>
-          </section>
-          <hr>
-          <section>
-            </header>
-            <blockquote> Beautiful paths can't be discovered without getting lost.</blockquote>
-            <h3 style="text-align:right;">- Erol Ozan</h3>
-          </section>
-        </article>
-        <!-- Plotter -->
-        <article class="container box style3">
-          <header>
-            <h2>Relationships</h2>
-          </header>
-          <section>
-            <p>Arend is decisive and militant and often favors a "take action" approach to solving problems. He will usually approve of individuals who are assertive in their efforts towards restoring order. As a moral and compassionate person, he respects the principles of honor, sacrifice, truth, and selflessness and often approves of others that are kind or who go out of their way to help those in need.</p>
-          </section>
-          <header>
-            <h3>Enemies</h3>
-          </header>
-          <section>
-            <p>Arend can be somewhat mistrustful of outsiders and will usually approve of a measure of restriction on their freedoms. He is also generally wary of strange magic and spirits and will sometimes look unfavorably toward people who dabble in unknown or forbidden arts. He is not fond of people who keep secrets or not openly honest.</p>
-          </section>
-          <header>
-            <h3>Something more?</h3>
-          </header>
-          <section>
-            <p>When it comes to love, Arend is shy and awkward. His inexperience is evident, and his softness makes him easily hurt. He is very traditional when courting, firmly believing in chivalry and romantic gestures. However, he can be remarkably dense and not initiate a thing without explicit confessions.</p>
-          </section>
-        </article>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.tab-button');
+        const contentArea = document.getElementById('content');
+
         
-        <!-- Gallery -->
-        <article class="container box style2">
-          <header>
-            <h2>Gallery</h2>
-            <p>They inspire and protect their allies with their righteous power. Experts with sword and shield, they remain on their feet after punishment that would usually kill the untrained. They rely on studying the terrain and enemies to gain the upper hand. They use their shield to protect themselves and stagger their enemies.</p>
-          </header>
-          <div class="inner gallery">
-              <div class="row 0%">
-                  <div class="3u 12u(mobile)"><a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" alt="" title="Ad infinitum" /></a></div>
-                  <div class="3u 12u(mobile)"><a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" alt="" title="Dressed in Clarity" /></a></div>
-                  <div class="3u 12u(mobile)"><a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" alt="" title="Raven" /></a></div>
-                  <div class="3u 12u(mobile)"><a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" alt="" title="I'll have a cup of Disneyland, please" /></a></div>
-              </div>
-              <div class="row 0%">
-                  <div class="3u 12u(mobile)"><a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" alt="" title="Cherish" /></a></div>
-                  <div class="3u 12u(mobile)"><a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" alt="" title="Different." /></a></div>
-                  <div class="3u 12u(mobile)"><a href="images/fulls/07.jpg" class="image fit"><img src="images/thumbs/07.jpg" alt="" title="History was made here" /></a></div>
-                  <div class="3u 12u(mobile)"><a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" alt="" title="People come and go and walk away" /></a></div>
-              </div>
-          </div>
-        </article>
-        <!-- Trivia -->
-        <article class="container box style3">
-          <header>
-            <h2>Trivia</h2>
-            <p>Minor details to poke some fun into his interractions</p>
-          </header>
-          <ul>
-            <li>Arend can be easily misled.</li>
-            <li></li>
-            <li>He is remarkably naive, not believing things could get worse. </li>
-            <li>Ignores facts so as not to change his opinions.</li>
-            <li>Assumes things will always be the same.</li>
-            <li>Places too much trust in something or someone.</li>
-            <li>Assumes everybody holds a particular belief.</li>
-            <li>Assumes everybody else acts a certain way.</li>
-            <li>Will jump in without knowing all the facts and extrapolating. </li>
-          </ul>
-        </article>
-      </div>
-      </form>
-      <div class="copyright">
-        <ul class="menu">
-          <li>Original Design: <a href="http://html5up.net">HTML5 UP</a>
-          </li>
+
+// Modify the existing button click handler
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const tab = button.dataset.tab;
+        contentArea.innerHTML = tabContent[tab];
+        
+        if (tab === 'voice') {
+            setTimeout(initializeVoicePlayer, 0);
+        } else if (tab === 'levelUpgrade' || tab === 'skillUpgrade') {
+            setTimeout(initializeUpgradeCards, 0);
+        }
+    });
+});
+
+
+// Add this after the existing buttons.forEach loop
+function initializeVoicePlayer() {
+    const voiceItems = document.querySelectorAll('.voice-item');
+    const audioPlayer = document.getElementById('voiceAudio');
+    const currentVoiceText = document.getElementById('currentVoice');
+
+    if (voiceItems && audioPlayer && currentVoiceText) {
+        voiceItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const audioUrl = item.getAttribute('data-audio');
+                const voiceText = item.textContent.split(' - ')[0]; // Get the title before the description
+                audioPlayer.src = audioUrl;
+                audioPlayer.play();
+                currentVoiceText.textContent = `Current: ${voiceText}`;
+            });
+        });
+    }
+}
+
+// Define upgrade data
+const upgradeData = {
+    levelUpgrades: {
+        totalCost: { gold: 1000, ironOre: 50, mysticShard: 25 },
+        levels: [
+            { from: 1, to: 2, materials: { gold: 100, ironOre: 5, mysticShard: 2 } },
+            { from: 2, to: 3, materials: { gold: 200, ironOre: 10, mysticShard: 5 } },
+            { from: 3, to: 4, materials: { gold: 300, ironOre: 15, mysticShard: 8 } },
+            { from: 4, to: 5, materials: { gold: 400, ironOre: 20, mysticShard: 10 } }
+        ]
+    },
+    skillUpgrades: {
+        totalCost: { gold: 900, ironOre: 45, mysticShard: 25 },
+        skills: [
+            {
+                name: "Elemental Mastery",
+                maxLevel: 3,
+                upgrades: [
+                    { from: 1, to: 2, materials: { gold: 100, ironOre: 5, mysticShard: 3 } },
+                    { from: 2, to: 3, materials: { gold: 200, ironOre: 10, mysticShard: 7 } }
+                ]
+            },
+            {
+                name: "Enhanced Strength",
+                maxLevel: 4,
+                upgrades: [
+                    { from: 1, to: 2, materials: { gold: 100, ironOre: 5, mysticShard: 2 } },
+                    { from: 2, to: 3, materials: { gold: 150, ironOre: 8, mysticShard: 4 } },
+                    { from: 3, to: 4, materials: { gold: 200, ironOre: 12, mysticShard: 6 } }
+                ]
+            },
+            {
+                name: "Light Manipulation",
+                maxLevel: 2,
+                upgrades: [
+                    { from: 1, to: 2, materials: { gold: 150, ironOre: 5, mysticShard: 3 } }
+                ]
+            }
+        ]
+    }
+};
+
+// Function to generate total cost HTML
+function generateTotalCost(totalCost, title) {
+    return `
+        <div class="total-cost" style="background-color: #2a2a2a; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #444;">
+            <h3>${title}</h3>
+            <ul style="list-style: none; padding: 0; margin-top: 10px;">
+                <li><span style="color: #ffd700;">${totalCost.gold} Gold</span></li>
+                <li><span style="color: #b0b0b0;">${totalCost.ironOre} Iron Ore</span></li>
+                <li><span style="color: #00b7eb;">${totalCost.mysticShard} Mystic Shard</span></li>
+            </ul>
+        </div>
+    `;
+}
+
+// Function to generate upgrade card HTML
+function generateUpgradeCard(id, title, materialsList) {
+    const materialsHtml = materialsList.map(m => `
+        <li>Lv ${m.from} → Lv ${m.to}:</li>
+        <li><span style="color: #ffd700;">${m.materials.gold} Gold</span></li>
+        <li><span style="color: #b0b0b0;">${m.materials.ironOre} Iron Ore</span></li>
+        <li><span style="color: #00b7eb;">${m.materials.mysticShard} Mystic Shard</span></li>
+    `).join('');
+    return `
+        <div class="upgrade-card" data-upgrade="${id}">
+            <div class="upgrade-header" style="background-color: #3a3a3a; padding: 10px 15px; border-radius: 8px 8px 0 0; cursor: pointer;">
+                <span>${title}</span>
+                <i class="fas fa-chevron-down" style="float: right;"></i>
+            </div>
+            <div class="upgrade-materials-alt" background-color: #252525; padding: 15px; border-radius: 0 0 8px 8px;">
+                <ul style="list-style: none; padding: 0;">
+                    ${materialsHtml}
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Function to generate level upgrade tab HTML
+function generateLevelUpgradeTab() {
+    const levelCards = upgradeData.levelUpgrades.levels.map(level => 
+        generateUpgradeCard(`level-${level.from}-${level.to}`, `Level ${level.from} → Level ${level.to}`, [level])
+    ).join('');
+    
+    return `
+        <h2>Level Up Upgrade Cost</h2>
+        ${generateTotalCost(upgradeData.levelUpgrades.totalCost, "Total Level Upgrade Cost (Level 1 → Level 5)")}
+        <div class="upgrade-container-alt">
+            ${levelCards}
+        </div>
+    `;
+}
+
+// Function to generate skill upgrade tab HTML
+function generateSkillUpgradeTab() {
+    const skillCards = upgradeData.skillUpgrades.skills.map(skill => 
+        generateUpgradeCard(`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`, 
+                           `${skill.name} (Lv 1 → Lv ${skill.maxLevel})`, 
+                           skill.upgrades)
+    ).join('');
+
+    return `
+        <h2>Skill Upgrade Cost</h2>
+        ${generateTotalCost(upgradeData.skillUpgrades.totalCost, "Total Skill Upgrade Cost (All Skills to Max)")}
+        <div class="upgrade-container-alt">
+            ${skillCards}
+        </div>
+    `;
+}
+
+function initializeUpgradeCards() {
+    const upgradeHeaders = document.querySelectorAll('.upgrade-header');
+    upgradeHeaders.forEach(header => {
+        // Set initial state to open
+        const materials = header.nextElementSibling;
+        const chevron = header.querySelector('i');
+        materials.style.display = 'none';
+        chevron.classList.remove('fa-chevron-up');
+        chevron.classList.add('fa-chevron-down');
+
+        // Add click event listener to toggle visibility
+header.addEventListener('click', (event) => {
+
+    if (materials.style.display === 'none') {
+        materials.style.display = 'block';
+        chevron.classList.remove('fa-chevron-down');
+        chevron.classList.add('fa-chevron-up');
+    } else {
+        materials.style.display = 'none';
+        chevron.classList.remove('fa-chevron-up');
+        chevron.classList.add('fa-chevron-down');
+    }
+
+});
+
+
+    });
+}
+
+// Function to load skills dynamically
+function loadSkills() {
+    const skills = [
+        {
+            name: "Spectro Slash",
+			user: "Jinhsi",
+            description: "Attack the target, dealing Spectro DMG.",
+            stats: {
+                skillDMG: ["251.40%+586.60%", "272.02%+634.71%", "292.63%+682.81%", "321.50%+750.15%"],
+                cooldown: ["24s", "24s", "20s", "20s"],
+                resonanceCost: ["150", "140", "120", "100"]
+            },
+            multipliers: {
+                lv1: [
+                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "80%", resonanceEnergy: "10", concertoEnergy: "0", hardness: "1", toughness: "1" },
+                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "120%", resonanceEnergy: "10", concertoEnergy: "0", hardness: "1", toughness: "1" }
+                ],
+                lv2: [
+                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "90%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
+                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "135%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
+                ],
+                lv3: [
+                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "100%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
+                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "150%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
+                ],
+                lv4: [
+                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "110%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
+                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "165%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
+                ]
+            }
+        },
+		{
+            name: "Spectro Slash 2",
+			user: "Jinhsi",
+            description: "Attack the target, dealing Spectro DMG.",
+            stats: {
+                skillDMG: ["251.40%+586.60%", "272.02%+634.71%", "292.63%+682.81%", "321.50%+750.15%"],
+                cooldown: ["24s", "24s", "20s", "20s"],
+                resonanceCost: ["150", "140", "120", "100"]
+            },
+            multipliers: {
+                lv1: [
+                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "80%", resonanceEnergy: "10", concertoEnergy: "0", hardness: "1", toughness: "1" },
+                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "120%", resonanceEnergy: "10", concertoEnergy: "0", hardness: "1", toughness: "1" }
+                ],
+                lv2: [
+                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "90%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
+                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "135%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
+                ],
+                lv3: [
+                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "100%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
+                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "150%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
+                ],
+                lv4: [
+                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "110%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
+                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "165%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
+                ]
+            }
+        }
+    ];
+
+    const container = document.getElementById("skills-container");
+    if (!container) return;
+
+    container.innerHTML = ""; // Clear previous skills
+
+    skills.forEach((skill, index) => {
+        const skillDiv = document.createElement("div");
+        skillDiv.classList.add("skill");
+
+        skillDiv.innerHTML = `
+            <h2 style="color: #f5f5f5;">${skill.name}</h2>
+            <p style="color: #ddd;">${skill.description}</p>
+			<div style="text-align: right;">
+				<label class="level-display" style="color: #f5f5f5;">
+					Skill Level: <span id="level-display-${index}">1</span>
+				</label>
+			</div>
+            <input type="range" id="skill-slider-${index}" min="1" max="4" value="1" step="1" style="width: 100%;">
+			<div style="text-align: center;">
+            	<h3 style="color: #f5f5f5;">Stats</h3>
+			</div>
+            <table class="dark-table">
+                <tr><th>Skill DMG</th><td id="skill-dmg-${index}">${skill.stats.skillDMG[0]}</td></tr>
+                <tr><th>Cooldown</th><td id="cooldown-${index}">${skill.stats.cooldown[0]}</td></tr>
+                <tr><th>Resonance Cost</th><td id="res-cost-${index}">${skill.stats.resonanceCost[0]}</td></tr>
+            </table>
+
+            <h3 style="color: #f5f5f5; margin-top: 20px;">Multipliers</h3>
+			<table id="multipliers-table-${index}" class="dark-table">
+				${generateMultiplierRows(skill.multipliers.lv1)}
+			</table>
+        `;
+
+        container.appendChild(skillDiv);
+
+        document.getElementById(`skill-slider-${index}`).addEventListener("input", (event) => {
+            const level = event.target.value - 1; // Adjusting index (array starts at 0)
+            document.getElementById(`level-display-${index}`).innerText = level + 1;
+            document.getElementById(`skill-dmg-${index}`).innerText = skill.stats.skillDMG[level];
+            document.getElementById(`cooldown-${index}`).innerText = skill.stats.cooldown[level];
+            document.getElementById(`res-cost-${index}`).innerText = skill.stats.resonanceCost[level];
+
+            // Update multipliers per level
+            const multipliersKey = `lv${level + 1}`;
+            document.getElementById(`multipliers-table-${index}`).innerHTML = generateMultiplierRows(skill.multipliers[multipliersKey]);
+        });
+    });
+}
+
+// Function to generate table rows for multipliers
+function generateMultiplierRows(multiplierData) {
+    let rows = `
+        <tr>
+            <th>Entry</th>
+            <th>Attribute</th>
+            <th>Attack Type</th>
+            <th>Damage Type</th>
+            <th>Skill Value</th>
+            <th>Resonance Energy</th>
+            <th>Concerto Energy</th>
+            <th>Hardness</th>
+            <th>Toughness</th>
+        </tr>`;
+    
+    multiplierData.forEach(multiplier => {
+        rows += `
+            <tr>
+                <td>${multiplier.entry}</td>
+                <td>${multiplier.attribute}</td>
+                <td>${multiplier.attackType}</td>
+                <td>${multiplier.damageType}</td>
+                <td>${multiplier.skillValue}</td>
+                <td>${multiplier.resonanceEnergy}</td>
+                <td>${multiplier.concertoEnergy}</td>
+                <td>${multiplier.hardness}</td>
+                <td>${multiplier.toughness}</td>
+            </tr>`;
+    });
+
+    return rows;
+}
+
+// Tab switching logic
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const tab = button.dataset.tab;
+        contentArea.innerHTML = tabContent[tab] || `<h2 style="color: white;">${tab} Content Coming Soon...</h2>`;
+
+        if (tab === "skill") {
+            loadSkills();
+        }
+    });
+});
+
+
+const tabContent = {
+    profile: `
+        <div class="card rarity-legendary tab-title">
+            <p>Character Name (Legendary)
+                <i class="fa fa-id-card"></i>
+            </p>
+        </div>
+        <table class="table-striped">
+            <tr class="row">
+                <td class="col-3 text-right font-weight-bold">full name</td>
+                <td class="col-3">n/a</td>
+                <td class="col-3 text-right font-weight-bold">age</td>
+                <td class="col-3">n/a</td>
+            </tr>
+            <tr class="row">
+                <td class="col-3 text-right font-weight-bold">species</td>
+                <td class="col-3">n/a</td>
+                <td class="col-3 text-right font-weight-bold">gender</td>
+                <td class="col-3">n/a</td>
+            </tr>
+            <tr class="row">
+                <td class="col-3 text-right font-weight-bold">Ocupation</td>
+                <td class="col-3">n/a</td>
+                <td class="col-3 text-right font-weight-bold">Status</td>
+                <td class="col-3">n/a</td>
+            </tr>
+        </table>
+    `,
+    backstory: `
+        <h2>Backstory</h2>
+        <p>Born in a small village ravaged by war, the character discovered their powers at a young age. 
+        After losing their family to a dark force, they vowed to protect the innocent and bring justice 
+        to the realm.</p>
+    `,
+    skill: `
+		<h1>Skill Multiplier Viewer (work in progress)</h1>
+		<div id="skills-container">
+			<p>Skill details will be displayed here.</p>
+		</div>
+    `,
+    voice: `
+    <h2>Voice</h2>
+    <div class="voice-section">
+        <ul class="voice-list" style="list-style: none; padding: 0;">
+            <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Greeting - "Welcome to my realm!"</li>
+            <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Battle Cry - "For justice!"</li>
+            <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Victory - "The light prevails!"</li>
         </ul>
-      </div>
-      </section>
-      <script src="https://kit.fontawesome.com/be68743c12.js" crossorigin="anonymous"></script>
-      </div>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="../JS/Sidebar.js"></script>
-    <script src="../JS/Character_Detail.js"></script>
-  </body>
+        <div class="voice-player">
+            <audio id="voiceAudio" controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p id="currentVoice">Current: Greeting</p>
+        </div>
+    </div>
+	`,
+	dupe: `
+		<h2>Sequence Upgrades</h2>
+		<div class="sequence-container">
+			<div class="card general-bg tab-title" style="border: 2px solid #555;">
+				<p>S1 | Abyssal Ascension</p>
+			</div>
+			<div class="sequence-description" style="border: 2px solid #555; border-top: none; padding: 10px; margin-bottom: 15px;">
+				<p>Add stats by 15%</p>
+			</div>
+			<div class="card general-bg tab-title" style="border: 2px solid #555;">
+				<p>S2 | Sequence Node 2</p>
+			</div>
+			<div class="sequence-description" style="border: 2px solid #555; border-top: none; padding: 10px;">
+				<p>Skill becomes AoE</p>
+			</div>
+		</div>
+	`,
+	levelUpgrade: generateLevelUpgradeTab(),
+    skillUpgrade: generateSkillUpgradeTab(),
+};
+    </script>
+</body>
 </html>

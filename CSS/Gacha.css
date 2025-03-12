@@ -1,9 +1,12 @@
-body, html {
+main {
     margin: 0;
     padding: 0;
     height: 100%;
+    margin-top: 25px;
     overflow: hidden;
     font-family: Arial, sans-serif;
+    z-index: 3;
+    min-height: 650px;
 }
 
 #gachaBody {
@@ -13,22 +16,23 @@ body, html {
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: row; /* Changed to row to place navbar and container side by side */
+    flex-direction: row; /* Changed to row to place banner-pannel and container side by side */
     color: white;
+    z-index: 3;
 }
 
-.navbar {
+.banner-pannel {
     /* Removed position: fixed */
-    width: 200px; /* Fixed width for the navbar */
+    width: 200px; /* Fixed width for the banner-pannel */
     height: 100%; /* Full height */
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.2);
     padding: 10px;
     z-index: 2;
-    flex-shrink: 0; /* Prevents navbar from shrinking */
+    flex-shrink: 0; /* Prevents banner-pannel from shrinking */
 }
 
-.navbar button {
+.banner-pannel button {
     margin: 5px 0;
     padding: 10px;
     background: #444; /* Default background */
@@ -36,14 +40,14 @@ body, html {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%; /* Full width of navbar */
+    width: 100%; /* Full width of banner-pannel */
     height: 70px;
     background-size: cover; /* For background images */
     background-position: center;
     text-shadow: 1px 1px 2px black; /* Improve text readability on images */
 }
 
-.navbar button:hover {
+.banner-pannel button:hover {
     background-color: #666; /* Hover effect still applies over image */
 }
 
@@ -51,6 +55,7 @@ body, html {
     flex-grow: 1; /* Takes remaining space */
     position: relative;
     height: 100%;
+    min-height: 600px;
 }
 
 .banner {
@@ -150,7 +155,7 @@ body, html {
 .pagination button {
     margin: 0 5px;
     padding: 5px 10px;
-    background: #ff5722;
+    background: #713a96;
     color: white;
     border: none;
     border-radius: 5px;
