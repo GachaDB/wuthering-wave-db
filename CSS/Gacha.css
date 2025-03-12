@@ -120,26 +120,21 @@ main {
 }
 
 .modal-content {
-    position: absolute;
     background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     color: white;
-    min-width: 700px;
+    min-width: 700px; /* Optional: Ensures a minimum width */
     min-height: 400px;
-    overflow-y: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-y: auto; /* Scroll if content overflows */
+    position: relative;
+    text-align: center;
 }
 
 .history-table {
     width: 100%;
     border-collapse: collapse;
     margin: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .history-table th, .history-table td {
@@ -246,10 +241,6 @@ main {
     color: white;
     display: none;
     max-width: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: -1;
 }
 
 .summon-item {
@@ -356,7 +347,7 @@ main {
     }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (max-width: 900px) and (orientation: landscape) {
     .portrait-message {
         display: none;
     }
@@ -380,7 +371,6 @@ main {
     .modal-content {
         margin-top: 50px;
         padding: 10px;
-        display: flex;
         justify-content: center;
         align-items: center;
     }
