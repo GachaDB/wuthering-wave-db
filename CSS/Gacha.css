@@ -352,11 +352,18 @@ main {
         display: none;
     }
 
-    .history, .summon-result {
+    .history-table, #summonResult {
         width: 80%; /* Make them take more width but still smaller */
         max-width: 450px; /* Reduce max width for smaller screens */
         font-size: 12px; /* Reduce text size */
         padding: 8px;
-        z-index: 98;
+        z-index: 100;
+    }
+    .summon-item-weapon img {
+        width: 100%;
+        max-width: 80px;
+        height: auto;
+        object-fit: contain;
+        display: block;
     }
 }
