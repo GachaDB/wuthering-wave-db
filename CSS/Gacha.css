@@ -348,6 +348,11 @@ main {
 }
 
 @media screen and (max-width: 900px) and (orientation: landscape) {
+    html, body {
+        margin-left: 50px;
+        padding: 0;
+        height: 100%;
+    }
     .portrait-message {
         display: none;
     }
