@@ -378,6 +378,7 @@ main {
         display: none;
     }
     .modal-content {
-        margin-top: 20 px;
+        margin-top: 20px;
+        padding: 10px;
     }
 }
