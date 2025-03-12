@@ -247,6 +247,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: -1;
 }
 
 .summon-item {
@@ -358,10 +359,9 @@ main {
         display: none;
     }
 
-    .history-table, #summonResult {
-        width: 80%; /* Make them take more width but still smaller */
-        max-width: 450px; /* Reduce max width for smaller screens */
-        font-size: 12px; /* Reduce text size */
+    .history-table, .summoning-result {
+        height: 80%;
+        font-size: 10px; /* Reduce text size */
         padding: 8px;
         z-index: 1000;
     }
