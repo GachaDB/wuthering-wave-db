@@ -39,6 +39,8 @@
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         /* Stronger Shadow */
+        border-left: 10px solid #1E1E1E;
+        border-right: 10px solid #1E1E1E;
         border-radius: 8px;
         overflow-x: auto;
         overflow-y: auto;
@@ -90,7 +92,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 80px;
+        gap: 50px;
       }
     
       .timeline-line {
@@ -117,11 +119,11 @@
         position: absolute;
         display: flex;
         align-items: center;
-        height: 80px;
+        height: 60px;
         border: 2px solid #ccc;
         border-radius: 10px;
         transition: transform 0.2s ease-in-out;
-        transform: translateY(-40px);
+        transform: translateY(-20px);
         padding: 5px 10px;
         overflow: hidden;
         user-select: none;
@@ -202,11 +204,11 @@
     
       .new-label {
         position: absolute;
-        top: 10px;
+        top: 0px;
         left: 35px;
         background: linear-gradient(45deg, #ff0000, #ff7300);
         color: white;
-        font-size: 10px;
+        font-size: 8px;
         font-weight: bold;
         padding: 5px 8px;
         border-radius: 10px;
@@ -214,6 +216,7 @@
         transform: rotate(25deg);
         text-transform: uppercase;
         z-index: 10;
+        clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
       }
     
       /* Custom class for different types */
