@@ -663,6 +663,62 @@
       "end": "2025-03-31 09:59"
     },
     {
+      "id": "whiwareset130225",
+      "name": "Whimpering Waste Reset",
+      "type": "WhiWa",
+      "event_detail": {
+        "enemies": {
+          "Doomstrand Stage": {
+            "Level 80": {
+              "First Half": [
+                "Wuthering Waves - Abyssal Gladius",
+                "Wuthering Waves - Abyssal Mercator",
+                "Wuthering Waves - Calcified Junrock",
+                "Wuthering Waves - Frostscourge Stalker",
+                "Wuthering Waves - Galescourge Stalker",
+                "Wuthering Waves - Golden Junrock",
+                "Wuthering Waves - Rage Against the Statue",
+                "Wuthering Waves - Voltscourge Stalker"
+              ],
+              "Second Half": [
+                "Wuthering Waves - Abyssal Mercator",
+                "Wuthering Waves - Cuddle Wuddle",
+                "Wuthering Waves - Cyan-Feathered Heron",
+                "Wuthering Waves - Diggy Duggy",
+                "Wuthering Waves - Dwarf Cassowary",
+                "Wuthering Waves - Nimbus Wraith",
+                "Wuthering Waves - Violet-Feathered Heron"
+              ]
+            }
+          },
+          "Infinite Torrents": {
+            "Level 100": {
+              "First Half": [
+                "Wuthering Waves - Abyssal Gladius",
+                "Wuthering Waves - Abyssal Mercator",
+                "Wuthering Waves - Diggy Duggy",
+                "Wuthering Waves - Hocus Pocus",
+                "Wuthering Waves - Lottie Lost",
+                "Wuthering Waves - Nimbus Wraith",
+                "Wuthering Waves - Vitreum Dancer"
+              ],
+              "Second Half": [
+                "Wuthering Waves - Chasm Guardian",
+                "Wuthering Waves - Chop Chop",
+                "Wuthering Waves - Dwarf Cassowary",
+                "Wuthering Waves - Frostscourge Stalker",
+                "Wuthering Waves - Galescourge Stalker",
+                "Wuthering Waves - Voltscourge Stalker"
+              ]
+            }
+          }
+        }
+      },
+      "imageUrl": "Toa_Reset.webp",
+      "start": "2025-02-13 09:59",
+      "end": "2025-03-17 09:59"
+    },
+    {
       "id": "tidalChorus",
       "name": "Tidal Chorus",
       "type": "Convene",
