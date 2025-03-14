@@ -197,11 +197,20 @@
         }
       }
     
-      .timeline-image {
+      .timeline-image-convene {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        /* Make it circular */
+        border: 3px solid #a50000;
+        margin-right: 10px;
+        z-index: 2;
+      }
+
+      .timeline-image-toa,  
+      .timeline-image-whiwa {
+        width: 75px;
+        height: 50px;
+        border-radius: 5px;
         border: 3px solid #a50000;
         margin-right: 10px;
         z-index: 2;
@@ -409,7 +418,7 @@
                 extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
               }
               // Determine isNew based on count
-              const isNew = allEvents.filter(e => e.type === "Convene" ? e.event_detail?.type === event.event_detail?.type && e.event_detail?.featured === event.event_detail?.featured : e.type === event.type).length === 1;
+              const isNew = ["whiwa", "toa"].includes(event.type.toLowerCase()) ? false : allEvents.filter(e => e.type === "Convene" ? e.event_detail?.type === event.event_detail?.type && e.event_detail?.featured === event.event_detail?.featured : e.type === event.type).length === 1;
               return {
                 name: event.name,
                 start: new Date(event.start),
@@ -587,6 +596,13 @@
             .replace(/hero|weapon/g, "")
             .replace(/--+/g, "-")
             .trim()}`;
+            const imageTypeClass = `timeline-image-${item.name
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/\d+/g, "")
+            .replace(/hero|weapon/g, "")
+            .replace(/--+/g, "-")
+            .trim()}`;
             const itemElement = document.createElement("div");
             itemElement.className = `timeline-item ${itemTypeClass}`;
             itemElement.style.left = `${startPos + (index > 1 ? 130 : index * 130)}px`;
@@ -595,7 +611,7 @@
             const imageElement = document.createElement("img");
             imageElement.src = period.image;
             imageElement.alt = period.name;
-            imageElement.className = "timeline-image";
+            imageElement.className = imageTypeClass;
             const span = document.createElement("span");
             span.textContent = `${period.name}: ${period.start.toDateString()} - ${period.end.toDateString()}`;
             const isNew = period.isNew;
