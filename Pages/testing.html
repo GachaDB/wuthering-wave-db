@@ -436,9 +436,36 @@
 			}
 			scrollToToday(allDates, dateCellWidth);
 			item.periods.forEach(period => {
-				const startPos = calculatePosition(period.start);
-				const endPos = calculatePosition(period.end);
-				const width = endPos - startPos + dateCellWidth + 10;
+
+                const startPos = calculatePosition(period.start);
+const endPos = calculatePosition(period.end);
+
+// Adjust start position: if period.start is before timelineData.startDate, use timelineData.startDate
+const adjustedStartPos = period.start < timelineData.startDate 
+    ? calculatePosition(timelineData.startDate) 
+    : startPos;
+
+// Adjust end position: if period.end is after timelineData.endDate, use timelineData.endDate
+const adjustedEndPos = period.end > timelineData.endDate 
+    ? calculatePosition(timelineData.endDate) 
+    : endPos;
+
+const width = adjustedEndPos - adjustedStartPos + dateCellWidth + 10;
+
+// Log for debugging
+console.log({
+    periodName: period.name,
+    originalStart: period.start.toDateString(),
+    originalEnd: period.end.toDateString(),
+    startPos: startPos,
+    endPos: endPos,
+    timelineStart: timelineData.startDate.toDateString(),
+    timelineEnd: timelineData.endDate.toDateString(),
+    adjustedStartPos: adjustedStartPos,
+    adjustedEndPos: adjustedEndPos,
+    width: width,
+    dateCellWidth: dateCellWidth
+});
 				const itemTypeClass = `timeline-${item.name
         .toLowerCase()
         .replace(/\s+/g, "-")

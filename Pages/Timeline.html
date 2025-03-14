@@ -529,7 +529,13 @@
           item.periods.forEach(period => {
             const startPos = calculatePosition(period.start);
             const endPos = calculatePosition(period.end);
-            const width = endPos - startPos + dateCellWidth + 80;
+            const adjustedStartPos = period.start < timelineData.startDate 
+                ? calculatePosition(timelineData.startDate) 
+                : startPos;
+            const adjustedEndPos = period.end > timelineData.endDate 
+                ? calculatePosition(timelineData.endDate) 
+                : endPos;
+            const width = adjustedEndPos - adjustedStartPos + dateCellWidth + 80;
             const itemTypeClass = `timeline-${item.name
             .toLowerCase()
             .replace(/\s+/g, "-")
