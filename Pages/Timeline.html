@@ -80,6 +80,10 @@
         color: #BB86FC;
         white-space: nowrap;
         transform: translateY(-30px);
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
       }
     
       .timeline-header span {
@@ -142,6 +146,10 @@
         transform: translateY(-40px);
         padding: 5px 10px;
         overflow: hidden;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
         z-index: 1;
       }
     
@@ -187,15 +195,6 @@
         100% {
           background-position: 0% 50%;
         }
-      }
-    
-      .timeline-item:hover::after {
-        opacity: 0.8;
-      }
-    
-      .timeline-item:hover {
-        transform: scale(1.05);
-        z-index: 3;
       }
     
       .timeline-image {
@@ -331,7 +330,7 @@
     </nav>
     <main>
       <h1 id="timeline-title"></h1>
-      <div class="timeline-container">
+      <div class="timeline-container" id="timeline-container">
         <h1><br></h1>
         <div class="timeline-header" id="timeline-header"></div>
         <div class="timeline" id="timeline"></div>
@@ -494,6 +493,49 @@
           renderTimelineContent(baseLineWidth, allDates);
         });
       }
+
+      function enableTimelineScroll(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) {
+            console.error(`Container with ID "${containerId}" not found`);
+            return;
+        }
+
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+
+        // Start dragging
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+            container.style.cursor = 'grabbing'; // Visual feedback
+        });
+
+        // Stop dragging
+        container.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDragging = false;
+            container.style.cursor = 'grab';
+        });
+
+        // Scroll while dragging
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault(); // Prevent text selection
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2; // Multiply for faster scrolling
+            container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Set initial cursor style
+        container.style.cursor = 'grab';
+    }
     
       function scrollToToday(allDates, dateCellWidth) {
         const today = new Date().setHours(0, 0, 0, 0);
@@ -568,6 +610,7 @@
           });
           timeline.appendChild(line);
         });
+        enableTimelineScroll('timeline-container');
       }
       </script>
   </body>
