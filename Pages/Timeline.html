@@ -405,6 +405,8 @@
                   const featuredWeapon = event.event_detail.featured;
                   extractedImage = getWeaponImageUrl(featuredWeapon);
                 }
+              }else{
+                extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
               }
               // Determine isNew based on count
               const isNew = allEvents.filter(e => e.type === "Convene" ? e.event_detail?.type === event.event_detail?.type && e.event_detail?.featured === event.event_detail?.featured : e.type === event.type).length === 1;
