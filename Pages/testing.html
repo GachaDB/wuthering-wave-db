@@ -1,20 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gacha System</title>
-    <link rel="stylesheet" href="../CSS/Gacha.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patch 1.0 Timeline</title>
+  <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark Background */
+    color: #E0E0E0; /* Light Text */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#timeline-title{
+    color: #fff;
+}
+
+.timeline-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.timeline-container::-webkit-scrollbar-track {
+    background: #222; /* Dark track */
+    border-radius: 10px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.timeline-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ea00ff, #ff6600);
+}
+
+.timeline-container {
+    width: 90%;
+    max-width: 1200px;
+    background: #1E1E1E; /* Darker Container */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Stronger Shadow */
+    border-radius: 8px;
+    overflow-x: auto;
+	overflow-y: auto;
+}
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .timeline-header {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #BB86FC;
+      white-space: nowrap;
+      transform: translateY(-30px);
+    }
+
+    .timeline-header span {
+      flex: 1;
+      text-align: center;
+      font-size: 12px;
+      padding: 5px;
+      border-right: 1px solid #ddd;
+      min-width: 40px; /* Ensure each date has a minimum width */
+    }
+
+    .timeline-header span:last-child {
+      border-right: none;
+    }
+
+    .today {
+    font-weight: bold;
+    color: #ff4d4d;
+    background-color: #ffecec;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    .timeline-line {
+    position: relative;
+    height: 20px;
+    border-radius: 5px;
+    background: #222;
+    background-size: 200% 100%;
+}
+.timeline-line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 50%);
+    background-size: 20px 20px;
+    opacity: 0.8;
+}
+
+    .timeline-item {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      height: 80px; 
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      transition: transform 0.2s ease-in-out;
+      transform: translateY(-40px);
+      padding: 5px 10px;
+    overflow: hidden;
+      z-index: 1;
+    }
+
+    .timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/black-thread-light.png') repeat;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, 
+        rgba(255, 0, 64, 0.5), 
+        rgba(0, 238, 255, 0.5), 
+        rgba(255, 255, 0, 0.5), 
+        rgba(255, 0, 150, 0.5)
+    );
+    background-size: 200% 200%;
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+    animation: holoShine 5s infinite linear;
+}
+@keyframes holoShine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.timeline-item:hover::after {
+    opacity: 0.8;
+}
+
+    .timeline-item:hover {
+    transform: scale(1.05);
+    z-index: 3;
+}
+
+.timeline-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make it circular */
+    border: 3px solid #a50000;
+    margin-right: 10px;
+    z-index: 2;
+}
+.timeline-item span {
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Custom class for different types */
+.timeline-convene {
+    background-color: #ffeb3b;
+    color: #333;
+}
+.timeline-toa {
+    background-color: #ff1515;
+    color: #dfdfdf;
+}
+.timeline-whiwa {
+    background-color: #00184b;
+    color: #fff;
+}
+  </style>
 </head>
 <body>
-    <div id="gachaBody">
-        <div class="navbar" id="bannerNav"></div>
-        <div id="summonResult" class="result"></div>
-        <div id="bannerContainer">
-            <label style="opacity: 0"> <input type="checkbox" id="limitedToggle" /> Include Limited Items </label>
-            <!-- Banners will be dynamically inserted here -->
-        </div>
-    </div>
-    <script src="../JS/Gacha.js"></script>
+    <h1 id="timeline-title"></h1>
+  <div class="timeline-container">
+    <h1><br></h1>
+    <div class="timeline-header" id="timeline-header"></div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <script>
+    // Timeline data
+    let timelineData = null;
+    let weaponData = null;
+
+    Promise.all([
+        fetch('https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/events.json').then(res => res.json()),
+        fetch('https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/weapon.json').then(res => res.json())
+    ])
+    .then(([eventData, weaponResponse]) => {
+        weaponData = weaponResponse.weapons;
+
+        const startDate = new Date("2025-02-13");
+        const endDate = new Date(startDate);
+        endDate.setDate(startDate.getDate() + 6 * 7 - 1);
+
+        const filteredEvents = eventData.filter(event => {
+            const eventStart = new Date(event.start);
+            const eventEnd = new Date(event.end);
+            return (eventStart >= startDate && eventStart <= endDate) ||
+                   (eventEnd >= startDate && eventEnd <= endDate) ||
+                   (eventStart <= startDate && eventEnd >= endDate);
+        });
+
+        const getWeaponImageUrl = (weaponName) => {
+            if (!weaponData) return "https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/";
+            const weapon = weaponData.find(w => w.name === weaponName);
+            return weapon ? `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/${weapon.image}` : "https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/";
+        };
+
+        const groupedEvents = { normal: [], conveneHero: [], conveneWeapon: [] };
+
+        filteredEvents.forEach(event => {
+            if (event.type === "Convene" && event.event_detail?.type) {
+                if (event.event_detail.type === "hero") {
+                    groupedEvents.conveneHero.push(event);
+                } else if (event.event_detail.type === "weapon") {
+                    groupedEvents.conveneWeapon.push(event);
+                }
+            } else {
+                groupedEvents.normal.push(event);
+            }
+        });
+
+        timelineData = {
+            title: "Patch 2.1",
+            startDate: startDate,
+            endDate: endDate,
+            items: []
+        };
+
+        document.getElementById("timeline-title").textContent = `${timelineData.title} Timeline`;
+
+        const normalGrouped = groupedEvents.normal.reduce((acc, event) => {
+            if (!acc[event.type]) acc[event.type] = [];
+            acc[event.type].push(event);
+            return acc;
+        }, {});
+
+        Object.keys(normalGrouped).forEach(type => {
+            timelineData.items.push({
+                name: type,
+                periods: normalGrouped[type].map(event => {
+                    let extractedImage = event.imageUrl; // Default image
+
+                    if (event.type === "Convene") {
+                        if (event.event_detail?.type === "hero") {
+                            const featuredHero = event.event_detail.featured.replace(/ /g, "_");
+                            extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}.webp`;
+                        } else if (event.event_detail?.type === "weapon") {
+                            const featuredWeapon = event.event_detail.featured;
+                            extractedImage = getWeaponImageUrl(featuredWeapon);
+                        }
+                    }
+
+                    return {
+                        name: event.name,
+                        start: new Date(event.start),
+                        end: new Date(event.end),
+                        image: extractedImage
+                    };
+                })
+            });
+        });
+
+        const groupEvents = (events, prefix) => {
+            const groups = [];
+            
+            events.forEach(event => {
+                const existingGroup = groups.find(group =>
+                    group.every(e => e.start !== event.start || e.end !== event.end)
+                );
+                if (existingGroup) {
+                    existingGroup.push(event);
+                } else {
+                    groups.push([event]);
+                }
+            });
+
+            groups.forEach((group, index) => {
+                timelineData.items.push({
+                    name: `${prefix}${index + 1}`,
+                    periods: group.map(event => {
+                        let extractedImage = event.imageUrl; // Default image
+
+                        if (event.type === "Convene") {
+                            if (event.event_detail?.type === "hero") {
+                                const featuredHero = event.event_detail.featured.replace(/ /g, "_");
+                                extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}_Head_Icon.webp`;
+                            } else if (event.event_detail?.type === "weapon") {
+                                const featuredWeapon = event.event_detail.featured;
+                                extractedImage = getWeaponImageUrl(featuredWeapon);
+                            }
+                        }
+
+                        return {
+                            name: event.name,
+                            start: new Date(event.start),
+                            end: new Date(event.end),
+                            image: extractedImage
+                        };
+                    })
+                });
+            });
+        };
+
+        groupEvents(groupedEvents.conveneHero, "Convenehero");
+        groupEvents(groupedEvents.conveneWeapon, "Conveneweapon");
+
+        console.log(timelineData);
+        requestAnimationFrame(renderTimeline);
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
+    function getAllDates(startDate, endDate) {
+        const dates = [];
+        let currentDate = new Date(startDate);
+        while (currentDate <= endDate) {
+            dates.push(new Date(currentDate));
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+        return dates;
+    }
+
+    function renderTimeline() {
+    const timelineHeader = document.getElementById("timeline-header");
+    const allDates = getAllDates(timelineData.startDate, timelineData.endDate);
+    let baseLineWidth = 0;
+
+    timelineHeader.innerHTML = "";
+
+    const today = new Date().setHours(0, 0, 0, 0); // Get today's date without time
+
+    allDates.forEach(date => {
+        const dateElement = document.createElement("span");
+        dateElement.textContent = date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+
+        // Check if this date is today and add the class
+        if (date.setHours(0, 0, 0, 0) === today) {
+            dateElement.classList.add("today");
+        }
+
+        timelineHeader.appendChild(dateElement);
+    });
+
+    requestAnimationFrame(() => {
+        baseLineWidth = timelineHeader.scrollWidth;
+        renderTimelineContent(baseLineWidth, allDates);
+    });
+}
+
+function scrollToToday(allDates, dateCellWidth) {
+    const today = new Date().setHours(0, 0, 0, 0);
+    const todayIndex = allDates.findIndex(d => d.setHours(0, 0, 0, 0) === today);
+
+    if (todayIndex !== -1) {
+        const timelineContainer = document.querySelector(".timeline-container");
+        const todayPosition = todayIndex * dateCellWidth;
+
+        timelineContainer.scrollTo({
+            left: todayPosition - timelineContainer.clientWidth / 2, // Center "today"
+            behavior: "smooth"
+        });
+    }
+}
+
+
+    function renderTimelineContent(baseLineWidth, allDates) {
+        const timeline = document.getElementById("timeline");
+        if (baseLineWidth === 0) {
+            requestAnimationFrame(() => renderTimelineContent(baseLineWidth, allDates));
+            return;
+        }
+
+        const dateCellWidth = document.querySelector("#timeline-header span")?.scrollWidth || 0;
+        const calculatePosition = date => allDates.findIndex(d => d.toDateString() === date.toDateString()) * dateCellWidth;
+
+        timeline.innerHTML = ""; // Clear previous content
+
+        timelineData.items.forEach(item => {
+            const line = document.createElement("div");
+            line.className = "timeline-line";
+            line.style.minWidth = `${baseLineWidth}px`;
+            let index = 0;
+
+            if (item.periods.length > 0 && item.periods[0].start.toDateString() === timelineData.startDate.toDateString()) {
+                console.log(`First event of "${item.name}" starts on the first day of the timeline.`);
+            } else {
+                console.log(`First event of "${item.name}" starts NOT on the first day of the timeline.`);
+                index = 1;
+            }
+
+    scrollToToday(allDates, dateCellWidth);
+
+item.periods.forEach(period => {
+    const startPos = calculatePosition(period.start);
+    const endPos = calculatePosition(period.end);
+    const width = endPos - startPos + dateCellWidth + 10;
+
+    const itemTypeClass = `timeline-${item.name
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/\d+/g, "")
+        .replace(/hero|weapon/g, "")
+        .replace(/--+/g, "-")
+        .trim()}`;
+
+    const itemElement = document.createElement("div");
+    itemElement.className = `timeline-item ${itemTypeClass}`;
+    itemElement.style.left = `${startPos + (index > 1 ? 60 : index * 60)}px`;
+    itemElement.style.width = `${width}px`;
+    itemElement.title = `${period.name}: ${period.start.toDateString()} - ${period.end.toDateString()}`;
+
+    const imageElement = document.createElement("img");
+    imageElement.src = period.image;
+    imageElement.alt = period.name;
+    imageElement.className = "timeline-image";
+
+    const span = document.createElement("span");
+    span.textContent = `${period.name}: ${period.start.toDateString()} - ${period.end.toDateString()}`;
+
+    itemElement.appendChild(imageElement);
+    itemElement.appendChild(span);
+
+    console.log(`Class added: ${itemElement.className}`); // Debugging
+    index += 1;
+    line.appendChild(itemElement);
+});
+
+
+
+            timeline.appendChild(line);
+        });
+    }
+</script>
 </body>
 </html>
