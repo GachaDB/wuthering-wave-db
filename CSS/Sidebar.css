@@ -7,6 +7,25 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ea00ff, #ff6600);
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 10px;
+}
 :root {
   --body-color: #e4e9f7;
   --sidebar-color: #fff;
