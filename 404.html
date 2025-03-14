@@ -7,6 +7,9 @@
     <style>
         body {
             background-color: #121212;
+            background-image: url("https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/main/Asset/Image/background.jpg");
+            background-repeat: repeat, no-repeat;
+            background-size: cover;
             color: #fff;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -18,10 +21,21 @@
             margin: 0;
             overflow: hidden;
         }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity (0.5 = 50%) */
+            z-index: 1;
+        }
         h1 {
             font-size: 2.5rem;
             text-shadow: 0 0 10px #00ffcc;
             animation: glow 1.5s infinite alternate;
+            z-index: 2;
         }
         .progress-container {
             width: 80%;
@@ -30,6 +44,7 @@
             overflow: hidden;
             margin-top: 20px;
             box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+            z-index: 2;
         }
         .progress-bar {
             height: 20px;
@@ -47,6 +62,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            z-index: 2;
         }
         .particle {
             position: absolute;
