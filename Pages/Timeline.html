@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="StickIn" content="This is the Stick IN Home Page">
-    <link rel="stylesheet" href="../CSS/Sidebar.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="StickIn" content="This is the Stick IN Home Page" />
+    <link rel="stylesheet" href="../CSS/Sidebar.css" />
     <title>Gacha</title>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <!-- Three.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
     <style>
+      /* Your existing CSS styles */
       main {
         font-family: Arial, sans-serif;
-        /* Dark Background */
-        color: #E0E0E0;
-        /* Light Text */
+        color: #e0e0e0;
         margin: 0;
         padding: 20px;
         display: flex;
@@ -26,38 +28,36 @@
         justify-content: center;
         min-height: 100vh;
       }
-    
+
       #timeline-title {
         color: #fff;
       }
-    
+
       .timeline-container {
         max-width: 1200px;
         min-width: 1200px;
-        background: #1E1E1E;
-        /* Darker Container */
+        background: #1e1e1e;
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        /* Stronger Shadow */
-        border-left: 10px solid #1E1E1E;
-        border-right: 10px solid #1E1E1E;
+        border-left: 10px solid #1e1e1e;
+        border-right: 10px solid #1e1e1e;
         border-radius: 8px;
         overflow-x: auto;
         overflow-y: auto;
       }
-    
+
       h1 {
         text-align: center;
         color: #333;
         margin-bottom: 20px;
       }
-    
+
       .timeline-header {
         display: flex;
         gap: 5px;
         margin-bottom: 20px;
         font-weight: bold;
-        color: #BB86FC;
+        color: #bb86fc;
         white-space: nowrap;
         transform: translateY(-30px);
         user-select: none;
@@ -65,7 +65,7 @@
         -moz-user-select: none;
         -ms-user-select: none;
       }
-    
+
       .timeline-header span {
         flex: 1;
         text-align: center;
@@ -73,13 +73,12 @@
         padding: 5px;
         border-right: 1px solid #ddd;
         min-width: 50px;
-        /* Ensure each date has a minimum width */
       }
-    
+
       .timeline-header span:last-child {
         border-right: none;
       }
-    
+
       .today {
         font-weight: bold;
         color: #ff4d4d;
@@ -87,14 +86,14 @@
         padding: 5px 10px;
         border-radius: 5px;
       }
-    
+
       .timeline {
         position: relative;
         display: flex;
         flex-direction: column;
         gap: 50px;
       }
-    
+
       .timeline-line {
         position: relative;
         height: 20px;
@@ -102,7 +101,7 @@
         background: #222;
         background-size: 200% 100%;
       }
-    
+
       .timeline-line::before {
         content: "";
         position: absolute;
@@ -110,11 +109,15 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 50%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.8) 10%,
+          transparent 50%
+        );
         background-size: 20px 20px;
         opacity: 0.8;
       }
-    
+
       .timeline-item {
         position: absolute;
         display: flex;
@@ -132,7 +135,7 @@
         -ms-user-select: none;
         z-index: 1;
       }
-    
+
       .timeline-item::before {
         content: "";
         position: absolute;
@@ -140,11 +143,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('https://www.transparenttextures.com/patterns/black-thread-light.png') repeat;
+        background: url("https://www.transparenttextures.com/patterns/black-thread-light.png")
+          repeat;
         opacity: 1;
         pointer-events: none;
       }
-    
+
       .timeline-item::after {
         content: "";
         position: absolute;
@@ -152,31 +156,31 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(120deg,
+        background: linear-gradient(
+          120deg,
           rgba(255, 0, 64, 0.5),
           rgba(0, 238, 255, 0.5),
           rgba(255, 255, 0, 0.5),
-          rgba(255, 0, 150, 0.5));
+          rgba(255, 0, 150, 0.5)
+        );
         background-size: 200% 200%;
         mix-blend-mode: overlay;
         opacity: 0.6;
         animation: holoShine 5s infinite linear;
       }
-    
+
       @keyframes holoShine {
         0% {
           background-position: 0% 50%;
         }
-    
         50% {
           background-position: 100% 50%;
         }
-    
         100% {
           background-position: 0% 50%;
         }
       }
-    
+
       .timeline-image-convene {
         width: 50px;
         height: 50px;
@@ -186,7 +190,7 @@
         z-index: 2;
       }
 
-      .timeline-image-toa,  
+      .timeline-image-toa,
       .timeline-image-whiwa {
         width: 75px;
         height: 50px;
@@ -195,13 +199,13 @@
         margin-right: 10px;
         z-index: 2;
       }
-    
+
       .timeline-item span {
         font-size: 14px;
         font-weight: bold;
         z-index: 2;
       }
-    
+
       .new-label {
         position: absolute;
         top: 0px;
@@ -218,23 +222,33 @@
         z-index: 10;
         clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
       }
-    
-      /* Custom class for different types */
+
       .timeline-convene {
         background-color: #ffeb3b;
         color: #333;
       }
-    
+
       .timeline-toa {
         background-color: #ff1515;
         color: #dfdfdf;
       }
-    
+
       .timeline-whiwa {
         background-color: #00184b;
         color: #fff;
       }
-      </style>
+
+      /* Dropdown styles */
+      #version-dropdown {
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -247,7 +261,10 @@
         <div class="image-text">
           <a href="your-link-here">
             <span class="image">
-              <img src="https://t4.ftcdn.net/jpg/04/06/91/91/240_F_406919147_D3WsGjwXj1qmFNrei2ZFvBWwiueRcFmg.jpg" alt="logo" />
+              <img
+                src="https://t4.ftcdn.net/jpg/04/06/91/91/240_F_406919147_D3WsGjwXj1qmFNrei2ZFvBWwiueRcFmg.jpg"
+                alt="logo"
+              />
             </span>
           </a>
           <div class="text header-text">
@@ -272,13 +289,13 @@
           </li>
           <li class="nav-link">
             <a href="Character.html">
-              <i class='bx bx-group icons'></i>
+              <i class="bx bx-group icons"></i>
               <span class="text nav-text">Character</span>
             </a>
           </li>
           <li class="nav-link">
             <a href="Weapon.html">
-              <i class='bx bx-knife icons'></i>
+              <i class="bx bx-knife icons"></i>
               <span class="text nav-text">Weapon</span>
             </a>
           </li>
@@ -306,7 +323,6 @@
               <span class="text nav-text">Gacha Simulator</span>
             </a>
           </li>
-          </ul>
         </div>
         <div class="bottom-content">
           <li class="nav-link">
@@ -319,9 +335,10 @@
       </div>
     </nav>
     <main>
+      <select id="version-dropdown"></select>
       <h1 id="timeline-title"></h1>
       <div class="timeline-container" id="timeline-container">
-        <h1><br></h1>
+        <h1><br /></h1>
         <div class="timeline-header" id="timeline-header"></div>
         <div class="timeline" id="timeline"></div>
       </div>
@@ -333,149 +350,233 @@
       let timelineData = null;
       let weaponData = null;
       let allEvents = [];
-      fetch('https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/events.json').then(res => res.json()).then(eventData => {
-        allEvents = eventData;
-        return Promise.all([
-          Promise.resolve(eventData),
-          fetch('https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/weapon.json').then(res => res.json())
-        ]);
-      }).then(([eventData, weaponResponse]) => {
-        weaponData = weaponResponse.weapons;
-        const startDate = new Date("2025-02-13");
-        const endDate = new Date(startDate);
-        endDate.setDate(startDate.getDate() + 6 * 7 - 1);
-        const filteredEvents = eventData.filter(event => {
-          const eventStart = new Date(event.start);
-          const eventEnd = new Date(event.end);
-          return (eventStart >= startDate && eventStart <= endDate) || (eventEnd >= startDate && eventEnd <= endDate) || (eventStart <= startDate && eventEnd >= endDate);
+      let versionsData = null;
+
+      // Fetch versions data and populate dropdown
+      fetch(
+        "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/updates.json"
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          versionsData = data.versions;
+          populateVersionDropdown();
+        })
+        .catch((error) => console.error("Error fetching versions data:", error));
+
+      // Populate version dropdown
+      function populateVersionDropdown() {
+        const dropdown = document.getElementById("version-dropdown");
+        versionsData.forEach((version) => {
+          const option = document.createElement("option");
+          option.value = version.version;
+          option.textContent = `${version.version} - ${version.name}`;
+          dropdown.appendChild(option);
         });
-        const getWeaponImageUrl = (weaponName) => {
-          if(!weaponData) return "https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/";
-          const weapon = weaponData.find(w => w.name === weaponName);
-          return weapon ? `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/${weapon.image}` : "https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/";
-        };
-        const groupedEvents = {
-          normal: [],
-          conveneHero: [],
-          conveneWeapon: []
-        };
-        filteredEvents.forEach(event => {
-          if(event.type === "Convene" && event.event_detail?.type) {
-            if(event.event_detail.type === "hero") {
-              groupedEvents.conveneHero.push(event);
-            } else if(event.event_detail.type === "weapon") {
-              groupedEvents.conveneWeapon.push(event);
-            }
-          } else {
-            groupedEvents.normal.push(event);
-          }
-        });
+
+        // Set the default selected version
+        dropdown.value = versionsData[0].version;
+        updateTimelineData(versionsData[0]);
+      }
+
+      // Update timeline data based on selected version
+      function updateTimelineData(selectedVersion) {
+        const startDate = new Date(selectedVersion.release_date);
+        const endDate = new Date(selectedVersion.end_date);
+
         timelineData = {
-          title: "Patch 2.1",
+          title: `Patch ${selectedVersion.version}`,
           startDate: startDate,
           endDate: endDate,
-          items: []
+          items: [],
         };
+
+        // Update the timeline title
         document.getElementById("timeline-title").textContent = `${timelineData.title} Timeline`;
-        const normalGrouped = groupedEvents.normal.reduce((acc, event) => {
-          if(!acc[event.type]) acc[event.type] = [];
-          acc[event.type].push(event);
-          return acc;
-        }, {});
-        Object.keys(normalGrouped).forEach(type => {
-          timelineData.items.push({
-            name: type,
-            periods: normalGrouped[type].map(event => {
-              let extractedImage = event.imageUrl;
-              if(event.type === "Convene") {
-                if(event.event_detail?.type === "hero") {
-                  const featuredHero = event.event_detail.featured.replace(/ /g, "_");
-                  extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}.webp`;
-                } else if(event.event_detail?.type === "weapon") {
-                  const featuredWeapon = event.event_detail.featured;
-                  extractedImage = getWeaponImageUrl(featuredWeapon);
-                }
-              }else{
-                extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
-              }
-              // Determine isNew based on count
-              const isNew = ["whiwa", "toa"].includes(event.type.toLowerCase()) ? false : allEvents.filter(e => e.type === "Convene" ? e.event_detail?.type === event.event_detail?.type && e.event_detail?.featured === event.event_detail?.featured : e.type === event.type).length === 1;
-              return {
-                name: event.name,
-                start: new Date(event.start),
-                end: new Date(event.end),
-                image: extractedImage,
-                isNew: isNew
-              };
-            })
-          });
+
+        // Re-render the timeline
+        renderTimeline();
+      }
+
+      // Event listener for dropdown change
+      document
+        .getElementById("version-dropdown")
+        .addEventListener("change", function () {
+          const selectedVersion = versionsData.find(
+            (version) => version.version === this.value
+          );
+          if (selectedVersion) {
+            updateTimelineData(selectedVersion);
+          }
         });
-        const groupEvents = (events, prefix) => {
-          const groups = [];
-          events.forEach(event => {
-            const existingGroup = groups.find(group => group.every(e => e.start !== event.start || e.end !== event.end));
-            if(existingGroup) {
-              existingGroup.push(event);
+
+      // Fetch events and weapon data
+      fetch(
+        "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/events.json"
+      )
+        .then((res) => res.json())
+        .then((eventData) => {
+          allEvents = eventData;
+          return Promise.all([
+            Promise.resolve(eventData),
+            fetch(
+              "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/weapon.json"
+            ).then((res) => res.json()),
+          ]);
+        })
+        .then(([eventData, weaponResponse]) => {
+          weaponData = weaponResponse.weapons;
+          const startDate = new Date("2025-02-13");
+          const endDate = new Date(startDate);
+          endDate.setDate(startDate.getDate() + 6 * 7 - 1);
+          const filteredEvents = eventData.filter((event) => {
+            const eventStart = new Date(event.start);
+            const eventEnd = new Date(event.end);
+            return (
+              (eventStart >= startDate && eventStart <= endDate) ||
+              (eventEnd >= startDate && eventEnd <= endDate) ||
+              (eventStart <= startDate && eventEnd >= endDate)
+            );
+          });
+          const getWeaponImageUrl = (weaponName) => {
+            if (!weaponData)
+              return "https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/";
+            const weapon = weaponData.find((w) => w.name === weaponName);
+            return weapon
+              ? `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/${weapon.image}`
+              : "https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/";
+          };
+          const groupedEvents = {
+            normal: [],
+            conveneHero: [],
+            conveneWeapon: [],
+          };
+          filteredEvents.forEach((event) => {
+            if (event.type === "Convene" && event.event_detail?.type) {
+              if (event.event_detail.type === "hero") {
+                groupedEvents.conveneHero.push(event);
+              } else if (event.event_detail.type === "weapon") {
+                groupedEvents.conveneWeapon.push(event);
+              }
             } else {
-              groups.push([event]);
+              groupedEvents.normal.push(event);
             }
           });
-          groups.forEach((group, index) => {
+          timelineData = {
+            title: "Patch 2.1",
+            startDate: startDate,
+            endDate: endDate,
+            items: [],
+          };
+          document.getElementById("timeline-title").textContent = `${timelineData.title} Timeline`;
+          const normalGrouped = groupedEvents.normal.reduce((acc, event) => {
+            if (!acc[event.type]) acc[event.type] = [];
+            acc[event.type].push(event);
+            return acc;
+          }, {});
+          Object.keys(normalGrouped).forEach((type) => {
             timelineData.items.push({
-              name: `${prefix}${index + 1}`,
-              periods: group.map(event => {
-                let extractedImage = event.imageUrl; // Default image
-                if(event.type === "Convene") {
-                  if(event.event_detail?.type === "hero") {
+              name: type,
+              periods: normalGrouped[type].map((event) => {
+                let extractedImage = event.imageUrl;
+                if (event.type === "Convene") {
+                  if (event.event_detail?.type === "hero") {
                     const featuredHero = event.event_detail.featured.replace(/ /g, "_");
-                    extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}_Head_Icon.webp`;
-                  } else if(event.event_detail?.type === "weapon") {
+                    extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}.webp`;
+                  } else if (event.event_detail?.type === "weapon") {
                     const featuredWeapon = event.event_detail.featured;
                     extractedImage = getWeaponImageUrl(featuredWeapon);
                   }
+                } else {
+                  extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
                 }
                 // Determine isNew based on count
-                  const isNew = allEvents.filter(e => e.type === "Convene" ? e.event_detail?.type === event.event_detail?.type && e.event_detail?.featured === event.event_detail?.featured : e.type === event.type).length === 1;
-                            return {
+                const isNew =
+                  ["whiwa", "toa"].includes(event.type.toLowerCase())
+                    ? false
+                    : allEvents.filter((e) =>
+                        e.type === "Convene"
+                          ? e.event_detail?.type === event.event_detail?.type &&
+                            e.event_detail?.featured === event.event_detail?.featured
+                          : e.type === event.type
+                      ).length === 1;
+                return {
                   name: event.name,
                   start: new Date(event.start),
                   end: new Date(event.end),
                   image: extractedImage,
-                  isNew: isNew
+                  isNew: isNew,
                 };
-              })
+              }),
             });
           });
-        };
-        groupEvents(groupedEvents.conveneHero, "Convenehero");
-        groupEvents(groupedEvents.conveneWeapon, "Conveneweapon");
-        requestAnimationFrame(renderTimeline);
-      }).catch(error => console.error('Error fetching data:', error));
-    
-      function getAllDates(startDate, endDate) {
-        const dates = [];
-        let currentDate = new Date(startDate);
-        while(currentDate <= endDate) {
-          dates.push(new Date(currentDate));
-          currentDate.setDate(currentDate.getDate() + 1);
-        }
-        return dates;
-      }
-    
+          const groupEvents = (events, prefix) => {
+            const groups = [];
+            events.forEach((event) => {
+              const existingGroup = groups.find((group) =>
+                group.every(
+                  (e) => e.start !== event.start || e.end !== event.end
+                )
+              );
+              if (existingGroup) {
+                existingGroup.push(event);
+              } else {
+                groups.push([event]);
+              }
+            });
+            groups.forEach((group, index) => {
+              timelineData.items.push({
+                name: `${prefix}${index + 1}`,
+                periods: group.map((event) => {
+                  let extractedImage = event.imageUrl; // Default image
+                  if (event.type === "Convene") {
+                    if (event.event_detail?.type === "hero") {
+                      const featuredHero = event.event_detail.featured.replace(/ /g, "_");
+                      extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}_Head_Icon.webp`;
+                    } else if (event.event_detail?.type === "weapon") {
+                      const featuredWeapon = event.event_detail.featured;
+                      extractedImage = getWeaponImageUrl(featuredWeapon);
+                    }
+                  }
+                  // Determine isNew based on count
+                  const isNew =
+                    allEvents.filter((e) =>
+                      e.type === "Convene"
+                        ? e.event_detail?.type === event.event_detail?.type &&
+                          e.event_detail?.featured === event.event_detail?.featured
+                        : e.type === event.type
+                    ).length === 1;
+                  return {
+                    name: event.name,
+                    start: new Date(event.start),
+                    end: new Date(event.end),
+                    image: extractedImage,
+                    isNew: isNew,
+                  };
+                }),
+              });
+            });
+          };
+          groupEvents(groupedEvents.conveneHero, "Convenehero");
+          groupEvents(groupedEvents.conveneWeapon, "Conveneweapon");
+          requestAnimationFrame(renderTimeline);
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+
+      // Render timeline
       function renderTimeline() {
         const timelineHeader = document.getElementById("timeline-header");
         const allDates = getAllDates(timelineData.startDate, timelineData.endDate);
         let baseLineWidth = 0;
         timelineHeader.innerHTML = "";
         const today = new Date().setHours(0, 0, 0, 0); // Get today's date without time
-        allDates.forEach(date => {
+        allDates.forEach((date) => {
           const dateElement = document.createElement("span");
           dateElement.textContent = date.toLocaleDateString("en-US", {
             month: "short",
-            day: "numeric"
+            day: "numeric",
           });
           // Check if this date is today and add the class
-          if(date.setHours(0, 0, 0, 0) === today) {
+          if (date.setHours(0, 0, 0, 0) === today) {
             dateElement.classList.add("today");
           }
           timelineHeader.appendChild(dateElement);
@@ -486,104 +587,60 @@
         });
       }
 
-      function enableTimelineScroll(containerId) {
-        const container = document.getElementById(containerId);
-        if (!container) {
-            console.error(`Container with ID "${containerId}" not found`);
-            return;
-        }
-
-        let isDragging = false;
-        let startX;
-        let scrollLeft;
-
-        // Start dragging
-        container.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
-            container.style.cursor = 'grabbing'; // Visual feedback
-        });
-
-        // Stop dragging
-        container.addEventListener('mouseup', () => {
-            isDragging = false;
-            container.style.cursor = 'grab';
-        });
-
-        container.addEventListener('mouseleave', () => {
-            isDragging = false;
-            container.style.cursor = 'grab';
-        });
-
-        // Scroll while dragging
-        container.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault(); // Prevent text selection
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX) * 2; // Multiply for faster scrolling
-            container.scrollLeft = scrollLeft - walk;
-        });
-
-        // Set initial cursor style
-        container.style.cursor = 'grab';
-    }
-    
-      function scrollToToday(allDates, dateCellWidth) {
-        const today = new Date().setHours(0, 0, 0, 0);
-        const todayIndex = allDates.findIndex(d => d.setHours(0, 0, 0, 0) === today);
-        if(todayIndex !== -1) {
-          const timelineContainer = document.querySelector(".timeline-container");
-          const todayPosition = todayIndex * dateCellWidth;
-          timelineContainer.scrollTo({
-            left: todayPosition - timelineContainer.clientWidth / 2, // Center "today"
-            behavior: "smooth"
-          });
-        }
-      }
-    
+      // Render timeline content
       function renderTimelineContent(baseLineWidth, allDates) {
         const timeline = document.getElementById("timeline");
-        if(baseLineWidth === 0) {
+        if (baseLineWidth === 0) {
           requestAnimationFrame(() => renderTimelineContent(baseLineWidth, allDates));
           return;
         }
-        const dateCellWidth = document.querySelector("#timeline-header span")?.scrollWidth || 0;
-        const calculatePosition = date => allDates.findIndex(d => d.toDateString() === date.toDateString()) * dateCellWidth;
+        const dateCellWidth =
+          document.querySelector("#timeline-header span")?.scrollWidth || 0;
+        const calculatePosition = (date) =>
+          allDates.findIndex(
+            (d) => d.toDateString() === date.toDateString()
+          ) * dateCellWidth;
         timeline.innerHTML = ""; // Clear previous content
-        timelineData.items.forEach(item => {
+        timelineData.items.forEach((item) => {
           const line = document.createElement("div");
           line.className = "timeline-line";
           line.style.minWidth = `${baseLineWidth}px`;
           let index = 0;
-          if(item.periods.length > 0 && item.periods[0].start.toDateString() === timelineData.startDate.toDateString()) {} else {
+          if (
+            item.periods.length > 0 &&
+            item.periods[0].start.toDateString() ===
+              timelineData.startDate.toDateString()
+          ) {
+          } else {
             index = 1;
           }
           scrollToToday(allDates, dateCellWidth);
-          item.periods.forEach(period => {
+          item.periods.forEach((period) => {
             const startPos = calculatePosition(period.start);
             const endPos = calculatePosition(period.end);
-            const adjustedStartPos = period.start < timelineData.startDate 
-                ? calculatePosition(timelineData.startDate) 
+            const adjustedStartPos =
+              period.start < timelineData.startDate
+                ? calculatePosition(timelineData.startDate)
                 : startPos;
-            const adjustedEndPos = period.end > timelineData.endDate 
-                ? calculatePosition(timelineData.endDate) 
+            const adjustedEndPos =
+              period.end > timelineData.endDate
+                ? calculatePosition(timelineData.endDate)
                 : endPos;
             const width = adjustedEndPos - adjustedStartPos + dateCellWidth + 80;
             const itemTypeClass = `timeline-${item.name
-            .toLowerCase()
-            .replace(/\s+/g, "-")
-            .replace(/\d+/g, "")
-            .replace(/hero|weapon/g, "")
-            .replace(/--+/g, "-")
-            .trim()}`;
+              .toLowerCase()
+              .replace(/\s+/g, "-")
+              .replace(/\d+/g, "")
+              .replace(/hero|weapon/g, "")
+              .replace(/--+/g, "-")
+              .trim()}`;
             const imageTypeClass = `timeline-image-${item.name
-            .toLowerCase()
-            .replace(/\s+/g, "-")
-            .replace(/\d+/g, "")
-            .replace(/hero|weapon/g, "")
-            .replace(/--+/g, "-")
-            .trim()}`;
+              .toLowerCase()
+              .replace(/\s+/g, "-")
+              .replace(/\d+/g, "")
+              .replace(/hero|weapon/g, "")
+              .replace(/--+/g, "-")
+              .trim()}`;
             const itemElement = document.createElement("div");
             itemElement.className = `timeline-item ${itemTypeClass}`;
             itemElement.style.left = `${startPos + (index > 1 ? 130 : index * 130)}px`;
@@ -596,7 +653,7 @@
             const span = document.createElement("span");
             span.textContent = `${period.name}: ${period.start.toDateString()} - ${period.end.toDateString()}`;
             const isNew = period.isNew;
-            if(isNew) {
+            if (isNew) {
               const newLabel = document.createElement("div");
               newLabel.className = "new-label";
               newLabel.textContent = "NEW";
@@ -609,8 +666,79 @@
           });
           timeline.appendChild(line);
         });
-        enableTimelineScroll('timeline-container');
+        enableTimelineScroll("timeline-container");
       }
-      </script>
+
+      // Enable timeline scroll
+      function enableTimelineScroll(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) {
+          console.error(`Container with ID "${containerId}" not found`);
+          return;
+        }
+
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+
+        // Start dragging
+        container.addEventListener("mousedown", (e) => {
+          isDragging = true;
+          startX = e.pageX - container.offsetLeft;
+          scrollLeft = container.scrollLeft;
+          container.style.cursor = "grabbing"; // Visual feedback
+        });
+
+        // Stop dragging
+        container.addEventListener("mouseup", () => {
+          isDragging = false;
+          container.style.cursor = "grab";
+        });
+
+        container.addEventListener("mouseleave", () => {
+          isDragging = false;
+          container.style.cursor = "grab";
+        });
+
+        // Scroll while dragging
+        container.addEventListener("mousemove", (e) => {
+          if (!isDragging) return;
+          e.preventDefault(); // Prevent text selection
+          const x = e.pageX - container.offsetLeft;
+          const walk = (x - startX) * 2; // Multiply for faster scrolling
+          container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Set initial cursor style
+        container.style.cursor = "grab";
+      }
+
+      // Scroll to today
+      function scrollToToday(allDates, dateCellWidth) {
+        const today = new Date().setHours(0, 0, 0, 0);
+        const todayIndex = allDates.findIndex(
+          (d) => d.setHours(0, 0, 0, 0) === today
+        );
+        if (todayIndex !== -1) {
+          const timelineContainer = document.querySelector(".timeline-container");
+          const todayPosition = todayIndex * dateCellWidth;
+          timelineContainer.scrollTo({
+            left: todayPosition - timelineContainer.clientWidth / 2, // Center "today"
+            behavior: "smooth",
+          });
+        }
+      }
+
+      // Get all dates between start and end
+      function getAllDates(startDate, endDate) {
+        const dates = [];
+        let currentDate = new Date(startDate);
+        while (currentDate <= endDate) {
+          dates.push(new Date(currentDate));
+          currentDate.setDate(currentDate.getDate() + 1);
+        }
+        return dates;
+      }
+    </script>
   </body>
 </html>

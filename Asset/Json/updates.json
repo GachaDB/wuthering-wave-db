@@ -1,0 +1,60 @@
+{
+    "versions": [
+        {
+        "version": "2.1",
+        "name": "Waves Sing, and the Cerulean Bird Calls",
+        "release_date": "2025-02-13",
+        "end_date": "2025-03-26"
+        },
+        {
+        "version": "2.0",
+        "name": "All Silent Souls Can Sing",
+        "release_date": "2025-01-02",
+        "end_date": "2025-02-12"
+        },
+        {
+        "version": "1.4",
+        "name": "When the Night Knocks",
+        "release_date": "2024-11-14",
+        "end_date": "2024-12-12"
+        },
+        {
+        "version": "1.3",
+        "name": "To the Shore's End",
+        "release_date": "2024-09-29",
+        "end_date": "2024-10-24"
+        },
+        {
+        "version": "1.2",
+        "name": "In the Turquoise Moonglow",
+        "release_date": "2024-08-15",
+        "end_date": "2024-09-07"
+        },
+        {
+        "version": "1.1",
+        "name": "Thaw of Eons",
+        "release_date": "2024-06-28",
+        "end_date": "2024-07-22"
+        },
+        {
+        "version": "1.0",
+        "name": "Waking of a World",
+        "release_date": "2024-05-23",
+        "end_date": "2024-06-13"
+        }
+    ],
+    "prerelease": [
+        {
+        "version": "Closed Beta II",
+        "name": "Version/Closed Beta II",
+        "release_date": "2024-02-19",
+        "end_date": "N/A"
+        },
+        {
+        "version": "Closed Beta I",
+        "name": "Version/Closed Beta I",
+        "release_date": "2023-04-24",
+        "end_date": "N/A"
+        }
+    ]
+}
