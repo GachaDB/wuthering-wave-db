@@ -54,7 +54,6 @@
 
       .timeline-header {
         display: flex;
-        gap: 5px;
         margin-bottom: 20px;
         font-weight: bold;
         color: #bb86fc;
@@ -628,7 +627,7 @@
               period.end > timelineData.endDate
                 ? calculatePosition(timelineData.endDate)
                 : endPos;
-            const width = adjustedEndPos - adjustedStartPos + dateCellWidth + 80;
+            const width = adjustedEndPos - adjustedStartPos + dateCellWidth;
             const itemTypeClass = `timeline-${item.name
               .toLowerCase()
               .replace(/\s+/g, "-")
@@ -645,7 +644,7 @@
               .trim()}`;
             const itemElement = document.createElement("div");
             itemElement.className = `timeline-item ${itemTypeClass}`;
-            itemElement.style.left = `${startPos + (index > 1 ? 0 : index * 130)}px`;
+            itemElement.style.left = `${startPos + (index > 1 ? 0 : index * 50)}px`;
             itemElement.style.width = `${width}px`;
             itemElement.title = `${period.name}: ${period.start.toDateString()} - ${period.end.toDateString()}`;
             const imageElement = document.createElement("img");
@@ -671,7 +670,6 @@
         enableTimelineScroll("timeline-container");
       }
     
-      // Enable timeline scroll
       function enableTimelineScroll(containerId) {
         const container = document.getElementById(containerId);
         if (!container) {
