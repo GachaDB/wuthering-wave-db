@@ -41,16 +41,17 @@ function createNavigation() {
 
     const menuBar = document.createElement('div');
     menuBar.className = 'menu-bar';
+    const baseUrl = window.location.pathname.includes("/wuthering-wave-db") ? "/wuthering-wave-db" : "";
 
     const menuItems = [
-        { href: '../index', icon: 'bx-home-alt', text: 'Dashboard' },
-        { href: '../Pages/Code', icon: 'bxs-coupon', text: 'Coupons/Codes' },
-        { href: '../Pages/Character', icon: 'bx-group', text: 'Character' },
-        { href: '../Pages/Weapon', icon: 'bx-knife', text: 'Weapon' },
-        { href: '../Pages/Echos-TD', icon: 'bxs-virus', text: 'Echos/TD' },
-        { href: '../Pages/Story', icon: 'bx-book-content', text: 'Story' },
-        { href: '../Pages/Timeline', icon: 'bx-calendar', text: 'Timeline' },
-        { href: '../Pages/Gacha', icon: 'bx-stats', text: 'Gacha Simulator' }
+        { href: `${baseUrl}/index`, icon: 'bx-home-alt', text: 'Dashboard' },
+        { href: `${baseUrl}/Pages/Code`, icon: 'bxs-coupon', text: 'Coupons/Codes' },
+        { href: `${baseUrl}/Pages/Character`, icon: 'bx-group', text: 'Character' },
+        { href: `${baseUrl}/Pages/Weapon`, icon: 'bx-knife', text: 'Weapon' },
+        { href: `${baseUrl}/Pages/Echos-TD`, icon: 'bxs-virus', text: 'Echos/TD' },
+        { href: `${baseUrl}/Pages/Story`, icon: 'bx-book-content', text: 'Story' },
+        { href: `${baseUrl}/Pages/Timeline`, icon: 'bx-calendar', text: 'Timeline' },
+        { href: `${baseUrl}/Pages/Gacha`, icon: 'bx-stats', text: 'Gacha Simulator' }
     ];
     const validPaths = new Set(menuItems.map(item => item.href));
 
