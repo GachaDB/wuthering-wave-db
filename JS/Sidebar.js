@@ -44,13 +44,13 @@ function createNavigation() {
 
     const menuItems = [
         { href: '../index', icon: 'bx-home-alt', text: 'Dashboard' },
-        { href: '/Pages/Code', icon: 'bxs-coupon', text: 'Coupons/Codes' },
-        { href: '/Pages/Character', icon: 'bx-group', text: 'Character' },
-        { href: '/Pages/Weapon', icon: 'bx-knife', text: 'Weapon' },
-        { href: '/Pages/Echos-TD', icon: 'bxs-virus', text: 'Echos/TD' },
-        { href: '/Pages/Story', icon: 'bx-book-content', text: 'Story' },
-        { href: '/Pages/Timeline', icon: 'bx-calendar', text: 'Timeline' },
-        { href: '/Pages/Gacha', icon: 'bx-stats', text: 'Gacha Simulator' }
+        { href: '../Pages/Code', icon: 'bxs-coupon', text: 'Coupons/Codes' },
+        { href: '../Pages/Character', icon: 'bx-group', text: 'Character' },
+        { href: '../Pages/Weapon', icon: 'bx-knife', text: 'Weapon' },
+        { href: '../Pages/Echos-TD', icon: 'bxs-virus', text: 'Echos/TD' },
+        { href: '../Pages/Story', icon: 'bx-book-content', text: 'Story' },
+        { href: '../Pages/Timeline', icon: 'bx-calendar', text: 'Timeline' },
+        { href: '../Pages/Gacha', icon: 'bx-stats', text: 'Gacha Simulator' }
     ];
     const validPaths = new Set(menuItems.map(item => item.href));
 
