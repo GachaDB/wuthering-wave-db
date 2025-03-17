@@ -232,15 +232,16 @@
     </div>
 
     <script>
+        const baseUrl = window.location.pathname.includes("/wuthering-wave-db") ? "/wuthering-wave-db" : "";
         const menuItems = [
-            { href: '../index' },
-            { href: '/Pages/Code' },
-            { href: '/Pages/Character' },
-            { href: '/Pages/Weapon' },
-            { href: '/Pages/Echos-TD' },
-            { href: '/Pages/Story' },
-            { href: '/Pages/Timeline' },
-            { href: '/Pages/Gacha' }
+            { href: `${baseUrl}/index` },
+            { href: `${baseUrl}/Pages/Code` },
+            { href: `${baseUrl}/Pages/Character` },
+            { href: `${baseUrl}/Pages/Weapon` },
+            { href: `${baseUrl}/Pages/Echos-TD` },
+            { href: `${baseUrl}/Pages/Story` },
+            { href: `${baseUrl}/Pages/Timeline` },
+            { href: `${baseUrl}/Pages/Gacha` }
         ];
 
         function checkPage() {
