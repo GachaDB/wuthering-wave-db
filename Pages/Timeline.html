@@ -395,11 +395,9 @@
           .then(([eventData, weaponResponse]) => {
             weaponData = weaponResponse.weapons;
     
-            // Set startDate and endDate based on the selected version
             const startDate = new Date(selectedVersion.release_date);
             const endDate = new Date(selectedVersion.end_date);
     
-            // Filter events based on the selected version's date range
             const filteredEvents = eventData.filter((event) => {
               const eventStart = new Date(event.start);
               const eventEnd = new Date(event.end);
@@ -490,31 +488,62 @@
             });
     
             const groupEvents = (events, prefix) => {
-  const groups = [];
+  const groups = {};
+
+  // Step 1: Group events by type
   events.forEach((event) => {
-    const existingGroup = groups.find((group) =>
-      group.some((e) => {
-        const overlapStart = Math.max(e.start, event.start);
-        const overlapEnd = Math.min(e.end, event.end);
-        const overlapDuration = overlapEnd - overlapStart;
-        return overlapDuration > 0 && overlapDuration < 23 * 60 * 60 * 1000; // 23 hours in milliseconds
-      })
-    );
-    if (existingGroup) {
-      existingGroup.push(event);
-    } else {
-      groups.push([event]);
+    const typeKey = event.type === "Convene" ? `Convene${event.event_detail?.type}` : event.type;
+    if (!groups[typeKey]) {
+      groups[typeKey] = [];
     }
+    groups[typeKey].push(event);
   });
-  groups.forEach((group, index) => {
+
+  // Step 2: Split each type group by overlapping date ranges
+  const finalGroups = [];
+  Object.entries(groups).forEach(([typeKey, typeEvents]) => {
+    typeEvents.sort((a, b) => new Date(a.start) - new Date(b.start)); // Sort by start date
+    let currentGroups = [];
+
+    typeEvents.forEach((event) => {
+      const eventStart = new Date(event.start).getTime();
+      const eventEnd = new Date(event.end).getTime();
+      let placed = false;
+
+      // Check each existing group for overlap
+      for (let group of currentGroups) {
+        const hasOverlap = group.some((e) => {
+          const eStart = new Date(e.start).getTime();
+          const eEnd = new Date(e.end).getTime();
+          return eventStart <= eEnd && eventEnd >= eStart; // Overlap condition
+        });
+        if (!hasOverlap) {
+          group.push(event);
+          placed = true;
+          break;
+        }
+      }
+
+      // If no non-overlapping group found, create a new one
+      if (!placed) {
+        currentGroups.push([event]);
+      }
+    });
+
+    finalGroups.push(...currentGroups);
+  });
+
+  finalGroups.forEach((group, index) => {
+    const typeKey = group[0].type === "Convene" ? `Convene${group[0].event_detail?.type}` : group[0].type;
+    const groupName = `${typeKey}${finalGroups.filter(g => g[0].type === group[0].type && g[0].event_detail?.type === group[0].event_detail?.type).indexOf(group) + 1}`;
     timelineData.items.push({
-      name: `${prefix}${index + 1}`,
-      periods: group.map((event, idx) => {
+      name: groupName,
+      periods: group.map((event) => {
         let extractedImage = event.imageUrl;
         if (event.type === "Convene") {
           if (event.event_detail?.type === "hero") {
-                        const featuredHero = event.event_detail.featured.replace(/ /g, "_");
-                        extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}_Head_Icon.webp`;
+            const featuredHero = event.event_detail.featured.replace(/ /g, "_");
+            extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}_Head_Icon.webp`;
           } else if (event.event_detail?.type === "weapon") {
             const featuredWeapon = event.event_detail.featured;
             extractedImage = getWeaponImageUrl(featuredWeapon);
@@ -523,21 +552,21 @@
           extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
         }
         const isNew = ["whiwa", "toa"].includes(event.type.toLowerCase())
-  ? false
-  : allEvents
-      .filter((e) =>
-        e.type === "Convene"
-          ? e.event_detail?.type === event.event_detail?.type &&
-            e.event_detail?.featured === event.event_detail?.featured
-          : e.type === event.type
-      )
-      .sort((a, b) => new Date(a.date) - new Date(b.date))[0] === event;
+          ? false
+          : allEvents
+              .filter((e) =>
+                e.type === "Convene"
+                  ? e.event_detail?.type === event.event_detail?.type &&
+                    e.event_detail?.featured === event.event_detail?.featured
+                  : e.type === event.type
+              )
+              .sort((a, b) => new Date(a.date) - new Date(b.date))[0] === event;
         return {
           name: event.name,
           start: new Date(event.start),
           end: new Date(event.end),
           image: extractedImage,
-          isNew: isNew
+          isNew: isNew,
         };
       }),
     });
@@ -551,7 +580,6 @@
           .catch((error) => console.error("Error fetching data:", error));
       }
     
-      // Event listener for dropdown change
       document
         .getElementById("version-dropdown")
         .addEventListener("change", function () {
@@ -563,20 +591,18 @@
           }
         });
     
-      // Render timeline
       function renderTimeline() {
         const timelineHeader = document.getElementById("timeline-header");
         const allDates = getAllDates(timelineData.startDate, timelineData.endDate);
         let baseLineWidth = 0;
         timelineHeader.innerHTML = "";
-        const today = new Date().setHours(0, 0, 0, 0); // Get today's date without time
+        const today = new Date().setHours(0, 0, 0, 0);
         allDates.forEach((date) => {
           const dateElement = document.createElement("span");
           dateElement.textContent = date.toLocaleDateString("en-US", {
             month: "short",
             day: "numeric",
           });
-          // Check if this date is today and add the class
           if (date.setHours(0, 0, 0, 0) === today) {
             dateElement.classList.add("today");
           }
@@ -588,7 +614,6 @@
         });
       }
     
-      // Render timeline content
       function renderTimelineContent(baseLineWidth, allDates) {
         const timeline = document.getElementById("timeline");
         if (baseLineWidth === 0) {

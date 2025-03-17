@@ -1,752 +1,576 @@
 [
-    {
-      "id": "absolutePulsationAgesOfHarvest1",
-      "name": "Ages of Harvest",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Ages of Harvest",
-        "featured4Star": [
-          "Discord",
-          "Commando of Conviction",
-          "Amity Accord"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Ages_of_Harvest_2024-06-28.webp",
-      "start": "2024-06-28 09:00",
-      "end": "2024-07-22 09:59",
-      "version": "Version 1.1"
+  {
+    "id": "absolutePulsationVerdantSummit1",
+    "name": "Verdant Summit",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Verdant Summit",
+      "featured4Star": ["Dauntless Evernight", "Variation", "Hollow Mirage"]
     },
-    {
-      "id": "absolutePulsationAgesOfHarvest2",
-      "name": "Ages of Harvest",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Ages of Harvest",
-        "featured4Star": [
-          "Celestial Spiral",
-          "Dauntless Evernight",
-          "Variation"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Ages_of_Harvest_2024-06-28.webp",
-      "start": "2025-01-23 10:00",
-      "end": "2025-02-12 09:59",
-      "version": "Version 2.0"
+    "imageUrl": "Absolute_Pulsation_Verdant_Summit_2024-05-23.webp",
+    "start": "2024-05-23 09:00",
+    "end": "2024-06-13 09:59",
+    "version": "Version 1.0"
+  },
+  {
+    "id": "prevailTheLastingNight1",
+    "name": "Prevail the Lasting Night",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Jiyan",
+      "featured4Star": ["Danjin", "Chixia", "Mortefi"]
     },
-    {
-      "id": "absolutePulsationBlazingBrilliance1",
-      "name": "Blazing Brilliance",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Blazing Brilliance",
-        "featured4Star": [
-          "Comet Flare",
-          "Overture",
-          "Undying Flame"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Blazing_Brilliance_2024-07-22.webp",
-      "start": "2024-07-22 10:00",
-      "end": "2024-08-14 09:59",
-      "version": "Version 1.1"
+    "imageUrl": "Prevail_the_Lasting_Night_2024-05-23_2024-05-23 09:00.webp",
+    "start": "2024-05-23 09:00",
+    "end": "2024-06-13 09:59",
+    "version": "Version 1.0"
+  },
+  {
+    "id": "absolutePulsationStringmaster1",
+    "name": "Stringmaster",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Stringmaster",
+      "featured4Star": ["Jinzhou Keeper", "Cadenza", "Lunar Cutter"]
     },
-    {
-      "id": "absolutePulsationLuminousHymn",
-      "name": "Luminous Hymn",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Luminous Hymn",
-        "featured4Star": [
-          "Jinzhou Keeper",
-          "Discord",
-          "Novaburst"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Luminous_Hymn_2025-02-13.webp",
-      "start": "2025-02-13 09:00",
-      "end": "2025-03-06 09:59",
-      "version": "Version 2.1"
+    "imageUrl": "Absolute_Pulsation_Stringmaster_2024-06-06.webp",
+    "start": "2024-06-06 10:00",
+    "end": "2024-06-26 11:59",
+    "version": "Version 1.0"
+  },
+  {
+    "id": "whenThunderPours1",
+    "name": "When Thunder Pours",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Yinlin",
+      "featured4Star": ["Taoqi", "Aalto", "Yuanwu"]
     },
-    {
-      "id": "absolutePulsationRedSpring",
-      "name": "Red Spring",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Red Spring",
-        "featured4Star": [
-          "Commando of Conviction",
-          "Novaburst",
-          "Fusion Accretion"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Red_Spring_2024-11-14.webp",
-      "start": "2024-11-14 10:00",
-      "end": "2024-12-12 09:59",
-      "version": "Version 1.4"
+    "imageUrl": "When_Thunder_Pours_2024-06-06.webp",
+    "start": "2024-06-06 10:00",
+    "end": "2024-06-26 11:59",
+    "version": "Version 1.0"
+  },
+  {
+    "id": "absolutePulsationAgesOfHarvest1",
+    "name": "Ages of Harvest",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Ages of Harvest",
+      "featured4Star": ["Discord", "Commando of Conviction", "Amity Accord"]
     },
-    {
-      "id": "absolutePulsationRimeDrapedSprouts1",
-      "name": "Rime-Draped Sprouts",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Rime-Draped Sprouts",
-        "featured4Star": [
-          "Dauntless Evernight",
-          "Jinzhou Keeper",
-          "Hollow Mirage"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Rime-Draped_Sprouts_2024-08-15.webp",
-      "start": "2024-08-15 09:00",
-      "end": "2024-09-07 09:59",
-      "version": "Version 1.2"
+    "imageUrl": "Absolute_Pulsation_Ages_of_Harvest_2024-06-28.webp",
+    "start": "2024-06-28 09:00",
+    "end": "2024-07-22 09:59",
+    "version": "Version 1.1"
+  },
+  {
+    "id": "thawbornRenewal1",
+    "name": "Thawborn Renewal",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Jinhsi",
+      "featured4Star": ["Sanhua", "Danjin", "Yangyang"]
     },
-    {
-      "id": "absolutePulsationRimeDrapedSprouts2",
-      "name": "Rime-Draped Sprouts",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Rime-Draped Sprouts",
-        "featured4Star": [
-          "Waning Redshift",
-          "Comet Flare",
-          "Marcato"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Rime-Draped_Sprouts_2025-01-02.webp",
-      "start": "2025-01-02 09:00",
-      "end": "2025-01-23 09:59",
-      "version": "Version 2.0"
+    "imageUrl": "Thawborn_Renewal_2024-06-28.webp",
+    "start": "2024-06-28 09:00",
+    "end": "2024-07-22 09:59",
+    "version": "Version 1.1"
+  },
+  {
+    "id": "absolutePulsationBlazingBrilliance1",
+    "name": "Blazing Brilliance",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Blazing Brilliance",
+      "featured4Star": ["Comet Flare", "Overture", "Undying Flame"]
     },
-    {
-      "id": "absolutePulsationStellarSymphony",
-      "name": "Stellar Symphony",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Stellar Symphony",
-        "featured4Star": [
-          "Endless Collapse",
-          "Discord",
-          "Comet Flare"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Stellar_Symphony_2024-09-29.webp",
-      "start": "2024-09-29 10:00",
-      "end": "2024-10-24 09:59",
-      "version": "Version 1.3"
+    "imageUrl": "Absolute_Pulsation_Blazing_Brilliance_2024-07-22.webp",
+    "start": "2024-07-22 10:00",
+    "end": "2024-08-14 09:59",
+    "version": "Version 1.1"
+  },
+  {
+    "id": "vermillionsPloy1",
+    "name": "Vermillion's Ploy",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Changli",
+      "featured4Star": ["Taoqi", "Baizhi", "Mortefi"]
     },
-    {
-      "id": "absolutePulsationStringmaster1",
-      "name": "Stringmaster",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Stringmaster",
-        "featured4Star": [
-          "Jinzhou Keeper",
-          "Cadenza",
-          "Lunar Cutter"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Stringmaster_2024-06-06.webp",
-      "start": "2024-06-06 10:00",
-      "end": "2024-06-26 11:59",
-      "version": "Version 1.0"
+    "imageUrl": "Vermillion%27s_Ploy_2024-07-22.webp",
+    "start": "2024-07-22 10:00",
+    "end": "2024-08-14 11:59",
+    "version": "Version 1.1"
+  },
+  {
+    "id": "absolutePulsationRimeDrapedSprouts1",
+    "name": "Rime-Draped Sprouts",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Rime-Draped Sprouts",
+      "featured4Star": ["Dauntless Evernight", "Jinzhou Keeper", "Hollow Mirage"]
     },
-    {
-      "id": "absolutePulsationStringmaster2",
-      "name": "Stringmaster",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Stringmaster",
-        "featured4Star": [
-          "Waning Redshift",
-          "Jinzhou Keeper",
-          "Hollow Mirage"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Stringmaster_2024-12-12.webp",
-      "start": "2024-12-12 10:00",
-      "end": "2025-01-01 11:59",
-      "version": "Version 1.4"
+    "imageUrl": "Absolute_Pulsation_Rime-Draped_Sprouts_2024-08-15.webp",
+    "start": "2024-08-15 09:00",
+    "end": "2024-09-07 09:59",
+    "version": "Version 1.2"
+  },
+  {
+    "id": "chromaticProse1",
+    "name": "Chromatic Prose",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Zhezhi",
+      "featured4Star": ["Chixia", "Baizhi", "Sanhua"]
     },
-    {
-      "id": "absolutePulsationTheLastDance",
-      "name": "The Last Dance",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "The Last Dance",
-        "featured4Star": [
-          "Relativistic Jet",
-          "Fusion Accretion",
-          "Amity Accord"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_The_Last_Dance_2025-01-02.webp",
-      "start": "2025-01-02 09:00",
-      "end": "2025-01-23 09:59",
-      "version": "Version 2.0"
+    "imageUrl": "Chromatic_Prose_2024-08-15.webp",
+    "start": "2024-08-15 09:00",
+    "end": "2024-09-07 09:59",
+    "version": "Version 1.2"
+  },
+  {
+    "id": "absolutePulsationVeritysHandle1",
+    "name": "Verity's Handle",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Verity's Handle",
+      "featured4Star": ["Marcato", "Helios Cleaver", "Novaburst"]
     },
-    {
-      "id": "absolutePulsationTragicomedy",
-      "name": "Tragicomedy",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Tragicomedy",
-        "featured4Star": [
-          "Celestial Spiral",
-          "Dauntless Evernight",
-          "Variation"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Tragicomedy_2025-01-23.webp",
-      "start": "2025-01-23 10:00",
-      "end": "2025-02-12 09:59",
-      "version": "Version 2.0"
+    "imageUrl": "Absolute_Pulsation_Verity%27s_Handle_2024-09-07.webp",
+    "start": "2024-09-07 10:00",
+    "end": "2024-09-28 09:59",
+    "version": "Version 1.2"
+  },
+  {
+    "id": "celestialRevelation1",
+    "name": "Celestial Revelation",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Xiangli Yao",
+      "featured4Star": ["Danjin", "Aalto", "Yuanwu"]
     },
-    {
-      "id": "absolutePulsationVerdantSummit1",
-      "name": "Verdant Summit",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Verdant Summit",
-        "featured4Star": [
-          "Dauntless Evernight",
-          "Variation",
-          "Hollow Mirage"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Verdant_Summit_2024-05-23.webp",
-      "start": "2024-05-23 09:00",
-      "end": "2024-06-13 09:59",
-      "version": "Version 1.0"
+    "imageUrl": "Celestial_Revelation_2024-09-07.webp",
+    "start": "2024-09-07 10:00",
+    "end": "2024-09-28 11:59",
+    "version": "Version 1.2"
+  },
+  {
+    "id": "absolutePulsationStellarSymphony",
+    "name": "Stellar Symphony",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Stellar Symphony",
+      "featured4Star": ["Endless Collapse", "Discord", "Comet Flare"]
     },
-    {
-      "id": "absolutePulsationVerdantSummit2",
-      "name": "Verdant Summit",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Verdant Summit",
-        "featured4Star": [
-          "Celestial Spiral",
-          "Variation",
-          "Helios Cleaver"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Verdant_Summit_2024-05-23.webp",
-      "start": "2024-10-24 11:00",
-      "end": "2024-11-13 09:59",
-      "version": "Version 1.3"
+    "imageUrl": "Absolute_Pulsation_Stellar_Symphony_2024-09-29.webp",
+    "start": "2024-09-29 10:00",
+    "end": "2024-10-24 09:59",
+    "version": "Version 1.3"
+  },
+  {
+    "id": "tillTheSeaTurnsClear",
+    "name": "Till the Sea Turns Clear",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Shorekeeper",
+      "featured4Star": ["Taoqi", "Yangyang", "Chixia"]
     },
-    {
-      "id": "absolutePulsationVeritysHandle1",
-      "name": "Verity's Handle",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Verity's Handle",
-        "featured4Star": [
-          "Marcato",
-          "Helios Cleaver",
-          "Novaburst"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Verity%27s_Handle_2024-09-07.webp",
-      "start": "2024-09-07 10:00",
-      "end": "2024-09-28 09:59",
-      "version": "Version 1.2"
+    "imageUrl": "Till_the_Sea_Turns_Clear_2024-09-29.webp",
+    "start": "2024-09-29 10:00",
+    "end": "2024-10-24 09:59",
+    "version": "Version 1.3"
+  },
+  {
+    "id": "absolutePulsationVerdantSummit2",
+    "name": "Verdant Summit",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Verdant Summit",
+      "featured4Star": ["Celestial Spiral", "Variation", "Helios Cleaver"]
     },
-    {
-      "id": "absolutePulsationVeritysHandle2",
-      "name": "Verity's Handle",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Verity's Handle",
-        "featured4Star": [
-          "Waning Redshift",
-          "Jinzhou Keeper",
-          "Hollow Mirage"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Verity%27s_Handle_2024-12-12.webp",
-      "start": "2024-12-12 10:00",
-      "end": "2025-01-01 11:59",
-      "version": "Version 1.4"
+    "imageUrl": "Absolute_Pulsation_Verdant_Summit_2024-05-23.webp",
+    "start": "2024-10-24 11:00",
+    "end": "2024-11-13 09:59",
+    "version": "Version 1.3"
+  },
+  {
+    "id": "prevailTheLastingNight2",
+    "name": "Prevail the Lasting Night",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Jiyan",
+      "featured4Star": ["Youhu", "Sanhua", "Mortefi"]
     },
-    {
-      "id": "celestialRevelation1",
-      "name": "Celestial Revelation",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Xiangli Yao",
-        "featured4Star": [
-          "Danjin",
-          "Aalto",
-          "Yuanwu"
-        ]
-      },
-      "imageUrl": "Celestial_Revelation_2024-09-07.webp",
-      "start": "2024-09-07 10:00",
-      "end": "2024-09-28 11:59",
-      "version": "Version 1.2"
+    "imageUrl": "Prevail_the_Lasting_Night_2024-10-24.webp",
+    "start": "2024-10-24 10:00",
+    "end": "2024-11-13 09:59",
+    "version": "Version 1.3"
+  },
+  {
+    "id": "absolutePulsationRedSpring",
+    "name": "Red Spring",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Red Spring",
+      "featured4Star": ["Commando of Conviction", "Novaburst", "Fusion Accretion"]
     },
-    {
-      "id": "celestialRevelation2",
-      "name": "Celestial Revelation",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Xiangli Yao",
-        "featured4Star": [
-          "Lumi",
-          "Baizhi",
-          "Yuanwu"
-        ]
-      },
-      "imageUrl": "Celestial_Revelation_2024-12-12.webp",
-      "start": "2024-12-12 10:00",
-      "end": "2025-01-01 11:59",
-      "version": "Version 1.4"
+    "imageUrl": "Absolute_Pulsation_Red_Spring_2024-11-14.webp",
+    "start": "2024-11-14 10:00",
+    "end": "2024-12-12 09:59",
+    "version": "Version 1.4"
+  },
+  {
+    "id": "endOfLostTrail",
+    "name": "End of Lost Trail",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Camellya",
+      "featured4Star": ["Danjin", "Yangyang", "Aalto"]
     },
-    {
-      "id": "chromaticProse1",
-      "name": "Chromatic Prose",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Zhezhi",
-        "featured4Star": [
-          "Chixia",
-          "Baizhi",
-          "Sanhua"
-        ]
-      },
-      "imageUrl": "Chromatic_Prose_2024-08-15.webp",
-      "start": "2024-08-15 09:00",
-      "end": "2024-09-07 09:59",
-      "version": "Version 1.2"
+    "imageUrl": "End_of_Lost_Trail_2024-11-14.webp",
+    "start": "2024-11-14 10:00",
+    "end": "2024-12-12 09:59",
+    "version": "Version 1.4"
+  },
+  {
+    "id": "absolutePulsationStringmaster2",
+    "name": "Stringmaster",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Stringmaster",
+      "featured4Star": ["Waning Redshift", "Jinzhou Keeper", "Hollow Mirage"]
     },
-    {
-      "id": "chromaticProse2",
-      "name": "Chromatic Prose",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Zhezhi",
-        "featured4Star": [
-          "Chixia",
-          "Sanhua",
-          "Mortefi"
-        ]
-      },
-      "imageUrl": "Chromatic_Prose_2025-01-02.webp",
-      "start": "2025-01-02 09:00",
-      "end": "2025-01-23 09:59",
-      "version": "Version 2.0"
+    "imageUrl": "Absolute_Pulsation_Stringmaster_2024-12-12.webp",
+    "start": "2024-12-12 10:00",
+    "end": "2025-01-01 11:59",
+    "version": "Version 1.4"
+  },
+  {
+    "id": "absolutePulsationVeritysHandle2",
+    "name": "Verity's Handle",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Verity's Handle",
+      "featured4Star": ["Waning Redshift", "Jinzhou Keeper", "Hollow Mirage"]
     },
-    {
-      "id": "endOfLostTrail",
-      "name": "End of Lost Trail",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Camellya",
-        "featured4Star": [
-          "Danjin",
-          "Yangyang",
-          "Aalto"
-        ]
-      },
-      "imageUrl": "End_of_Lost_Trail_2024-11-14.webp",
-      "start": "2024-11-14 10:00",
-      "end": "2024-12-12 09:59",
-      "version": "Version 1.4"
+    "imageUrl": "Absolute_Pulsation_Verity%27s_Handle_2024-12-12.webp",
+    "start": "2024-12-12 10:00",
+    "end": "2025-01-01 11:59",
+    "version": "Version 1.4"
+  },
+  {
+    "id": "celestialRevelation2",
+    "name": "Celestial Revelation",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Xiangli Yao",
+      "featured4Star": ["Lumi", "Baizhi", "Yuanwu"]
     },
-    {
-      "id": "prevailTheLastingNight1",
-      "name": "Prevail the Lasting Night",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Jiyan",
-        "featured4Star": [
-          "Danjin",
-          "Chixia",
-          "Mortefi"
-        ]
-      },
-      "imageUrl": "Prevail_the_Lasting_Night_2024-05-23_2024-05-23 09:00.webp",
-      "start": "2024-05-23 09:00",
-      "end": "2024-06-13 09:59",
-      "version": "Version 1.0"
+    "imageUrl": "Celestial_Revelation_2024-12-12.webp",
+    "start": "2024-12-12 10:00",
+    "end": "2025-01-01 11:59",
+    "version": "Version 1.4"
+  },
+  {
+    "id": "whenThunderPours2",
+    "name": "When Thunder Pours",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Yinlin",
+      "featured4Star": ["Lumi", "Baizhi", "Yuanwu"]
     },
-    {
-      "id": "prevailTheLastingNight2",
-      "name": "Prevail the Lasting Night",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Jiyan",
-        "featured4Star": [
-          "Youhu",
-          "Sanhua",
-          "Mortefi"
-        ]
-      },
-      "imageUrl": "Prevail_the_Lasting_Night_2024-10-24.webp",
-      "start": "2024-10-24 10:00",
-      "end": "2024-11-13 09:59",
-      "version": "Version 1.3"
+    "imageUrl": "When_Thunder_Pours_2024-12-12.webp",
+    "start": "2024-12-12 10:00",
+    "end": "2025-01-01 11:59",
+    "version": "Version 1.4"
+  },
+  {
+    "id": "absolutePulsationRimeDrapedSprouts2",
+    "name": "Rime-Draped Sprouts",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Rime-Draped Sprouts",
+      "featured4Star": ["Waning Redshift", "Comet Flare", "Marcato"]
     },
-    {
-      "id": "thawbornRenewal1",
-      "name": "Thawborn Renewal",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Jinhsi",
-        "featured4Star": [
-          "Sanhua",
-          "Danjin",
-          "Yangyang"
-        ]
-      },
-      "imageUrl": "Thawborn_Renewal_2024-06-28.webp",
-      "start": "2024-06-28 09:00",
-      "end": "2024-07-22 09:59",
-      "version": "Version 1.1"
+    "imageUrl": "Absolute_Pulsation_Rime-Draped_Sprouts_2025-01-02.webp",
+    "start": "2025-01-02 09:00",
+    "end": "2025-01-23 09:59",
+    "version": "Version 2.0"
+  },
+  {
+    "id": "absolutePulsationTheLastDance",
+    "name": "The Last Dance",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "The Last Dance",
+      "featured4Star": ["Relativistic Jet", "Fusion Accretion", "Amity Accord"]
     },
-    {
-      "id": "thawbornRenewal2",
-      "name": "Thawborn Renewal",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Jinhsi",
-        "featured4Star": [
-          "Danjin",
-          "Youhu",
-          "Yuanwu"
-        ]
-      },
-      "imageUrl": "Thawborn_Renewal_2025-01-23.webp",
-      "start": "2025-01-23 10:00",
-      "end": "2025-02-12 11:59",
-      "version": "Version 2.0"
+    "imageUrl": "Absolute_Pulsation_The_Last_Dance_2025-01-02.webp",
+    "start": "2025-01-02 09:00",
+    "end": "2025-01-23 09:59",
+    "version": "Version 2.0"
+  },
+  {
+    "id": "chromaticProse2",
+    "name": "Chromatic Prose",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Zhezhi",
+      "featured4Star": ["Chixia", "Sanhua", "Mortefi"]
     },
-    {
-      "id": "tillTheSeaTurnsClear",
-      "name": "Till the Sea Turns Clear",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Shorekeeper",
-        "featured4Star": [
-          "Taoqi",
-          "Yangyang",
-          "Chixia"
-        ]
-      },
-      "imageUrl": "Till_the_Sea_Turns_Clear_2024-09-29.webp",
-      "start": "2024-09-29 10:00",
-      "end": "2024-10-24 09:59",
-      "version": "Version 1.3"
+    "imageUrl": "Chromatic_Prose_2025-01-02.webp",
+    "start": "2025-01-02 09:00",
+    "end": "2025-01-23 09:59",
+    "version": "Version 2.0"
+  },
+  {
+    "id": "whenSilenceTolls",
+    "name": "When Silence Tolls",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Carlotta",
+      "featured4Star": ["Chixia", "Sanhua", "Mortefi"]
     },
-    {
-      "id": "vermillionsPloy1",
-      "name": "Vermillion's Ploy",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Changli",
-        "featured4Star": [
-          "Taoqi",
-          "Baizhi",
-          "Mortefi"
-        ]
-      },
-      "imageUrl": "Vermillion%27s_Ploy_2024-07-22.webp",
-      "start": "2024-07-22 10:00",
-      "end": "2024-08-14 11:59",
-      "version": "Version 1.1"
+    "imageUrl": "When_Silence_Tolls_2025-01-02.webp",
+    "start": "2025-01-02 09:00",
+    "end": "2025-01-23 09:59",
+    "version": "Version 2.0"
+  },
+  {
+    "id": "absolutePulsationAgesOfHarvest2",
+    "name": "Ages of Harvest",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Ages of Harvest",
+      "featured4Star": ["Celestial Spiral", "Dauntless Evernight", "Variation"]
     },
-    {
-      "id": "whenSilenceTolls",
-      "name": "When Silence Tolls",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Carlotta",
-        "featured4Star": [
-          "Chixia",
-          "Sanhua",
-          "Mortefi"
-        ]
-      },
-      "imageUrl": "When_Silence_Tolls_2025-01-02.webp",
-      "start": "2025-01-02 09:00",
-      "end": "2025-01-23 09:59",
-      "version": "Version 2.0"
+    "imageUrl": "Absolute_Pulsation_Ages_of_Harvest_2024-06-28.webp",
+    "start": "2025-01-23 10:00",
+    "end": "2025-02-12 09:59",
+    "version": "Version 2.0"
+  },
+  {
+    "id": "absolutePulsationTragicomedy",
+    "name": "Tragicomedy",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Tragicomedy",
+      "featured4Star": ["Celestial Spiral", "Dauntless Evernight", "Variation"]
     },
-    {
-      "id": "whenThunderPours1",
-      "name": "When Thunder Pours",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Yinlin",
-        "featured4Star": [
-          "Taoqi",
-          "Aalto",
-          "Yuanwu"
-        ]
-      },
-      "imageUrl": "When_Thunder_Pours_2024-06-06.webp",
-      "start": "2024-06-06 10:00",
-      "end": "2024-06-26 11:59",
-      "version": "Version 1.0"
+    "imageUrl": "Absolute_Pulsation_Tragicomedy_2025-01-23.webp",
+    "start": "2025-01-23 10:00",
+    "end": "2025-02-12 09:59",
+    "version": "Version 2.0"
+  },
+  {
+    "id": "thawbornRenewal2",
+    "name": "Thawborn Renewal",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Jinhsi",
+      "featured4Star": ["Danjin", "Youhu", "Yuanwu"]
     },
-    {
-      "id": "whenThunderPours2",
-      "name": "When Thunder Pours",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Yinlin",
-        "featured4Star": [
-          "Lumi",
-          "Baizhi",
-          "Yuanwu"
-        ]
-      },
-      "imageUrl": "When_Thunder_Pours_2024-12-12.webp",
-      "start": "2024-12-12 10:00",
-      "end": "2025-01-01 11:59",
-      "version": "Version 1.4"
+    "imageUrl": "Thawborn_Renewal_2025-01-23.webp",
+    "start": "2025-01-23 10:00",
+    "end": "2025-02-12 11:59",
+    "version": "Version 2.0"
+  },
+  {
+    "id": "stageinthebox1",
+    "name": "Stage in the Box",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Roccia",
+      "featured4Star": ["Danjin", "Youhou", "Yuanwu"]
     },
-    {
+    "imageUrl": "Stage_in_the_Box_2025-01-23.webp",
+    "start": "2025-01-23 10:00",
+    "end": "2025-02-12 09:59",
+    "version": "Version 2.0"
+  },
+  {
+    "id": "absolutePulsationLuminousHymn",
+    "name": "Luminous Hymn",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Luminous Hymn",
+      "featured4Star": ["Jinzhou Keeper", "Discord", "Novaburst"]
+    },
+    "imageUrl": "Absolute_Pulsation_Luminous_Hymn_2025-02-13.webp",
+    "start": "2025-02-13 09:00",
+    "end": "2025-03-06 09:59",
+    "version": "Version 2.1"
+  },
+  {
     "id": "WithHushedWhispers",
     "name": "With Hushed Whispers",
     "type": "Convene",
     "event_detail": {
-        "type": "hero",
-        "featured": "Phoebe",
-        "featured4Star": [
-        "Lumi",
-        "Chixia",
-        "Aalto"
-        ]
+      "type": "hero",
+      "featured": "Phoebe",
+      "featured4Star": ["Lumi", "Chixia", "Aalto"]
     },
     "imageUrl": "With_Hushed_Whispers_2025-02-13.webp",
     "start": "2025-02-13 09:00",
     "end": "2025-03-06 09:59",
     "version": "Version 2.1"
-    },
-    {
-      "id": "blazeAcrossTheDeep",
-      "name": "Blaze Across the Deep",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Brant",
-        "featured4Star": [
-          "Youhu",
-          "Taoqi",
-          "Mortefi"
-        ]
-      },
-      "imageUrl": "Blaze_Across_the_Deep_2025-03-06.webp",
-      "start": "2025-03-06 10:00",
-      "end": "2025-03-26 09:59",
-      "version": "Version 2.1"
-    },
-    {
-      "id": "absolutePulsationUnflickeringValor",
-      "name": "Unflickering Valor",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Unflickering Valor",
-        "featured4Star": [
-          "Waning Redshift",
-          "Comet Flare",
-          "Marcato"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Unflickering_Valor_2025-03-06.webp",
-      "start": "2025-03-06 10:00",
-      "end": "2025-03-26 09:59",
-      "version": "Version 2.1"
-    },
-    {
-      "id": "vermillionsPloy2",
-      "name": "Vermillion's Ploy",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Changli",
-        "featured4Star": [
-          "Youhu",
-          "Taoqi",
-          "Mortefi"
-        ]
-      },
-      "imageUrl": "Vermillion%27s_Ploy_2025-03-06.webp",
-      "start": "2025-03-06 10:00",
-      "end": "2025-03-26 09:59",
-      "version": "Version 2.1"
-    },
-    {
-      "id": "absolutePulsationBlazingBrilliance2",
-      "name": "Blazing Brilliance",
-      "type": "Convene",
-      "event_detail": {
-        "type": "weapon",
-        "featured": "Blazing Brilliance",
-        "featured4Star": [
-          "Waning Redshift",
-          "Comet Flare",
-          "Marcato"
-        ]
-      },
-      "imageUrl": "Absolute_Pulsation_Blazing_Brilliance_2025-03-06.webp",
-      "start": "2025-03-06 10:00",
-      "end": "2025-03-26 09:59",
-      "version": "Version 2.1"
-    },
-    {
-      "id": "toareset010325",
-      "name": "Tower of Adversity Reset",
-      "type": "ToA",
-      "event_detail": {
-        "enemies": {
-          "Resonant Tower": {
-            "Floor 1": ["Baby Viridblaze Saurian", "Viridblaze Saurian"],
-            "Floor 2": ["Fusion Dreadmane", "Chop Chop: Headless", "Chop Chop: Leftless", "Chop Chop: Rightless"],
-            "Floor 3": ["Snip Snap", "Stonewall Bracer", "Fusion Warrior", "Spearback"],
-            "Floor 4": ["Chop Chop", "Dragon of Dirge"]
-          },
-          "Echoing Tower": {
-            "Floor 1": ["Voltscourge Stalker"],
-            "Floor 2": ["Vitreum Dancer"],
-            "Floor 3": ["Questless Knight", "Diurnus Knight", "Nocturnus Knight"],
-            "Floor 4": ["Mech Abomination"]
-          },
-          "Hazard Tower": {
-            "Floor 1": ["Thundering Mephis"],
-            "Floor 2": ["Cyan-Feathered Heron", "Galescourge Stalker", "Feilian Beringal"]
+  },
+  {
+    "id": "whiwareset130225",
+    "name": "Whimpering Waste Reset",
+    "type": "WhiWa",
+    "event_detail": {
+      "enemies": {
+        "Doomstrand Stage": {
+          "Level 80": {
+            "First Half": ["Abyssal Gladius", "Abyssal Mercator", "Calcified Junrock", "Frostscourge Stalker", "Galescourge Stalker", "Golden Junrock", "Rage Against the Statue", "Voltscourge Stalker"],
+            "Second Half": ["Abyssal Mercator", "Cuddle Wuddle", "Cyan-Feathered Heron", "Diggy Duggy", "Dwarf Cassowary", "Nimbus Wraith", "Violet-Feathered Heron"]
           }
         },
-        "interference": {
-          "Hazard Tower": "Enemy Spectro RES and Fusion RES are decreased by 10%, and their Electro RES and Aero RES are increased by 10%.",
-          "Echoing Tower": "Enemy Glacio RES decreases by 10%. When Resonators cast Resonance Liberation, their ATK is increased by 5%, and they gain 10% Resonance Skill DMG Bonus for 3s, stacking up to 4 times. The effect will be removed when the active Resonator is switched off the field.",
-          "Resonant Tower": "Enemy Havoc RES decreased by 10%. When Resonators perform Heavy Attack, the ATK of all Resonators in the team is increased by 10% and their Basic Attack DMG dealt by 10% for 18s, stacking up to 3 times. The effect's duration resets with each new stack."
-        }
-      },
-      "imageUrl": "Tower_of_Adversity.webp",
-      "start": "2025-03-01 09:59",
-      "end": "2025-03-31 09:59"
-    },
-    {
-      "id": "whiwareset130225",
-      "name": "Whimpering Waste Reset",
-      "type": "WhiWa",
-      "event_detail": {
-        "enemies": {
-          "Doomstrand Stage": {
-            "Level 80": {
-              "First Half": [
-                "Abyssal Gladius",
-                "Abyssal Mercator",
-                "Calcified Junrock",
-                "Frostscourge Stalker",
-                "Galescourge Stalker",
-                "Golden Junrock",
-                "Rage Against the Statue",
-                "Voltscourge Stalker"
-              ],
-              "Second Half": [
-                "Abyssal Mercator",
-                "Cuddle Wuddle",
-                "Cyan-Feathered Heron",
-                "Diggy Duggy",
-                "Dwarf Cassowary",
-                "Nimbus Wraith",
-                "Violet-Feathered Heron"
-              ]
-            }
-          },
-          "Infinite Torrents": {
-            "Level 100": {
-              "First Half": [
-                "Abyssal Gladius",
-                "Abyssal Mercator",
-                "Diggy Duggy",
-                "Hocus Pocus",
-                "Lottie Lost",
-                "Nimbus Wraith",
-                "Vitreum Dancer"
-              ],
-              "Second Half": [
-                "Chasm Guardian",
-                "Chop Chop",
-                "Dwarf Cassowary",
-                "Frostscourge Stalker",
-                "Galescourge Stalker",
-                "Voltscourge Stalker"
-              ]
-            }
+        "Infinite Torrents": {
+          "Level 100": {
+            "First Half": ["Abyssal Gladius", "Abyssal Mercator", "Diggy Duggy", "Hocus Pocus", "Lottie Lost", "Nimbus Wraith", "Vitreum Dancer"],
+            "Second Half": ["Chasm Guardian", "Chop Chop", "Dwarf Cassowary", "Frostscourge Stalker", "Galescourge Stalker", "Voltscourge Stalker"]
           }
         }
-      },
-      "imageUrl": "Whimpering_Wastes.webp",
-      "start": "2025-02-13 09:59",
-      "end": "2025-03-17 09:59"
+      }
     },
-    {
-      "id": "tidalChorus",
-      "name": "Tidal Chorus",
-      "type": "Convene",
-      "event_detail": {
-        "type": "normal",
-        "featured": null,
-        "featured4Star": [null]
+    "imageUrl": "Whimpering_Wastes.webp",
+    "start": "2025-02-13 09:59",
+    "end": "2025-03-17 09:59"
+  },
+  {
+    "id": "toareset010325",
+    "name": "Tower of Adversity Reset",
+    "type": "ToA",
+    "event_detail": {
+      "enemies": {
+        "Resonant Tower": {
+          "Floor 1": ["Baby Viridblaze Saurian", "Viridblaze Saurian"],
+          "Floor 2": ["Fusion Dreadmane", "Chop Chop: Headless", "Chop Chop: Leftless", "Chop Chop: Rightless"],
+          "Floor 3": ["Snip Snap", "Stonewall Bracer", "Fusion Warrior", "Spearback"],
+          "Floor 4": ["Chop Chop", "Dragon of Dirge"]
+        },
+        "Echoing Tower": {
+          "Floor 1": ["Voltscourge Stalker"],
+          "Floor 2": ["Vitreum Dancer"],
+          "Floor 3": ["Questless Knight", "Diurnus Knight", "Nocturnus Knight"],
+          "Floor 4": ["Mech Abomination"]
+        },
+        "Hazard Tower": {
+          "Floor 1": ["Thundering Mephis"],
+          "Floor 2": ["Cyan-Feathered Heron", "Galescourge Stalker", "Feilian Beringal"]
+        }
       },
-      "imageUrl": "Tidal_Chorus.webp",
-      "start": null,
-      "end": null
+      "interference": {
+        "Hazard Tower": "Enemy Spectro RES and Fusion RES are decreased by 10%, and their Electro RES and Aero RES are increased by 10%.",
+        "Echoing Tower": "Enemy Glacio RES decreases by 10%. When Resonators cast Resonance Liberation, their ATK is increased by 5%, and they gain 10% Resonance Skill DMG Bonus for 3s, stacking up to 4 times. The effect will be removed when the active Resonator is switched off the field.",
+        "Resonant Tower": "Enemy Havoc RES decreased by 10%. When Resonators perform Heavy Attack, the ATK of all Resonators in the team is increased by 10% and their Basic Attack DMG dealt by 10% for 18s, stacking up to 3 times. The effect's duration resets with each new stack."
+      }
     },
-    {
-      "id": "stageinthebox1",
-      "name": "Stage in the Box",
-      "type": "Convene",
-      "event_detail": {
-        "type": "hero",
-        "featured": "Roccia",
-        "featured4Star": [
-          "Danjin",
-          "Youhou",
-          "Yuanwu"
-        ]
-      },
-      "imageUrl": "Stage_in_the_Box_2025-01-23.webp",
-      "start": "2025-01-23 10:00",
-      "end": "2025-02-12 09:59",
-      "version": "Version 2.0"
-    }
-  ]
+    "imageUrl": "Tower_of_Adversity.webp",
+    "start": "2025-03-01 09:59",
+    "end": "2025-03-31 09:59"
+  },
+  {
+    "id": "blazeAcrossTheDeep",
+    "name": "Blaze Across the Deep",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Brant",
+      "featured4Star": ["Youhu", "Taoqi", "Mortefi"]
+    },
+    "imageUrl": "Blaze_Across_the_Deep_2025-03-06.webp",
+    "start": "2025-03-06 10:00",
+    "end": "2025-03-26 09:59",
+    "version": "Version 2.1"
+  },
+  {
+    "id": "absolutePulsationUnflickeringValor",
+    "name": "Unflickering Valor",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Unflickering Valor",
+      "featured4Star": ["Waning Redshift", "Comet Flare", "Marcato"]
+    },
+    "imageUrl": "Absolute_Pulsation_Unflickering_Valor_2025-03-06.webp",
+    "start": "2025-03-06 10:00",
+    "end": "2025-03-26 09:59",
+    "version": "Version 2.1"
+  },
+  {
+    "id": "vermillionsPloy2",
+    "name": "Vermillion's Ploy",
+    "type": "Convene",
+    "event_detail": {
+      "type": "hero",
+      "featured": "Changli",
+      "featured4Star": ["Youhu", "Taoqi", "Mortefi"]
+    },
+    "imageUrl": "Vermillion%27s_Ploy_2025-03-06.webp",
+    "start": "2025-03-06 10:00",
+    "end": "2025-03-26 09:59",
+    "version": "Version 2.1"
+  },
+  {
+    "id": "absolutePulsationBlazingBrilliance2",
+    "name": "Blazing Brilliance",
+    "type": "Convene",
+    "event_detail": {
+      "type": "weapon",
+      "featured": "Blazing Brilliance",
+      "featured4Star": ["Waning Redshift", "Comet Flare", "Marcato"]
+    },
+    "imageUrl": "Absolute_Pulsation_Blazing_Brilliance_2025-03-06.webp",
+    "start": "2025-03-06 10:00",
+    "end": "2025-03-26 09:59",
+    "version": "Version 2.1"
+  },
+  {
+    "id": "tidalChorus",
+    "name": "Tidal Chorus",
+    "type": "Convene",
+    "event_detail": {
+      "type": "normal",
+      "featured": null,
+      "featured4Star": [null]
+    },
+    "imageUrl": "Tidal_Chorus.webp",
+    "start": null,
+    "end": null
+  }
+]
