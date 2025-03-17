@@ -469,61 +469,16 @@
                   } else {
                     extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
                   }
-                  // Determine isNew based on count
-                  const isNew =
-                    ["whiwa", "toa"].includes(event.type.toLowerCase())
-                      ? false
-                      : allEvents.filter((e) =>
-                          e.type === "Convene"
-                            ? e.event_detail?.type === event.event_detail?.type &&
-                              e.event_detail?.featured === event.event_detail?.featured
-                            : e.type === event.type
-                        ).length === 1;
-                  return {
-                    name: event.name,
-                    start: new Date(event.start),
-                    end: new Date(event.end),
-                    image: extractedImage,
-                    isNew: isNew,
-                  };
-                }),
-              });
-            });
-    
-            const groupEvents = (events, prefix) => {
-              const groups = [];
-              events.forEach((event) => {
-                const existingGroup = groups.find((group) =>
-                  group.every((e) => e.start !== event.start || e.end !== event.end)
-                );
-                if (existingGroup) {
-                  existingGroup.push(event);
-                } else {
-                  groups.push([event]);
-                }
-              });
-              groups.forEach((group, index) => {
-                timelineData.items.push({
-                  name: `${prefix}${index + 1}`,
-                  periods: group.map((event) => {
-                    let extractedImage = event.imageUrl; // Default image
-                    if (event.type === "Convene") {
-                      if (event.event_detail?.type === "hero") {
-                        const featuredHero = event.event_detail.featured.replace(/ /g, "_");
-                        extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}_Head_Icon.webp`;
-                      } else if (event.event_detail?.type === "weapon") {
-                        const featuredWeapon = event.event_detail.featured;
-                        extractedImage = getWeaponImageUrl(featuredWeapon);
-                      }
-                    }
-                    // Determine isNew based on count
-                    const isNew =
-                      allEvents.filter((e) =>
-                        e.type === "Convene"
-                          ? e.event_detail?.type === event.event_detail?.type &&
-                            e.event_detail?.featured === event.event_detail?.featured
-                          : e.type === event.type
-                      ).length === 1;
+                  const isNew = ["whiwa", "toa"].includes(event.type.toLowerCase())
+  ? false
+  : allEvents
+      .filter((e) =>
+        e.type === "Convene"
+          ? e.event_detail?.type === event.event_detail?.type &&
+            e.event_detail?.featured === event.event_detail?.featured
+          : e.type === event.type
+      )
+      .sort((a, b) => new Date(a.date) - new Date(b.date))[0] === event;
                     return {
                       name: event.name,
                       start: new Date(event.start),
@@ -531,10 +486,64 @@
                       image: extractedImage,
                       isNew: isNew,
                     };
-                  }),
-                });
+                }),
               });
-            };
+            });
+    
+            const groupEvents = (events, prefix) => {
+  const groups = [];
+  events.forEach((event) => {
+    const existingGroup = groups.find((group) =>
+      group.some((e) => {
+        const overlapStart = Math.max(e.start, event.start);
+        const overlapEnd = Math.min(e.end, event.end);
+        const overlapDuration = overlapEnd - overlapStart;
+        return overlapDuration > 0 && overlapDuration < 23 * 60 * 60 * 1000; // 23 hours in milliseconds
+      })
+    );
+    if (existingGroup) {
+      existingGroup.push(event);
+    } else {
+      groups.push([event]);
+    }
+  });
+  groups.forEach((group, index) => {
+    timelineData.items.push({
+      name: `${prefix}${index + 1}`,
+      periods: group.map((event, idx) => {
+        let extractedImage = event.imageUrl;
+        if (event.type === "Convene") {
+          if (event.event_detail?.type === "hero") {
+                        const featuredHero = event.event_detail.featured.replace(/ /g, "_");
+                        extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}_Head_Icon.webp`;
+          } else if (event.event_detail?.type === "weapon") {
+            const featuredWeapon = event.event_detail.featured;
+            extractedImage = getWeaponImageUrl(featuredWeapon);
+          }
+        } else {
+          extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
+        }
+        const isNew = ["whiwa", "toa"].includes(event.type.toLowerCase())
+  ? false
+  : allEvents
+      .filter((e) =>
+        e.type === "Convene"
+          ? e.event_detail?.type === event.event_detail?.type &&
+            e.event_detail?.featured === event.event_detail?.featured
+          : e.type === event.type
+      )
+      .sort((a, b) => new Date(a.date) - new Date(b.date))[0] === event;
+        return {
+          name: event.name,
+          start: new Date(event.start),
+          end: new Date(event.end),
+          image: extractedImage,
+          isNew: isNew
+        };
+      }),
+    });
+  });
+};
     
             groupEvents(groupedEvents.conveneHero, "Convenehero");
             groupEvents(groupedEvents.conveneWeapon, "Conveneweapon");
@@ -636,7 +645,7 @@
               .trim()}`;
             const itemElement = document.createElement("div");
             itemElement.className = `timeline-item ${itemTypeClass}`;
-            itemElement.style.left = `${startPos + (index > 1 ? 130 : index * 130)}px`;
+            itemElement.style.left = `${startPos + (index > 1 ? 0 : index * 130)}px`;
             itemElement.style.width = `${width}px`;
             itemElement.title = `${period.name}: ${period.start.toDateString()} - ${period.end.toDateString()}`;
             const imageElement = document.createElement("img");
