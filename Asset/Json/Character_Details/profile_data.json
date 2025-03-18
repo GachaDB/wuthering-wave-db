@@ -1,0 +1,1825 @@
+[
+  {
+    "name": "Brant",
+    "title": "Flamebound Compass",
+    "class": "Natural",
+    "gender": "Male",
+    "birthplace": "Rinascita",
+    "affiliations": [
+      {
+        "name": "Ragunna",
+        "link": "https://wutheringwaves.fandom.com/wiki/Ragunna"
+      },
+      {
+        "name": "Troupe of Fools",
+        "link": "https://wutheringwaves.fandom.com/wiki/Troupe_of_Fools"
+      }
+    ],
+    "release_date": "March 06, 2025",
+    "special_dish": "not found",
+    "voice_actors": {
+      "english": {
+        "name": "Hyoie O'Grady",
+        "link": "https://www.imdb.com/name/nm11144144/"
+      },
+      "chinese": {
+        "name": "Moran (莫然) (莫然)",
+        "link": "https://zh.moegirl.org.cn/zh-tw/%E8%8E%AB%E7%84%B6"
+      },
+      "japanese": {
+        "name": "Kishio Daisuke (岸尾だいすけ) (岸尾だいすけ)",
+        "link": "https://en.wikipedia.org/wiki/Daisuke_Kishio"
+      },
+      "korean": {
+        "name": "Lee Ju-seung (이주승) (이주승)",
+        "link": "https://namu.wiki/w/%EC%9D%B4%EC%A3%BC%EC%8A%B9(%EC%84%B1%EC%9A%B0)"
+      }
+    },
+    "quotes": [
+      {
+        "text": "In the face of danger and adversity, the stage is set for our grandest act!",
+        "source": "Brant"
+      }
+    ],
+    "weapon": "Swords",
+    "element": "Fusion",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Brant",
+      "Chinese (S)": "布兰特",
+      "Chinese (T)": "布蘭特",
+      "Japanese": "ブラント",
+      "Korean": "브렌트",
+      "French": "Brant",
+      "German": "Brant",
+      "Spanish": "Brant"
+    }
+  },
+  {
+    "name": "Chixia",
+    "title": "Gallant Blaze",
+    "class": "Mutant",
+    "gender": "Female",
+    "birthday": "April 18",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Public Security Bureau",
+        "link": "https://wutheringwaves.fandom.com/wiki/Public_Security_Bureau"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Champion Hotpot",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Harriet Carmichael",
+        "link": "https://www.imdb.com/name/nm1689502/"
+      },
+      "chinese": {
+        "name": "Cai Na (蔡娜) (蔡娜)",
+        "link": "https://zh.moegirl.org.cn/zh-hant/%E8%94%A1%E5%A8%9C"
+      },
+      "japanese": {
+        "name": "Nagase Anna (永瀬アンナ) (永瀬アンナ)",
+        "link": "https://en.wikipedia.org/wiki/Anna_Nagase"
+      },
+      "korean": {
+        "name": "[5] (강은애)",
+        "link": "https://wutheringwaves.fandom.com/wiki/Chixia#cite_note-KR-VA_TWChixia-5"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Jinzhou Patroller, Chixia. You can always call on me if you ever find yourself in a pickle!",
+        "source": "Chixia"
+      },
+      {
+        "text": [
+          "Chixia is a junior Jinzhou Patroller.",
+          "",
+          "She roams Jinzhou City, leaving her fiery mark on every alley she stamps through.",
+          "",
+          "As the starring hero among her community, Chixia is always ready for anyone in need."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Pistols",
+    "element": "Fusion",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Chixia",
+      "Chinese (S)": "炽霞",
+      "Chinese (T)": "熾霞",
+      "Japanese": "熾シ霞カ",
+      "Korean": "치샤",
+      "French": "Chixia",
+      "German": "Chixia",
+      "Spanish": "Chixia"
+    }
+  },
+  {
+    "name": "Aalto",
+    "title": "Mistcloak Strike",
+    "class": "Congenital",
+    "gender": "Male",
+    "birthday": "June 11",
+    "birthplace": "New",
+    "nation": "The",
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Perceptive Eyes",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "James Day",
+        "link": "https://www.imdb.com/name/nm8112834/"
+      },
+      "chinese": {
+        "name": "Liang Dawei (梁达伟) (梁达伟)",
+        "link": "https://zh.moegirl.org.cn/zh/%E6%A2%81%E8%BE%BE%E4%BC%9F"
+      },
+      "japanese": {
+        "name": "Iwasaki Ryōta (岩崎諒太) (岩崎諒太)",
+        "link": "https://en.wikipedia.org/wiki/Ryota_Iwasaki"
+      },
+      "korean": {
+        "name": "Im Chaebin (임채빈) (임채빈)",
+        "link": "https://namu.wiki/w/%EC%9E%84%EC%B1%84%EB%B9%88"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Well, if it isn't my loyal patron! What do you wish to inquire about today?",
+        "source": "Aalto"
+      },
+      {
+        "text": [
+          "Aalto is an enigmatic Information Broker, known for his elusive nature and welcoming smile.",
+          "",
+          "Rumor has it he'll provide any information at the right price.",
+          "",
+          "He was invited to join the Black Shores, a mysterious organization based on an isolated island, for his intel-gathering expertise.",
+          "",
+          "Both working for the Black Shores as Consultants, Aalto and Encore have become an inseparable and lively duo during missions.",
+          "",
+          "Despite his skittish demeanor, Aalto's true character shines through as a reliable and attentive individual."
+        ],
+        "source": "His introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Pistols",
+    "element": "Aero",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Aalto",
+      "Chinese (S)": "秋水",
+      "Chinese (T)": "秋水",
+      "Japanese": "アールト",
+      "Korean": "알토",
+      "French": "Aalto",
+      "German": "Aalto",
+      "Spanish": "Aalto"
+    }
+  },
+  {
+    "name": "Baizhi",
+    "title": "Healing You'tan",
+    "class": "Mutant",
+    "gender": "Female",
+    "birthday": "September 10",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Huaxu Academy",
+        "link": "https://wutheringwaves.fandom.com/wiki/Huaxu_Academy"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Iced Perilla",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Samantha Dakin",
+        "link": "https://www.imdb.com/name/nm4476858/"
+      },
+      "chinese": {
+        "name": "Chen Tingting (陈婷婷) (陈婷婷)",
+        "link": "https://zh.moegirl.org.cn/%E9%99%88%E5%A9%B7%E5%A9%B7"
+      },
+      "japanese": {
+        "name": "Seto Asami (瀬戸麻沙美) (瀬戸麻沙美)",
+        "link": "https://en.wikipedia.org/wiki/Asami_Seto"
+      },
+      "korean": {
+        "name": "Seong Ye-won (성예원) (성예원)",
+        "link": "https://en.wikipedia.org/wiki/ko:%EC%84%B1%EC%98%88%EC%9B%90"
+      }
+    },
+    "quotes": [
+      {
+        "text": "No, I cannot place my faith in it, but my anticipation stems precisely from this distrust. A claim is always verifiable before it is discredited entirely.",
+        "source": "Baizhi"
+      },
+      {
+        "text": [
+          "Baizhi, a researcher at Huaxu Academy, is known for her sharp intellect and precise methods.",
+          "",
+          "Despite appearing aloof, she is approachable to those who seek knowledge.",
+          "",
+          "Her insatiable thirst for understanding drives her to tirelessly study Remnant Energy.",
+          "",
+          "She will stop at nothing until its mysteries are unraveled, even if it means dedicating her entire life to the pursuit."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Rectifiers",
+    "element": "Glacio",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Baizhi",
+      "Chinese (S)": "白芷",
+      "Chinese (T)": "白芷",
+      "Japanese": "白ビャク芷シ",
+      "Korean": "설지",
+      "French": "Baizhi",
+      "German": "Baizhi",
+      "Spanish": "Baizhi"
+    }
+  },
+  {
+    "name": "Calcharo",
+    "title": "Phantom Hunters",
+    "class": "Natural",
+    "gender": "Male",
+    "birthday": "July 8",
+    "birthplace": "New",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Ghost Hounds",
+        "link": "https://wutheringwaves.fandom.com/wiki/Ghost_Hounds"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Ration Bar",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Ben Cura",
+        "link": "https://www.imdb.com/name/nm4459896/"
+      },
+      "chinese": {
+        "name": "[1] (徐翔)",
+        "link": "https://wutheringwaves.fandom.com/wiki/Calcharo#cite_note-CN-VA_KGCalcharo-1"
+      },
+      "japanese": {
+        "name": "Toshiyuki Morikawa (森川智之) (森川智之)",
+        "link": "https://en.wikipedia.org/wiki/Toshiyuki_Morikawa"
+      },
+      "korean": {
+        "name": "Park Min-gi (박민기) (박민기)",
+        "link": "https://namu.wiki/w/%EB%B0%95%EB%AF%BC%EA%B8%B0%28%EC%84%B1%EC%9A%B0%29"
+      }
+    },
+    "quotes": [
+      {
+        "text": "They'll make an offer we like. I'll make sure of it.",
+        "source": "Calcharo"
+      },
+      {
+        "text": [
+          "Leader of the \"Ghost Hounds\", an international mercenary group.",
+          "",
+          "Ruthless, vengeful, unforgiving. A potential client must be mindful of the price to pay before making him an offer."
+        ],
+        "source": "His introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Broadblades",
+    "element": "Electro",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Calcharo",
+      "Chinese (S)": "卡卡罗",
+      "Chinese (T)": "卡卡羅",
+      "Japanese": "カカロ",
+      "Korean": "카카루",
+      "French": "Calcharo",
+      "German": "Calcharo",
+      "Spanish": "Calcharo"
+    }
+  },
+  {
+    "name": "Danjin",
+    "title": "Scarlet Shade",
+    "class": "Mutant",
+    "gender": "Female",
+    "birthday": "August 31",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Midnight Rangers",
+        "link": "https://wutheringwaves.fandom.com/wiki/Midnight_Rangers"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Silky Reveries",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Sophie Colquhoun",
+        "link": "https://en.wikipedia.org/wiki/Sophie_Colquhoun"
+      },
+      "chinese": {
+        "name": "Yi Kou Jing (一口井) (一口井)",
+        "link": "https://zh.moegirl.org.cn/%E4%B8%80%E5%8F%A3%E4%BA%95"
+      },
+      "japanese": {
+        "name": "Okasaki Miho (岡咲美保) (岡咲美保)",
+        "link": "https://en.wikipedia.org/wiki/Miho_Okasaki"
+      },
+      "korean": {
+        "name": "Lee Hyunjin (이현진) (이현진)",
+        "link": "https://namu.wiki/w/%EC%9D%B4%ED%98%84%EC%A7%84(%EC%84%B1%EC%9A%B0)"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Wherever I go, I swear to vanquish evil, whether it's out in the daylight or hiding in the dark.",
+        "source": "Danjin"
+      },
+      {
+        "text": [
+          "A ranger straightforward in nature, with a strong sense of moral judgment.",
+          "",
+          "She travels the lands refining her knowledge in an endeavor to seek the true meaning of good and evil.",
+          "",
+          "Though perils lurk in every corner of her journey, she vows to cleanse the world of villainy."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Swords",
+    "element": "Havoc",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Danjin",
+      "Chinese (S)": "丹瑾",
+      "Chinese (T)": "丹瑾",
+      "Japanese": "丹タン瑾キン",
+      "Korean": "단근",
+      "French": "Danjin",
+      "German": "Danjin",
+      "Spanish": "Danjin"
+    }
+  },
+  {
+    "name": "Encore",
+    "title": "Wooly–counting Game",
+    "class": "Congenital",
+    "gender": "Female",
+    "birthday": "March 21",
+    "birthplace": "New",
+    "nation": "The",
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Fairytale",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Carina Reeves",
+        "link": "https://carinareeves.com/"
+      },
+      "chinese": {
+        "name": "Xiao Sibai (皛四白) (皛四白)",
+        "link": "https://zh.moegirl.org.cn/%E5%9B%9B%E7%99%BD"
+      },
+      "japanese": {
+        "name": "[3] (伊吹誓乃)",
+        "link": "https://wutheringwaves.fandom.com/wiki/Encore#cite_note-JP-VA_TWEncore-3"
+      },
+      "korean": {
+        "name": "[4] (이세레나)",
+        "link": "https://wutheringwaves.fandom.com/wiki/Encore#cite_note-KR-VA_TWEncore-4"
+      }
+    },
+    "quotes": [
+      {
+        "text": "A long, long time ago... Cosmos told Encore about a fun spot! Come on! Let's go check it out!",
+        "source": "Encore"
+      },
+      {
+        "text": [
+          "Encore, a consultant from the Black Shores, is a quirky, lively, and spunky girl who loves to recount her friendships and adventures through fantasy and fairy tales.",
+          "",
+          "She always has two Woolies with her, who are Encore's best friends and protectors.",
+          "",
+          "With Cosmos and Cloudy, Encore travels all over the world!"
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Rectifiers",
+    "element": "Fusion",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Encore",
+      "Chinese (S)": "安可",
+      "Chinese (T)": "安可",
+      "Japanese": "アンコ",
+      "Korean": "앙코",
+      "French": "Encore",
+      "German": "Encore",
+      "Spanish": "Encore"
+    }
+  },
+  {
+    "name": "Jianxin",
+    "title": "Cleansing Reflections",
+    "class": "Natural",
+    "gender": "Female",
+    "birthday": "April 6",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Fengyiquan",
+        "link": "https://wutheringwaves.fandom.com/wiki/Fengyiquan"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Mirrors of Clarity",
+      "image_url": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Ioanna Kimbook",
+        "link": "https://en.wikipedia.org/wiki/Ioanna_Kimbook"
+      },
+      "chinese": {
+        "name": "Yu Tou (昱头) (昱头)",
+        "link": "https://zh.moegirl.org.cn/%E5%BC%A0%E6%98%B1"
+      },
+      "japanese": {
+        "name": "Anzai Chika (安済知佳) (安済知佳)",
+        "link": "https://en.wikipedia.org/wiki/Chika_Anzai"
+      },
+      "korean": {
+        "name": "Lee Eunjo (이은조) (이은조)",
+        "link": "https://namu.wiki/w/%EC%9D%B4%EC%9D%80%EC%A1%B0(%EC%84%B1%EC%9A%B0)"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Release the wants, and the mind quiets. Cleanse the thoughts, and the soul clears.",
+        "source": "Jianxin"
+      },
+      {
+        "text": [
+          "Born in the wilderness and raised in a Taoist sect, Jianxin has been imparted the martial arts of Fengyiquan.",
+          "",
+          "Her upbringing instilled in her a pure and persistent dedication to perfecting her martial arts skills.",
+          "",
+          "Now, she journeys into the secular world, eager to experience the bittersweetness of everyday life and gain a deeper understanding of the world around her."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Gauntlets",
+    "element": "Aero",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Jianxin",
+      "Chinese (S)": "鉴心",
+      "Chinese (T)": "鑒心",
+      "Japanese": "鑑カン心シン",
+      "Korean": "감심",
+      "French": "Jianxin",
+      "German": "Jianxin",
+      "Spanish": "Jianxin"
+    }
+  },
+  {
+    "name": "Jiyan",
+    "title": "Windborne Rider",
+    "class": "Mutant",
+    "gender": "Male",
+    "birthday": "December 14",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Midnight Rangers",
+        "link": "https://wutheringwaves.fandom.com/wiki/Midnight_Rangers"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Qingloong",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Alex Jordan",
+        "link": "https://imdb.com/name/nm7074735"
+      },
+      "chinese": {
+        "name": "Sun Ye (孙晔) (孙晔)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E5%AD%99%E6%99%94"
+      },
+      "japanese": {
+        "name": "Ono Yūki (小野友樹) (小野友樹)",
+        "link": "https://en.wikipedia.org/wiki/Y%C5%ABki_Ono"
+      },
+      "korean": {
+        "name": "Nam Doh-hyeong (남도형) (남도형)",
+        "link": "https://en.m.wikipedia.org/wiki/Nam_Doh-hyeong"
+      }
+    },
+    "quotes": [
+      {
+        "text": "I have never regretted to brave the long night.",
+        "source": "Jiyan"
+      },
+      {
+        "text": [
+          "Jiyan is the General of Midnight Rangers stationed in Jinzhou, embracing strong sense of justice and resolution.",
+          "",
+          "Born in a family devoted to medicine, Jiyan is both skilled and attentive.",
+          "",
+          "Later, in a bid to fend off the encroaching Tacet Discords, he relinquished his role in medicine and took up arms as a soldier."
+        ],
+        "source": "His introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Broadblades",
+    "element": "Aero",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Jiyan",
+      "Chinese (S)": "忌炎",
+      "Chinese (T)": "忌炎",
+      "Japanese": "忌キ炎エン",
+      "Korean": "기염",
+      "French": "Jiyan",
+      "German": "Jiyan",
+      "Spanish": "Jiyan"
+    }
+  },
+  {
+    "name": "Lingyang",
+    "title": "Frosty Gusto",
+    "class": "Natural",
+    "gender": "Male",
+    "birthday": "August 8",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Fiery Dance",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Aleksander Varadian",
+        "link": "https://www.aleksandervaradian.com/"
+      },
+      "chinese": {
+        "name": "Jinli (锦鲤) (锦鲤)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E9%94%A6%E9%B2%A4"
+      },
+      "japanese": {
+        "name": "Natsuki Hanae (花江夏樹) (花江夏樹)",
+        "link": "https://en.wikipedia.org/wiki/Natsuki_Hanae"
+      },
+      "korean": {
+        "name": "Lee Sangho (이상호) (이상호)",
+        "link": "https://namu.wiki/w/%EC%9D%B4%EC%83%81%ED%98%B8(%EC%84%B1%EC%9A%B0)"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Awoo—Lion up! Victory is mine at this year's Greens-plucking Tournament!",
+        "source": "Lingyang"
+      },
+      {
+        "text": [
+          "Lingyang is a sincere, compassionate foreign visitor of the human community.",
+          "",
+          "He joined the Liondance Troupe in Jinzhou by chance, aspiring to dispel fear and dread for others through his electrifying \"Liondance\"."
+        ],
+        "source": "His introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Gauntlets",
+    "element": "Glacio",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Lingyang",
+      "Chinese (S)": "凌阳",
+      "Chinese (T)": "凌陽",
+      "Japanese": "凌リン陽ヨウ",
+      "Korean": "능양",
+      "French": "Lingyang",
+      "German": "Lingyang",
+      "Spanish": "Lingyang"
+    }
+  },
+  {
+    "name": "Mortefi",
+    "title": "Dragon's Breath",
+    "class": "Mutant",
+    "gender": "Male",
+    "birthday": "November 6",
+    "birthplace": "New",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Huaxu Academy",
+        "link": "https://wutheringwaves.fandom.com/wiki/Huaxu_Academy"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Smoked Pigeon",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Joseph May",
+        "link": "https://en.wikipedia.org/wiki/Joseph_May"
+      },
+      "chinese": {
+        "name": "Liu Yijia (刘以嘉) (刘以嘉)",
+        "link": "https://zh.moegirl.org.cn/zh/%E5%88%98%E4%BB%A5%E5%98%89"
+      },
+      "korean": {
+        "name": "Kim Daol (김다올) (김다올)",
+        "link": "https://namu.wiki/w/%EA%B9%80%EB%8B%A4%EC%98%AC"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Fine, since you've done this much for me... Go ahead, tell me the wildest inventions you can think of, and watch me make them happen for you.",
+        "source": "Mortefi"
+      },
+      {
+        "text": [
+          "Born into the upper class, Mortefi is a lofty man with an erudite look.",
+          "",
+          "Renowned for his exceptional talent in scientific research, Mortefi was once famed as the youngest genius in the New Federation.",
+          "",
+          "Driven by a thirst for knowledge, Mortefi later abandoned his privileged life to work as an International Research Fellow at the Huaxu Academy.",
+          "",
+          "It's not hard to win Mortefi's favor: Just remember to talk nicely, and always shower him with ample praise."
+        ],
+        "source": "His introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Pistols",
+    "element": "Fusion",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Mortefi",
+      "Chinese (S)": "莫特斐",
+      "Chinese (T)": "莫特斐",
+      "Japanese": "モルトフィー",
+      "Korean": "모르테피",
+      "French": "Mortefi",
+      "German": "Mortefi",
+      "Spanish": "Mortefi"
+    }
+  },
+  {
+    "name": "Sanhua",
+    "title": "Snow Waltz",
+    "class": "Mutant",
+    "gender": "Female",
+    "birthday": "January 20",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "City Hall",
+        "link": "https://wutheringwaves.fandom.com/wiki/City_Hall"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Crystal Clear Buns",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Jennifer Armour",
+        "link": "https://en.wikipedia.org/wiki/Jennifer_Armour"
+      },
+      "chinese": {
+        "name": "Song Yuanyuan (宋媛媛) (宋媛媛)",
+        "link": "https://zh.moegirl.org.cn/%E5%AE%8B%E5%AA%9B%E5%AA%9B"
+      },
+      "japanese": {
+        "name": "Matsuda Risae (松田利冴) (松田利冴)",
+        "link": "https://en.wikipedia.org/wiki/Risae_Matsuda"
+      },
+      "korean": {
+        "name": "Yooyoung (유영) (유영)",
+        "link": "https://en.wikipedia.org/wiki/Lee_Hwa-kyum"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Please don't stay too far away from me. I am confident to not let you get harmed in the slightest.",
+        "source": "Sanhua"
+      },
+      {
+        "text": [
+          "A loyal and reliable guard for Jinhsi, Sanhua is composed and reserved.",
+          "",
+          "Sanhua perceives a world distinctly different from that in the eyes of others, and her body temperature is below normal.",
+          "",
+          "Her Forte allows her to cool the surrounding air and conjure snow.",
+          "",
+          "To maintain emotional stability and prevent Overclocking, Sanhua finds solace in the art of swordplay.",
+          "",
+          "This allows her to master her Forte with graceful ease and alleviates the burden on her body."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Swords",
+    "element": "Glacio",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Sanhua",
+      "Chinese (S)": "散华",
+      "Chinese (T)": "散華",
+      "Japanese": "散サン華カ",
+      "Korean": "산화",
+      "French": "Sanhua",
+      "German": "Sanhua",
+      "Spanish": "Sanhua"
+    }
+  },
+  {
+    "name": "Taoqi",
+    "title": "Blossom of Slashes",
+    "class": "Natural",
+    "gender": "Female",
+    "birthday": "February 25th",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Ministry of Development",
+        "link": "https://wutheringwaves.fandom.com/wiki/Ministry_of_Development"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Floral Porridge",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Clare Louise Connolly",
+        "link": "https://www.imdb.com/name/nm2463762/"
+      },
+      "chinese": { "name": "KIYO", "link": "https://zh.moegirl.org.cn/KIYO" },
+      "japanese": {
+        "name": "Yōmiya Hina (羊宮妃那) (羊宮妃那)",
+        "link": "https://en.wikipedia.org/wiki/Hina_Y%C5%8Dmiya"
+      },
+      "korean": {
+        "name": "Yi Sae-ah (이새아) (이새아)",
+        "link": "https://namu.wiki/w/%EC%9D%B4%EC%83%88%EC%95%84"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Phew... All set. Time for a little break.",
+        "source": "Taoqi"
+      },
+      {
+        "text": [
+          "Taoqi oversees Jinzhou's border defense at the Ministry of Development.",
+          "",
+          "Despite her unhurried demeanor, she is an exceptionally dependable individual who works tirelessly to protect others and provide a peaceful haven.",
+          "",
+          "With effortless efficiency, she balances her work and personal life, steadily moving towards her ultimate goal: creating a future of true safety for all."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Broadblades",
+    "element": "Havoc",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Taoqi",
+      "Chinese (S)": "桃祈",
+      "Chinese (T)": "桃祈",
+      "Japanese": "桃タオ祈キ",
+      "Korean": "도기",
+      "French": "Taoqi",
+      "German": "Taoqi",
+      "Spanish": "Taoqi"
+    }
+  },
+  {
+    "name": "Verina",
+    "title": "Nature Calling",
+    "class": "Congenital",
+    "gender": "Female",
+    "birthday": "May 18th",
+    "birthplace": "New",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Pioneer Association",
+        "link": "https://wutheringwaves.fandom.com/wiki/Pioneer_Association"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Exploration (Sigil)",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Heather Nicol",
+        "link": "https://www.imdb.com/name/nm2744476/"
+      },
+      "chinese": {
+        "name": "Zhao Shuang (赵爽) (赵爽)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E8%B5%B5%E7%88%BD"
+      },
+      "japanese": {
+        "name": "Sasahara Yū (篠原侑) (篠原侑)",
+        "link": "https://en.wikipedia.org/wiki/Y%C5%AB_Sasahara"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Plants talk in a silent and sincere language. I can translate their talk for you, if you want.",
+        "source": "Verina"
+      },
+      {
+        "text": [
+          "Formerly a member of a Pioneer Association expedition team from the New Federation, Verina is a humble and determined plant breeder.",
+          "",
+          "Somehow she always ends up taking on caretaker duties in any expedition, showing remarkable tenacity for her age."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Rectifiers",
+    "element": "Spectro",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Verina",
+      "Chinese (S)": "维里奈",
+      "Chinese (T)": "維里奈",
+      "Japanese": "ヴェリーナ",
+      "Korean": "벨리나",
+      "French": "Verina",
+      "German": "Verina",
+      "Spanish": "Verina"
+    }
+  },
+  {
+    "name": "Yangyang",
+    "title": "Breath of Winds",
+    "class": "Natural",
+    "gender": "Female",
+    "birthday": "October 11th",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Midnight Rangers",
+        "link": "https://wutheringwaves.fandom.com/wiki/Midnight_Rangers"
+      }
+    ],
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Fluffy Wuthercake",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Rebecca Yeo",
+        "link": "https://www.imdb.com/name/nm5476333/"
+      },
+      "chinese": {
+        "name": "Chongchong (虫虫) (虫虫)",
+        "link": "https://zh.moegirl.org.cn/%E8%99%AB%E8%99%AB"
+      },
+      "japanese": {
+        "name": "Ishikawa Yui (石川由依) (石川由依)",
+        "link": "https://en.wikipedia.org/wiki/Yui_Ishikawa"
+      },
+      "korean": {
+        "name": "Lee Yu-ri (이유리) (이유리)",
+        "link": "https://en.wikipedia.org/wiki/Lee_Yu-ri"
+      }
+    },
+    "quotes": [
+      {
+        "text": "I hope I can be the one to embrace all that you are, and share with you all that you carry.",
+        "source": "Yangyang"
+      },
+      {
+        "text": [
+          "Yangyang journeyed far away from home to become an Outrider in Jinzhou.",
+          "",
+          "Instead of seeking the spotlight, Yangyang chooses to provide comfort through quiet companionship for others.",
+          "",
+          "After enduring hardships and anguish, she has found a clear purpose: to be a beacon of guidance and an aiding presence in a world still in need of healing."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Swords",
+    "element": "Aero",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Yangyang",
+      "Chinese (S)": "秧秧",
+      "Chinese (T)": "秧秧",
+      "Japanese": "秧ヤン秧ヤン",
+      "Korean": "양양",
+      "French": "Yangyang",
+      "German": "Yangyang",
+      "Spanish": "Yangyang"
+    }
+  },
+  {
+    "name": "Yuanwu",
+    "title": "Fist of Thunder",
+    "class": "Natural",
+    "gender": "Male",
+    "birthday": "October 2",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "release_date": "May 23, 2024",
+    "special_dish": {
+      "name": "Sanqing Tea",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Adam Diggle",
+        "link": "https://www.adamdiggle.co.uk/"
+      },
+      "chinese": {
+        "name": "Liu Beichen (刘北辰) (刘北辰)",
+        "link": "https://zh.moegirl.org.cn/zh-hant/%E5%88%98%E5%8C%97%E8%BE%B0"
+      },
+      "japanese": {
+        "name": "Shirokuma Hiroshi (白熊寬嗣) (白熊寬嗣)",
+        "link": "https://en.wikipedia.org/wiki/Hiroshi_Shirokuma"
+      },
+      "korean": {
+        "name": "[3]",
+        "link": "https://wutheringwaves.fandom.com/wiki/Yuanwu#cite_note-KR-VA_TWYuanwu-3"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Assuming I've thought my decisions through and acted with integrity, I am content.",
+        "source": "Yuanwu"
+      },
+      {
+        "text": [
+          "As the proprietor of a boxing gym, Yuanwu is a polite and modest gentleman, displaying composure and confidence in his actions.",
+          "",
+          "Having honed his skills in the Leihuang martial arts style, Yuanwu also earned mastery in health management.",
+          "",
+          "A perfect synergy of strength and elegance."
+        ],
+        "source": "His introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Gauntlets",
+    "element": "Electro",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Yuanwu",
+      "Chinese (S)": "渊武",
+      "Chinese (T)": "淵武",
+      "Japanese": "淵エン武ブ",
+      "Korean": "연무",
+      "French": "Yuanwu",
+      "German": "Yuanwu",
+      "Spanish": "Yuanwu"
+    }
+  },
+  {
+    "name": "Yinlin",
+    "title": "Lightning of Execution",
+    "class": "Congenital",
+    "gender": "Female",
+    "birthday": "September 17",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Public Security Bureau",
+        "link": "https://wutheringwaves.fandom.com/wiki/Public_Security_Bureau"
+      }
+    ],
+    "release_date": "June 06, 2024",
+    "special_dish": {
+      "name": "Golden Fried Rice",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Naomi McDonald",
+        "link": "https://www.imdb.com/name/nm1696370/"
+      },
+      "chinese": {
+        "name": "Xiao Liansha (小连杀) (小连杀)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E5%B0%8F%E8%BF%9E%E6%9D%80"
+      },
+      "japanese": {
+        "name": "Koshimizu Ami (小清水亜美) (小清水亜美)",
+        "link": "https://en.wikipedia.org/wiki/Ami_Koshimizu"
+      },
+      "korean": {
+        "name": "Kang Sae-bom (강새봄) (강새봄)",
+        "link": "https://namu.wiki/w/%EA%B0%95%EC%83%88%EB%B4%84"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Name's Yinlin. As for what I do... Shhh, we don't talk about that in public.",
+        "source": "Yinlin"
+      },
+      {
+        "text": [
+          "Previously known as an outstanding Jinzhou Patroller, Yinlin is steady and reliable, yet harbors hidden depths of secrets.",
+          "",
+          "She excels at exploiting resources at her disposal to uncover lurking crimes.",
+          "",
+          "Beneath her aloof and flamboyant exterior, Yinlin possesses a heart of gold, reserved only for those she deems trustworthy."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Rectifiers",
+    "element": "Electro",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Yinlin",
+      "Chinese (S)": "吟霖",
+      "Chinese (T)": "吟霖",
+      "Japanese": "吟イン霖リン",
+      "Korean": "음림",
+      "French": "Yinlin",
+      "German": "Yinlin",
+      "Spanish": "Yinlin"
+    }
+  },
+  {
+    "name": "Jinhsi",
+    "title": "Thawborn Renewal",
+    "class": "Congenital",
+    "gender": "Female",
+    "birthday": "March 6",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "City Hall",
+        "link": "https://wutheringwaves.fandom.com/wiki/City_Hall"
+      },
+      {
+        "name": "Mt. Firmament",
+        "link": "https://wutheringwaves.fandom.com/wiki/Mt._Firmament"
+      }
+    ],
+    "release_date": "June 28, 2024",
+    "special_dish": {
+      "name": "Spring Pastry",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Anna Devlin",
+        "link": "https://www.imdb.com/name/nm1683988/"
+      },
+      "chinese": {
+        "name": "Jiang Yue (江月) (江月)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E6%B1%9F%E6%9C%88"
+      },
+      "japanese": {
+        "name": "Aoyama Yoshino (青山吉能) (青山吉能)",
+        "link": "https://en.wikipedia.org/wiki/Yoshino_Aoyama"
+      },
+      "korean": {
+        "name": "Park Hajin (박하진) (박하진)",
+        "link": "https://en.wikipedia.org/wiki/ko:%EB%B0%95%ED%95%98%EC%A7%84"
+      }
+    },
+    "quotes": [
+      {
+        "text": "There's still much to be done. Please rest assured, I am here to guide you through it.",
+        "source": "Jinhsi"
+      },
+      {
+        "text": [
+          "Being the Magistrate of Jinzhou, Jinhsi bears her noble and weighty share of duties.",
+          "",
+          "Through repeated ages, the Lament has preyed upon mankind's vulnerable hope.",
+          "",
+          "Yet, grasping the nettle, she strives with all her might to forge a path toward tomorrow."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Broadblades",
+    "element": "Spectro",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Jinhsi",
+      "Chinese (S)": "今汐",
+      "Chinese (T)": "今汐",
+      "Japanese": "今コン汐シ",
+      "Korean": "금희",
+      "French": "Jinhsi",
+      "German": "Jinhsi",
+      "Spanish": "Jinhsi"
+    }
+  },
+  {
+    "name": "Changli",
+    "title": "Eternal Blaze",
+    "class": "Natural",
+    "gender": "Female",
+    "birthday": "June 6",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "City Hall",
+        "link": "https://wutheringwaves.fandom.com/wiki/City_Hall"
+      }
+    ],
+    "release_date": "July 22, 2024",
+    "special_dish": {
+      "name": "Blazing Feather Spicy Meat",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Ashleigh Haddad",
+        "link": "https://www.imdb.com/name/nm7514824/"
+      },
+      "chinese": {
+        "name": "Mufei (沐霏) (沐霏)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E6%B2%90%E9%9C%8F"
+      },
+      "japanese": {
+        "name": "Saitō Chiwa (斎藤千和) (斎藤千和)",
+        "link": "https://en.wikipedia.org/wiki/Chiwa_Sait%C5%8D"
+      },
+      "korean": {
+        "name": "Shin Nari (신나리) (신나리)",
+        "link": "https://namu.wiki/w/%EC%8B%A0%EB%82%98%EB%A6%AC(%EC%84%B1%EC%9A%B0)"
+      }
+    },
+    "quotes": [
+      {
+        "text": [
+          "Eons of time on this vast land, all encapsulated in a humble game...",
+          "I am fortunate to have you as my opponent."
+        ],
+        "source": "Changli"
+      },
+      {
+        "text": "Counselor to the Jinzhou Magistrate, Changli excels at leveraging human nature to corner her enemies into traps. Being the mentor to Jinhsi, she is persuasive and patient. She entertains an unwavering aspiration, holding her ground in the endless game against time and chaos.",
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Swords",
+    "element": "Fusion",
+    "rarity": 5,
+    "official_names_by_language": { "The Hand of God!": "5" }
+  },
+  {
+    "name": "Zhezhi",
+    "title": "Enchanted Brush",
+    "class": "Congenital",
+    "gender": "Female",
+    "birthday": "December 31",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "release_date": "August 15, 2024",
+    "special_dish": {
+      "name": "Sweet Stuffed Flatbread",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "[1]",
+        "link": "https://wutheringwaves.fandom.com/wiki/Zhezhi#cite_note-Zhezhi_Bilibili-1"
+      },
+      "chinese": {
+        "name": "[1] (苗子)",
+        "link": "https://wutheringwaves.fandom.com/wiki/Zhezhi#cite_note-Zhezhi_Bilibili-1"
+      },
+      "japanese": {
+        "name": "Makino Yui (牧野由依) (牧野由依)",
+        "link": "https://en.wikipedia.org/wiki/Yui_Makino"
+      },
+      "korean": {
+        "name": "[1] (김하루)",
+        "link": "https://wutheringwaves.fandom.com/wiki/Zhezhi#cite_note-Zhezhi_Bilibili-1"
+      }
+    },
+    "quotes": [
+      {
+        "text": "What I wanted to say is, the sunlight on you right now is so beautiful. Can I... paint you?",
+        "source": "Zhezhi"
+      }
+    ],
+    "weapon": "Rectifiers",
+    "element": "Glacio",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Zhezhi",
+      "Chinese (S)": "折枝",
+      "Chinese (T)": "折枝",
+      "Japanese": "折オリ枝エ",
+      "Korean": "절지",
+      "French": "Zhezhi",
+      "German": "Zhezhi",
+      "Spanish": "Zhezhi"
+    }
+  },
+  {
+    "name": "Xiangli Yao",
+    "title": "Matter Weaver",
+    "class": "Mutant",
+    "gender": "Male",
+    "birthday": "Unknown",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Jinzhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Jinzhou"
+      },
+      {
+        "name": "Huaxu Academy",
+        "link": "https://wutheringwaves.fandom.com/wiki/Huaxu_Academy"
+      }
+    ],
+    "release_date": "September 07, 2024",
+    "special_dish": "not found",
+    "voice_actors": {
+      "english": {
+        "name": "Shaun Mendum",
+        "link": "https://www.imdb.com/name/nm7471114/"
+      },
+      "chinese": {
+        "name": "Banma (斑马) (斑马)",
+        "link": "https://zh.moegirl.org.cn/%E9%A9%AC%E6%96%91%E9%A9%AC"
+      },
+      "japanese": {
+        "name": "Kobayashi Chiaki (小林千晃) (小林千晃)",
+        "link": "https://en.wikipedia.org/wiki/Chiaki_Kobayashi"
+      },
+      "korean": {
+        "name": "Jung Eui-jin (정의진) (정의진)",
+        "link": "https://ko.wikipedia.org/wiki/%EC%A0%95%EC%9D%98%EC%A7%84"
+      }
+    },
+    "quotes": [
+      {
+        "text": "As truthseekers, we gauge the universe from within a nutshell. I'd love to hear your insights.",
+        "source": "Xiangli Yao"
+      }
+    ],
+    "weapon": "Gauntlets",
+    "element": "Electro",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Xiangli Yao",
+      "Chinese (S)": "相里要",
+      "Chinese (T)": "相里要",
+      "Japanese": "相ソウ里リ要ヨウ",
+      "Korean": "상리요",
+      "French": "Xiangli Yao",
+      "German": "Xiangli Yao",
+      "Spanish": "Xiangli Yao"
+    }
+  },
+  {
+    "name": "The Shorekeeper",
+    "title": "Euphonic Chrysalis",
+    "gender": "Female",
+    "birthday": "February 27",
+    "birthplace": "The",
+    "nation": "The",
+    "release_date": "September 29, 2024",
+    "special_dish": "not found",
+    "voice_actors": {
+      "english": {
+        "name": "Stephanie McKeon",
+        "link": "https://www.imdb.com/name/nm2267289/"
+      },
+      "chinese": {
+        "name": "Tang Yajing (唐雅菁) (唐雅菁)",
+        "link": "https://zh.moegirl.org.cn/%E5%94%90%E9%9B%85%E8%8F%81"
+      },
+      "japanese": {
+        "name": "Suwa Ayaka (諏訪彩花) (諏訪彩花)",
+        "link": "https://en.wikipedia.org/wiki/Ayaka_Suwa"
+      },
+      "korean": {
+        "name": "[3] (김보나)",
+        "link": "https://wutheringwaves.fandom.com/wiki/Shorekeeper#cite_note-The_KR-VA_TWShorekeeper-3"
+      }
+    },
+    "quotes": [
+      {
+        "text": [
+          "\"The Shorekeeper\"...",
+          "This name suits me well enough. It aligns with my purpose and drive: they only exist because of you."
+        ],
+        "source": "The Shorekeeper"
+      },
+      {
+        "text": "The Shorekeeper of the Black Shores, a mysterious divine being governing the essence of aloofness, emerges in response to your summon. Having spent eons in guardianship, the first stirrings of emotion and desire awaken within her heart, fostering a firm determination to connect with the world — and with you.",
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Rectifiers",
+    "element": "Spectro",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "The Shorekeeper",
+      "Chinese (S)": "守岸人",
+      "Chinese (T)": "守岸人",
+      "Japanese": "ショアキーパー",
+      "Korean": "파수인",
+      "French": "La Gardienne du Littoral",
+      "German": "Die Küstenwächterin",
+      "Spanish": "La Guardiana de la Orilla"
+    }
+  },
+  {
+    "name": "Youhu",
+    "title": "Cryogenic Wonders",
+    "class": "Mutant",
+    "gender": "Female",
+    "birthday": "October 13th",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "release_date": "October 24, 2024",
+    "special_dish": {
+      "name": "Frostwork Cake",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/7/77/Icon_4_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134633"
+    },
+    "voice_actors": {
+      "chinese": {
+        "name": "Liu Yilei (刘一蕾) (刘一蕾)",
+        "link": "https://zh.moegirl.org.cn/%E5%88%98%E4%B8%80%E8%95%BE"
+      },
+      "japanese": {
+        "name": "Tomita Miyu (富田美憂) (富田美憂))",
+        "link": "https://en.wikipedia.org/wiki/Miyu_Tomita"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Here you go, a special edition of my poetry collection, hand-signed by moi! You are welcome!",
+        "source": "Youhu"
+      },
+      {
+        "text": "A voluble and whimsical antique appraiser. Known for creating limericks on the spot, she presents her appraisals with flair and precision. She sets up a stall on the street, ensuring antiques find their way to those who truly cherish them.",
+        "source": "Introduction from the Official Website",
+        "source_link": "https://wutheringwaves.kurogames.com/m/en/main/news/detail/1525"
+      }
+    ],
+    "weapon": "Gauntlets",
+    "element": "Glacio",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Youhu",
+      "Chinese (S)": "釉瑚",
+      "Chinese (T)": "釉瑚",
+      "Japanese": "釉ユウ瑚ゴ",
+      "Korean": "유호",
+      "French": "Youhu",
+      "German": "Youhu",
+      "Spanish": "Youhu"
+    }
+  },
+  {
+    "name": "Camellya",
+    "title": "Sanguine Blossom",
+    "class": "Artificial",
+    "gender": "Female",
+    "birthday": "December 10th",
+    "birthplace": "Unknown",
+    "nation": "The",
+    "release_date": "November 14, 2024",
+    "special_dish": {
+      "name": "Iced Grape Tea",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Meaghan Martin",
+        "link": "https://en.wikipedia.org/wiki/Meaghan_Martin"
+      },
+      "chinese": {
+        "name": "Liu Zhixiao (柳知萧) (柳知萧)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E6%9F%B3%E7%9F%A5%E8%90%A7"
+      },
+      "japanese": {
+        "name": "Ise Mariya (伊瀬茉莉也) (伊瀬茉莉也)",
+        "link": "https://en.wikipedia.org/wiki/Mariya_Ise"
+      },
+      "korean": {
+        "name": "Yu Hye-ji  (유혜지) (유혜지)",
+        "link": "https://namu.wiki/w/%EC%9C%A0%ED%98%9C%EC%A7%80"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Boring... Oh, It's you! Hehe... I'm looking forward to our game.",
+        "source": "Camellya"
+      },
+      {
+        "text": [
+          "Bloom Bearer from the Black Shores, Camellya is a laid-back character free from shackles, with her personal aroma of \"danger.\"",
+          "Intrigued by the belief in fate, she wanders the lands of her own accord, following such a chain of scenarios and its vague guidance."
+        ],
+        "source": "Introduction from the Official Website",
+        "source_link": "https://wutheringwaves.kurogames.com/m/en/main/#resonators"
+      }
+    ],
+    "weapon": "Swords",
+    "element": "Havoc",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Camellya",
+      "Chinese (S)": "椿",
+      "Chinese (T)": "椿",
+      "Japanese": "ツバキ",
+      "Korean": "카멜리아",
+      "French": "Camellya",
+      "German": "Camellya",
+      "Spanish": "Camellya"
+    }
+  },
+  {
+    "name": "Lumi",
+    "title": "Kaleido Refraction",
+    "class": "Congenital",
+    "gender": "Female",
+    "birthplace": "Huanglong",
+    "nation": "Huanglong",
+    "affiliations": [
+      {
+        "name": "Yuezhou",
+        "link": "https://wutheringwaves.fandom.com/wiki/Yuezhou"
+      },
+      {
+        "name": "Lollo Logistics",
+        "link": "https://wutheringwaves.fandom.com/wiki/Lollo_Logistics"
+      }
+    ],
+    "release_date": "December 12, 2024",
+    "special_dish": "not found",
+    "voice_actors": {
+      "japanese": {
+        "name": "Suzuki Minori (鈴木みのり) (鈴木みのり)",
+        "link": "https://en.wikipedia.org/wiki/Minori_Suzuki"
+      },
+      "korean": {
+        "name": "Jeong Ha-eun (정해은) (정해은)",
+        "link": "https://en.namu.wiki/w/%EC%A0%95%ED%95%B4%EC%9D%80(%EC%84%B1%EC%9A%B0)"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Hehe, busy days, but it feels great to be needed... I should keep it up!",
+        "source": "Lumi"
+      },
+      {
+        "text": [
+          "From dense forests to vast wilderness, places where navigator of Lollo Logistics Lumi has traveled bear witness to her charming personality, like a shaft of sunlight.",
+          "",
+          "Born disciplined, she is now enjoying her daily tasks as a diligent courier, honoring her duty of punctual delivery."
+        ],
+        "source": "Her introduction on the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Broadblades",
+    "element": "Electro",
+    "rarity": 4,
+    "official_names_by_language": {
+      "English": "Lumi",
+      "Chinese (S)": "灯灯",
+      "Chinese (T)": "燈燈",
+      "Japanese": "灯トウ灯トウ",
+      "Korean": "루미",
+      "French": "Lumi",
+      "German": "Lumi",
+      "Spanish": "Lumi"
+    }
+  },
+  {
+    "name": "Carlotta",
+    "title": "Crystal Remorph",
+    "class": "Mutant",
+    "gender": "Female",
+    "birthday": "Unknown",
+    "birthplace": "Ragunna",
+    "nation": "Rinascita",
+    "affiliations": [
+      {
+        "name": "Ragunna",
+        "link": "https://wutheringwaves.fandom.com/wiki/Ragunna"
+      },
+      {
+        "name": "Montelli Family",
+        "link": "https://wutheringwaves.fandom.com/wiki/Montelli_Family"
+      }
+    ],
+    "release_date": "January 02, 2025",
+    "special_dish": "not found",
+    "voice_actors": {
+      "english": {
+        "name": "Jennifer English",
+        "link": "https://www.imdb.com/name/nm10804818/"
+      },
+      "chinese": {
+        "name": "Yan Yeqiao (闫夜桥) (闫夜桥)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E9%97%AB%E5%A4%9C%E6%A1%A5"
+      },
+      "japanese": {
+        "name": "Ueda Kana (植田佳奈) (植田佳奈)",
+        "link": "https://en.wikipedia.org/wiki/Kana_Ueda"
+      },
+      "korean": {
+        "name": "Kim Soon-mi  (김순미) (김순미)",
+        "link": "https://namu.wiki/w/%EA%B9%80%EC%88%9C%EB%AF%B8"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Fate will lead you to me eventually, and I am merely extending my finest proposal in advance… You wouldn't refuse me, would you?",
+        "source": "Carlotta"
+      },
+      {
+        "text": [
+          "Carlotta, the second daughter of the esteemed Montelli family, embodies innate nobility and a refined appreciation for art. Her elegance is matched by her unconventional spirit, unshackled by tradition.",
+          "To ensure her family’s future, she alternates between dual roles, addressing delicate \"troubles\" behind the scenes."
+        ],
+        "source": "Introduction from the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Pistols",
+    "element": "Glacio",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Carlotta",
+      "Chinese (S)": "珂莱塔",
+      "Chinese (T)": "珂莱塔",
+      "Japanese": "カルロッタ",
+      "Korean": "카를로타",
+      "French": "Carlotta",
+      "German": "Carlotta",
+      "Spanish": "Carlotta"
+    }
+  },
+  {
+    "name": "Roccia",
+    "title": "Stage in the Box",
+    "class": "Acquired",
+    "gender": "Female",
+    "birthday": "January 31st",
+    "birthplace": "Rinascita",
+    "nation": "Rinascita",
+    "affiliations": [
+      {
+        "name": "Ragunna",
+        "link": "https://wutheringwaves.fandom.com/wiki/Ragunna"
+      },
+      {
+        "name": "Troupe of Fools",
+        "link": "https://wutheringwaves.fandom.com/wiki/Troupe_of_Fools"
+      }
+    ],
+    "release_date": "January 23, 2025",
+    "special_dish": {
+      "name": "Multi-Scoop Ice Cream",
+      "image_url": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/115?cb=20240429134545"
+    },
+    "voice_actors": {
+      "english": {
+        "name": "Holly Earl",
+        "link": "https://en.wikipedia.org/wiki/Holly_Earl"
+      },
+      "chinese": {
+        "name": "Shen Huasang (沈话桑) (沈话桑)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E6%B2%88%E8%AF%9D%E6%A1%91"
+      },
+      "japanese": {
+        "name": "Kohara Konomi (小原好美) (小原好美)",
+        "link": "https://en.wikipedia.org/wiki/Konomi_Kohara"
+      },
+      "korean": {
+        "name": "Jang Mi (장미) (장미)",
+        "link": "https://namu.wiki/w/%EC%9E%A5%EB%AF%B8(%EC%84%B1%EC%9A%B0)"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Hello. Got anything you don't need? Pero's stomach is open for business.",
+        "source": "Roccia"
+      },
+      {
+        "text": [
+          "Roccia is a gifted improvisational comedian and the First Mate of the Fool's Troupe, known for her mastery of stage props.",
+          "With a tranquil, composed disposition, she navigates the ship's quarters, perched atop her giant box, meticulously ensuring the Troupe remains orderly and tidy."
+        ],
+        "source": "Introduction from the Official Website.",
+        "source_link": "https://wutheringwaves.kurogames.com/en/main#resonators"
+      }
+    ],
+    "weapon": "Gauntlets",
+    "element": "Havoc",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Roccia",
+      "Chinese (S)": "洛可可",
+      "Chinese (T)": "洛可可",
+      "Japanese": "ロココ",
+      "Korean": "로코코",
+      "French": "Roccia",
+      "German": "Roccia",
+      "Spanish": "Roccia"
+    }
+  },
+  {
+    "name": "Phoebe",
+    "title": "Graceful Luminescence",
+    "class": "Unknown",
+    "gender": "Female",
+    "birthplace": "Rinascita",
+    "nation": "Rinascita",
+    "affiliations": [
+      {
+        "name": "Ragunna",
+        "link": "https://wutheringwaves.fandom.com/wiki/Ragunna"
+      },
+      {
+        "name": "Order of the Deep",
+        "link": "https://wutheringwaves.fandom.com/wiki/Order_of_the_Deep"
+      }
+    ],
+    "release_date": "February 13, 2025",
+    "special_dish": "not found",
+    "voice_actors": {
+      "english": {
+        "name": "Rebecca LaChance",
+        "link": "https://www.imdb.com/name/nm11072091/"
+      },
+      "chinese": {
+        "name": "Fu Tingyun (傅婷云) (傅婷云)",
+        "link": "https://zh.moegirl.org.cn/zh-hans/%E5%82%85%E5%A9%B7%E4%BA%91"
+      },
+      "japanese": {
+        "name": "Hondo Kaede (本渡楓) (本渡楓)",
+        "link": "https://en.wikipedia.org/wiki/Kaede_Hondo"
+      },
+      "korean": {
+        "name": "Lee Bo-yong (이보용) (이보용)",
+        "link": "https://namu.wiki/w/%EC%9D%B4%EB%B3%B4%EC%9A%A9"
+      }
+    },
+    "quotes": [
+      {
+        "text": "Praise the Sentinel. May They guide you to compassion and enlightenment.",
+        "source": "Phoebe"
+      }
+    ],
+    "weapon": "Rectifiers",
+    "element": "Spectro",
+    "rarity": 5,
+    "official_names_by_language": {
+      "English": "Phoebe",
+      "Chinese (S)": "菲比",
+      "Chinese (T)": "菲比",
+      "Japanese": "フィービー",
+      "Korean": "페비",
+      "French": "Phoebe",
+      "German": "Phoebe",
+      "Spanish": "Phoebe"
+    }
+  }
+]

@@ -95,16 +95,16 @@ async function initializeBanners() {
 		}
 
 		banners.forEach((banner) => {
-            const fixedUrl = fixApostrophe(banner.imageUrl);
-            const button = document.createElement("button");
-            button.style.backgroundImage = `url(${fixedUrl})`;
-            button.onclick = () => showPage(banner.id);
-            bannerNav.appendChild(button);
-        
-            const bannerDiv = document.createElement("div");
-bannerDiv.id = banner.id;
-bannerDiv.className = "banner";
-bannerDiv.innerHTML = `
+			const fixedUrl = fixApostrophe(banner.imageUrl);
+			const button = document.createElement("button");
+			button.style.backgroundImage = `url(${fixedUrl})`;
+			button.onclick = () => showPage(banner.id);
+			bannerNav.appendChild(button);
+
+			const bannerDiv = document.createElement("div");
+			bannerDiv.id = banner.id;
+			bannerDiv.className = "banner";
+			bannerDiv.innerHTML = `
     <img src="${fixedUrl}" alt="${banner.name}" class="banner-image">
     <div class="banner-content">
         <h2>${banner.name}</h2>
@@ -148,10 +148,10 @@ bannerDiv.innerHTML = `
         </div>
     </div>
 `;
-            bannerContainer.appendChild(bannerDiv);
-        
-            initializeSummonData(banner.type);
-        });
+			bannerContainer.appendChild(bannerDiv);
+
+			initializeSummonData(banner.type);
+		});
 
 		localStorage.setItem("summonData", JSON.stringify(summonData));
 		console.log("Saved summonData to localStorage:", summonData);
@@ -169,20 +169,20 @@ function fixApostrophe(url) {
 }
 
 function showPage(bannerId) {
-    console.log("showPage called for banner:", bannerId);
-    document.querySelectorAll(".banner").forEach((banner) => {
-        banner.classList.remove("active");
-    });
-    const bannerDiv = document.getElementById(bannerId);
-    if (bannerDiv) {
-        bannerDiv.classList.add("active");
+	console.log("showPage called for banner:", bannerId);
+	document.querySelectorAll(".banner").forEach((banner) => {
+		banner.classList.remove("active");
+	});
+	const bannerDiv = document.getElementById(bannerId);
+	if (bannerDiv) {
+		bannerDiv.classList.add("active");
 
-        setTimeout(() => {
-            loadHistory();
-        }, 50);
-    } else {
-        console.error("Banner div not found:", bannerId);
-    }
+		setTimeout(() => {
+			loadHistory();
+		}, 50);
+	} else {
+		console.error("Banner div not found:", bannerId);
+	}
 }
 
 async function fetchPoolData() {
@@ -222,19 +222,19 @@ function getRandomItem(pool, rarity) {
 
 // Add these after your banners.forEach loop
 function openHistoryModal(bannerId) {
-    document.getElementById(`historyModal${bannerId}`).style.display = "flex";
+	document.getElementById(`historyModal${bannerId}`).style.display = "flex";
 }
 
 function closeHistoryModal(bannerId) {
-    document.getElementById(`historyModal${bannerId}`).style.display = "none";
+	document.getElementById(`historyModal${bannerId}`).style.display = "none";
 }
 
 function openSummonResultModal(bannerId) {
-    document.getElementById(`summonResultModal${bannerId}`).style.display = "flex";
+	document.getElementById(`summonResultModal${bannerId}`).style.display = "flex";
 }
 
 function closeSummonResultModal(bannerId) {
-    document.getElementById(`summonResultModal${bannerId}`).style.display = "none";
+	document.getElementById(`summonResultModal${bannerId}`).style.display = "none";
 }
 
 async function summon(bannerId, bannerType, count) {
@@ -290,7 +290,7 @@ async function summon(bannerId, bannerType, count) {
 		saveToHistory(bannerType, item);
 	}
 
-    openSummonResultModal(bannerId);
+	openSummonResultModal(bannerId);
 	showLatestSummonResult(bannerId, summonResults);
 	updateHistoryDisplay(bannerType);
 	updatePityCounter(bannerType);
@@ -306,71 +306,73 @@ function saveToHistory(bannerType, item) {
 }
 
 function updateHistoryDisplay(bannerType) {
-    console.log("Updating history display for banner type:", bannerType);
-    const historyBodies = document.querySelectorAll(`#${bannerType}HistoryBody`);
-    const pageInfoElements = document.querySelectorAll(`#${bannerType}PageInfo`);
-    if (historyBodies.length === 0) {
-        console.error(`History table body not found for banner type: ${bannerType}`);
-        return;
-    }
+	console.log("Updating history display for banner type:", bannerType);
+	const historyBodies = document.querySelectorAll(`#${bannerType}HistoryBody`);
+	const pageInfoElements = document.querySelectorAll(`#${bannerType}PageInfo`);
+	if (historyBodies.length === 0) {
+		console.error(`History table body not found for banner type: ${bannerType}`);
+		return;
+	}
 
-    historyBodies.forEach((historyBody, index) => {
-        const pageInfo = pageInfoElements[index];
-        historyBody.innerHTML = "";
-        if (!summonData[bannerType] || !summonData[bannerType].history || summonData[bannerType].history.length === 0) {
-            historyBody.innerHTML = "<tr><td colspan='3'>No history available</td></tr>";
-            pageInfo.textContent = "Page 1 of 1";
-            return;
-        }
+	historyBodies.forEach((historyBody, index) => {
+		const pageInfo = pageInfoElements[index];
+		historyBody.innerHTML = "";
+		if (!summonData[bannerType] || !summonData[bannerType].history || summonData[bannerType].history.length === 0) {
+			historyBody.innerHTML = "<tr><td colspan='3'>No history available</td></tr>";
+			pageInfo.textContent = "Page 1 of 1";
+			return;
+		}
 
-        // Pagination logic
-        const itemsPerPage = 5;
-        if (!paginationState[bannerType]) {
-            paginationState[bannerType] = { currentPage: 1 };
-        }
-        const totalItems = summonData[bannerType].history.length;
-        const totalPages = Math.ceil(totalItems / itemsPerPage);
-        let currentPage = paginationState[bannerType].currentPage;
+		// Pagination logic
+		const itemsPerPage = 5;
+		if (!paginationState[bannerType]) {
+			paginationState[bannerType] = {
+				currentPage: 1
+			};
+		}
+		const totalItems = summonData[bannerType].history.length;
+		const totalPages = Math.ceil(totalItems / itemsPerPage);
+		let currentPage = paginationState[bannerType].currentPage;
 
-        // Ensure currentPage is valid
-        if (currentPage > totalPages) currentPage = totalPages;
-        if (currentPage < 1) currentPage = 1;
-        paginationState[bannerType].currentPage = currentPage;
+		// Ensure currentPage is valid
+		if (currentPage > totalPages) currentPage = totalPages;
+		if (currentPage < 1) currentPage = 1;
+		paginationState[bannerType].currentPage = currentPage;
 
-        const startIndex = (currentPage - 1) * itemsPerPage;
-        const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
-        const paginatedHistory = summonData[bannerType].history.slice().reverse().slice(startIndex, endIndex);
+		const startIndex = (currentPage - 1) * itemsPerPage;
+		const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+		const paginatedHistory = summonData[bannerType].history.slice().reverse().slice(startIndex, endIndex);
 
-        paginatedHistory.forEach((entry) => {
-            const rarityClass = `rarity-${entry.rarity}`; // e.g., rarity-5, rarity-4
-            const row = document.createElement("tr");
-            row.innerHTML = `
+		paginatedHistory.forEach((entry) => {
+			const rarityClass = `rarity-${entry.rarity}`; // e.g., rarity-5, rarity-4
+			const row = document.createElement("tr");
+			row.innerHTML = `
                 <td class="${rarityClass}">${entry.name}</td>
                 <td class="${rarityClass}">${entry.rarity}⭐</td>
                 <td class="${rarityClass}">${entry.time}</td>
             `;
-            historyBody.appendChild(row);
-        });
+			historyBody.appendChild(row);
+		});
 
-        pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-    });
+		pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+	});
 }
 
 function prevPage(bannerType) {
-    if (paginationState[bannerType] && paginationState[bannerType].currentPage > 1) {
-        paginationState[bannerType].currentPage--;
-        updateHistoryDisplay(bannerType);
-    }
+	if (paginationState[bannerType] && paginationState[bannerType].currentPage > 1) {
+		paginationState[bannerType].currentPage--;
+		updateHistoryDisplay(bannerType);
+	}
 }
 
 function nextPage(bannerType) {
-    if (!summonData[bannerType] || !summonData[bannerType].history) return;
-    const totalItems = summonData[bannerType].history.length;
-    const totalPages = Math.ceil(totalItems / 5);
-    if (paginationState[bannerType] && paginationState[bannerType].currentPage < totalPages) {
-        paginationState[bannerType].currentPage++;
-        updateHistoryDisplay(bannerType);
-    }
+	if (!summonData[bannerType] || !summonData[bannerType].history) return;
+	const totalItems = summonData[bannerType].history.length;
+	const totalPages = Math.ceil(totalItems / 5);
+	if (paginationState[bannerType] && paginationState[bannerType].currentPage < totalPages) {
+		paginationState[bannerType].currentPage++;
+		updateHistoryDisplay(bannerType);
+	}
 }
 
 function updatePityCounter(bannerType) {
@@ -500,9 +502,9 @@ function showSummonResult(item, bannerId, pityCount) {
 	const summonResultDiv = document.getElementById("summonResult");
 	summonResultDiv.innerHTML = `<p>🎉 You got a <b>5⭐ ${item.name}</b> at <b>${pityCount}</b> pity!</p>`;
 	summonResultDiv.style.display = "block";
-    setTimeout(() => {
-        summonResultDiv.style.display = "none";
-    }, 5000);
+	setTimeout(() => {
+		summonResultDiv.style.display = "none";
+	}, 5000);
 }
 
 function clearHistory(bannerType) {
@@ -525,13 +527,13 @@ function loadHistory() {
 }
 
 function checkOrientation() {
-    if (window.innerHeight > window.innerWidth) {
-        document.getElementById("gachaBody").style.display = "none";
-        document.querySelector(".portrait-message").style.display = "flex";
-    } else {
-        document.getElementById("gachaBody").style.display = "flex";
-        document.querySelector(".portrait-message").style.display = "none";
-    }
+	if (window.innerHeight > window.innerWidth) {
+		document.getElementById("gachaBody").style.display = "none";
+		document.querySelector(".portrait-message").style.display = "flex";
+	} else {
+		document.getElementById("gachaBody").style.display = "flex";
+		document.querySelector(".portrait-message").style.display = "none";
+	}
 }
 
 window.addEventListener("resize", checkOrientation);

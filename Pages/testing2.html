@@ -1,439 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Character Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
 
-        body {
-            background-color: #1a1a1a;
-            color: #ffffff;
-        }
+      body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+      }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-        }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+      }
 
-        .header {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
+      .header {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
 
-        .character-image {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 1px solid #333;
-        }
+      .character-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid #333;
+      }
 
-        .basic-info {
-            flex: 1;
-        }
+      .basic-info {
+        flex: 1;
+      }
 
-        .description {
-            line-height: 1.5;
-            margin-top: 10px;
-            color: #cccccc;
-        }
+      .description {
+        line-height: 1.5;
+        margin-top: 10px;
+        color: #cccccc;
+      }
 
-        .button-list {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
+      .button-list {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
 
-        .tab-button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+      .tab-button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
 
-        .tab-button.active {
-            background-color: #007bff;
-        }
+      .tab-button.active {
+        background-color: #007bff;
+      }
 
-        .tab-button:hover:not(.active) {
-            background-color: #444;
-        }
+      .tab-button:hover:not(.active) {
+        background-color: #444;
+      }
 
-        .content-area {
-            padding: 20px;
-            border-radius: 5px;
-            min-height: 200px;
-            background-color: #2a2a2a;
-        }
-		.tab-title{
-			font-size: 12px;
-		}
+      .content-area {
+        padding: 20px;
+        border-radius: 5px;
+        min-height: 200px;
+        background-color: #2a2a2a;
+      }
+      .tab-title {
+        font-size: 12px;
+      }
 
-        /* Profile Card Styles */
-        .card {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 1rem;
-            margin-bottom: 0.5rem;
-            color: white;
-            border: 0;
-            border-radius: 50px;
-            height: 50px;
-            transition: background-color 0.3s;
-        }
+      /* Profile Card Styles */
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1rem;
+        margin-bottom: 0.5rem;
+        color: white;
+        border: 0;
+        border-radius: 50px;
+        height: 50px;
+        transition: background-color 0.3s;
+      }
 
-        .card p {
-            margin: 0;
-            font: bold 1.5em Verdana, sans-serif;
-        }
+      .card p {
+        margin: 0;
+        font: bold 1.5em Verdana, sans-serif;
+      }
 
-        .card i {
-            float: right;
-            padding: 4px;
-        }
+      .card i {
+        float: right;
+        padding: 4px;
+      }
 
-        /* Rarity-based colors */
-        .rarity-common { background-color: #4a4a4a; }
-        .rarity-uncommon { background-color: #2d6a4f; }
-        .rarity-rare { background-color: #1e3a8a; }
-        .rarity-epic { background-color: #4c2c72; }
-        .rarity-legendary { background-color: #b8860b; }
-        .general-bg { background-color: #713a96; }
+      /* Rarity-based colors */
+      .rarity-common {
+        background-color: #4a4a4a;
+      }
+      .rarity-uncommon {
+        background-color: #2d6a4f;
+      }
+      .rarity-rare {
+        background-color: #1e3a8a;
+      }
+      .rarity-epic {
+        background-color: #4c2c72;
+      }
+      .rarity-legendary {
+        background-color: #b8860b;
+      }
+      .general-bg {
+        background-color: #713a96;
+      }
 
-        /* Table Styles */
-        .table-striped {
-            width: 100%;
-            margin-bottom: 1rem;
-            border: 1px solid #444;
-            border-radius: 4px;
-        }
+      /* Table Styles */
+      .table-striped {
+        width: 100%;
+        margin-bottom: 1rem;
+        border: 1px solid #444;
+        border-radius: 4px;
+      }
 
-        .table-striped tr:nth-child(odd) {
-            background-color: #333;
-        }
+      .table-striped tr:nth-child(odd) {
+        background-color: #333;
+      }
 
-        .table-striped tr:nth-child(even) {
-            background-color: #2a2a2a;
-        }
+      .table-striped tr:nth-child(even) {
+        background-color: #2a2a2a;
+      }
 
-        .table-striped td {
-            padding: 0.25rem 0.5rem;
-        }
+      .table-striped td {
+        padding: 0.25rem 0.5rem;
+      }
 
-        /* Custom column widths */
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0;
-        }
+      /* Custom column widths */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+      }
 
+      .col-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+
+      .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .font-weight-bold {
+        font-weight: bold;
+      }
+
+      .voice-section {
+        margin-top: 10px;
+      }
+
+      .voice-list {
+        margin-bottom: 15px;
+      }
+
+      .voice-item {
+        padding: 8px;
+        background-color: #333;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .voice-item:hover {
+        background-color: #444;
+      }
+
+      .voice-player {
+        margin-top: 15px;
+      }
+
+      #voiceAudio {
+        width: 100%;
+        max-width: 300px;
+        background-color: #333;
+        border-radius: 5px;
+      }
+
+      #currentVoice {
+        margin-top: 5px;
+        color: #cccccc;
+        font-size: 0.9em;
+      }
+
+      .sequence-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0; /* No gap between card and description */
+      }
+
+      .sequence-description {
+        background-color: #2a2a2a;
+        color: #cccccc;
+        border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+      }
+
+      .upgrade-container-alt {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .upgrade-card {
+        border: 1px solid #444;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .upgrade-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: background-color 0.3s;
+      }
+
+      .upgrade-header:hover {
+        background-color: #4a4a4a !important; /* Override inline style on hover */
+      }
+
+      .upgrade-materials-alt {
+        color: #ffffff;
+      }
+
+      .upgrade-materials-alt ul li {
+        padding: 5px 0;
+        font-size: 0.95em;
+      }
+      .skill {
+        padding: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      pre {
+        background: #eee;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+
+      .dark-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #1e1e1e;
+        color: #fff;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      .dark-table th,
+      .dark-table td {
+        padding: 10px;
+        border: 1px solid #333;
+        text-align: left;
+      }
+
+      .dark-table th {
+        background-color: #333;
+      }
+
+      input[type="range"] {
+        accent-color: #eee;
+      }
+
+      @media (max-width: 576px) {
         .col-3 {
-            flex: 0 0 25%;
-            max-width: 25%;
+          flex: 0 0 50%;
+          max-width: 50%;
         }
-
         .col-6 {
-            flex: 0 0 50%;
-            max-width: 50%;
+          flex: 0 0 50%;
+          max-width: 50%;
         }
-
-        .text-right {
-            text-align: right;
-        }
-
-        .font-weight-bold {
-            font-weight: bold;
-        }
-
-		.voice-section {
-    margin-top: 10px;
-}
-
-.voice-list {
-    margin-bottom: 15px;
-}
-
-.voice-item {
-    padding: 8px;
-    background-color: #333;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.voice-item:hover {
-    background-color: #444;
-}
-
-.voice-player {
-    margin-top: 15px;
-}
-
-#voiceAudio {
-    width: 100%;
-    max-width: 300px;
-    background-color: #333;
-    border-radius: 5px;
-}
-
-#currentVoice {
-    margin-top: 5px;
-    color: #cccccc;
-    font-size: 0.9em;
-}
-
-.sequence-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0; /* No gap between card and description */
-}
-
-.sequence-description {
-    background-color: #2a2a2a;
-    color: #cccccc;
-    border-radius: 0 0 5px 5px; /* Rounded bottom corners */
-}
-
-.upgrade-container-alt {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.upgrade-card {
-    border: 1px solid #444;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.upgrade-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background-color 0.3s;
-}
-
-.upgrade-header:hover {
-    background-color: #4a4a4a !important; /* Override inline style on hover */
-}
-
-.upgrade-materials-alt {
-    color: #ffffff;
-}
-
-.upgrade-materials-alt ul li {
-    padding: 5px 0;
-    font-size: 0.95em;
-}
-        .skill {
-            padding: 15px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-        }
-        input[type="range"] {
-            width: 100%;
-        }
-        pre {
-            background: #eee;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-		.dark-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #1e1e1e;
-    color: #fff;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-
-.dark-table th, .dark-table td {
-    padding: 10px;
-    border: 1px solid #333;
-    text-align: left;
-}
-
-.dark-table th {
-    background-color: #333;
-}
-
-input[type="range"] {
-    accent-color: #eee;
-}
-
-        @media (max-width: 576px) {
-            .col-3 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-            .col-6 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <img src="https://via.placeholder.com/200" alt="Character Image" class="character-image">
-            <div class="basic-info">
-                <h1>Character Name</h1>
-                <div><span class="rarity">Legendary</span>|<span class="weapon">Greatsword</span></div>
-                <p class="description">
-                    A mysterious warrior from the ancient lands, wielding powers beyond mortal comprehension.
-                </p>
-            </div>
+      <div class="header">
+        <img
+          src="https://via.placeholder.com/200"
+          alt="Character Image"
+          class="character-image"
+        />
+        <div class="basic-info">
+          <h1>Character Name</h1>
+          <div>
+            <span class="rarity">Legendary</span>|<span class="weapon"
+              >Greatsword</span
+            >
+          </div>
+          <p class="description">
+            A mysterious warrior from the ancient lands, wielding powers beyond
+            mortal comprehension.
+          </p>
         </div>
-		<div class="button-list">
-			<button class="tab-button active" data-tab="profile">Profile</button>
-			<button class="tab-button" data-tab="backstory">Backstory</button>
-			<button class="tab-button" data-tab="stats">Stats</button>
-			<button class="tab-button" data-tab="skill">Skills</button>
-			<button class="tab-button" data-tab="levelUpgrade">Level Upgrade</button>
-			<button class="tab-button" data-tab="skillUpgrade">Skill Upgrade</button>
-			<button class="tab-button" data-tab="voice">Voice</button>
-			<button class="tab-button" data-tab="dupe">Resonance Chain</button>
-			<button class="tab-button" data-tab="gallery">Gallery</button>
-		</div>
+      </div>
+      <div class="button-list">
+        <button class="tab-button active" data-tab="profile">Profile</button>
+        <button class="tab-button" data-tab="backstory">Backstory</button>
+        <button class="tab-button" data-tab="battle">Battle</button>
+        <button class="tab-button" data-tab="skill">Skills</button>
+        <button class="tab-button" data-tab="levelUpgrade">
+          Level Upgrade
+        </button>
+        <button class="tab-button" data-tab="skillUpgrade">
+          Skill Upgrade
+        </button>
+        <button class="tab-button" data-tab="voice">Voice</button>
+        <button class="tab-button" data-tab="dupe">Resonance Chain</button>
+        <button class="tab-button" data-tab="gallery">Gallery</button>
+      </div>
 
-        <div class="content-area" id="content">
-            <div class="card rarity-legendary">
-                <p>Character Name (Legendary)
-                    <i class="fa fa-id-card"></i>
-                </p>
-            </div>
-            <table class="table-striped">
-                <tr class="row">
-                    <td class="col-3 text-right font-weight-bold">full name</td>
-                    <td class="col-3">n/a</td>
-                    <td class="col-3 text-right font-weight-bold">age</td>
-                    <td class="col-3">n/a</td>
-                </tr>
-                <tr class="row">
-                    <td class="col-3 text-right font-weight-bold">species</td>
-                    <td class="col-3">n/a</td>
-                    <td class="col-3 text-right font-weight-bold">gender</td>
-                    <td class="col-3">n/a</td>
-                </tr>
-                <tr class="row">
-                    <td class="col-3 text-right font-weight-bold">Ocupation</td>
-                    <td class="col-3">n/a</td>
-                    <td class="col-3 text-right font-weight-bold">Status</td>
-                    <td class="col-3">n/a</td>
-                </tr>
-            </table>
+      <div class="content-area" id="content">
+        <div class="card rarity-legendary">
+          <p>
+            Character Name (Legendary)
+            <i class="fa fa-id-card"></i>
+          </p>
         </div>
+        <table class="table-striped">
+          <tr class="row">
+            <td class="col-3 text-right font-weight-bold">full name</td>
+            <td class="col-3">n/a</td>
+            <td class="col-3 text-right font-weight-bold">age</td>
+            <td class="col-3">n/a</td>
+          </tr>
+          <tr class="row">
+            <td class="col-3 text-right font-weight-bold">species</td>
+            <td class="col-3">n/a</td>
+            <td class="col-3 text-right font-weight-bold">gender</td>
+            <td class="col-3">n/a</td>
+          </tr>
+          <tr class="row">
+            <td class="col-3 text-right font-weight-bold">Ocupation</td>
+            <td class="col-3">n/a</td>
+            <td class="col-3 text-right font-weight-bold">Status</td>
+            <td class="col-3">n/a</td>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <script>
-        const buttons = document.querySelectorAll('.tab-button');
-        const contentArea = document.getElementById('content');
+      const buttons = document.querySelectorAll(".tab-button");
+      const contentArea = document.getElementById("content");
 
-        
+      // Modify the existing button click handler
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          buttons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+          const tab = button.dataset.tab;
+          contentArea.innerHTML = tabContent[tab];
 
-// Modify the existing button click handler
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        const tab = button.dataset.tab;
-        contentArea.innerHTML = tabContent[tab];
-        
-        if (tab === 'voice') {
+          if (tab === "voice") {
             setTimeout(initializeVoicePlayer, 0);
-        } else if (tab === 'levelUpgrade' || tab === 'skillUpgrade') {
+          } else if (tab === "levelUpgrade" || tab === "skillUpgrade") {
             setTimeout(initializeUpgradeCards, 0);
-        }
-    });
-});
-
-
-// Add this after the existing buttons.forEach loop
-function initializeVoicePlayer() {
-    const voiceItems = document.querySelectorAll('.voice-item');
-    const audioPlayer = document.getElementById('voiceAudio');
-    const currentVoiceText = document.getElementById('currentVoice');
-
-    if (voiceItems && audioPlayer && currentVoiceText) {
-        voiceItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const audioUrl = item.getAttribute('data-audio');
-                const voiceText = item.textContent.split(' - ')[0]; // Get the title before the description
-                audioPlayer.src = audioUrl;
-                audioPlayer.play();
-                currentVoiceText.textContent = `Current: ${voiceText}`;
-            });
+          }
         });
-    }
-}
+      });
 
-// Define upgrade data
-const upgradeData = {
-    levelUpgrades: {
-        totalCost: { gold: 1000, ironOre: 50, mysticShard: 25 },
-        levels: [
-            { from: 1, to: 2, materials: { gold: 100, ironOre: 5, mysticShard: 2 } },
-            { from: 2, to: 3, materials: { gold: 200, ironOre: 10, mysticShard: 5 } },
-            { from: 3, to: 4, materials: { gold: 300, ironOre: 15, mysticShard: 8 } },
-            { from: 4, to: 5, materials: { gold: 400, ironOre: 20, mysticShard: 10 } }
-        ]
-    },
-    skillUpgrades: {
-        totalCost: { gold: 900, ironOre: 45, mysticShard: 25 },
-        skills: [
+      // Add this after the existing buttons.forEach loop
+      function initializeVoicePlayer() {
+        const voiceItems = document.querySelectorAll(".voice-item");
+        const audioPlayer = document.getElementById("voiceAudio");
+        const currentVoiceText = document.getElementById("currentVoice");
+
+        if (voiceItems && audioPlayer && currentVoiceText) {
+          voiceItems.forEach((item) => {
+            item.addEventListener("click", () => {
+              const audioUrl = item.getAttribute("data-audio");
+              const voiceText = item.textContent.split(" - ")[0]; // Get the title before the description
+              audioPlayer.src = audioUrl;
+              audioPlayer.play();
+              currentVoiceText.textContent = `Current: ${voiceText}`;
+            });
+          });
+        }
+      }
+
+      // Define upgrade data
+      const upgradeData = {
+        levelUpgrades: {
+          totalCost: { gold: 1000, ironOre: 50, mysticShard: 25 },
+          levels: [
             {
-                name: "Elemental Mastery",
-                maxLevel: 3,
-                upgrades: [
-                    { from: 1, to: 2, materials: { gold: 100, ironOre: 5, mysticShard: 3 } },
-                    { from: 2, to: 3, materials: { gold: 200, ironOre: 10, mysticShard: 7 } }
-                ]
+              from: 1,
+              to: 2,
+              materials: { gold: 100, ironOre: 5, mysticShard: 2 },
             },
             {
-                name: "Enhanced Strength",
-                maxLevel: 4,
-                upgrades: [
-                    { from: 1, to: 2, materials: { gold: 100, ironOre: 5, mysticShard: 2 } },
-                    { from: 2, to: 3, materials: { gold: 150, ironOre: 8, mysticShard: 4 } },
-                    { from: 3, to: 4, materials: { gold: 200, ironOre: 12, mysticShard: 6 } }
-                ]
+              from: 2,
+              to: 3,
+              materials: { gold: 200, ironOre: 10, mysticShard: 5 },
             },
             {
-                name: "Light Manipulation",
-                maxLevel: 2,
-                upgrades: [
-                    { from: 1, to: 2, materials: { gold: 150, ironOre: 5, mysticShard: 3 } }
-                ]
-            }
-        ]
-    }
-};
+              from: 3,
+              to: 4,
+              materials: { gold: 300, ironOre: 15, mysticShard: 8 },
+            },
+            {
+              from: 4,
+              to: 5,
+              materials: { gold: 400, ironOre: 20, mysticShard: 10 },
+            },
+          ],
+        },
+        skillUpgrades: {
+          totalCost: { gold: 900, ironOre: 45, mysticShard: 25 },
+          skills: [
+            {
+              name: "Elemental Mastery",
+              maxLevel: 3,
+              upgrades: [
+                {
+                  from: 1,
+                  to: 2,
+                  materials: { gold: 100, ironOre: 5, mysticShard: 3 },
+                },
+                {
+                  from: 2,
+                  to: 3,
+                  materials: { gold: 200, ironOre: 10, mysticShard: 7 },
+                },
+              ],
+            },
+            {
+              name: "Enhanced Strength",
+              maxLevel: 4,
+              upgrades: [
+                {
+                  from: 1,
+                  to: 2,
+                  materials: { gold: 100, ironOre: 5, mysticShard: 2 },
+                },
+                {
+                  from: 2,
+                  to: 3,
+                  materials: { gold: 150, ironOre: 8, mysticShard: 4 },
+                },
+                {
+                  from: 3,
+                  to: 4,
+                  materials: { gold: 200, ironOre: 12, mysticShard: 6 },
+                },
+              ],
+            },
+            {
+              name: "Light Manipulation",
+              maxLevel: 2,
+              upgrades: [
+                {
+                  from: 1,
+                  to: 2,
+                  materials: { gold: 150, ironOre: 5, mysticShard: 3 },
+                },
+              ],
+            },
+          ],
+        },
+      };
 
-// Function to generate total cost HTML
-function generateTotalCost(totalCost, title) {
-    return `
+      // Function to generate total cost HTML
+      function generateTotalCost(totalCost, title) {
+        return `
         <div class="total-cost" style="background-color: #2a2a2a; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #444;">
             <h3>${title}</h3>
             <ul style="list-style: none; padding: 0; margin-top: 10px;">
@@ -443,17 +509,21 @@ function generateTotalCost(totalCost, title) {
             </ul>
         </div>
     `;
-}
+      }
 
-// Function to generate upgrade card HTML
-function generateUpgradeCard(id, title, materialsList) {
-    const materialsHtml = materialsList.map(m => `
+      // Function to generate upgrade card HTML
+      function generateUpgradeCard(id, title, materialsList) {
+        const materialsHtml = materialsList
+          .map(
+            (m) => `
         <li>Lv ${m.from} → Lv ${m.to}:</li>
         <li><span style="color: #ffd700;">${m.materials.gold} Gold</span></li>
         <li><span style="color: #b0b0b0;">${m.materials.ironOre} Iron Ore</span></li>
         <li><span style="color: #00b7eb;">${m.materials.mysticShard} Mystic Shard</span></li>
-    `).join('');
-    return `
+    `
+          )
+          .join("");
+        return `
         <div class="upgrade-card" data-upgrade="${id}">
             <div class="upgrade-header" style="background-color: #3a3a3a; padding: 10px 15px; border-radius: 8px 8px 0 0; cursor: pointer;">
                 <span>${title}</span>
@@ -466,140 +536,322 @@ function generateUpgradeCard(id, title, materialsList) {
             </div>
         </div>
     `;
-}
+      }
 
-// Function to generate level upgrade tab HTML
-function generateLevelUpgradeTab() {
-    const levelCards = upgradeData.levelUpgrades.levels.map(level => 
-        generateUpgradeCard(`level-${level.from}-${level.to}`, `Level ${level.from} → Level ${level.to}`, [level])
-    ).join('');
-    
-    return `
+      // Function to generate level upgrade tab HTML
+      function generateLevelUpgradeTab() {
+        const levelCards = upgradeData.levelUpgrades.levels
+          .map((level) =>
+            generateUpgradeCard(
+              `level-${level.from}-${level.to}`,
+              `Level ${level.from} → Level ${level.to}`,
+              [level]
+            )
+          )
+          .join("");
+
+        return `
         <h2>Level Up Upgrade Cost</h2>
-        ${generateTotalCost(upgradeData.levelUpgrades.totalCost, "Total Level Upgrade Cost (Level 1 → Level 5)")}
+        ${generateTotalCost(
+          upgradeData.levelUpgrades.totalCost,
+          "Total Level Upgrade Cost (Level 1 → Level 5)"
+        )}
         <div class="upgrade-container-alt">
             ${levelCards}
         </div>
     `;
-}
+      }
 
-// Function to generate skill upgrade tab HTML
-function generateSkillUpgradeTab() {
-    const skillCards = upgradeData.skillUpgrades.skills.map(skill => 
-        generateUpgradeCard(`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`, 
-                           `${skill.name} (Lv 1 → Lv ${skill.maxLevel})`, 
-                           skill.upgrades)
-    ).join('');
+      // Function to generate skill upgrade tab HTML
+      function generateSkillUpgradeTab() {
+        const skillCards = upgradeData.skillUpgrades.skills
+          .map((skill) =>
+            generateUpgradeCard(
+              `skill-${skill.name.toLowerCase().replace(/\s+/g, "-")}`,
+              `${skill.name} (Lv 1 → Lv ${skill.maxLevel})`,
+              skill.upgrades
+            )
+          )
+          .join("");
 
-    return `
+        return `
         <h2>Skill Upgrade Cost</h2>
-        ${generateTotalCost(upgradeData.skillUpgrades.totalCost, "Total Skill Upgrade Cost (All Skills to Max)")}
+        ${generateTotalCost(
+          upgradeData.skillUpgrades.totalCost,
+          "Total Skill Upgrade Cost (All Skills to Max)"
+        )}
         <div class="upgrade-container-alt">
             ${skillCards}
         </div>
     `;
-}
+      }
 
-function initializeUpgradeCards() {
-    const upgradeHeaders = document.querySelectorAll('.upgrade-header');
-    upgradeHeaders.forEach(header => {
-        // Set initial state to open
-        const materials = header.nextElementSibling;
-        const chevron = header.querySelector('i');
-        materials.style.display = 'none';
-        chevron.classList.remove('fa-chevron-up');
-        chevron.classList.add('fa-chevron-down');
+      function initializeUpgradeCards() {
+        const upgradeHeaders = document.querySelectorAll(".upgrade-header");
+        upgradeHeaders.forEach((header) => {
+          // Set initial state to open
+          const materials = header.nextElementSibling;
+          const chevron = header.querySelector("i");
+          materials.style.display = "none";
+          chevron.classList.remove("fa-chevron-up");
+          chevron.classList.add("fa-chevron-down");
 
-        // Add click event listener to toggle visibility
-header.addEventListener('click', (event) => {
+          // Add click event listener to toggle visibility
+          header.addEventListener("click", (event) => {
+            if (materials.style.display === "none") {
+              materials.style.display = "block";
+              chevron.classList.remove("fa-chevron-down");
+              chevron.classList.add("fa-chevron-up");
+            } else {
+              materials.style.display = "none";
+              chevron.classList.remove("fa-chevron-up");
+              chevron.classList.add("fa-chevron-down");
+            }
+          });
+        });
+      }
 
-    if (materials.style.display === 'none') {
-        materials.style.display = 'block';
-        chevron.classList.remove('fa-chevron-down');
-        chevron.classList.add('fa-chevron-up');
-    } else {
-        materials.style.display = 'none';
-        chevron.classList.remove('fa-chevron-up');
-        chevron.classList.add('fa-chevron-down');
-    }
-
-});
-
-
-    });
-}
-
-// Function to load skills dynamically
-function loadSkills() {
-    const skills = [
-        {
+      // Function to load skills dynamically
+      function loadSkills() {
+        const skills = [
+          {
             name: "Spectro Slash",
-			user: "Jinhsi",
+            user: "Jinhsi",
             description: "Attack the target, dealing Spectro DMG.",
             stats: {
-                skillDMG: ["251.40%+586.60%", "272.02%+634.71%", "292.63%+682.81%", "321.50%+750.15%"],
-                cooldown: ["24s", "24s", "20s", "20s"],
-                resonanceCost: ["150", "140", "120", "100"]
+              skillDMG: [
+                "251.40%+586.60%",
+                "272.02%+634.71%",
+                "292.63%+682.81%",
+                "321.50%+750.15%",
+              ],
+              cooldown: ["24s", "24s", "20s", "20s"],
+              resonanceCost: ["150", "140", "120", "100"],
             },
             multipliers: {
-                lv1: [
-                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "80%", resonanceEnergy: "10", concertoEnergy: "0", hardness: "1", toughness: "1" },
-                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "120%", resonanceEnergy: "10", concertoEnergy: "0", hardness: "1", toughness: "1" }
-                ],
-                lv2: [
-                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "90%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
-                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "135%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
-                ],
-                lv3: [
-                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "100%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
-                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "150%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
-                ],
-                lv4: [
-                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "110%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
-                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "165%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
-                ]
-            }
-        },
-		{
+              lv1: [
+                {
+                  entry: 1,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "80%",
+                  resonanceEnergy: "10",
+                  concertoEnergy: "0",
+                  hardness: "1",
+                  toughness: "1",
+                },
+                {
+                  entry: 2,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "120%",
+                  resonanceEnergy: "10",
+                  concertoEnergy: "0",
+                  hardness: "1",
+                  toughness: "1",
+                },
+              ],
+              lv2: [
+                {
+                  entry: 1,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "90%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+                {
+                  entry: 2,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "135%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+              ],
+              lv3: [
+                {
+                  entry: 1,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "100%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+                {
+                  entry: 2,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "150%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+              ],
+              lv4: [
+                {
+                  entry: 1,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "110%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+                {
+                  entry: 2,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "165%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+              ],
+            },
+          },
+          {
             name: "Spectro Slash 2",
-			user: "Jinhsi",
+            user: "Jinhsi",
             description: "Attack the target, dealing Spectro DMG.",
             stats: {
-                skillDMG: ["251.40%+586.60%", "272.02%+634.71%", "292.63%+682.81%", "321.50%+750.15%"],
-                cooldown: ["24s", "24s", "20s", "20s"],
-                resonanceCost: ["150", "140", "120", "100"]
+              skillDMG: [
+                "251.40%+586.60%",
+                "272.02%+634.71%",
+                "292.63%+682.81%",
+                "321.50%+750.15%",
+              ],
+              cooldown: ["24s", "24s", "20s", "20s"],
+              resonanceCost: ["150", "140", "120", "100"],
             },
             multipliers: {
-                lv1: [
-                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "80%", resonanceEnergy: "10", concertoEnergy: "0", hardness: "1", toughness: "1" },
-                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "120%", resonanceEnergy: "10", concertoEnergy: "0", hardness: "1", toughness: "1" }
-                ],
-                lv2: [
-                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "90%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
-                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "135%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
-                ],
-                lv3: [
-                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "100%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
-                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "150%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
-                ],
-                lv4: [
-                    { entry: 1, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "110%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" },
-                    { entry: 2, attribute: "ATK", attackType: "Inherent Skill", damageType: "Damage", skillValue: "165%", resonanceEnergy: "12", concertoEnergy: "0", hardness: "2", toughness: "1" }
-                ]
-            }
-        }
-    ];
+              lv1: [
+                {
+                  entry: 1,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "80%",
+                  resonanceEnergy: "10",
+                  concertoEnergy: "0",
+                  hardness: "1",
+                  toughness: "1",
+                },
+                {
+                  entry: 2,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "120%",
+                  resonanceEnergy: "10",
+                  concertoEnergy: "0",
+                  hardness: "1",
+                  toughness: "1",
+                },
+              ],
+              lv2: [
+                {
+                  entry: 1,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "90%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+                {
+                  entry: 2,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "135%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+              ],
+              lv3: [
+                {
+                  entry: 1,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "100%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+                {
+                  entry: 2,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "150%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+              ],
+              lv4: [
+                {
+                  entry: 1,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "110%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+                {
+                  entry: 2,
+                  attribute: "ATK",
+                  attackType: "Inherent Skill",
+                  damageType: "Damage",
+                  skillValue: "165%",
+                  resonanceEnergy: "12",
+                  concertoEnergy: "0",
+                  hardness: "2",
+                  toughness: "1",
+                },
+              ],
+            },
+          },
+        ];
 
-    const container = document.getElementById("skills-container");
-    if (!container) return;
+        const container = document.getElementById("skills-container");
+        if (!container) return;
 
-    container.innerHTML = ""; // Clear previous skills
+        container.innerHTML = ""; // Clear previous skills
 
-    skills.forEach((skill, index) => {
-        const skillDiv = document.createElement("div");
-        skillDiv.classList.add("skill");
+        skills.forEach((skill, index) => {
+          const skillDiv = document.createElement("div");
+          skillDiv.classList.add("skill");
 
-        skillDiv.innerHTML = `
+          skillDiv.innerHTML = `
             <h2 style="color: #f5f5f5;">${skill.name}</h2>
             <p style="color: #ddd;">${skill.description}</p>
 			<div style="text-align: right;">
@@ -612,9 +864,15 @@ function loadSkills() {
             	<h3 style="color: #f5f5f5;">Stats</h3>
 			</div>
             <table class="dark-table">
-                <tr><th>Skill DMG</th><td id="skill-dmg-${index}">${skill.stats.skillDMG[0]}</td></tr>
-                <tr><th>Cooldown</th><td id="cooldown-${index}">${skill.stats.cooldown[0]}</td></tr>
-                <tr><th>Resonance Cost</th><td id="res-cost-${index}">${skill.stats.resonanceCost[0]}</td></tr>
+                <tr><th>Skill DMG</th><td id="skill-dmg-${index}">${
+            skill.stats.skillDMG[0]
+          }</td></tr>
+                <tr><th>Cooldown</th><td id="cooldown-${index}">${
+            skill.stats.cooldown[0]
+          }</td></tr>
+                <tr><th>Resonance Cost</th><td id="res-cost-${index}">${
+            skill.stats.resonanceCost[0]
+          }</td></tr>
             </table>
 
             <h3 style="color: #f5f5f5; margin-top: 20px;">Multipliers</h3>
@@ -623,25 +881,32 @@ function loadSkills() {
 			</table>
         `;
 
-        container.appendChild(skillDiv);
+          container.appendChild(skillDiv);
 
-        document.getElementById(`skill-slider-${index}`).addEventListener("input", (event) => {
-            const level = event.target.value - 1; // Adjusting index (array starts at 0)
-            document.getElementById(`level-display-${index}`).innerText = level + 1;
-            document.getElementById(`skill-dmg-${index}`).innerText = skill.stats.skillDMG[level];
-            document.getElementById(`cooldown-${index}`).innerText = skill.stats.cooldown[level];
-            document.getElementById(`res-cost-${index}`).innerText = skill.stats.resonanceCost[level];
+          document
+            .getElementById(`skill-slider-${index}`)
+            .addEventListener("input", (event) => {
+              const level = event.target.value - 1; // Adjusting index (array starts at 0)
+              document.getElementById(`level-display-${index}`).innerText =
+                level + 1;
+              document.getElementById(`skill-dmg-${index}`).innerText =
+                skill.stats.skillDMG[level];
+              document.getElementById(`cooldown-${index}`).innerText =
+                skill.stats.cooldown[level];
+              document.getElementById(`res-cost-${index}`).innerText =
+                skill.stats.resonanceCost[level];
 
-            // Update multipliers per level
-            const multipliersKey = `lv${level + 1}`;
-            document.getElementById(`multipliers-table-${index}`).innerHTML = generateMultiplierRows(skill.multipliers[multipliersKey]);
+              // Update multipliers per level
+              const multipliersKey = `lv${level + 1}`;
+              document.getElementById(`multipliers-table-${index}`).innerHTML =
+                generateMultiplierRows(skill.multipliers[multipliersKey]);
+            });
         });
-    });
-}
+      }
 
-// Function to generate table rows for multipliers
-function generateMultiplierRows(multiplierData) {
-    let rows = `
+      // Function to generate table rows for multipliers
+      function generateMultiplierRows(multiplierData) {
+        let rows = `
         <tr>
             <th>Entry</th>
             <th>Attribute</th>
@@ -653,9 +918,9 @@ function generateMultiplierRows(multiplierData) {
             <th>Hardness</th>
             <th>Toughness</th>
         </tr>`;
-    
-    multiplierData.forEach(multiplier => {
-        rows += `
+
+        multiplierData.forEach((multiplier) => {
+          rows += `
             <tr>
                 <td>${multiplier.entry}</td>
                 <td>${multiplier.attribute}</td>
@@ -667,29 +932,30 @@ function generateMultiplierRows(multiplierData) {
                 <td>${multiplier.hardness}</td>
                 <td>${multiplier.toughness}</td>
             </tr>`;
-    });
+        });
 
-    return rows;
-}
+        return rows;
+      }
 
-// Tab switching logic
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+      // Tab switching logic
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          buttons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
 
-        const tab = button.dataset.tab;
-        contentArea.innerHTML = tabContent[tab] || `<h2 style="color: white;">${tab} Content Coming Soon...</h2>`;
+          const tab = button.dataset.tab;
+          contentArea.innerHTML =
+            tabContent[tab] ||
+            `<h2 style="color: white;">${tab} Content Coming Soon...</h2>`;
 
-        if (tab === "skill") {
+          if (tab === "skill") {
             loadSkills();
-        }
-    });
-});
+          }
+        });
+      });
 
-
-const tabContent = {
-    profile: `
+      function generateProfileTab() {
+        return `
         <div class="card rarity-legendary tab-title">
             <p>Character Name (Legendary)
                 <i class="fa fa-id-card"></i>
@@ -715,56 +981,76 @@ const tabContent = {
                 <td class="col-3">n/a</td>
             </tr>
         </table>
-    `,
-    backstory: `
+    `;
+      }
+
+      function generateBackstoryTab() {
+        return `
         <h2>Backstory</h2>
         <p>Born in a small village ravaged by war, the character discovered their powers at a young age. 
         After losing their family to a dark force, they vowed to protect the innocent and bring justice 
         to the realm.</p>
-    `,
-    skill: `
-		<h1>Skill Multiplier Viewer (work in progress)</h1>
-		<div id="skills-container">
-			<p>Skill details will be displayed here.</p>
-		</div>
-    `,
-    voice: `
-    <h2>Voice</h2>
-    <div class="voice-section">
-        <ul class="voice-list" style="list-style: none; padding: 0;">
-            <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Greeting - "Welcome to my realm!"</li>
-            <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Battle Cry - "For justice!"</li>
-            <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Victory - "The light prevails!"</li>
-        </ul>
-        <div class="voice-player">
-            <audio id="voiceAudio" controls>
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <p id="currentVoice">Current: Greeting</p>
+    `;
+      }
+
+      function generateSkillTab() {
+        return `
+        <h1>Skill Multiplier Viewer (work in progress)</h1>
+        <div id="skills-container">
+            <p>Skill details will be displayed here.</p>
         </div>
-    </div>
-	`,
-	dupe: `
-		<h2>Sequence Upgrades</h2>
-		<div class="sequence-container">
-			<div class="card general-bg tab-title" style="border: 2px solid #555;">
-				<p>S1 | Abyssal Ascension</p>
-			</div>
-			<div class="sequence-description" style="border: 2px solid #555; border-top: none; padding: 10px; margin-bottom: 15px;">
-				<p>Add stats by 15%</p>
-			</div>
-			<div class="card general-bg tab-title" style="border: 2px solid #555;">
-				<p>S2 | Sequence Node 2</p>
-			</div>
-			<div class="sequence-description" style="border: 2px solid #555; border-top: none; padding: 10px;">
-				<p>Skill becomes AoE</p>
-			</div>
-		</div>
-	`,
-	levelUpgrade: generateLevelUpgradeTab(),
-    skillUpgrade: generateSkillUpgradeTab(),
-};
+    `;
+      }
+
+      function generateVoiceTab() {
+        return `
+        <h2>Voice</h2>
+        <div class="voice-section">
+            <ul class="voice-list" style="list-style: none; padding: 0;">
+                <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Greeting - "Welcome to my realm!"</li>
+                <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Battle Cry - "For justice!"</li>
+                <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Victory - "The light prevails!"</li>
+            </ul>
+            <div class="voice-player">
+                <audio id="voiceAudio" controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p id="currentVoice">Current: Greeting</p>
+            </div>
+        </div>
+    `;
+      }
+
+      function generateDupeTab() {
+        return `
+        <h2>Sequence Upgrades</h2>
+        <div class="sequence-container">
+            <div class="card general-bg tab-title" style="border: 2px solid #555;">
+                <p>S1 | Abyssal Ascension</p>
+            </div>
+            <div class="sequence-description" style="border: 2px solid #555; border-top: none; padding: 10px; margin-bottom: 15px;">
+                <p>Add stats by 15%</p>
+            </div>
+            <div class="card general-bg tab-title" style="border: 2px solid #555;">
+                <p>S2 | Sequence Node 2</p>
+            </div>
+            <div class="sequence-description" style="border: 2px solid #555; border-top: none; padding: 10px;">
+                <p>Skill becomes AoE</p>
+            </div>
+        </div>
+    `;
+      }
+
+      const tabContent = {
+        profile: generateProfileTab(),
+        backstory: generateBackstoryTab(),
+        skill: generateSkillTab(),
+        voice: generateVoiceTab(),
+        dupe: generateDupeTab(),
+        levelUpgrade: generateLevelUpgradeTab(),
+        skillUpgrade: generateSkillUpgradeTab(),
+      };
     </script>
-</body>
+  </body>
 </html>

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="StickIn" content="This is the Stick IN Home Page">
-    <link rel="stylesheet" href="../CSS/Sidebar.css">
-    <link rel="stylesheet" href="../CSS/Character.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="StickIn" content="This is the Stick IN Home Page" />
+    <link rel="stylesheet" href="../CSS/Sidebar.css" />
+    <link rel="stylesheet" href="../CSS/Character.css" />
     <title>Resonator</title>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <!-- Three.js Library -->
@@ -18,9 +21,9 @@
     <main>
       <!-- 🎉 Banner -->
       <div class="banner">
-        <hr class="separator">
+        <hr class="separator" />
         <h2 class="title">Resonator</h2>
-        <hr class="separator">
+        <hr class="separator" />
       </div>
       <!-- 📦 Main Content Container -->
       <div class="container">
@@ -30,66 +33,122 @@
           <fieldset>
             <legend>Element</legend>
             <label>
-              <input type="checkbox" value="All" class="element-filter" onchange="toggleAll(this, 'element-filter')"> All </label>
-            <label>
-              <input type="checkbox" value="Spectro" class="element-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Spectro_Element_Icon.webp" alt="Spectro">
+              <input
+                type="checkbox"
+                value="All"
+                class="element-filter"
+                onchange="toggleAll(this, 'element-filter')"
+              />
+              All
             </label>
             <label>
-              <input type="checkbox" value="Havoc" class="element-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Havoc_Element_Icon.webp" alt="Havoc">
+              <input type="checkbox" value="Spectro" class="element-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Spectro_Element_Icon.webp"
+                alt="Spectro"
+              />
             </label>
             <label>
-              <input type="checkbox" value="Fusion" class="element-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Fusion_Element_Icon.webp" alt="Fusion">
+              <input type="checkbox" value="Havoc" class="element-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Havoc_Element_Icon.webp"
+                alt="Havoc"
+              />
             </label>
             <label>
-              <input type="checkbox" value="Electro" class="element-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Electro_Element_Icon.webp" alt="Electro">
+              <input type="checkbox" value="Fusion" class="element-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Fusion_Element_Icon.webp"
+                alt="Fusion"
+              />
             </label>
             <label>
-              <input type="checkbox" value="Glacio" class="element-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Glacio_Element_Icon.webp" alt="Glacio">
+              <input type="checkbox" value="Electro" class="element-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Electro_Element_Icon.webp"
+                alt="Electro"
+              />
             </label>
             <label>
-              <input type="checkbox" value="Aero" class="element-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Aero_Element_Icon.webp" alt="Aero">
+              <input type="checkbox" value="Glacio" class="element-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Glacio_Element_Icon.webp"
+                alt="Glacio"
+              />
+            </label>
+            <label>
+              <input type="checkbox" value="Aero" class="element-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/element/Aero_Element_Icon.webp"
+                alt="Aero"
+              />
             </label>
           </fieldset>
           <!-- 🌟 Rarity Filter -->
           <fieldset>
             <legend>Rarity</legend>
             <label>
-              <input type="checkbox" value="All" class="rarity-filter" onchange="toggleAll(this, 'rarity-filter')"> All </label>
+              <input
+                type="checkbox"
+                value="All"
+                class="rarity-filter"
+                onchange="toggleAll(this, 'rarity-filter')"
+              />
+              All
+            </label>
             <label>
-              <input type="checkbox" value="4" class="rarity-filter"> ⭐⭐⭐⭐ </label>
+              <input type="checkbox" value="4" class="rarity-filter" /> ⭐⭐⭐⭐
+            </label>
             <label>
-              <input type="checkbox" value="5" class="rarity-filter"> ⭐⭐⭐⭐⭐ </label>
+              <input type="checkbox" value="5" class="rarity-filter" />
+              ⭐⭐⭐⭐⭐
+            </label>
           </fieldset>
           <!-- ⚔️ Weapon Type Filter -->
           <fieldset>
             <legend>Weapon Type</legend>
             <label>
-              <input type="checkbox" value="All" class="type-filter" onchange="toggleAll(this, 'type-filter')">all </label>
-            <label>
-              <input type="checkbox" value="Sword" class="type-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Sword_Weapon_Icon.webp" alt="Sword">
+              <input
+                type="checkbox"
+                value="All"
+                class="type-filter"
+                onchange="toggleAll(this, 'type-filter')"
+              />all
             </label>
             <label>
-              <input type="checkbox" value="Broadblade" class="type-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Broadblade_Weapon_Icon.webp" alt="Broadblade">
+              <input type="checkbox" value="Sword" class="type-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Sword_Weapon_Icon.webp"
+                alt="Sword"
+              />
             </label>
             <label>
-              <input type="checkbox" value="Pistol" class="type-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Pistols_Weapon_Icon.webp" alt="Pistols">
+              <input type="checkbox" value="Broadblade" class="type-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Broadblade_Weapon_Icon.webp"
+                alt="Broadblade"
+              />
             </label>
             <label>
-              <input type="checkbox" value="Rectifier" class="type-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Rectifier_Weapon_Icon.webp" alt="Rectifier">
+              <input type="checkbox" value="Pistol" class="type-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Pistols_Weapon_Icon.webp"
+                alt="Pistols"
+              />
             </label>
             <label>
-              <input type="checkbox" value="Gauntlet" class="type-filter">
-              <img src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Gauntlets_Weapon_Icon.webp" alt="Gauntlets">
+              <input type="checkbox" value="Rectifier" class="type-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Rectifier_Weapon_Icon.webp"
+                alt="Rectifier"
+              />
+            </label>
+            <label>
+              <input type="checkbox" value="Gauntlet" class="type-filter" />
+              <img
+                src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/Gauntlets_Weapon_Icon.webp"
+                alt="Gauntlets"
+              />
             </label>
           </fieldset>
           <!-- 🎭 Role Filter -->
@@ -103,7 +162,12 @@
           </fieldset>
         </aside>
         <!-- 🔎 Full-width Search Bar -->
-        <input type="text" id="searchInput" placeholder="Search by name..." oninput="filterCharacters()">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by name..."
+          oninput="filterCharacters()"
+        />
         <!-- 🎭 Character Display Grid -->
         <div id="characterGrid" class="item-list"></div>
       </div>

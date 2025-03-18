@@ -267,7 +267,7 @@
       let weaponData = null;
       let allEvents = [];
       let versionsData = null;
-    
+
       // Fetch versions data and populate dropdown
       fetch(
         "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/updates.json"
@@ -277,8 +277,10 @@
           versionsData = data.versions;
           populateVersionDropdown();
         })
-        .catch((error) => console.error("Error fetching versions data:", error));
-    
+        .catch((error) =>
+          console.error("Error fetching versions data:", error)
+        );
+
       // Populate version dropdown
       function populateVersionDropdown() {
         const dropdown = document.getElementById("version-dropdown");
@@ -288,12 +290,12 @@
           option.textContent = `${version.version} - ${version.name}`;
           dropdown.appendChild(option);
         });
-    
+
         // Set the default selected version
         dropdown.value = versionsData[0].version;
         fetchAndProcessData(versionsData[0]);
       }
-    
+
       // Fetch and process events and weapon data
       function fetchAndProcessData(selectedVersion) {
         fetch(
@@ -311,10 +313,10 @@
           })
           .then(([eventData, weaponResponse]) => {
             weaponData = weaponResponse.weapons;
-    
+
             const startDate = new Date(selectedVersion.release_date);
             const endDate = new Date(selectedVersion.end_date);
-    
+
             const filteredEvents = eventData.filter((event) => {
               const eventStart = new Date(event.start);
               const eventEnd = new Date(event.end);
@@ -324,7 +326,7 @@
                 (eventStart <= startDate && eventEnd >= endDate)
               );
             });
-    
+
             const getWeaponImageUrl = (weaponName) => {
               if (!weaponData)
                 return "https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/";
@@ -333,13 +335,13 @@
                 ? `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/${weapon.image}`
                 : "https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/";
             };
-    
+
             const groupedEvents = {
               normal: [],
               conveneHero: [],
               conveneWeapon: [],
             };
-    
+
             filteredEvents.forEach((event) => {
               if (event.type === "Convene" && event.event_detail?.type) {
                 if (event.event_detail.type === "hero") {
@@ -351,22 +353,24 @@
                 groupedEvents.normal.push(event);
               }
             });
-    
+
             timelineData = {
               title: `Patch ${selectedVersion.version}`,
               startDate: startDate,
               endDate: endDate,
               items: [],
             };
-    
-            document.getElementById("timeline-title").textContent = `${timelineData.title} Timeline`;
-    
+
+            document.getElementById(
+              "timeline-title"
+            ).textContent = `${timelineData.title} Timeline`;
+
             const normalGrouped = groupedEvents.normal.reduce((acc, event) => {
               if (!acc[event.type]) acc[event.type] = [];
               acc[event.type].push(event);
               return acc;
             }, {});
-    
+
             Object.keys(normalGrouped).forEach((type) => {
               timelineData.items.push({
                 name: type,
@@ -374,7 +378,10 @@
                   let extractedImage = event.imageUrl;
                   if (event.type === "Convene") {
                     if (event.event_detail?.type === "hero") {
-                      const featuredHero = event.event_detail.featured.replace(/ /g, "_");
+                      const featuredHero = event.event_detail.featured.replace(
+                        / /g,
+                        "_"
+                      );
                       extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}.webp`;
                     } else if (event.event_detail?.type === "weapon") {
                       const featuredWeapon = event.event_detail.featured;
@@ -383,16 +390,130 @@
                   } else {
                     extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
                   }
-                  const isNew = ["whiwa", "toa"].includes(event.type.toLowerCase())
-  ? false
-  : allEvents
-      .filter((e) =>
-        e.type === "Convene"
-          ? e.event_detail?.type === event.event_detail?.type &&
-            e.event_detail?.featured === event.event_detail?.featured
-          : e.type === event.type
-      )
-      .sort((a, b) => new Date(a.date) - new Date(b.date))[0] === event;
+                  const isNew = ["whiwa", "toa"].includes(
+                    event.type.toLowerCase()
+                  )
+                    ? false
+                    : allEvents
+                        .filter((e) =>
+                          e.type === "Convene"
+                            ? e.event_detail?.type ===
+                                event.event_detail?.type &&
+                              e.event_detail?.featured ===
+                                event.event_detail?.featured
+                            : e.type === event.type
+                        )
+                        .sort(
+                          (a, b) => new Date(a.date) - new Date(b.date)
+                        )[0] === event;
+                  return {
+                    name: event.name,
+                    start: new Date(event.start),
+                    end: new Date(event.end),
+                    image: extractedImage,
+                    isNew: isNew,
+                  };
+                }),
+              });
+            });
+
+            const groupEvents = (events, prefix) => {
+              const groups = {};
+
+              // Step 1: Group events by type
+              events.forEach((event) => {
+                const typeKey =
+                  event.type === "Convene"
+                    ? `Convene${event.event_detail?.type}`
+                    : event.type;
+                if (!groups[typeKey]) {
+                  groups[typeKey] = [];
+                }
+                groups[typeKey].push(event);
+              });
+
+              // Step 2: Split each type group by overlapping date ranges
+              const finalGroups = [];
+              Object.entries(groups).forEach(([typeKey, typeEvents]) => {
+                typeEvents.sort(
+                  (a, b) => new Date(a.start) - new Date(b.start)
+                ); // Sort by start date
+                let currentGroups = [];
+
+                typeEvents.forEach((event) => {
+                  const eventStart = new Date(event.start).getTime();
+                  const eventEnd = new Date(event.end).getTime();
+                  let placed = false;
+
+                  // Check each existing group for overlap
+                  for (let group of currentGroups) {
+                    const hasOverlap = group.some((e) => {
+                      const eStart = new Date(e.start).getTime();
+                      const eEnd = new Date(e.end).getTime();
+                      return eventStart <= eEnd && eventEnd >= eStart; // Overlap condition
+                    });
+                    if (!hasOverlap) {
+                      group.push(event);
+                      placed = true;
+                      break;
+                    }
+                  }
+
+                  // If no non-overlapping group found, create a new one
+                  if (!placed) {
+                    currentGroups.push([event]);
+                  }
+                });
+
+                finalGroups.push(...currentGroups);
+              });
+
+              finalGroups.forEach((group, index) => {
+                const typeKey =
+                  group[0].type === "Convene"
+                    ? `Convene${group[0].event_detail?.type}`
+                    : group[0].type;
+                const groupName = `${typeKey}${
+                  finalGroups
+                    .filter(
+                      (g) =>
+                        g[0].type === group[0].type &&
+                        g[0].event_detail?.type === group[0].event_detail?.type
+                    )
+                    .indexOf(group) + 1
+                }`;
+                timelineData.items.push({
+                  name: groupName,
+                  periods: group.map((event) => {
+                    let extractedImage = event.imageUrl;
+                    if (event.type === "Convene") {
+                      if (event.event_detail?.type === "hero") {
+                        const featuredHero =
+                          event.event_detail.featured.replace(/ /g, "_");
+                        extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}_Head_Icon.webp`;
+                      } else if (event.event_detail?.type === "weapon") {
+                        const featuredWeapon = event.event_detail.featured;
+                        extractedImage = getWeaponImageUrl(featuredWeapon);
+                      }
+                    } else {
+                      extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
+                    }
+                    const isNew = ["whiwa", "toa"].includes(
+                      event.type.toLowerCase()
+                    )
+                      ? false
+                      : allEvents
+                          .filter((e) =>
+                            e.type === "Convene"
+                              ? e.event_detail?.type ===
+                                  event.event_detail?.type &&
+                                e.event_detail?.featured ===
+                                  event.event_detail?.featured
+                              : e.type === event.type
+                          )
+                          .sort(
+                            (a, b) => new Date(a.date) - new Date(b.date)
+                          )[0] === event;
                     return {
                       name: event.name,
                       start: new Date(event.start),
@@ -400,103 +521,18 @@
                       image: extractedImage,
                       isNew: isNew,
                     };
-                }),
+                  }),
+                });
               });
-            });
-    
-            const groupEvents = (events, prefix) => {
-  const groups = {};
+            };
 
-  // Step 1: Group events by type
-  events.forEach((event) => {
-    const typeKey = event.type === "Convene" ? `Convene${event.event_detail?.type}` : event.type;
-    if (!groups[typeKey]) {
-      groups[typeKey] = [];
-    }
-    groups[typeKey].push(event);
-  });
-
-  // Step 2: Split each type group by overlapping date ranges
-  const finalGroups = [];
-  Object.entries(groups).forEach(([typeKey, typeEvents]) => {
-    typeEvents.sort((a, b) => new Date(a.start) - new Date(b.start)); // Sort by start date
-    let currentGroups = [];
-
-    typeEvents.forEach((event) => {
-      const eventStart = new Date(event.start).getTime();
-      const eventEnd = new Date(event.end).getTime();
-      let placed = false;
-
-      // Check each existing group for overlap
-      for (let group of currentGroups) {
-        const hasOverlap = group.some((e) => {
-          const eStart = new Date(e.start).getTime();
-          const eEnd = new Date(e.end).getTime();
-          return eventStart <= eEnd && eventEnd >= eStart; // Overlap condition
-        });
-        if (!hasOverlap) {
-          group.push(event);
-          placed = true;
-          break;
-        }
-      }
-
-      // If no non-overlapping group found, create a new one
-      if (!placed) {
-        currentGroups.push([event]);
-      }
-    });
-
-    finalGroups.push(...currentGroups);
-  });
-
-  finalGroups.forEach((group, index) => {
-    const typeKey = group[0].type === "Convene" ? `Convene${group[0].event_detail?.type}` : group[0].type;
-    const groupName = `${typeKey}${finalGroups.filter(g => g[0].type === group[0].type && g[0].event_detail?.type === group[0].event_detail?.type).indexOf(group) + 1}`;
-    timelineData.items.push({
-      name: groupName,
-      periods: group.map((event) => {
-        let extractedImage = event.imageUrl;
-        if (event.type === "Convene") {
-          if (event.event_detail?.type === "hero") {
-            const featuredHero = event.event_detail.featured.replace(/ /g, "_");
-            extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Icon/${featuredHero}_Head_Icon.webp`;
-          } else if (event.event_detail?.type === "weapon") {
-            const featuredWeapon = event.event_detail.featured;
-            extractedImage = getWeaponImageUrl(featuredWeapon);
-          }
-        } else {
-          extractedImage = `https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/other/background/${extractedImage}`;
-        }
-        const isNew = ["whiwa", "toa"].includes(event.type.toLowerCase())
-          ? false
-          : allEvents
-              .filter((e) =>
-                e.type === "Convene"
-                  ? e.event_detail?.type === event.event_detail?.type &&
-                    e.event_detail?.featured === event.event_detail?.featured
-                  : e.type === event.type
-              )
-              .sort((a, b) => new Date(a.date) - new Date(b.date))[0] === event;
-        return {
-          name: event.name,
-          start: new Date(event.start),
-          end: new Date(event.end),
-          image: extractedImage,
-          isNew: isNew,
-        };
-      }),
-    });
-  });
-};
-    
             groupEvents(groupedEvents.conveneHero, "Convenehero");
             groupEvents(groupedEvents.conveneWeapon, "Conveneweapon");
             requestAnimationFrame(renderTimeline);
           })
           .catch((error) => console.error("Error fetching data:", error));
       }
-    
+
       document
         .getElementById("version-dropdown")
         .addEventListener("change", function () {
@@ -507,10 +543,13 @@
             fetchAndProcessData(selectedVersion);
           }
         });
-    
+
       function renderTimeline() {
         const timelineHeader = document.getElementById("timeline-header");
-        const allDates = getAllDates(timelineData.startDate, timelineData.endDate);
+        const allDates = getAllDates(
+          timelineData.startDate,
+          timelineData.endDate
+        );
         let baseLineWidth = 0;
         timelineHeader.innerHTML = "";
         const today = new Date().setHours(0, 0, 0, 0);
@@ -530,19 +569,20 @@
           renderTimelineContent(baseLineWidth, allDates);
         });
       }
-    
+
       function renderTimelineContent(baseLineWidth, allDates) {
         const timeline = document.getElementById("timeline");
         if (baseLineWidth === 0) {
-          requestAnimationFrame(() => renderTimelineContent(baseLineWidth, allDates));
+          requestAnimationFrame(() =>
+            renderTimelineContent(baseLineWidth, allDates)
+          );
           return;
         }
         const dateCellWidth =
           document.querySelector("#timeline-header span")?.scrollWidth || 0;
         const calculatePosition = (date) =>
-          allDates.findIndex(
-            (d) => d.toDateString() === date.toDateString()
-          ) * dateCellWidth;
+          allDates.findIndex((d) => d.toDateString() === date.toDateString()) *
+          dateCellWidth;
         timeline.innerHTML = ""; // Clear previous content
         timelineData.items.forEach((item) => {
           const line = document.createElement("div");
@@ -586,15 +626,21 @@
               .trim()}`;
             const itemElement = document.createElement("div");
             itemElement.className = `timeline-item ${itemTypeClass}`;
-            itemElement.style.left = `${startPos + (index > 1 ? 0 : index * 50)}px`;
+            itemElement.style.left = `${
+              startPos + (index > 1 ? 0 : index * 50)
+            }px`;
             itemElement.style.width = `${width}px`;
-            itemElement.title = `${period.name}: ${period.start.toDateString()} - ${period.end.toDateString()}`;
+            itemElement.title = `${
+              period.name
+            }: ${period.start.toDateString()} - ${period.end.toDateString()}`;
             const imageElement = document.createElement("img");
             imageElement.src = period.image;
             imageElement.alt = period.name;
             imageElement.className = imageTypeClass;
             const span = document.createElement("span");
-            span.textContent = `${period.name}: ${period.start.toDateString()} - ${period.end.toDateString()}`;
+            span.textContent = `${
+              period.name
+            }: ${period.start.toDateString()} - ${period.end.toDateString()}`;
             const isNew = period.isNew;
             if (isNew) {
               const newLabel = document.createElement("div");
@@ -611,18 +657,18 @@
         });
         enableTimelineScroll("timeline-container");
       }
-    
+
       function enableTimelineScroll(containerId) {
         const container = document.getElementById(containerId);
         if (!container) {
           console.error(`Container with ID "${containerId}" not found`);
           return;
         }
-    
+
         let isDragging = false;
         let startX;
         let scrollLeft;
-    
+
         // Start dragging
         container.addEventListener("mousedown", (e) => {
           isDragging = true;
@@ -630,18 +676,18 @@
           scrollLeft = container.scrollLeft;
           container.style.cursor = "grabbing"; // Visual feedback
         });
-    
+
         // Stop dragging
         container.addEventListener("mouseup", () => {
           isDragging = false;
           container.style.cursor = "grab";
         });
-    
+
         container.addEventListener("mouseleave", () => {
           isDragging = false;
           container.style.cursor = "grab";
         });
-    
+
         // Scroll while dragging
         container.addEventListener("mousemove", (e) => {
           if (!isDragging) return;
@@ -650,11 +696,11 @@
           const walk = (x - startX) * 2; // Multiply for faster scrolling
           container.scrollLeft = scrollLeft - walk;
         });
-    
+
         // Set initial cursor style
         container.style.cursor = "grab";
       }
-    
+
       // Scroll to today
       function scrollToToday(allDates, dateCellWidth) {
         const today = new Date().setHours(0, 0, 0, 0);
@@ -662,7 +708,9 @@
           (d) => d.setHours(0, 0, 0, 0) === today
         );
         if (todayIndex !== -1) {
-          const timelineContainer = document.querySelector(".timeline-container");
+          const timelineContainer = document.querySelector(
+            ".timeline-container"
+          );
           const todayPosition = todayIndex * dateCellWidth;
           timelineContainer.scrollTo({
             left: todayPosition - timelineContainer.clientWidth / 2, // Center "today"
@@ -670,7 +718,7 @@
           });
         }
       }
-    
+
       // Get all dates between start and end
       function getAllDates(startDate, endDate) {
         const dates = [];

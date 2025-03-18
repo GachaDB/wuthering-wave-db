@@ -8,6 +8,7 @@ async function fetchCharacters() {
     console.error("Error loading characters:", error);
   }
 }
+
 function displayCharacters(characters) {
   const container = document.getElementById("characterGrid");
   container.innerHTML = "";
@@ -150,9 +151,9 @@ function getInitials(name) {
     .split(/\s+/) // Split by spaces
     .map((word) =>
       word
-        .split("")
-        .filter((char, i) => i === 0 || char.toUpperCase() === char)
-        .join("")
+      .split("")
+      .filter((char, i) => i === 0 || char.toUpperCase() === char)
+      .join("")
     )
     .join("")
     .toLowerCase();
