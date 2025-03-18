@@ -2,29 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Character Profile</title>
+    <meta name="StickIn" content="This is the Stick IN Home Page" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link rel="stylesheet" href="../CSS/Sidebar.css" />
+    <link rel="stylesheet" href="../CSS/Gamelist.css" />
+    <title>Detail</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
-
-      body {
-        background-color: #1a1a1a;
+      main {
         color: #ffffff;
       }
 
       .container {
+        background-color: #1a1a1a;
         max-width: 800px;
-        margin: 20px auto;
+        margin: auto;
         padding: 20px;
+        text-align: left;
       }
 
       .header {
@@ -121,6 +127,7 @@
         padding: 4px;
       }
       /* Voice Actors Section */
+
       .voice-actors-section {
         margin-top: 20px;
         padding: 15px;
@@ -430,55 +437,43 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <div id="character-container">
-        <p>Loading character data...</p>
-      </div>
-      <div class="button-list">
-        <button class="tab-button active" data-tab="profile">Profile</button>
-        <button class="tab-button" data-tab="backstory">Backstory</button>
-        <button class="tab-button" data-tab="battle">Battle</button>
-        <button class="tab-button" data-tab="skill">Skills</button>
-        <button class="tab-button" data-tab="levelUpgrade">
-          Level Upgrade
-        </button>
-        <button class="tab-button" data-tab="skillUpgrade">
-          Skill Upgrade
-        </button>
-        <button class="tab-button" data-tab="voice">Voice</button>
-        <button class="tab-button" data-tab="dupe">Resonance Chain</button>
-        <button class="tab-button" data-tab="gallery">Gallery</button>
-      </div>
-
-      <div class="content-area" id="content">
-        <div class="card rarity-legendary">
-          <p>
-            Character Name (Legendary)
-            <i class="fa fa-id-card"></i>
-          </p>
+    <main>
+      <div class="container">
+        <div id="character-container">
+          <p>Loading character data...</p>
         </div>
-        <table class="table-striped">
-          <tr class="row">
-            <td class="col-3 text-right font-weight-bold">full name</td>
-            <td class="col-3">n/a</td>
-            <td class="col-3 text-right font-weight-bold">age</td>
-            <td class="col-3">n/a</td>
-          </tr>
-          <tr class="row">
-            <td class="col-3 text-right font-weight-bold">species</td>
-            <td class="col-3">n/a</td>
-            <td class="col-3 text-right font-weight-bold">gender</td>
-            <td class="col-3">n/a</td>
-          </tr>
-          <tr class="row">
-            <td class="col-3 text-right font-weight-bold">Ocupation</td>
-            <td class="col-3">n/a</td>
-            <td class="col-3 text-right font-weight-bold">Status</td>
-            <td class="col-3">n/a</td>
-          </tr>
-        </table>
+        <div class="button-list">
+          <button class="tab-button active" data-tab="profile">Profile</button>
+          <button class="tab-button" data-tab="backstory">Backstory</button>
+          <button class="tab-button" data-tab="battle">Battle</button>
+          <button class="tab-button" data-tab="skill">Skills</button>
+          <button class="tab-button" data-tab="levelUpgrade">
+            Level Upgrade
+          </button>
+          <button class="tab-button" data-tab="skillUpgrade">
+            Skill Upgrade
+          </button>
+          <button class="tab-button" data-tab="voice">Voice</button>
+          <button class="tab-button" data-tab="dupe">Resonance Chain</button>
+          <button class="tab-button" data-tab="gallery">Gallery</button>
+        </div>
+
+        <div class="content-area" id="content">
+          <div class="card rarity-legendary">
+            <p>
+              Character Name (Legendary)
+              <i class="fa fa-id-card"></i>
+            </p>
+          </div>
+          <table class="table-striped">
+          </table>
+        </div>
       </div>
-    </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <script src="../JS/Sidebar.js"></script>
 
     <script>
       const buttons = document.querySelectorAll(".tab-button");
@@ -1298,39 +1293,39 @@
         </div>
         <table class="table-striped">
             <tr class="row">
-                <td class="col-3 text-right font-weight-bold">Name</td>
+                <td class="col-3 text-right font-weight-bold">Name:</td>
                 <td class="col-3">${name}</td>
-                <td class="col-3 text-right font-weight-bold">Birthday</td>
+                <td class="col-3 text-right font-weight-bold">Birthday:</td>
                 <td class="col-3">${birthday}</td>
             </tr>
             <tr class="row">
-                <td class="col-3 text-right font-weight-bold">Title</td>
+                <td class="col-3 text-right font-weight-bold">Title:</td>
                 <td class="col-3">${title}</td>
-                <td class="col-3 text-right font-weight-bold">Gender</td>
+                <td class="col-3 text-right font-weight-bold">Gender:</td>
                 <td class="col-3">${gender}</td>
             </tr>
             <tr class="row">
-                <td class="col-3 text-right font-weight-bold">Class</td>
+                <td class="col-3 text-right font-weight-bold">Class:</td>
                 <td class="col-3">${classType}</td>
-                <td class="col-3 text-right font-weight-bold">Element</td>
+                <td class="col-3 text-right font-weight-bold">Element:</td>
                 <td class="col-3">${element}</td>
             </tr>
             <tr class="row">
-                <td class="col-3 text-right font-weight-bold">Weapon</td>
+                <td class="col-3 text-right font-weight-bold">Weapon:</td>
                 <td class="col-3">${weapon}</td>
-                <td class="col-3 text-right font-weight-bold">Birthplace</td>
+                <td class="col-3 text-right font-weight-bold">Birthplace:</td>
                 <td class="col-3">${birthplace}</td>
             </tr>
             <tr class="row">
-                <td class="col-3 text-right font-weight-bold">Nation</td>
+                <td class="col-3 text-right font-weight-bold">Nation:</td>
                 <td class="col-3">${nation}</td>
-                <td class="col-3 text-right font-weight-bold">Special Dish</td>
+                <td class="col-3 text-right font-weight-bold">Special Dish:</td>
                 <td class="col-3">${specialDish}</td>
             </tr>
             <tr class="row">
-                <td class="col-3 text-right font-weight-bold">Affiliation</td>
+                <td class="col-3 text-right font-weight-bold">Affiliation:</td>
                 <td class="col-3">${affiliations}</td>
-                <td class="col-3 text-right font-weight-bold">Release Date</td>
+                <td class="col-3 text-right font-weight-bold">Release Date:</td>
                 <td class="col-3">${releaseDate}</td>
             </tr>
         </table>

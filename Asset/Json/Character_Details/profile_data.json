@@ -1299,7 +1299,16 @@
     "weapon": "Sword",
     "element": "Fusion",
     "rarity": 5,
-    "official_names_by_language": { "The Hand of God!": "5" }
+    "official_names_by_language": {
+      "English": "Changli",
+      "Chinese (S)": "长离",
+      "Chinese (T)": "長離",
+      "Japanese": "長チョウ離リ",
+      "Korean": "장리",
+      "French": "Changli",
+      "German": "Changli",
+      "Spanish": "Changli"
+    }
   },
   {
     "name": "Zhezhi",
