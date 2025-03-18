@@ -40,6 +40,11 @@
         border-radius: 10px;
         border: 1px solid #333;
       }
+      .weapon img {
+        width: 20px;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
 
       .basic-info {
         flex: 1;
@@ -311,25 +316,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <img
-          src="https://via.placeholder.com/200"
-          alt="Character Image"
-          class="character-image"
-        />
-        <div class="basic-info">
-          <h1>Character Name</h1>
-          <div>
-            <span class="rarity">Legendary</span>|<span class="weapon"
-              >Greatsword</span
-            >
-          </div>
-          <p class="description">
-            A mysterious warrior from the ancient lands, wielding powers beyond
-            mortal comprehension.
-          </p>
-        </div>
-      </div>
+      <p>Loading character data...</p>
       <div class="button-list">
         <button class="tab-button active" data-tab="profile">Profile</button>
         <button class="tab-button" data-tab="backstory">Backstory</button>
@@ -379,6 +366,115 @@
     <script>
       const buttons = document.querySelectorAll(".tab-button");
       const contentArea = document.getElementById("content");
+
+      async function getCharacterData(characterName) {
+        try {
+          const response = await fetch(
+            "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/Character_Details/profile_data.json"
+          );
+          const data = await response.json();
+
+          const character = data.find(
+            (char) =>
+              char.name?.English.toLowerCase() ===
+              characterName.toLowerCase()
+          );
+
+          if (!character) {
+            console.error("Character not found");
+            return null;
+          }
+
+          const stars = "⭐".repeat(character.rarity || 0);
+
+          let descriptionHTML = "";
+          if (character.quotes && character.quotes.length > 0) {
+            descriptionHTML = character.quotes
+              .map((quote) => {
+                if (Array.isArray(quote.text)) {
+                  return `<p class="description">${quote.text.join(
+                    "<br><br>"
+                  )}</p>`;
+                }
+                return `<p class="description">${quote.text}</p>`;
+              })
+              .join("");
+          } else {
+            descriptionHTML =
+              '<p class="description">No quotes available for this character.</p>';
+          }
+
+          const html = `
+            <div class="container">
+                <div class="header">
+                    <img
+                        src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Model/${encodeURIComponent(
+                          character.official_names_by_language.English
+                        )}_Full_Sprite.webp"
+                        alt="${
+                          character.official_names_by_language.English
+                        } Image"
+                        class="character-image"
+                    />
+                    <div class="basic-info">
+                        <h1>${character.official_names_by_language.English}</h1>
+                        <div>
+                            <span class="rarity">${stars}</span>|<span class="weapon">
+                                <img 
+                                    src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/weapon/${encodeURIComponent(
+                                      character.weapon
+                                    )}_Weapon_Icon.webp" 
+                                    alt="${character.weapon}"
+                                >
+                                ${character.weapon}
+                            </span>
+                        </div>
+                        ${descriptionHTML}
+                    </div>
+                </div>
+            </div>
+        `;
+
+          return html;
+        } catch (error) {
+          console.error("Error fetching or processing character data:", error);
+          return null;
+        }
+      }
+
+      // Function to get parameter from URL
+      function getParameterByName(name) {
+        const url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+        const results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      // Display character based on URL parameter
+      async function displayCharacterFromUrl() {
+        const characterName = getParameterByName("r");
+        if (!characterName) {
+          document.getElementById("character-container").innerHTML =
+            "<p>No character specified in URL</p>";
+          return;
+        }
+
+        const characterHTML = await getCharacterData(characterName);
+        if (characterHTML) {
+          document.getElementById("character-container").innerHTML =
+            characterHTML;
+        } else {
+          document.getElementById(
+            "character-container"
+          ).innerHTML = `<p>Character "${characterName}" not found</p>`;
+        }
+      }
+
+      // Call this when the page loads
+      window.onload = displayCharacterFromUrl;
 
       // Modify the existing button click handler
       buttons.forEach((button) => {
