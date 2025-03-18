@@ -71,7 +71,7 @@ function displayCharacters(characters) {
 
     // Add click event to navigate to the detail page
     charDiv.addEventListener("click", () => {
-      window.location.href = `Character-Detail.html?name=${encodeURIComponent(character.name)}`;
+      window.location.href = `Character-Detail?r=${encodeURIComponent(character.name)}`;
     });
 
     container.appendChild(charDiv);
