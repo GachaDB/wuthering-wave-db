@@ -1350,16 +1350,8 @@
     `;
       }
 
-      function generateBackstoryTab(character) {
-        return `
-        <h2>Backstory</h2>
-        <p>Born in a small village ravaged by war, the character discovered their powers at a young age. 
-        After losing their family to a dark force, they vowed to protect the innocent and bring justice 
-        to the realm.</p>
-    `;
-      }
 
-      function generateBackstoryTab(characterName) {
+      function generateBackstoryTab(character) {
   if (!backstoryData) {
     return `
       <div class="backstory-container">
@@ -1370,42 +1362,323 @@
   }
 
   const characterData = Array.isArray(backstoryData)
-    ? backstoryData.find(item => item.name.toLowerCase() === characterName.toLowerCase())
-    : backstoryData.name.toLowerCase() === characterName.toLowerCase() ? backstoryData : null;
+    ? backstoryData.find(item => item.name.toLowerCase() === character.toLowerCase())
+    : backstoryData.name.toLowerCase() === character.toLowerCase() ? backstoryData : null;
 
   if (!characterData) {
     return `
       <div class="backstory-container">
         <h2>Backstory</h2>
-        <p>No backstory found for ${characterName}</p>
+        <p>No backstory found for ${character.name}</p>
       </div>
     `;
   }
 
-  const storiesHTML = characterData.characterStories.map(story => `
-    <div class="story-section">
-      <h3>${story.title}</h3>
-      <p class="unlock-requirement">${story.unlockRequirement}</p>
-      ${story.content.map(paragraph => `<p>${paragraph}</p>`).join("")}
-    </div>
+  // Personality Section
+  const personalityHTML = characterData.personality.map(p => `
+    <p class="text-block">${p}</p>
   `).join("");
 
-  return `
-    <div class="backstory-container">
-      <h2>Backstory: ${characterData.name}</h2>
-      <div class="character-info">
-        <h3>Personality</h3>
-        ${characterData.personality.map(p => `<p>${p}</p>`).join("")}
-        <h3>Appearance</h3>
-        ${characterData.appearance.map(a => `<p>${a}</p>`).join("")}
-        <h3>Basic Information</h3>
-        <p>${characterData.archive.basicInformation}</p>
-      </div>
-      <div class="character-stories">
-        ${storiesHTML}
+  // Appearance Section
+  const appearanceHTML = characterData.appearance.map(a => `
+    <p class="text-block">${a}</p>
+  `).join("");
+
+  // Archive Section
+  const archiveHTML = `
+    <div class="archive-section">
+      <h3>Basic Information</h3>
+      <p class="text-block">${characterData.archive.basicInformation}</p>
+      <h3>Forte Examination Report</h3>
+      <div class="forte-details">
+        <p><strong>Resonance Power:</strong> ${characterData.archive.forteExaminationReport.resonancePower}</p>
+        <p><strong>Resonance Evaluation Report:</strong></p>
+        <p class="text-block">${characterData.archive.forteExaminationReport.resonanceEvaluationReport.replace(/\n\n/g, "</p><p class='text-block'>")}</p>
+        <p><strong>Overclock Diagnostic Report:</strong></p>
+        <p class="text-block">${characterData.archive.forteExaminationReport.overclockDiagnosticReport.replace(/\n\n/g, "</p><p class='text-block'>")}</p>
       </div>
     </div>
   `;
+
+  // Character Stories Section
+  const storiesHTML = characterData.characterStories.map(story => `
+    <div class="story-card">
+      <h3 class="story-title">${story.title}</h3>
+      <p class="unlock-requirement">${story.unlockRequirement}</p>
+      <div class="story-content">
+        ${story.content.map(paragraph => `<p class="text-block">${paragraph}</p>`).join("")}
+      </div>
+    </div>
+  `).join("");
+
+  // Cherished Items Section
+  const cherishedItemsHTML = characterData.cherishedItems.map(item => `
+    <div class="item-card">
+      <img src="${item.image}" alt="Cherished Item" class="item-image" onerror="this.src='https://via.placeholder.com/100?text=Image+Not+Found';">
+      <p class="item-description">${item.content}</p>
+    </div>
+  `).join("");
+
+  // Quests and Events Section
+  const mainQuestsHTML = characterData.questsAndEvents.mainQuests.map(quest => `
+    <li class="quest-item">
+      <a href="${quest.link}" target="_blank" class="quest-link">${quest.title}</a>
+      <ul class="sub-quest-list">
+        ${quest.subItems.map(sub => `<li><a href="${sub.link}" target="_blank" class="sub-quest-link">${sub.title}</a></li>`).join("")}
+      </ul>
+    </li>
+  `).join("");
+
+  const companionQuestsHTML = characterData.questsAndEvents.companionQuests.length
+    ? characterData.questsAndEvents.companionQuests.map(quest => `<li class="quest-item">${quest}</li>`).join("")
+    : "<li>No companion quests available.</li>";
+
+  const eventsHTML = characterData.questsAndEvents.events.map(event => `
+    <li class="quest-item">
+      <a href="${event.link}" target="_blank" class="quest-link">${event.title}</a>
+      <ul class="sub-quest-list">
+        ${event.subItems.map(sub => `<li><a href="${sub.link}" target="_blank" class="sub-quest-link">${sub.title}</a></li>`).join("")}
+      </ul>
+    </li>
+  `).join("");
+
+  // Full HTML with Dark Mode Styling
+  return `
+    <div class="backstory-container">
+      <header class="backstory-header">
+        <h1 class="character-name">${characterData.name}'s Chronicles</h1>
+        <div class="header-decoration"></div>
+      </header>
+
+      <section class="section personality-section">
+        <h2>Personality</h2>
+        ${personalityHTML}
+      </section>
+
+      <section class="section appearance-section">
+        <h2>Appearance</h2>
+        ${appearanceHTML}
+      </section>
+
+      <section class="section archive-section">
+        <h2>Archive</h2>
+        ${archiveHTML}
+      </section>
+
+      <section class="section stories-section">
+        <h2>Character Stories</h2>
+        <div class="stories-grid">
+          ${storiesHTML}
+        </div>
+      </section>
+
+      <section class="section items-section">
+        <h2>Cherished Items</h2>
+        <div class="items-grid">
+          ${cherishedItemsHTML}
+        </div>
+      </section>
+
+      <section class="section quests-section">
+        <h2>Quests & Events</h2>
+        <div class="quests-container">
+          <h3>Main Quests</h3>
+          <ul class="quest-list">${mainQuestsHTML}</ul>
+          <h3>Companion Quests</h3>
+          <ul class="quest-list">${companionQuestsHTML}</ul>
+          <h3>Events</h3>
+          <ul class="quest-list">${eventsHTML}</ul>
+        </div>
+      </section>
+    </div>
+
+    <style>
+      .backstory-container {
+        max-width: 900px;
+        margin: 40px auto;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #3d3d3d, #383c3d);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        color: #e0e6ed;
+      }
+
+      .backstory-header {
+        background: linear-gradient(to right, #333, #1a1a1a);
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .character-name {
+        font-size: 2.5em;
+        margin: 0;
+        color: #ecf0f1;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      }
+
+      .header-decoration {
+        height: 4px;
+        background: linear-gradient(to right, transparent, #bdc3c7, transparent);
+        margin-top: 10px;
+      }
+
+      .section {
+        padding: 25px;
+        border-bottom: 1px solid #3a4348;
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      h2 {
+        font-size: 1.8em;
+        color: #bdc3c7;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #1a1a1a;
+        padding-bottom: 8px;
+        position: relative;
+      }
+
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #333;
+      }
+
+      h3 {
+        font-size: 1.4em;
+        color: #95a5a6;
+        margin: 20px 0 10px;
+      }
+
+      .text-block {
+        line-height: 1.8;
+        color: #d5dbdb;
+        margin: 10px 0;
+        font-size: 1.1em;
+      }
+
+      .archive-section .forte-details {
+        background: #383c3d;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .stories-grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      .story-card {
+        background: #383c3d;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .story-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .story-title {
+        color: #bdc3c7;
+        margin-bottom: 10px;
+      }
+
+      .unlock-requirement {
+        font-style: italic;
+        color: #7f8c8d;
+        font-size: 0.95em;
+        margin-bottom: 15px;
+      }
+
+      .items-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .item-card {
+        background: #383c3d;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .item-card:hover {
+        transform: scale(1.03);
+      }
+
+      .item-image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #333;
+      }
+
+      .item-description {
+        color: #d5dbdb;
+        font-size: 1em;
+        line-height: 1.6;
+      }
+
+      .quests-container {
+        background: #383c3d;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      .quest-list {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+      }
+
+      .quest-item {
+        margin: 10px 0;
+      }
+
+      .quest-link, .sub-quest-link {
+        color: #d5dbdb;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .quest-link:hover, .sub-quest-link:hover {
+        color: #3498db;
+        text-decoration: underline;
+      }
+
+      .sub-quest-list {
+        list-style: none;
+        padding-left: 20px;
+        margin: 5px 0 0;
+        color: #95a5a6;
+      }
+    </style>
+  `;
+}
+
+function generateSkillTab(character) {
+  return `<h2>Skills: ${character.name}</h2><p>Skill content coming soon.</p>`;
 }
 
       function generateVoiceTab() {
