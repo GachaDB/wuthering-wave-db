@@ -1412,12 +1412,20 @@
   `).join("");
 
   // Cherished Items Section
-  const cherishedItemsHTML = characterData.cherishedItems.map(item => `
+  const cherishedItemsHTML = characterData.cherishedItems.map(item => {
+  // Fallback to local image if it's a known problematic Wikia URL
+  const imageSrc = item.image.startsWith("https://static.wikia.nocookie.net/wutheringwaves/images/")
+    ? `/images/${item.name.replace(/\s+/g, '_')}.png` // e.g., /images/Wind_Chimes.png
+    : item.image;
+  return `
     <div class="item-card">
-      <img src="${item.image}" alt="Cherished Item" class="item-image" onerror="this.src='https://via.placeholder.com/100?text=Image+Not+Found';">
+      <h4 class="item-name">${item.name}</h4>
+      <p class="item-requirement">${item.requirement}</p>
+      <img src="${imageSrc}" alt="${item.name}" class="item-image" onerror="console.error('Failed to load image: ${imageSrc}'); this.src='https://via.placeholder.com/100?text=Image+Not+Found';">
       <p class="item-description">${item.content}</p>
     </div>
-  `).join("");
+  `;
+}).join("");
 
   // Quests and Events Section
   const mainQuestsHTML = characterData.questsAndEvents.mainQuests.map(quest => `
