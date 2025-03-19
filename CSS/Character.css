@@ -85,7 +85,8 @@ label input {
   display: none;
 }
 
-label input:checked + img {
+
+label:has(input:checked) {
   border: 2px solid #4CAF50;
 }
 
@@ -93,15 +94,6 @@ label input[type="checkbox"]:disabled + img {
   opacity: 0.5;
 }
 
-#roleFilter {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  background: #1e1e1e;
-  color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
 
 /* 🎭 Character Grid */
 /* 📌 Grid Layout */

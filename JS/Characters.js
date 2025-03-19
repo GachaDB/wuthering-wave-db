@@ -103,7 +103,6 @@ function filterCharacters() {
       const selectedElements = Array.from(document.querySelectorAll(".element-filter:checked")).map((el) => el.value);
       const selectedRarity = Array.from(document.querySelectorAll(".rarity-filter:checked")).map((el) => parseInt(el.value));
       const selectedTypes = Array.from(document.querySelectorAll(".type-filter:checked")).map((el) => el.value);
-      const selectedRole = document.getElementById("roleFilter").value;
 
       const filtered = characters.filter((character) => {
         const hasValidReleaseDate = character.release_date && character.release_date !== "???";
@@ -115,8 +114,7 @@ function filterCharacters() {
           (search === "" || fuzzyMatch(nameLower, search) || fuzzyMatch(initials, search)) &&
           (selectedElements.length === 0 || selectedElements.includes(character.element)) &&
           (selectedRarity.length === 0 || selectedRarity.includes(character.rarity)) &&
-          (selectedTypes.length === 0 || selectedTypes.includes(character.type)) &&
-          (selectedRole === "" || character.role === selectedRole)
+          (selectedTypes.length === 0 || selectedTypes.includes(character.type))
         );
       });
 

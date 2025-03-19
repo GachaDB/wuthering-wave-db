@@ -302,44 +302,6 @@
         font-weight: bold;
       }
 
-      .voice-section {
-        margin-top: 10px;
-      }
-
-      .voice-list {
-        margin-bottom: 15px;
-      }
-
-      .voice-item {
-        padding: 8px;
-        background-color: #333;
-        margin-bottom: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-
-      .voice-item:hover {
-        background-color: #444;
-      }
-
-      .voice-player {
-        margin-top: 15px;
-      }
-
-      #voiceAudio {
-        width: 100%;
-        max-width: 300px;
-        background-color: #333;
-        border-radius: 5px;
-      }
-
-      #currentVoice {
-        margin-top: 5px;
-        color: #cccccc;
-        font-size: 0.9em;
-      }
-
       .sequence-container {
         display: flex;
         flex-direction: column;
@@ -480,6 +442,24 @@
       let characterData = null;
       let currentCharacterName = null;
       let backstoryData = null;
+      let audioData;
+
+      async function fetchAudioData() {
+  try {
+    const response = await fetch('https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/Character_Details/audio_data.json');
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    audioData = await response.json();
+    return audioData;
+  } catch (error) {
+    console.error('Error fetching audio data:', error);
+    return null;
+  }
+}
+
+// Call this on page load or when needed
+fetchAudioData().then(() => {
+  // Once fetched, you can generate the voice tab when the button is clicked
+});
 
       async function fetchCharacterData() {
         try {
@@ -536,9 +516,7 @@
         <div class="container">
             <div class="header">
                 <img
-                    src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Model/${encodeURIComponent(
-                      character.name
-                    )}_Full_Sprite.webp"
+                    src="https://raw.githubusercontent.com/GachaDB/Wuthering-Waves-Assets/refs/heads/main/resonator/Character%20Model/${encodeURIComponent(character.name).replace('%20', '_')}_Full_Sprite.webp"
                     alt="${character.name} Image"
                     class="character-image"
                 />
@@ -586,12 +564,14 @@
           await Promise.all([fetchCharacterData(), loadBackstoryData()]);
         }
 
-        const characterName = getParameterByName("r");
+        const characterName = decodeURIComponent(getParameterByName("r"));
         if (!characterName) {
           document.getElementById("character-container").innerHTML =
             "<p>No character specified in URL</p>";
           return;
         }
+        console.log('Available Keys:', Object.keys(characterData || {}));
+        console.log(characterName);
 
         const characterHTML = getCharacterData(characterName);
         if (characterHTML) {
@@ -639,22 +619,36 @@
 
       // Add this after the existing buttons.forEach loop
       function initializeVoicePlayer() {
-        const voiceItems = document.querySelectorAll(".voice-item");
-        const audioPlayer = document.getElementById("voiceAudio");
-        const currentVoiceText = document.getElementById("currentVoice");
+  const voiceItems = document.querySelectorAll(".voice-item");
+  const audioPlayer = document.getElementById("voiceAudio");
+  const currentVoiceText = document.getElementById("currentVoice");
+  const languageSelect = document.getElementById("language-select");
 
-        if (voiceItems && audioPlayer && currentVoiceText) {
-          voiceItems.forEach((item) => {
-            item.addEventListener("click", () => {
-              const audioUrl = item.getAttribute("data-audio");
-              const voiceText = item.textContent.split(" - ")[0]; // Get the title before the description
-              audioPlayer.src = audioUrl;
-              audioPlayer.play();
-              currentVoiceText.textContent = `Current: ${voiceText}`;
-            });
-          });
-        }
-      }
+  if (!voiceItems.length || !audioPlayer || !currentVoiceText || !languageSelect) {
+    console.warn("Voice player elements not found.");
+    return;
+  }
+
+  let currentLanguage = languageSelect.value || "en";
+
+  function updateAudioSource(item) {
+    const audioUrl = item.getAttribute(`data-audio-${currentLanguage}`);
+    const voiceText = item.querySelector(".voice-title").textContent;
+    audioPlayer.src = audioUrl;
+    audioPlayer.play();
+    currentVoiceText.textContent = `Current: ${voiceText} (${currentLanguage.toUpperCase()})`;
+  }
+
+  voiceItems.forEach(item => {
+    item.addEventListener("click", () => updateAudioSource(item));
+  });
+
+  languageSelect.addEventListener("change", (e) => {
+    currentLanguage = e.target.value;
+    const activeItem = document.querySelector(".voice-item:hover") || voiceItems[0];
+    if (activeItem) updateAudioSource(activeItem);
+  });
+}
 
       // Define upgrade data
       const upgradeData = {
@@ -1361,9 +1355,9 @@
 
         const characterData = Array.isArray(backstoryData)
           ? backstoryData.find(
-              (item) => item.name.toLowerCase() === character.toLowerCase()
+              (item) => item.name.toLowerCase() === character.name.toLowerCase()
             )
-          : backstoryData.name.toLowerCase() === character.toLowerCase()
+          : backstoryData.name.toLowerCase() === character.name.toLowerCase()
           ? backstoryData
           : null;
 
@@ -1377,125 +1371,82 @@
         }
 
         // Personality Section
-        const personalityHTML = characterData.personality
-          .map(
-            (p) => `
-    <p class="text-block">${p}</p>
-  `
-          )
-          .join("");
+        const personalityHTML = Array.isArray(characterData.personality)
+        ? characterData.personality.map((p) => `<p class="text-block">${p}</p>`).join("")
+        : '<p class="text-block">No personality data available</p>';
 
         // Appearance Section
-        const appearanceHTML = characterData.appearance
-          .map(
-            (a) => `
-    <p class="text-block">${a}</p>
-  `
-          )
-          .join("");
+        const appearanceHTML = Array.isArray(characterData.appearance)
+        ? characterData.appearance.map((a) => `<p class="text-block">${a}</p>`).join("")
+        : '<p class="text-block">No appearance data available</p>';
 
         // Archive Section
-        const archiveHTML = `
-    <div class="archive-section">
-      <h3>Basic Information</h3>
-      <p class="text-block">${characterData.archive.basicInformation}</p>
-      <h3>Forte Examination Report</h3>
-      <div class="forte-details">
-        <p><strong>Resonance Power:</strong> ${
-          characterData.archive.forteExaminationReport.resonancePower
-        }</p>
-        <p><strong>Resonance Evaluation Report:</strong></p>
-        <p class="text-block">${characterData.archive.forteExaminationReport.resonanceEvaluationReport.replace(
-          /\n\n/g,
-          "</p><p class='text-block'>"
-        )}</p>
-        <p><strong>Overclock Diagnostic Report:</strong></p>
-        <p class="text-block">${characterData.archive.forteExaminationReport.overclockDiagnosticReport.replace(
-          /\n\n/g,
-          "</p><p class='text-block'>"
-        )}</p>
-      </div>
-    </div>
-  `;
+        const archiveHTML = characterData.archive ? `
+        <div class="archive-section">
+            <h3>Basic Information</h3>
+            <p class="text-block">${characterData.archive.basicInformation || 'N/A'}</p>
+            <h3>Forte Examination Report</h3>
+            <div class="forte-details">
+                <p><strong>Resonance Power:</strong> ${characterData.archive.forteExaminationReport?.resonancePower || 'N/A'}</p>
+                <p><strong>Resonance Evaluation Report:</strong></p>
+                <p class="text-block">${(characterData.archive.forteExaminationReport?.resonanceEvaluationReport || 'N/A').replace(/\n\n/g, "</p><p class='text-block'>")}</p>
+                <p><strong>Overclock Diagnostic Report:</strong></p>
+                <p class="text-block">${(characterData.archive.forteExaminationReport?.overclockDiagnosticReport || 'N/A').replace(/\n\n/g, "</p><p class='text-block'>")}</p>
+            </div>
+        </div>
+    ` : '<p>No archive data available</p>';
 
         // Character Stories Section
-        const storiesHTML = characterData.characterStories
-          .map(
-            (story) => `
-    <div class="story-card">
-      <h3 class="story-title">${story.title}</h3>
-      <p class="unlock-requirement">${story.unlockRequirement}</p>
-      <div class="story-content">
-        ${story.content
-          .map((paragraph) => `<p class="text-block">${paragraph}</p>`)
-          .join("")}
-      </div>
-    </div>
-  `
-          )
-          .join("");
+        const storiesHTML = Array.isArray(characterData.characterStories)
+        ? characterData.characterStories.map((story) => `
+            <div class="story-card">
+                <h3 class="story-title">${story.title}</h3>
+                <p class="unlock-requirement">${story.unlockRequirement}</p>
+                <div class="story-content">
+                    ${Array.isArray(story.content) ? story.content.map((p) => `<p class="text-block">${p}</p>`).join("") : '<p>No story content</p>'}
+                </div>
+            </div>
+        `).join("")
+        : '<p>No character stories available</p>';
 
         // Cherished Items Section
-        const cherishedItemsHTML = characterData.cherishedItems
-          .map((item) => {
-            return `
-    <div class="item-card">
-      <h4 class="item-name">${item.name}</h4>
-      <p class="item-requirement">${item.requirement}</p>
-      <img src="${item.image}" alt="${item.name}" class="item-image" onerror="console.error('Failed to load image: ${item.image}'); this.src='https://via.placeholder.com/100?text=Image+Not+Found';">
-      <p class="item-description">${item.content}</p>
-    </div>
-  `;
-          })
-          .join("");
+        const cherishedItemsHTML = Array.isArray(characterData.cherishedItems)
+        ? characterData.cherishedItems.map((item) => `
+            <div class="item-card">
+                <h4 class="item-name">${item.name}</h4>
+                <p class="item-requirement">${item.requirement}</p>
+                <img src="${item.image}" alt="${item.name}" class="item-image" onerror="this.src='https://via.placeholder.com/100?text=Image+Not+Found';">
+                <p class="item-description">${item.content}</p>
+            </div>
+        `).join("")
+        : '<p>No cherished items available</p>';
 
         // Quests and Events Section
-        const mainQuestsHTML = characterData.questsAndEvents.mainQuests
-          .map(
-            (quest) => `
-    <li class="quest-item">
-      <a href="${quest.link}" target="_blank" class="quest-link">${
-              quest.title
-            }</a>
-      <ul class="sub-quest-list">
-        ${quest.subItems
-          .map(
-            (sub) =>
-              `<li><a href="${sub.link}" target="_blank" class="sub-quest-link">${sub.title}</a></li>`
-          )
-          .join("")}
-      </ul>
-    </li>
-  `
-          )
-          .join("");
+        const mainQuestsHTML = characterData.questsAndEvents?.mainQuests?.length
+        ? characterData.questsAndEvents.mainQuests.map((quest) => `
+            <li class="quest-item">
+                <a href="${quest.link}" target="_blank" class="quest-link">${quest.title}</a>
+                <ul class="sub-quest-list">
+                    ${quest.subItems?.map((sub) => `<li><a href="${sub.link}" target="_blank" class="sub-quest-link">${sub.title}</a></li>`).join("") || ''}
+                </ul>
+            </li>
+        `).join("")
+        : '<li>No main quests available</li>';
 
-        const companionQuestsHTML = characterData.questsAndEvents
-          .companionQuests.length
-          ? characterData.questsAndEvents.companionQuests
-              .map((quest) => `<li class="quest-item">${quest}</li>`)
-              .join("")
-          : "<li>No companion quests available.</li>";
+        const companionQuestsHTML = characterData.questsAndEvents?.companionQuests?.length
+        ? characterData.questsAndEvents.companionQuests.map((quest) => `<li class="quest-item">${quest}</li>`).join("")
+        : '<li>No companion quests available</li>';
 
-        const eventsHTML = characterData.questsAndEvents.events
-          .map(
-            (event) => `
-    <li class="quest-item">
-      <a href="${event.link}" target="_blank" class="quest-link">${
-              event.title
-            }</a>
-      <ul class="sub-quest-list">
-        ${event.subItems
-          .map(
-            (sub) =>
-              `<li><a href="${sub.link}" target="_blank" class="sub-quest-link">${sub.title}</a></li>`
-          )
-          .join("")}
-      </ul>
-    </li>
-  `
-          )
-          .join("");
+        const eventsHTML = characterData.questsAndEvents?.events?.length
+        ? characterData.questsAndEvents.events.map((event) => `
+            <li class="quest-item">
+                <a href="${event.link}" target="_blank" class="quest-link">${event.title}</a>
+                <ul class="sub-quest-list">
+                    ${event.subItems?.map((sub) => `<li><a href="${sub.link}" target="_blank" class="sub-quest-link">${sub.title}</a></li>`).join("") || ''}
+                </ul>
+            </li>
+        `).join("")
+        : '<li>No events available</li>';
 
         // Full HTML with Dark Mode Styling
         return `
@@ -1738,25 +1689,210 @@
         return `<h2>Skills: ${character.name}</h2><p>Skill content coming soon.</p>`;
       }
 
-      function generateVoiceTab() {
-        return `
+      function generateVoiceTab(character) {
+  if (!audioData) {
+    return `
+      <div class="content-area" id="content">
         <h2>Voice</h2>
-        <div class="voice-section">
-            <ul class="voice-list" style="list-style: none; padding: 0;">
-                <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Greeting - "Welcome to my realm!"</li>
-                <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Battle Cry - "For justice!"</li>
-                <li class="voice-item" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Victory - "The light prevails!"</li>
-            </ul>
-            <div class="voice-player">
-                <audio id="voiceAudio" controls>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <p id="currentVoice">Current: Greeting</p>
-            </div>
-        </div>
+        <p>Loading voice data...</p>
+      </div>
     `;
-      }
+  }
+
+  const characterAudio = audioData.find(item => item.name.toLowerCase() === character.name.toLowerCase());
+  if (!characterAudio) {
+    return `
+      <div class="content-area" id="content">
+        <h2>Voice</h2>
+        <p>No voice data found for ${character.name}</p>
+      </div>
+    `;
+  }
+
+  // Generate voice items dynamically
+  const voiceItemsHTML = characterAudio.audios.map(audio => `
+    <li class="voice-item" data-audio-en="${audio.audioSources.find(src => src.renamed.includes('_en_')).original}" 
+        data-audio-ja="${audio.audioSources.find(src => src.renamed.includes('_ja_')).original}" 
+        data-audio-ko="${audio.audioSources.find(src => src.renamed.includes('_ko_')).original}" 
+        data-audio-zh="${audio.audioSources.find(src => src.renamed.includes('_zh_')).original}">
+      <span class="voice-title">${audio.title.replace(/_/g, ' ')}</span>
+      ${audio.required ? `<span class="voice-requirement">${audio.required}</span>` : ''}
+      <p class="voice-description">${audio.description}</p>
+    </li>
+  `).join('');
+
+  return `
+      <header class="backstory-header">
+        <h1 class="character-name">${character.name}'s Voice Lines</h1>
+        <div class="header-decoration"></div>
+      </header>
+      <section class="section voice-section">
+        <div class="voice-controls">
+          <label for="language-select">Language: </label>
+          <select id="language-select">
+            <option value="en">English</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="zh">Chinese</option>
+          </select>
+        </div>
+        <ul class="voice-list">${voiceItemsHTML}</ul>
+        <div class="voice-player">
+          <audio id="voiceAudio" controls>
+            <source src="${characterAudio.audios[0].audioSources[0].original}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <p id="currentVoice">Current: ${characterAudio.audios[0].title}</p>
+        </div>
+      </section>
+
+      <style>
+        .content-area {
+          max-width: 900px;
+          margin: 40px auto;
+          font-family: 'Arial', sans-serif;
+          background: #2e2e2e;
+          border-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+          overflow: hidden;
+          color: #e0e0e0;
+        }
+
+        .backstory-header {
+          background: linear-gradient(to right, #212121, #424242);
+          padding: 20px;
+          text-align: center;
+          position: relative;
+        }
+
+        .character-name {
+          font-size: 2.5em;
+          margin: 0;
+          color: #ffffff;
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .header-decoration {
+          height: 4px;
+          background: linear-gradient(to right, transparent, #b0bec5, transparent);
+          margin-top: 10px;
+        }
+
+        .section {
+          padding: 25px;
+        }
+
+        .voice-controls {
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .voice-controls label {
+          color: #b0bec5;
+          font-size: 1.2em;
+        }
+
+        #language-select {
+          padding: 8px;
+          background: #424242;
+          color: #e0e0e0;
+          border: 1px solid #757575;
+          border-radius: 5px;
+          font-size: 1em;
+          cursor: pointer;
+        }
+
+        #language-select:hover {
+          background: #525252;
+        }
+
+        .voice-list {
+          list-style: none;
+          padding: 0;
+          max-height: 400px;
+          overflow-y: auto;
+          scrollbar-width: thin;
+          scrollbar-color: #757575 #2e2e2e;
+        }
+
+        .voice-list::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        .voice-list::-webkit-scrollbar-track {
+          background: #2e2e2e;
+        }
+
+        .voice-list::-webkit-scrollbar-thumb {
+          background: #757575;
+          border-radius: 4px;
+        }
+
+        .voice-item {
+          background: #424242;
+          padding: 15px;
+          margin-bottom: 10px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .voice-item:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .voice-title {
+          color: #b0bec5;
+          font-size: 1.2em;
+          font-weight: bold;
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        .voice-requirement {
+          color: #757575;
+          font-style: italic;
+          font-size: 0.95em;
+          margin-left: 10px;
+        }
+
+        .voice-description {
+          color: #e0e0e0;
+          font-size: 1em;
+          line-height: 1.6;
+          margin: 5px 0 0;
+        }
+
+        .voice-player {
+          margin-top: 20px;
+          text-align: center;
+        }
+
+        #voiceAudio {
+          width: 100%;
+          max-width: 500px;
+          background: #424242;
+          border-radius: 50px;
+          outline: none;
+        }
+
+        #voiceAudio::-webkit-media-controls-panel {
+          background: #424242;
+          color: #e0e0e0;
+        }
+
+        #currentVoice {
+          color: #b0bec5;
+          font-size: 1.1em;
+          margin-top: 10px;
+        }
+      </style>
+  `;
+}
 
       function generateDupeTab() {
         return `
@@ -1809,7 +1945,7 @@
       });
       const tabContent = (character) => ({
         profile: generateProfileTab(character),
-        backstory: generateBackstoryTab(character.name),
+        backstory: generateBackstoryTab(character),
         skill: generateSkillTab(character),
         voice: generateVoiceTab(character),
         dupe: generateDupeTab(character),
