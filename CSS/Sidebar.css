@@ -104,7 +104,7 @@ body.dark {
   background-color: var(--sidebar-color);
   padding: 10px 14px;
   transition: var(--trans-02);
-  z-index: 99;
+  z-index: 10000;
 }
 
 .sidebar header {
