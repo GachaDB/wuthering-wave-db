@@ -1,235 +1,330 @@
-// [Previous Local Storage Functions remain unchanged]
+// Function to scrape and parse the data from the current page into JSON
+function scrapeDataToJSON() {
+    const doc = document; // Use the current document
 
-// Expose utility functions globally
-window.clearLocalStorage = clearLocalStorage;
-window.removeHeroFromLocalStorage = removeHeroFromLocalStorage;
-window.downloadLocalStorageData = downloadLocalStorageData;
+    // Extract Name
+    const nameElement = doc.querySelector('.mw-page-title-main');
+    const name = nameElement ? nameElement.textContent.replace('/Backstory', '') : '';
 
-function scrapeCharacterData() {
-    const characterData = {};
-
-    // Helper function to safely get text content
-    function getText(selector, errorMsg) {
-        const element = document.querySelector(selector);
-        if (!element) {
-            console.warn(errorMsg);
-            return "not found";
+    // Function to collect all paragraph siblings after a section header as an array
+    function getParagraphsAfterHeader(headerId) {
+        console.log(`Searching for header with ID: ${headerId}`);
+    
+        const headerElement = document.getElementById(headerId);
+        if (!headerElement) {
+            console.warn(`Header with ID '${headerId}' not found.`);
+            return [];
         }
-        return element.textContent.trim();
-    }
-
-    // Helper function to extract affiliations as an array of objects
-    function getAffiliations(valueElement) {
-        const links = valueElement.querySelectorAll('a');
-        if (!links.length) return [{ name: "not found", link: "not found" }];
-        return Array.from(links).map(link => ({
-            name: link.textContent.trim(),
-            link: link.href || "not found"
-        }));
-    }
-
-    // Basic info
-    characterData.name = getText('h2[data-source="name"]', 'Name element not found');
-    characterData.title = getText('h2[data-item-name="secondary_title"]', 'Title element not found');
-
-    if (characterData.name === "not found" || characterData.title === "not found") {
-        console.error('Missing required basic info. Aborting scrape.');
-        return null;
-    }
-
-    // Data from pi-item elements
-    const dataItems = document.querySelectorAll('.wds-tab__content.wds-is-current .pi-item.pi-data');
-    dataItems.forEach(item => {
-        const labelElement = item.querySelector('.pi-data-label');
-        const valueElement = item.querySelector('.pi-data-value');
-
-        if (!labelElement || !valueElement) return;
-
-        const label = labelElement.textContent.toLowerCase();
-        const value = valueElement.textContent.trim();
-
-        switch(label) {
-            case 'class':
-                characterData.class = value || "not found";
-                break;
-            case 'gender':
-                characterData.gender = value || "not found";
-                break;
-            case 'birthday':
-                characterData.birthday = value || "not found";
-                break;
-            case 'birthplace':
-                characterData.birthplace = value.split(' ')[0] || "not found";
-                break;
-            case 'nation':
-                characterData.nation = value.split(' ')[0] || "not found";
-                break;
-            case 'affiliations':
-                characterData.affiliations = getAffiliations(valueElement);
-                break;
-            case 'release date':
-                const dateMatch = value.match(/[A-Za-z]+\s\d{1,2},\s\d{4}/);
-                characterData.release_date = dateMatch ? dateMatch[0] : (value.split('\n')[0] || "not found");
-                break;
+    
+        // Find the closest heading (h2, h3, h4, etc.)
+        const header = headerElement.closest("h1, h2, h3, h4, h5, h6");
+        if (!header) {
+            console.warn(`No heading (h1-h6) found for header ID '${headerId}'.`);
+            return [];
         }
-    });
-
-    // Special dish
-    const dishName = getText('.pi-horizontal-group-item .card-text', 'Special dish name not found');
-    const dishImage = document.querySelector('.pi-horizontal-group-item img');
-    if (dishName !== "not found" && dishImage) {
-        characterData.special_dish = {
-            name: dishName,
-            image_url: dishImage.src || "not found"
-        };
-    } else {
-        characterData.special_dish = "not found";
-    }
-
-    // Voice actors
-    characterData.voice_actors = {};
-    const validLanguages = ['english', 'chinese', 'japanese', 'korean'];
-    const allTabContents = document.querySelectorAll('.wds-tab__content');
-    allTabContents.forEach(tab => {
-        const voiceItems = tab.querySelectorAll('.pi-item.pi-data');
-        voiceItems.forEach(item => {
-            const langElement = item.querySelector('.pi-data-label');
-            const valueElement = item.querySelector('.pi-data-value a');
-            if (!langElement || !valueElement) return;
-
-            const lang = langElement.textContent.toLowerCase();
-            if (!validLanguages.includes(lang)) return;
-
-            const name = valueElement.textContent.trim() || "not found";
-            const link = valueElement.href || "not found";
-            const nativeNameElement = item.querySelector('span[lang]');
-            const nativeName = nativeNameElement ? ` (${nativeNameElement.textContent.trim()})` : "";
-            characterData.voice_actors[lang] = {
-                name: `${name}${nativeName}`,
-                link: link
-            };
-        });
-    });
-
-    // Quotes
-    characterData.quotes = Array.from(document.querySelectorAll('.pull-quote')).map(quote => {
-        const textElement = quote.querySelector('.pull-quote__text');
-        const sourceElement = quote.querySelector('.pull-quote__source');
-        if (!textElement || !sourceElement) return null;
-
-        const text = textElement.innerText.trim() || "not found";
-        const source = sourceElement.textContent.trim() || "not found";
-        const sourceLink = quote.querySelector('.pull-quote__source a')?.href || "not found";
-
-        return {
-            text: text.includes('\n') ? text.split('\n') : text,
-            source,
-            ...(sourceLink !== "not found" && { source_link: sourceLink })
-        };
-    }).filter(quote => quote !== null);
-
-    // Element, Weapon, and Rarity (Button Modal)
-    const weapons = ["Swords", "Broadblades", "Pistols", "Gauntlets", "Rectifiers"];
-    const elements = [
-        { name: "Fusion", color: "red" },
-        { name: "Glacio", color: "blue" },
-        { name: "Aero", color: "green" },
-        { name: "Electro", color: "purple" },
-        { name: "Spectro", color: "yellow" },
-        { name: "Havoc", color: "darkred" }
-    ];
-    const rarities = [
-        { name: "5*", color: "gold" },
-        { name: "4*", color: "purple" }
-    ];
-
-    function createButtonModal(options, label, useColors = false) {
-        return new Promise(resolve => {
-            const modal = document.createElement("div");
-            modal.style.cssText = "position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid black; z-index: 1000; text-align: center;";
-            const title = document.createElement("p");
-            title.textContent = `Select ${label}:`;
-            title.style.marginBottom = "10px";
-            modal.appendChild(title);
-
-            const buttonContainer = document.createElement("div");
-            buttonContainer.style.display = "flex";
-            buttonContainer.style.flexWrap = "wrap";
-            buttonContainer.style.gap = "10px";
-            buttonContainer.style.justifyContent = "center";
-
-            const notFoundButton = document.createElement("button");
-            notFoundButton.textContent = "Not Found";
-            notFoundButton.style.padding = "5px 10px";
-            notFoundButton.onclick = () => {
-                resolve("not found");
-                document.body.removeChild(modal);
-            };
-            buttonContainer.appendChild(notFoundButton);
-
-            options.forEach(option => {
-                const button = document.createElement("button");
-                const optionName = useColors ? option.name : option;
-                button.textContent = optionName;
-                button.style.padding = "5px 10px";
-                if (useColors) {
-                    button.style.backgroundColor = option.color;
-                    button.style.color = "white";
-                    button.style.border = "none";
-                    button.style.borderRadius = "5px";
-                }
-                button.onclick = () => {
-                    resolve(optionName);
-                    document.body.removeChild(modal);
-                };
-                buttonContainer.appendChild(button);
-            });
-
-            modal.appendChild(buttonContainer);
-            document.body.appendChild(modal);
-        });
-    }
-
-    // Main execution with Promise
-    return Promise.resolve()
-        .then(() => createButtonModal(weapons, "weapon"))
-        .then(weapon => {
-            characterData.weapon = weapon;
-            return createButtonModal(elements, "element", true);
-        })
-        .then(element => {
-            characterData.element = element;
-            return createButtonModal(rarities, "rarity", true);
-        })
-        .then(rarity => {
-            characterData.rarity = rarity;
-
-            // Official names by language
-            characterData.official_names_by_language = {};
-            const officialNameTable = document.querySelector('table.article-table.alternating-colors-table');
-            if (officialNameTable) {
-                const rows = officialNameTable.querySelectorAll('tbody tr');
-                rows.forEach(row => {
-                    const languageCell = row.querySelector('td:first-child');
-                    const nameCell = row.querySelector('td:last-child');
-
-                    if (!languageCell || !nameCell) return;
-
-                    const language = languageCell.textContent.trim().replace(/\s+/g, ' ') || "not found";
-                    const officialName = nameCell.textContent.trim() || "not found";
-
-                    characterData.official_names_by_language[language] = officialName;
-                });
-            } else {
-                characterData.official_names_by_language = "not found";
+    
+        console.log(`Found header:`, header);
+    
+        const paragraphs = [];
+        let nextElement = header.nextElementSibling;
+    
+        // Collect all <p> elements until another heading (h1-h6) or different section appears
+        while (nextElement && !nextElement.matches("h1, h2, h3, h4, h5, h6")) {
+            if (nextElement.tagName === "P") {
+                console.log(`Found paragraph: ${nextElement.textContent.trim()}`);
+                paragraphs.push(nextElement.textContent.trim());
             }
+            nextElement = nextElement.nextElementSibling;
+        }
+    
+        console.log(`Collected paragraphs:`, paragraphs);
+        return paragraphs;
+    }
+    
+    
 
-            // Log and save
-            console.log(JSON.stringify(characterData, null, 2));
-            saveToLocalStorage(characterData);
-        })
-        .catch(error => console.error('Error during execution:', error));
+    // Extract Personality (with multiple paragraphs as array)
+    const personality = getParagraphsAfterHeader('Personality');
+
+    // Extract Appearance (with multiple paragraphs as array)
+    const firstTry = getParagraphsAfterHeader('Appearance');
+    console.log("First try result:", firstTry);
+
+    if (!firstTry || firstTry.length === 0) {
+        console.log(`First attempt failed. Trying '${name}'s_Appearance'`);
+    }
+
+    const secondTry = getParagraphsAfterHeader(`${name}'s_Appearance`);
+    console.log("Second try result:", secondTry);
+
+    const appearance = firstTry.length > 0 ? firstTry : secondTry;
+    console.log("Final appearance result:", appearance);
+
+    console.log(appearance)
+
+    // Extract Archive
+    const archive = {};
+    const basicInfoSection = doc.querySelector('#Basic_Information')?.parentElement?.nextElementSibling;
+    archive.basicInformation = basicInfoSection ? basicInfoSection.textContent.trim() : '';
+
+    const forteReport = {};
+    const resonancePowerTable = doc.querySelector('.article-table');
+    forteReport.resonancePower = resonancePowerTable ? resonancePowerTable.querySelector('td')?.textContent.trim() : '';
+
+    // Function to extract full content (including nested <p> tags) from a table cell
+    function getTableCellContent(headerText) {
+        const rows = Array.from(doc.querySelectorAll('.article-table tr'));
+        const headerRow = rows.find(row => row.querySelector('th')?.textContent.trim() === headerText);
+        if (!headerRow) return '';
+        const td = headerRow.nextElementSibling?.querySelector('td');
+        if (!td) return '';
+        const paragraphs = Array.from(td.querySelectorAll('p'))
+            .map(p => p.textContent.trim())
+            .filter(text => text.length > 0);
+        return paragraphs.join('\n\n');
+    }
+
+    forteReport.resonanceEvaluationReport = getTableCellContent('Resonance Evaluation Report');
+    forteReport.overclockDiagnosticReport = getTableCellContent('Overclock Diagnostic Report');
+    archive.forteExaminationReport = forteReport;
+
+    // Extract Character Stories
+    const characterStories = [];
+    const charStoriesHeading = doc.querySelector('h2 span#Character_Stories')?.closest('h2');
+    const cherishedItemsHeading = doc.querySelector('h2 span#Cherished_Items')?.closest('h2');
+
+    if (charStoriesHeading && cherishedItemsHeading) {
+        let nextElement = charStoriesHeading.nextElementSibling;
+        while (nextElement && nextElement !== cherishedItemsHeading) {
+            if (nextElement.matches('table.article-table')) {
+                const rows = Array.from(nextElement.querySelectorAll('tr'));
+                for (let i = 0; i < rows.length; i += 2) {
+                    const headerRow = rows[i];
+                    const contentRow = rows[i + 1];
+
+                    if (headerRow && contentRow) {
+                        const title = headerRow.querySelector('th')?.textContent.trim();
+                        const unlockReq = headerRow.querySelector('th:nth-child(2) small i')?.textContent.trim();
+                        const contentTd = contentRow.querySelector('td');
+
+                        if (title && contentTd) {
+                            const paragraphs = Array.from(contentTd.querySelectorAll('p'))
+                                .map(p => p.textContent.trim())
+                                .filter(text => text.length > 0);
+
+                            characterStories.push({
+                                title,
+                                unlockRequirement: unlockReq || '',
+                                content: paragraphs // Array of paragraphs
+                            });
+                        }
+                    }
+                }
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+    }
+
+    // Extract Cherished Items
+    const cherishedItems = [];
+    if (cherishedItemsHeading) {
+        let nextElement = cherishedItemsHeading.nextElementSibling;
+        while (nextElement && !nextElement.matches('h2')) {
+            if (nextElement.matches('table.article-table')) {
+                const rows = Array.from(nextElement.querySelectorAll('tr'));
+                rows.forEach(row => {
+                    const imgElement = row.querySelector('img');
+                    const imgSrc = imgElement ? imgElement.getAttribute('src') : '';
+
+                    const descriptionCell = row.querySelector('td[colspan="2"]');
+                    const description = descriptionCell ? descriptionCell.textContent.trim() : '';
+
+                    if (imgSrc && description) {
+                        cherishedItems.push({
+                            image: imgSrc,
+                            content: description
+                        });
+                    }
+                });
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+    }
+
+    // Extract Quests, Companion Quests and Events
+    const questsAndEvents = {
+        mainQuests: [],
+        companionQuests: [],
+        events: []
+    };
+    const questsEventsHeading = doc.querySelector('h2 span#Quests_and_Events')?.closest('h2');
+    const characterTrialsHeading = doc.querySelector('h2 span#Character_Trials')?.closest('h2');
+    const characterMentionsHeading = doc.querySelector('h2 span#Character_Mentions')?.closest('h2');
+
+    if (questsEventsHeading) {
+        const endHeading = characterTrialsHeading || characterMentionsHeading;
+        let mainQuestsHeading = null;
+        let companionQuestsHeading = [];
+        let eventsHeading = null;
+        let nextElement = questsEventsHeading.nextElementSibling;
+
+        // Find Main Quests and Events headings
+        while (nextElement && nextElement !== endHeading) {
+            if (nextElement.matches('h3') && nextElement.querySelector('span#Main_Quests')) {
+                mainQuestsHeading = nextElement;
+            } else if (nextElement.matches('h3') && nextElement.querySelector('span#Events')) {
+                eventsHeading = nextElement;
+            } else if (nextElement.matches('h3') && nextElement.querySelector('span#Companion_Stories')) {
+                companionQuestsHeading = nextElement;
+            }
+            nextElement = nextElement.nextElementSibling;
+        }
+
+        // Function to extract nested list items
+        function extractNestedListItems(ulElement) {
+            const items = [];
+            const listItems = Array.from(ulElement.querySelectorAll(':scope > li'));
+            listItems.forEach(li => {
+                const link = li.querySelector('a');
+                const title = link ? link.textContent.trim() : li.textContent.trim();
+                const href = link ? link.href : '';
+                const subUl = li.querySelector('ul');
+                const subItems = subUl ? extractNestedListItems(subUl) : [];
+                
+                items.push({
+                    title,
+                    link: href,
+                    subItems: subItems.length > 0 ? subItems : undefined
+                });
+            });
+            return items;
+        }
+
+        // Extract Main Quests
+        if (mainQuestsHeading) {
+            let nextElement = mainQuestsHeading.nextElementSibling;
+            while (nextElement && nextElement !== eventsHeading && nextElement !== endHeading) {
+                if (nextElement.matches('ul')) {
+                    questsAndEvents.mainQuests = extractNestedListItems(nextElement);
+                    break; // Only process the first <ul> after Main_Quests
+                }
+                nextElement = nextElement.nextElementSibling;
+            }
+        }
+
+        // Extract Events
+        if (eventsHeading) {
+            let nextElement = eventsHeading.nextElementSibling;
+            while (nextElement && nextElement !== endHeading) {
+                if (nextElement.matches('ul')) {
+                    questsAndEvents.events = extractNestedListItems(nextElement);
+                    break; // Only process the first <ul> after Events
+                }
+                nextElement = nextElement.nextElementSibling;
+            }
+        }
+
+        // Extract Companion Quests
+        if (companionQuestsHeading) {
+            let nextElement = companionQuestsHeading.nextElementSibling;
+            while (nextElement && nextElement !== endHeading) {
+                if (nextElement.matches('ul')) {
+                    questsAndEvents.companionQuests = extractNestedListItems(nextElement);
+                    break; // Only process the first <ul> after Events
+                }
+                nextElement = nextElement.nextElementSibling;
+            }
+        }
+    }
+
+    // Construct JSON object
+    const jsonData = {
+        name,
+        personality,
+        appearance,
+        archive,
+        characterStories,
+        cherishedItems,
+        questsAndEvents
+    };
+
+    return jsonData;
 }
 
-// Run the scraper
-scrapeCharacterData();
+// Function to add JSON to localStorage with duplicate detection
+function addToLocalStorage(jsonData) {
+    const storageKey = 'scrapedData';
+    let storedData = JSON.parse(localStorage.getItem(storageKey)) || [];
+
+    // Check for duplicate based on name
+    const isDuplicate = storedData.some(item => item.name === jsonData.name);
+    if (isDuplicate) {
+        console.log(`Duplicate detected: "${jsonData.name}" already exists in localStorage. Skipping...`);
+        return false;
+    }
+
+    storedData.push(jsonData);
+    localStorage.setItem(storageKey, JSON.stringify(storedData));
+    console.log(`Added "${jsonData.name}" to localStorage.`);
+    return true;
+}
+
+// Function to clear localStorage
+function clearLocalStorage() {
+    const storageKey = 'scrapedData';
+    localStorage.removeItem(storageKey);
+    console.log('LocalStorage cleared.');
+}
+
+// Function to remove an item from localStorage by name
+function removeFromLocalStorage(name) {
+    const storageKey = 'scrapedData';
+    let storedData = JSON.parse(localStorage.getItem(storageKey)) || [];
+    
+    const initialLength = storedData.length;
+    storedData = storedData.filter(item => item.name !== name);
+    
+    if (storedData.length === initialLength) {
+        console.log(`No item found with name "${name}" in localStorage.`);
+        return false;
+    }
+
+    localStorage.setItem(storageKey, JSON.stringify(storedData));
+    console.log(`Removed "${name}" from localStorage.`);
+    return true;
+}
+
+// Function to download localStorage data as JSON file
+function downloadLocalStorageAsJSON() {
+    const storageKey = 'scrapedData';
+    const storedData = JSON.parse(localStorage.getItem(storageKey)) || [];
+    
+    if (storedData.length === 0) {
+        console.log('No data in localStorage to download.');
+        return;
+    }
+
+    const jsonString = JSON.stringify(storedData, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'scrapedData.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    console.log('Downloaded localStorage data as scrapedData.json');
+}
+
+// Execute the script
+const jsonData = scrapeDataToJSON();
+console.log(JSON.stringify(jsonData, null, 2));
+
+// Add to localStorage with duplicate detection
+addToLocalStorage(jsonData);
+
+// Example usage of additional functions (uncomment to test):
+// clearLocalStorage();
+// removeFromLocalStorage('Jinhsi');
+// downloadLocalStorageAsJSON();

@@ -572,5 +572,29 @@
     "imageUrl": "Tidal_Chorus.webp",
     "start": null,
     "end": null
+  },
+  {
+    "id": "whiwareset170325",
+    "name": "Whimpering Waste Reset",
+    "type": "WhiWa",
+    "event_detail": {
+      "enemies": {
+        "Doomstrand Stage": {
+          "Level 80": {
+            "First Half": ["Abyssal Gladius", "Abyssal Mercator", "Calcified Junrock", "Frostscourge Stalker", "Galescourge Stalker", "Golden Junrock", "Rage Against the Statue", "Voltscourge Stalker"],
+            "Second Half": ["Abyssal Mercator", "Cuddle Wuddle", "Cyan-Feathered Heron", "Diggy Duggy", "Dwarf Cassowary", "Nimbus Wraith", "Violet-Feathered Heron"]
+          }
+        },
+        "Infinite Torrents": {
+          "Level 100": {
+            "First Half": ["Abyssal Gladius", "Abyssal Mercator", "Diggy Duggy", "Hocus Pocus", "Lottie Lost", "Nimbus Wraith", "Vitreum Dancer"],
+            "Second Half": ["Chasm Guardian", "Chop Chop", "Dwarf Cassowary", "Frostscourge Stalker", "Galescourge Stalker", "Voltscourge Stalker"]
+          }
+        }
+      }
+    },
+    "imageUrl": "Whimpering_Wastes.webp",
+    "start": "2025-03-17 10:00",
+    "end": "2025-04-14 09:59"
   }
 ]

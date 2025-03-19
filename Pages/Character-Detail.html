@@ -465,8 +465,7 @@
               <i class="fa fa-id-card"></i>
             </p>
           </div>
-          <table class="table-striped">
-          </table>
+          <table class="table-striped"></table>
         </div>
       </div>
     </main>
@@ -480,6 +479,7 @@
       const contentArea = document.getElementById("content");
       let characterData = null;
       let currentCharacterName = null;
+      let backstoryData = null;
 
       async function fetchCharacterData() {
         try {
@@ -530,7 +530,7 @@
 
         // Call tabContent with the character object
         const tabs = tabContent(character);
-        contentArea.innerHTML = tabs.profile; // Set initial content to profile tab
+        contentArea.innerHTML = tabs.profile;
 
         const html = `
         <div class="container">
@@ -583,7 +583,7 @@
 
       async function displayCharacterFromUrl() {
         if (!characterData) {
-          await fetchCharacterData();
+          await Promise.all([fetchCharacterData(), loadBackstoryData()]);
         }
 
         const characterName = getParameterByName("r");
@@ -605,6 +605,22 @@
       }
 
       window.onload = displayCharacterFromUrl;
+
+
+      async function loadBackstoryData() {
+  try {
+    const response = await fetch(
+      "https://raw.githubusercontent.com/GachaDB/wuthering-wave-db/refs/heads/main/Asset/Json/Character_Details/backstory_data.json"
+    );
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    backstoryData = await response.json();
+    console.log("Backstory data fetched successfully");
+  } catch (error) {
+    console.error("Error fetching backstory data:", error);
+    backstoryData = null;
+  }
+}
+
 
       // Modify the existing button click handler
       buttons.forEach((button) => {
@@ -1334,7 +1350,7 @@
     `;
       }
 
-      function generateBackstoryTab() {
+      function generateBackstoryTab(character) {
         return `
         <h2>Backstory</h2>
         <p>Born in a small village ravaged by war, the character discovered their powers at a young age. 
@@ -1343,14 +1359,54 @@
     `;
       }
 
-      function generateSkillTab() {
-        return `
-        <h1>Skill Multiplier Viewer (work in progress)</h1>
-        <div id="skills-container">
-            <p>Skill details will be displayed here.</p>
-        </div>
+      function generateBackstoryTab(characterName) {
+  if (!backstoryData) {
+    return `
+      <div class="backstory-container">
+        <h2>Backstory</h2>
+        <p>Loading character data...</p>
+      </div>
     `;
-      }
+  }
+
+  const characterData = Array.isArray(backstoryData)
+    ? backstoryData.find(item => item.name.toLowerCase() === characterName.toLowerCase())
+    : backstoryData.name.toLowerCase() === characterName.toLowerCase() ? backstoryData : null;
+
+  if (!characterData) {
+    return `
+      <div class="backstory-container">
+        <h2>Backstory</h2>
+        <p>No backstory found for ${characterName}</p>
+      </div>
+    `;
+  }
+
+  const storiesHTML = characterData.characterStories.map(story => `
+    <div class="story-section">
+      <h3>${story.title}</h3>
+      <p class="unlock-requirement">${story.unlockRequirement}</p>
+      ${story.content.map(paragraph => `<p>${paragraph}</p>`).join("")}
+    </div>
+  `).join("");
+
+  return `
+    <div class="backstory-container">
+      <h2>Backstory: ${characterData.name}</h2>
+      <div class="character-info">
+        <h3>Personality</h3>
+        ${characterData.personality.map(p => `<p>${p}</p>`).join("")}
+        <h3>Appearance</h3>
+        ${characterData.appearance.map(a => `<p>${a}</p>`).join("")}
+        <h3>Basic Information</h3>
+        <p>${characterData.archive.basicInformation}</p>
+      </div>
+      <div class="character-stories">
+        ${storiesHTML}
+      </div>
+    </div>
+  `;
+}
 
       function generateVoiceTab() {
         return `
@@ -1423,7 +1479,7 @@
       });
       const tabContent = (character) => ({
         profile: generateProfileTab(character),
-        backstory: generateBackstoryTab(character),
+        backstory: generateBackstoryTab(character.name),
         skill: generateSkillTab(character),
         voice: generateVoiceTab(character),
         dupe: generateDupeTab(character),
